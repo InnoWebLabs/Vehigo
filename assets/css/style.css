@@ -1375,7 +1375,7 @@ body.dark-mode footer {
 
   .hero-banner {
     display: block;
-    background: url("../images/hero_banner_mustang.png") no-repeat;
+    background: url() no-repeat;
     background-size: cover;
     background-position: left;
     position: absolute;

@@ -147,7 +147,32 @@
               <p class="hero-text">Live in Bhopal, Indore and Ujjain!</p>
             </div>
 
-            <div class="hero-banner"></div>
+            <div class="hero-banner">
+              <div id="slideshow" style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+
+  <img src="./assets/images/creta.jpeg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 1;">
+  <img src="./assets/images/innova.jpeg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
+  <img src="./assets/images/fortuner.jpg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
+  <img src="./assets/images/nexon.jpg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
+  <img src="./assets/images/maruti alto.jpg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
+  <img src="./assets/images/mahindra  scorpio.jpg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
+  <img src="./assets/images/swift desire.jpg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
+  <img src="./assets/images/alto.jpeg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
+
+</div>
+
+<script>
+  const images = document.querySelectorAll("#slideshow img");
+  let current = 0;
+
+  setInterval(() => {
+    images[current].style.opacity = 0; // hide current
+    current = (current + 1) % images.length;
+    images[current].style.opacity = 1; // show next
+  }, 3000); // change image every 3 seconds
+</script>
+
+            </div>
 
             <form action="" class="hero-form">
               <div class="input-wrapper">
