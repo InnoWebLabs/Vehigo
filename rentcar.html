@@ -4,7 +4,76 @@
   <meta charset="UTF-8">
   <title>Add Your Car for Rent - Vehigo</title>
   <link rel="stylesheet" href="./styles/rentcar.css">
+    <script src="./scripts/logout.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
 </head>
+<header class="header" data-header style="background-color: rgba(63, 87, 142, 0.8);; padding: 0; position: sticky; z-index: 1000;">
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+    <div class="overlay" data-overlay></div>
+
+    <a href="index.html" class="logo" style="display: flex; align-items: center;">
+      <img src="./assets/images/vehigologo.png" alt="VehiGo logo" style="height: 40px;" />
+    </a>
+
+    <nav class="navbar" data-navbar style="flex-grow: 1;">
+      <ul class="navbar-list" style="display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; margin-left: 50px; align-items: center;">
+        <li>
+          <a href="index.html" class="navbar-link" data-nav-link style="color: white; text-decoration: none;">Home</a>
+        </li>
+        <li>
+          <a href="#featured-car" class="navbar-link" data-nav-link style="color: white; text-decoration: none;">Explore cars</a>
+        </li>
+        <li>
+          <a href="#" class="navbar-link" data-nav-link style="color: white; text-decoration: none;">About us</a>
+        </li>
+        <li>
+          <a href="#blog" class="navbar-link" data-nav-link style="color: white; text-decoration: none;">Blog</a>
+        </li>
+        <li>
+          <a href="offline.html" class="navbar-link" data-nav-link style="color: white; text-decoration: none;">Offline Centers</a>
+        </li>
+        <li>
+          <a href="rentcar.html" class="navbar-link" data-nav-link style="color: white; text-decoration: none;">Rent Your Car</a>
+        </li>
+        <li>
+          <button id="dark-mode-toggle" class="dark-toggle" style="background: none; border: none; color: white; cursor: pointer;">🌙</button>
+        </li>
+      <div class="header-actions" style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;padding-left: 150px;">
+      <div class="header-contact" style="color: white; text-align: right;">
+        <a href="tel:1800100100" class="contact-link" style="color: white; text-decoration: none;">1800-100-100</a><br>
+        <span class="contact-time" style="font-size: 12px;">Mon - Sat: 9:00 am - 6:00 pm</span>
+      </div>
+      </ul>
+      
+    </nav>
+
+    
+    
+
+      <button id="logoutBtn" style="display: none">Logout</button>
+
+      <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt" style="width:100px ;background-color: #393d78; padding: 8px;margin-right: 20px; border-radius: 5px; color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+        <ion-icon name="car-outline"></ion-icon>
+        <span id="aria-label-txt">Explore cars</span>
+      </a>
+
+      <a href="./login.html" class="btn user-btn" aria-label="Profile" style="width: 20px; ;background-color: #444; padding: 8px 12px;margin-right: 20px; border-radius: 50%; color: white; display: flex; align-items: center;">
+        <ion-icon name="person-outline"></ion-icon>
+      </a>
+
+      
+    </div>
+  </div>
+</header>
+
+
 <body>
   <h1>🚗 Add Your Car for Rent</h1>
   <hr
@@ -30,4 +99,57 @@
 
   <script src="./scripts/rentcar.js"></script>
 </body>
+
+<footer class="footer" style="width:100% ;background-color: #1a1a1a; color: white; padding: 40px 0; font-family: Arial, sans-serif;">
+  <div class="container" style="max-width: 1200px; margin: auto;">
+    <div class="footer-top" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+      <div class="footer-brand" style="flex: 1; min-width: 250px;">
+        <a href="#" class="logo" style="display: inline-block; margin-bottom: 15px;">
+          <img src="./assets/images/vehigologo.png" alt="VehiGo logo" style="height: 50px;">
+        </a>
+
+        <p class="footer-text" style="font-size: 14px; line-height: 1.6; color: #ccc;">
+          Search for cheap rental cars in Madhaya Pradesh. We offers our
+          customers an attractive and fun selection of vehicals as well as
+          an opportunity to rent thier cars when not in use.
+        </p>
+      </div>
+
+      <ul class="footer-list" style="list-style: none; padding: 0; flex: 1; min-width: 180px;">
+        <li>
+          <p class="footer-list-title" style="font-weight: bold; margin-bottom: 10px;">Company</p>
+        </li>
+        <li><a href="#" class="footer-link" style="color: #ccc; text-decoration: none; font-size: 14px;">About us</a></li>
+        <li><a href="#" class="footer-link" style="color: #ccc; text-decoration: none; font-size: 14px;">Pricing plans</a></li>
+        <li><a href="#" class="footer-link" style="color: #ccc; text-decoration: none; font-size: 14px;">Our blog</a></li>
+        <li><a href="./ContactUs.html" class="footer-link" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact Us</a></li>
+      </ul>
+
+      <ul class="footer-list" style="list-style: none; padding: 0; flex: 1; min-width: 180px;">
+        <li>
+          <p class="footer-list-title" style="font-weight: bold; margin-bottom: 10px;">Support</p>
+        </li>
+        <li><a href="#" class="footer-link" style="color: #ccc; text-decoration: none; font-size: 14px;">Help center</a></li>
+        <li><a href="src/pages/Askaques.html" class="footer-link" style="color: #ccc; text-decoration: none; font-size: 14px;">Ask a question</a></li>
+        <li><a href="privacypolicy.html" class="footer-link" style="color: #ccc; text-decoration: none; font-size: 14px;">Privacy policy</a></li>
+        <li><a href="src/pages/tandc.html" class="footer-link" style="color: #ccc; text-decoration: none; font-size: 14px;">Terms & conditions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom" style="margin-top: 40px; border-top: 1px solid #333; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <ul class="social-list" style="display: flex; list-style: none; padding: 0; gap: 15px;">
+        <li><a href="#" class="social-link" style="color: white; font-size: 20px;"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="#" class="social-link" style="color: white; font-size: 20px;"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        <li><a href="#" class="social-link" style="color: white; font-size: 20px;"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li><a href="#" class="social-link" style="color: white; font-size: 20px;"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="#" class="social-link" style="color: white; font-size: 20px;"><ion-icon name="mail-outline"></ion-icon></a></li>
+      </ul>
+
+      <p class="copyright" style="font-size: 13px; color: #aaa;">
+        &copy; 2023 <a href="./ContactUs.html" style="color: #ccc; text-decoration: none;">VehiGo</a> Contact us through
+      </p>
+    </div>
+  </div>
+</footer>
+
 </html>
