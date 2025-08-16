@@ -120,7 +120,8 @@ body.dark-mode .footer-link {
   margin-bottom: 15px;
   transition: 0.3s ease;
   text-decoration: none;
-  display: block;
+  display: inline;
+  position: relative;
   border-radius: 5px;
 }
 
@@ -140,6 +141,16 @@ body.dark-mode .footer-link {
 }
 
 
+.explorebtn{
+   position: relative;
+   display: inline-block;
+   width: 10px;
+   padding: 10px 5px;
+   font-size: 15px;
+   background-color: #2196F3;
+   color: white;
+   border-radius: 20px;
+}
 
 /*-----------------------------------*\
   #ABOUT SECTION
@@ -710,6 +721,7 @@ input:checked + .slider:before {
   transform: translateX(30px);
 }
 
+
 .slider .icon {
   display: flex;
   align-items: center;
@@ -768,7 +780,7 @@ input:checked + .slider:before {
 }
 
 .slider {
-  position: absolute;
+  position: relative;
   cursor: pointer;
   top: 0;
   left: 0;
@@ -780,7 +792,7 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5px;
+  padding: 5px 5px;
 }
 body.dark-mode {
   background-color: #121212;

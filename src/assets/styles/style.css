@@ -1280,6 +1280,9 @@ button, a { transition: var(--transition); }
   .header-contact .contact-link:is(:hover, :focus) { color: var(--carolina-blue); }
 
   .header-contact .contact-time {
+    display: inline-block;
+    position: relative;
+    width: 150px;
     color: var(--independence);
     font-size: var(--fs-7);
   }
