@@ -1,906 +1,1208 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | VehiGo</title>
 
-    <!-- favicon -->
-    <link
-      rel="shortcut icon"
-      href="../../public/favicon.svg"
-      type="image/svg+xml"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | VehiGo</title>
 
-    <!-- custom css link -->
-    <link rel="stylesheet" href="../assets/styles/style.css" />
-    <link rel="stylesheet" href="../assets/styles/about.css" />
-    <link rel="stylesheet" href="../../modern-improvements.css" />
-    <link rel="stylesheet" href="../../about-animations.css" />
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../../public/favicon.svg" type="image/svg+xml" />
 
-    <!-- google font link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- ionicon link -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const themeToggle = document.getElementById('theme-toggle');
-        if (themeToggle) {
-          themeToggle.addEventListener('change', (e) => {
-            document.documentElement.classList.toggle('dark-mode', e.target.checked);
-          });
-        }
-      });
-    </script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+  <!-- custom css link -->
+  <link rel="stylesheet" href="../assets/styles/style.css" />
+  <link rel="stylesheet" href="../assets/styles/about.css" />
+  <link rel="stylesheet" href="../../modern-improvements.css" />
+  <link rel="stylesheet" href="../../about-animations.css" />
 
-    <style>
-      :root {
-        --primary-gradient: linear-gradient(to right, #EAECC6, #2BC0E4 100%);
-        --secondary-gradient: linear-gradient(to right, #EAECC6, #2BC0E4 100%);
-        --accent-gradient: linear-gradient(to right, #EAECC6, #2BC0E4 100%);
-        --dark-gradient: linear-gradient(to right, #EAECC6, #2BC0E4 100%);
-        --glass-bg: rgba(255, 255, 255, 0.1);
-        --glass-border: rgba(255, 255, 255, 0.2);
-        --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.1);
-        --shadow-medium: 0 12px 40px rgba(0, 0, 0, 0.15);
-        --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.2);
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- ionicon link -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('change', (e) => {
+          document.documentElement.classList.toggle('dark-mode', e.target.checked);
+        });
+      }
+    });
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(to right, #EAECC6, #2BC0E4 100%);
+      --secondary-gradient: linear-gradient(to right, #EAECC6, #2BC0E4 100%);
+      --accent-gradient: linear-gradient(to right, #EAECC6, #2BC0E4 100%);
+      --dark-gradient: linear-gradient(to right, #EAECC6, #2BC0E4 100%);
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --shadow-medium: 0 12px 40px rgba(0, 0, 0, 0.15);
+      --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: #2BC0E4;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #EAECC6, #2BC0E4);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      min-height: 100vh;
+    }
+
+    /* Enhanced About Section */
+    .about-section {
+      padding: 120px 0;
+      background: #2BC0E4;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #EAECC6, #2BC0E4);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+      opacity: 0.3;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
       }
 
-      * {
-        box-sizing: border-box;
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .container1 {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-content {
+      animation: slideInLeft 1s ease-in;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: #2BC0E4;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #EAECC6, #2BC0E4);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      min-height: 100vh;
+    }
+
+
+    .about-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: black;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-text {
+      font-size: 1.4rem;
+      color: black;
+      margin-bottom: 30px;
+      font-weight: 600;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-content p {
+      color: black;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-content .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(45deg, #134980, #1a419c);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .about-content .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+      background: linear-gradient(45deg, #1d0f5c, #0a0859);
+    }
+
+    .about-banner {
+      position: relative;
+      animation: slideInRight 1s ease-out;
+    }
+
+    .about-banner img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      filter: brightness(1.1) saturate(1.2);
+    }
+
+    .about-banner:hover img {
+      transform: scale(1.05);
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
       }
 
-      body {
-        font-family: 'Nunito', sans-serif;
-        line-height: 1.6;
-        overflow-x: hidden;
-        background: #2BC0E4;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        min-height: 100vh;
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
       }
 
-      /* Enhanced About Section */
-      .about-section {
-        padding: 120px 0;
-        background: #2BC0E4;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        position: relative;
-        overflow: hidden;
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Enhanced Why Section */
+    .why-section {
+      padding: 100px 0;
+      background: #2BC0E4;
+      background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
+      background: linear-gradient(to right, #EAECC6, #2BC0E4);
+      position: relative;
+    }
+
+    .why-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    }
+
+    .why-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .why-section .h2 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgb(20, 19, 19);
+      margin-bottom: 60px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .why-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: slideInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .why-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .why-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .why-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .why-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transform: rotate(45deg);
+      transition: all 0.6s;
+      opacity: 0;
+    }
+
+    .why-card:hover::before {
+      animation: shine 0.6s ease-in-out;
+    }
+
+    @keyframes shine {
+      0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+        opacity: 0;
       }
 
-      .about-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .why-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .card-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 25px;
+      background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .why-card:hover .card-icon {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+    }
+
+    .card-icon ion-icon {
+      font-size: 2.5rem;
+      color: black;
+    }
+
+    .why-card .h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: gray;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .why-card p {
+      color: rgba(45, 41, 41, 0.9);
+      font-size: 1rem;
+      line-height: 1.6;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Enhanced Testimonials Section */
+    .reviews {
+      padding: 100px 0;
+      color: #2c3e50;
+      background: #2BC0E4;
+      background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
+      background: linear-gradient(to right, #EAECC6, #2BC0E4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reviews::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: calc(100% + 100px);
+      height: calc(100% + 100px);
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.1);
         opacity: 0.3;
-        animation: float 20s ease-in-out infinite;
+      }
+    }
+
+    .section-title1 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgb(15, 15, 15);
+      margin-bottom: 60px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    .outerdiv {
+      position: relative;
+      z-index: 2;
+    }
+
+    .innerdiv {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      color: black;
+    }
+
+    .eachdiv {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInScale 0.6s ease-out forwards;
+      color: black;
+    }
+
+    .div1 {
+      animation-delay: 0.1s;
+    }
+
+    .div2 {
+      animation-delay: 0.2s;
+    }
+
+    .div3 {
+      animation-delay: 0.3s;
+    }
+
+    .div4 {
+      animation-delay: 0.4s;
+    }
+
+    .div5 {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
       }
 
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .eachdiv:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .userdetails {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .imgbox {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .eachdiv:hover .imgbox {
+      border-color: rgba(103, 94, 94, 0.6);
+      transform: scale(1.1);
+    }
+
+    .imgbox img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: black;
+      margin: 0;
+    }
+
+    .userdetails {
+      color: black;
+    }
+
+    .detbbox p {
+      color: black;
+    }
+
+    .section-title1 {
+      padding-left: 50px;
+    }
+
+    .designation {
+      font-size: 0.9rem;
+      color: rgba(19, 17, 17, 0.8);
+      margin: 0;
+    }
+
+    .review h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: rgb(24, 23, 23);
+      margin-bottom: 15px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .review p {
+      color: rgba(0, 0, 0, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Enhanced Team Section */
+    .team-section {
+      padding: 100px 0;
+      background: #2BC0E4;
+      background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
+      background: linear-gradient(to right, #EAECC6, #2BC0E4);
+      position: relative;
+    }
+
+    .team-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+      animation: sweep 8s linear infinite;
+    }
+
+    @keyframes sweep {
+      0% {
+        transform: translateX(-100%);
       }
 
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .team-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .team-section .h2 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: black;
+      margin-bottom: 60px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .team-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      list-style: none;
+      padding: 0;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .team-member {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      animation: slideInScale 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .team-list li:nth-child(1) .team-member {
+      animation-delay: 0.1s;
+    }
+
+    .team-list li:nth-child(2) .team-member {
+      animation-delay: 0.2s;
+    }
+
+    .team-list li:nth-child(3) .team-member {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes slideInScale {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .team-member:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .team-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 25px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .team-member:hover .team-img {
+      transform: scale(1.1);
+      border-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .team-member .h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: gray;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .team-member p {
+      color: rgba(2, 2, 2, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .team-bio {
+      margin-top: 15px;
+      font-style: italic;
+    }
+
+    /* Enhanced Locations Section */
+    .locations-section {
+      padding: 100px 0;
+      background: #2BC0E4;
+      background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
+      background: linear-gradient(to right, #EAECC6, #2BC0E4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .locations-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 0h100v100H0z" fill="none"/><path d="M20 20l20 20-20 20M60 20l20 20-20 20" stroke="rgba(255,255,255,0.05)" stroke-width="2" fill="none"/></svg>') repeat;
+      animation: movePattern 30s linear infinite;
+    }
+
+    @keyframes movePattern {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+
+      100% {
+        transform: translateX(100px) translateY(100px);
+      }
+    }
+
+    .locations-section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .locations-section .h2 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: black;
+      margin-bottom: 60px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .locations-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .location-card {
+      display: block;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 40px 30px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      animation: locationSlide 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .location-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .location-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .location-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes locationSlide {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .location-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .location-card:hover::before {
+      left: 100%;
+    }
+
+    .location-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .location-card-content .h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: black;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .location-card-content p {
+      color: rgba(27, 25, 25, 0.9);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ff6b6b;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .card-link::after {
+      content: '→';
+      transition: transform 0.3s ease;
+    }
+
+    .location-card:hover .card-link::after {
+      transform: translateX(5px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
       .container1 {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-        position: relative;
-        z-index: 2;
-      }
-
-      .about-content {
-        animation: slideInLeft 1s ease-in;
+        grid-template-columns: 1fr;
+        gap: 40px;
       }
 
       .about-content h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: black;
-        margin-bottom: 20px;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        font-size: 2.5rem;
       }
 
       .hero-text {
-        font-size: 1.4rem;
-        color: black;
-        margin-bottom: 30px;
-        font-weight: 600;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .about-content p {
-        color: black;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 40px;
-        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-      }
-
-      .about-content .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        background: linear-gradient(45deg, #134980, #1a419c);
-        color: white;
-        padding: 16px 32px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem;
-        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-      }
-
-      .about-content .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
-        background: linear-gradient(45deg, #1d0f5c, #0a0859);
-      }
-
-      .about-banner {
-        position: relative;
-        animation: slideInRight 1s ease-out;
-      }
-
-      .about-banner img {
-        width: 100%;
-        height: auto;
-        border-radius: 20px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease;
-        filter: brightness(1.1) saturate(1.2);
-      }
-
-      .about-banner:hover img {
-        transform: scale(1.05);
-      }
-
-      @keyframes slideInLeft {
-        from { opacity: 0; transform: translateX(-100px); }
-        to { opacity: 1; transform: translateX(0); }
-      }
-
-      @keyframes slideInRight {
-        from { opacity: 0; transform: translateX(100px); }
-        to { opacity: 1; transform: translateX(0); }
-      }
-
-      /* Enhanced Why Section */
-      .why-section {
-        padding: 100px 0;
-        background: #2BC0E4;
-        background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
-        background: linear-gradient(to right, #EAECC6, #2BC0E4);
-        position: relative;
-      }
-
-      .why-section::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-      }
-
-      .why-section .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        position: relative;
-        z-index: 2;
-      }
-
-      .why-section .h2 {
-        text-align: center;
-        font-size: 3rem;
-        font-weight: 800;
-        color: rgb(20, 19, 19);
-        margin-bottom: 60px;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      }
-
-      .why-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-        list-style: none;
-        padding: 0;
-      }
-
-      .why-card {
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        padding: 40px 30px;
-        text-align: center;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        animation: slideInUp 0.6s ease-out forwards;
-        opacity: 0;
-      }
-
-      .why-card:nth-child(1) { animation-delay: 0.1s; }
-      .why-card:nth-child(2) { animation-delay: 0.2s; }
-      .why-card:nth-child(3) { animation-delay: 0.3s; }
-      .why-card:nth-child(4) { animation-delay: 0.4s; }
-
-      .why-card::before {
-        content: '';
-        position: absolute;
-        top: -50%; left: -50%;
-        width: 200%; height: 200%;
-        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-        transform: rotate(45deg);
-        transition: all 0.6s;
-        opacity: 0;
-      }
-
-      .why-card:hover::before { animation: shine 0.6s ease-in-out; }
-      @keyframes shine {
-        0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
-        50% { opacity: 1; }
-        100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
-      }
-      .why-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 0.25);
-      }
-
-      .card-icon {
-        width: 80px; height: 80px;
-        margin: 0 auto 25px;
-        background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-        transition: all 0.3s ease;
-      }
-
-      .why-card:hover .card-icon {
-        transform: scale(1.1) rotate(5deg);
-        box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
-      }
-      .card-icon ion-icon { font-size: 2.5rem; color: black; }
-      .why-card .h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: gray;
-        margin-bottom: 15px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      }
-      .why-card p {
-        color: rgba(45, 41, 41, 0.9);
-        font-size: 1rem;
-        line-height: 1.6;
-        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-      }
-      @keyframes slideInUp {
-        from { opacity: 0; transform: translateY(50px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      /* Enhanced Testimonials Section */
-      .reviews {
-        padding: 100px 0;
-        color: #2c3e50;
-        background: #2BC0E4;
-        background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
-        background: linear-gradient(to right, #EAECC6, #2BC0E4);
-        position: relative;
-        overflow: hidden;
-      }
-      .reviews::before {
-        content: '';
-        position: absolute;
-        top: -50px; left: -50px;
-        width: calc(100% + 100px);
-        height: calc(100% + 100px);
-        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-        animation: pulse 4s ease-in-out infinite;
-      }
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); opacity: 0.5; }
-        50% { transform: scale(1.1); opacity: 0.3; }
-      }
-      .section-title1 {
-        text-align: center;
-        font-size: 3rem;
-        font-weight: 800;
-        color: rgb(15, 15, 15);
-        margin-bottom: 60px;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        position: relative;
-        z-index: 2;
-      }
-      .outerdiv { position: relative; z-index: 2; }
-      .innerdiv {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        color: black;
-      }
-      .eachdiv {
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        padding: 30px;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        animation: fadeInScale 0.6s ease-out forwards;
-        color: black;
-      }
-      .div1 { animation-delay: 0.1s; }
-      .div2 { animation-delay: 0.2s; }
-      .div3 { animation-delay: 0.3s; }
-      .div4 { animation-delay: 0.4s; }
-      .div5 { animation-delay: 0.5s; }
-      @keyframes fadeInScale {
-        from { opacity: 0; transform: scale(0.9); }
-        to { opacity: 1; transform: scale(1); }
-      }
-      .eachdiv:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        background: rgba(255, 255, 255, 0.25);
-      }
-      .userdetails {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 20px;
-      }
-      .imgbox {
-        width: 50px; height: 50px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        transition: all 0.3s ease;
-      }
-      .eachdiv:hover .imgbox {
-        border-color: rgba(103, 94, 94, 0.6);
-        transform: scale(1.1);
-      }
-      .imgbox img { width: 100%; height: 100%; object-fit: cover; }
-      .name { font-weight: 700; font-size: 1.1rem; color: black; margin: 0; }
-      .userdetails { color: black; }
-      .detbbox p { color: black; }
-      .section-title1 { padding-left: 50px; }
-      .designation { font-size: 0.9rem; color: rgba(19, 17, 17, 0.8); margin: 0; }
-      .review h4 {
         font-size: 1.2rem;
-        font-weight: 600;
-        color: rgb(24, 23, 23);
-        margin-bottom: 15px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
       }
-      .review p {
-        color: rgba(0, 0, 0, 0.9);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-      }
-      /* Enhanced Team Section */
-      .team-section {
-        padding: 100px 0;
-        background: #2BC0E4;
-        background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
-        background: linear-gradient(to right, #EAECC6, #2BC0E4);
-        position: relative;
-      }
-      .team-section::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-        animation: sweep 8s linear infinite;
-      }
-      @keyframes sweep {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
-      }
-      .team-section .container { position: relative; z-index: 2; }
-      .team-section .h2 {
-        text-align: center;
-        font-size: 3rem;
-        font-weight: 800;
-        color: black;
-        margin-bottom: 60px;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      }
-      .team-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 40px;
-        list-style: none;
-        padding: 0;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-      .team-member {
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 25px;
-        padding: 40px 30px;
-        text-align: center;
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-        animation: slideInScale 0.6s ease-out forwards;
-        opacity: 0;
-      }
-      .team-list li:nth-child(1) .team-member { animation-delay: 0.1s; }
-      .team-list li:nth-child(2) .team-member { animation-delay: 0.2s; }
-      .team-list li:nth-child(3) .team-member { animation-delay: 0.3s; }
-      @keyframes slideInScale {
-        from { opacity: 0; transform: translateY(30px) scale(0.95); }
-        to { opacity: 1; transform: translateY(0) scale(1); }
-      }
-      .team-member:hover {
-        transform: translateY(-15px);
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 0.25);
-      }
-      .team-img {
-        width: 120px; height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 auto 25px;
-        border: 4px solid rgba(255, 255, 255, 0.3);
-        transition: all 0.4s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-      .team-member:hover .team-img {
-        transform: scale(1.1);
-        border-color: rgba(255, 255, 255, 0.6);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-      }
-      .team-member .h3 {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: gray;
-        margin-bottom: 10px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      }
-      .team-member p {
-        color: rgba(2, 2, 2, 0.9);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-      }
-      .team-bio { margin-top: 15px; font-style: italic; }
-      /* Enhanced Locations Section */
-      .locations-section {
-        padding: 100px 0;
-        background: #2BC0E4;
-        background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);
-        background: linear-gradient(to right, #EAECC6, #2BC0E4);
-        position: relative;
-        overflow: hidden;
-      }
-      .locations-section::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 0h100v100H0z" fill="none"/><path d="M20 20l20 20-20 20M60 20l20 20-20 20" stroke="rgba(255,255,255,0.05)" stroke-width="2" fill="none"/></svg>') repeat;
-        animation: movePattern 30s linear infinite;
-      }
-      @keyframes movePattern {
-        0% { transform: translateX(0) translateY(0); }
-        100% { transform: translateX(100px) translateY(100px); }
-      }
-      .locations-section .container { position: relative; z-index: 2; }
+
+      .why-section .h2,
+      .section-title1,
+      .team-section .h2,
       .locations-section .h2 {
-        text-align: center;
-        font-size: 3rem;
-        font-weight: 800;
-        color: black;
-        margin-bottom: 60px;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        font-size: 2.2rem;
       }
+
+      .why-list,
+      .innerdiv,
+      .team-list,
       .locations-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
+        grid-template-columns: 1fr;
       }
-      .location-card {
-        display: block;
-        text-decoration: none;
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        padding: 40px 30px;
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-        animation: locationSlide 0.6s ease-out forwards;
-        opacity: 0;
-      }
-      .location-card:nth-child(1) { animation-delay: 0.1s; }
-      .location-card:nth-child(2) { animation-delay: 0.2s; }
-      .location-card:nth-child(3) { animation-delay: 0.3s; }
-      @keyframes locationSlide {
-        from { opacity: 0; transform: translateX(-30px); }
-        to { opacity: 1; transform: translateX(0); }
-      }
-      .location-card::before {
-        content: '';
-        position: absolute;
-        top: 0; left: -100%;
-        width: 100%; height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s;
-      }
-      .location-card:hover::before { left: 100%; }
-      .location-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 0.25);
-      }
-      .location-card-content .h3 {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: black;
-        margin-bottom: 15px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      }
-      .location-card-content p {
-        color: rgba(27, 25, 25, 0.9);
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
-        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-      }
-      .card-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        color: #ff6b6b;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-      .card-link::after {
-        content: '→';
-        transition: transform 0.3s ease;
-      }
-      .location-card:hover .card-link::after { transform: translateX(5px); }
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .container1 { grid-template-columns: 1fr; gap: 40px; }
-        .about-content h1 { font-size: 2.5rem; }
-        .hero-text { font-size: 1.2rem; }
-        .why-section .h2, .section-title1, .team-section .h2, .locations-section .h2 { font-size: 2.2rem; }
-        .why-list, .innerdiv, .team-list, .locations-list { grid-template-columns: 1fr; }
-      }
-      /* Dark mode enhancements */
-      .dark-mode {
-        --glass-bg: rgba(42, 39, 39, 0.2);
-        --glass-border: rgba(255, 255, 255, 0.1);
-      }
-      body.dark-mode {
-        background: #0F2027;
-        background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-        background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-      }
-      .dark-mode .why-card,
-      .dark-mode .eachdiv,
-      .dark-mode .team-member,
-      .dark-mode .location-card {
-        background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .dark-mode .about-section,
-      .dark-mode .why-section,
-      .dark-mode .reviews {
-        background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-      }
-      .dark-mode .why-card:hover,
-      .dark-mode .eachdiv:hover,
-      .dark-mode .team-member:hover,
-      .dark-mode .location-card:hover {
-        background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-      }
-    </style>
-  </head>
-  <body>
-    <header class="header" data-header>
-      <div class="container">
-        <div class="overlay" data-overlay></div>
+    }
 
-        <a href="../../index.html" class="logo">
-          <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
+    /* Dark mode enhancements */
+    .dark-mode {
+      --glass-bg: rgba(42, 39, 39, 0.2);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    body.dark-mode {
+      background: #0F2027;
+      background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+      background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    }
+
+    .dark-mode .why-card,
+    .dark-mode .eachdiv,
+    .dark-mode .team-member,
+    .dark-mode .location-card {
+      background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dark-mode .about-section,
+    .dark-mode .why-section,
+    .dark-mode .reviews {
+      background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    }
+
+    .dark-mode .why-card:hover,
+    .dark-mode .eachdiv:hover,
+    .dark-mode .team-member:hover,
+    .dark-mode .location-card:hover {
+      background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+
+      <a href="../../index.html" class="logo">
+        <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li>
+            <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
+          </li>
+
+          <li>
+            <a href="about.html" class="navbar-link" data-nav-link>About us</a>
+          </li>
+
+          <li>
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li>
+            <a href="../../offline.html" class="navbar-link" data-nav-link>Offline Centers</a>
+          </li>
+
+          <li>
+            <a href="../../rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-contact">
+          <a href="tel:1800100100" class="contact-link">1800-100-100</a>
+          <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+        </div>
+        <label class="theme-switch" for="theme-toggle">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider">
+            <span class="icon sun" aria-label="Light mode"><svg width="25" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg></span>
+            <span class="icon moon" aria-label="Dark mode"><svg width="23" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+              </svg></span>
+          </span>
+        </label>
+        <button id="logoutBtn" style="display: none">Logout</button>
+
+        <a href="./login.html" class="btn user-btn" aria-label="Profile">
+          <ion-icon name="person-outline"></ion-icon>
         </a>
+        <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="aboutus-container">
+    <article>
+      <!-- ABOUT SECTION -->
+      <section class="section about-section modern-section animate-section">
+        <div class="container1">
+          <div class="about-content animate-card">
+            <h1 class="h1 gradient-text">About VehiGo</h1>
+            <p class="hero-text">Seamless Rentals, Endless Adventures!</p>
+            <p>
+              Founded in 2020, VehiGo is a premier car rental service in
+              Madhya Pradesh, operating in Bhopal, Indore, and Ujjain. Our
+              mission is to make car rentals effortless, affordable, and
+              enjoyable. Whether you're exploring the vibrant streets of
+              Indore or embarking on a scenic journey to Ujjain's temples, we
+              provide a diverse fleet of well-maintained vehicles to suit
+              every need. With transparent pricing and exceptional customer
+              support, VehiGo is your trusted partner for every journey.
+            </p>
+            <a href="../index.html#featured-car" class="btn">Explore Our Cars</a>
+          </div>
+          <div class="about-banner">
+            <img src="../assets/images/hero_banner_mustang.png" alt="VehiGo car rental" loading="lazy" class="w-100" />
+          </div>
+        </div>
+      </section>
 
-        <nav class="navbar" data-navbar>
-          <ul class="navbar-list">
-            <li>
-              <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
+      <!-- WHY SECTION -->
+      <section class="section why-section modern-section">
+        <div class="container">
+          <h2 class="h2 section-title gradient-text">🚗 Why Choose VehiGo?</h2>
+          <ul class="why-list">
+            <li class="why-card modern-card animate-card">
+              <div class="card-icon"><ion-icon name="car-outline"></ion-icon></div>
+              <h3 class="h3 card-title">Diverse Fleet</h3>
+              <p>From compact Swift Dzire to spacious Toyota Fortuner, choose from a wide range of vehicles.</p>
             </li>
-
-            <li>
-              <a href="#featured-car" class="navbar-link" data-nav-link
-                >Explore cars</a
-              >
+            <li class="why-card modern-card animate-card">
+              <div class="card-icon"><ion-icon name="cash-outline"></ion-icon></div>
+              <h3 class="h3 card-title">Transparent Pricing</h3>
+              <p>No hidden fees—just pay for what you rent, with clear and competitive rates.</p>
             </li>
-
-            <li>
-              <a href="about.html" class="navbar-link" data-nav-link>About us</a>
+            <li class="why-card modern-card animate-card">
+              <div class="card-icon"><ion-icon name="location-outline"></ion-icon></div>
+              <h3 class="h3 card-title">Flexible Locations</h3>
+              <p>Convenient pickup and drop-off options across Bhopal, Indore, and Ujjain.</p>
             </li>
-
-            <li>
-              <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-            </li>
-
-            <li>
-              <a href="../../offline.html" class="navbar-link" data-nav-link
-                >Offline Centers</a
-              >
-            </li>
-
-             <li>
-              <a href="../../rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
+            <li class="why-card modern-card animate-card">
+              <div class="card-icon"><ion-icon name="headset-outline"></ion-icon></div>
+              <h3 class="h3 card-title">Top-Notch Support</h3>
+              <p>Our friendly team is available to assist you 24/7, ensuring a hassle-free experience.</p>
             </li>
           </ul>
-        </nav>
-
-        <div class="header-actions">
-          <div class="header-contact">
-            <a href="tel:1800100100" class="contact-link">1800-100-100</a>
-            <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
-          </div>
-          <label class="theme-switch" for="theme-toggle">
-            <input type="checkbox" id="theme-toggle" />
-            <span class="slider">
-              <span class="icon sun" aria-label="Light mode"><svg width="25" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
-              <span class="icon moon" aria-label="Dark mode"><svg width="23" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg></span>
-            </span>
-          </label>
-          <button id="logoutBtn" style="display: none">Logout</button>
-          
-          <a href="./login.html" class="btn user-btn" aria-label="Profile">
-            <ion-icon name="person-outline"></ion-icon>
-          </a>
-          <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-            <span class="one"></span>
-            <span class="two"></span>
-            <span class="three"></span>
-          </button>
         </div>
-      </div>
-    </header>
-    <main class="aboutus-container">
-      <article>
-        <!-- ABOUT SECTION -->
-        <section class="section about-section modern-section animate-section">
-          <div class="container1">
-            <div class="about-content animate-card">
-              <h1 class="h1 gradient-text">About VehiGo</h1>
-              <p class="hero-text">Seamless Rentals, Endless Adventures!</p>
-              <p>
-                Founded in 2020, VehiGo is a premier car rental service in
-                Madhya Pradesh, operating in Bhopal, Indore, and Ujjain. Our
-                mission is to make car rentals effortless, affordable, and
-                enjoyable. Whether you're exploring the vibrant streets of
-                Indore or embarking on a scenic journey to Ujjain's temples, we
-                provide a diverse fleet of well-maintained vehicles to suit
-                every need. With transparent pricing and exceptional customer
-                support, VehiGo is your trusted partner for every journey.
-              </p>
-              <a href="../index.html#featured-car" class="btn">Explore Our Cars</a>
-            </div>
-            <div class="about-banner">
-              <img
-                src="../assets/images/hero_banner_mustang.png"
-                alt="VehiGo car rental"
-                loading="lazy"
-                class="w-100"
-              />
-            </div>
-          </div>
-        </section>
+      </section>
 
-        <!-- WHY SECTION -->
-        <section class="section why-section modern-section">
-          <div class="container">
-            <h2 class="h2 section-title gradient-text">🚗 Why Choose VehiGo?</h2>
-            <ul class="why-list">
-              <li class="why-card modern-card animate-card">
-                <div class="card-icon"><ion-icon name="car-outline"></ion-icon></div>
-                <h3 class="h3 card-title">Diverse Fleet</h3>
-                <p>From compact Swift Dzire to spacious Toyota Fortuner, choose from a wide range of vehicles.</p>
-              </li>
-              <li class="why-card modern-card animate-card">
-                <div class="card-icon"><ion-icon name="cash-outline"></ion-icon></div>
-                <h3 class="h3 card-title">Transparent Pricing</h3>
-                <p>No hidden fees—just pay for what you rent, with clear and competitive rates.</p>
-              </li>
-              <li class="why-card modern-card animate-card">
-                <div class="card-icon"><ion-icon name="location-outline"></ion-icon></div>
-                <h3 class="h3 card-title">Flexible Locations</h3>
-                <p>Convenient pickup and drop-off options across Bhopal, Indore, and Ujjain.</p>
-              </li>
-              <li class="why-card modern-card animate-card">
-                <div class="card-icon"><ion-icon name="headset-outline"></ion-icon></div>
-                <h3 class="h3 card-title">Top-Notch Support</h3>
-                <p>Our friendly team is available to assist you 24/7, ensuring a hassle-free experience.</p>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- TESTIMONIALS SECTION -->
-        <section class="section reviews modern-section" id="reviews">
-          <div class="container">
-            <h2 class="h2 section-title gradient-text">💬 What Our Customers Say</h2>
-            <div class="testimonials-carousel">
-              <button class="carousel-btn prev-btn" id="prevBtn"><ion-icon name="chevron-back-outline"></ion-icon></button>
-              <div class="testimonials-container">
-                <div class="testimonial-card modern-card animate-card">
-                  <div class="testimonial-header">
-                    <div class="customer-avatar"><img src="https://placehold.co/60x60/007BFF/white?text=RS" alt="Rahul Sharma" /></div>
-                    <div class="customer-info">
-                      <h4 class="customer-name">Rahul Sharma</h4>
-                      <p class="customer-role">Verified Customer</p>
-                      <div class="rating">⭐⭐⭐⭐⭐</div>
-                    </div>
+      <!-- TESTIMONIALS SECTION -->
+      <section class="section reviews modern-section" id="reviews">
+        <div class="container">
+          <h2 class="h2 section-title gradient-text">💬 What Our Customers Say</h2>
+          <div class="testimonials-carousel">
+            <button class="carousel-btn prev-btn" id="prevBtn"><ion-icon
+                name="chevron-back-outline"></ion-icon></button>
+            <div class="testimonials-container">
+              <div class="testimonial-card modern-card animate-card">
+                <div class="testimonial-header">
+                  <div class="customer-avatar"><img src="https://placehold.co/60x60/007BFF/white?text=RS"
+                      alt="Rahul Sharma" /></div>
+                  <div class="customer-info">
+                    <h4 class="customer-name">Rahul Sharma</h4>
+                    <p class="customer-role">Verified Customer</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
                   </div>
-                  <div class="testimonial-content"><p>"I recently rented a car from Vehigo, and I couldn't be happier with the experience. The staff was incredibly friendly and helpful."</p></div>
                 </div>
-                <div class="testimonial-card modern-card animate-card">
-                    <div class="testimonial-header">
-                      <div class="customer-avatar"><img src="https://placehold.co/60x60/28a745/white?text=AP" alt="Alok Patel" /></div>
-                      <div class="customer-info">
-                        <h4 class="customer-name">Alok Patel</h4>
-                        <p class="customer-role">Verified Customer</p>
-                        <div class="rating">⭐⭐⭐⭐⭐</div>
-                      </div>
-                    </div>
-                    <div class="testimonial-content"><p>"Renting a car from Vehigo was a breeze! The staff was friendly, the car was clean and well-maintained."</p></div>
-                </div>
-                <div class="testimonial-card modern-card animate-card">
-                    <div class="testimonial-header">
-                      <div class="customer-avatar"><img src="https://placehold.co/60x60/ffc107/black?text=AG" alt="Aaru Gupta" /></div>
-                      <div class="customer-info">
-                        <h4 class="customer-name">Aaru Gupta</h4>
-                        <p class="customer-role">Verified Customer</p>
-                        <div class="rating">⭐⭐⭐⭐⭐</div>
-                      </div>
-                    </div>
-                    <div class="testimonial-content"><p>"Vehigo is my top choice for renting a car. Their service is consistently outstanding and professional."</p></div>
-                </div>
-                <div class="testimonial-card modern-card animate-card">
-                    <div class="testimonial-header">
-                      <div class="customer-avatar"><img src="https://placehold.co/60x60/dc3545/white?text=PJ" alt="Prateeksha Joshi" /></div>
-                      <div class="customer-info">
-                        <h4 class="customer-name">Prateeksha Joshi</h4>
-                        <p class="customer-role">Verified Customer</p>
-                        <div class="rating">⭐⭐⭐⭐⭐</div>
-                      </div>
-                    </div>
-                    <div class="testimonial-content"><p>"Overall a wonderful experience! The car was spacious, comfortable, and fuel-efficient. Highly recommended!"</p></div>
-                </div>
-                <div class="testimonial-card modern-card animate-card">
-                    <div class="testimonial-header">
-                      <div class="customer-avatar"><img src="https://placehold.co/60x60/6f42c1/white?text=RM" alt="Rohit Mehta" /></div>
-                      <div class="customer-info">
-                        <h4 class="customer-name">Rohit Mehta</h4>
-                        <p class="customer-role">Verified Customer</p>
-                        <div class="rating">⭐⭐⭐⭐⭐</div>
-                      </div>
-                    </div>
-                    <div class="testimonial-content"><p>"I have been a loyal customer for several years. Their diverse fleet and exceptional customer service are unmatched."</p></div>
+                <div class="testimonial-content">
+                  <p>"I recently rented a car from Vehigo, and I couldn't be happier with the experience. The staff was
+                    incredibly friendly and helpful."</p>
                 </div>
               </div>
-              <button class="carousel-btn next-btn" id="nextBtn"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+              <div class="testimonial-card modern-card animate-card">
+                <div class="testimonial-header">
+                  <div class="customer-avatar"><img src="https://placehold.co/60x60/28a745/white?text=AP"
+                      alt="Alok Patel" /></div>
+                  <div class="customer-info">
+                    <h4 class="customer-name">Alok Patel</h4>
+                    <p class="customer-role">Verified Customer</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                  </div>
+                </div>
+                <div class="testimonial-content">
+                  <p>"Renting a car from Vehigo was a breeze! The staff was friendly, the car was clean and
+                    well-maintained."</p>
+                </div>
+              </div>
+              <div class="testimonial-card modern-card animate-card">
+                <div class="testimonial-header">
+                  <div class="customer-avatar"><img src="https://placehold.co/60x60/ffc107/black?text=AG"
+                      alt="Aaru Gupta" /></div>
+                  <div class="customer-info">
+                    <h4 class="customer-name">Aaru Gupta</h4>
+                    <p class="customer-role">Verified Customer</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                  </div>
+                </div>
+                <div class="testimonial-content">
+                  <p>"Vehigo is my top choice for renting a car. Their service is consistently outstanding and
+                    professional."</p>
+                </div>
+              </div>
+              <div class="testimonial-card modern-card animate-card">
+                <div class="testimonial-header">
+                  <div class="customer-avatar"><img src="https://placehold.co/60x60/dc3545/white?text=PJ"
+                      alt="Prateeksha Joshi" /></div>
+                  <div class="customer-info">
+                    <h4 class="customer-name">Prateeksha Joshi</h4>
+                    <p class="customer-role">Verified Customer</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                  </div>
+                </div>
+                <div class="testimonial-content">
+                  <p>"Overall a wonderful experience! The car was spacious, comfortable, and fuel-efficient. Highly
+                    recommended!"</p>
+                </div>
+              </div>
+              <div class="testimonial-card modern-card animate-card">
+                <div class="testimonial-header">
+                  <div class="customer-avatar"><img src="https://placehold.co/60x60/6f42c1/white?text=RM"
+                      alt="Rohit Mehta" /></div>
+                  <div class="customer-info">
+                    <h4 class="customer-name">Rohit Mehta</h4>
+                    <p class="customer-role">Verified Customer</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                  </div>
+                </div>
+                <div class="testimonial-content">
+                  <p>"I have been a loyal customer for several years. Their diverse fleet and exceptional customer
+                    service are unmatched."</p>
+                </div>
+              </div>
             </div>
+            <button class="carousel-btn next-btn" id="nextBtn"><ion-icon
+                name="chevron-forward-outline"></ion-icon></button>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- TEAM SECTION -->
-        <section class="section team-section modern-section">
-          <div class="container">
-            <h2 class="h2 section-title gradient-text">👥 Meet Our Team</h2>
-            <ul class="team-list has-scrollbar">
-              <li>
-                <div class="team-member modern-card animate-card">
-                  <img src="../assets/images/guy1.jpg" alt="John, Financial Head" class="team-img w-100" />
-                  <h3 class="h3 card-title">John</h3>
-                  <p>Financial Head</p>
-                  <p class="team-bio">With a passion for travel and innovation, John founded VehiGo to make car rentals accessible and seamless.</p>
-                </div>
-              </li>
-              <li>
-                <div class="team-member modern-card animate-card">
-                  <img src="../assets/images/girl1.jpg" alt="Janice, Executive Head" class="team-img w-100" />
-                  <h3 class="h3 card-title">Janice</h3>
-                  <p>Executive Head</p>
-                  <p class="team-bio">Janice ensures our fleet is ready and our operations run smoothly, delivering top-quality service.</p>
-                </div>
-              </li>
-              <li>
-                <div class="team-member modern-card animate-card">
-                  <img src="../assets/images/girl2.jpg" alt="Amrita, Team Manager" class="team-img w-100" />
-                  <h3 class="h3 card-title">Amrita</h3>
-                  <p>Team Manager</p>
-                  <p class="team-bio">Amrita leads our support team, ensuring every customer has a hassle-free experience.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
+      <!-- TEAM SECTION -->
+      <section class="section team-section modern-section">
+        <div class="container">
+          <h2 class="h2 section-title gradient-text">👥 Meet Our Team</h2>
+          <ul class="team-list has-scrollbar">
+            <li>
+              <div class="team-member modern-card animate-card">
+                <img src="../assets/images/guy1.jpg" alt="John, Financial Head" class="team-img w-100" />
+                <h3 class="h3 card-title">John</h3>
+                <p>Financial Head</p>
+                <p class="team-bio">With a passion for travel and innovation, John founded VehiGo to make car rentals
+                  accessible and seamless.</p>
+              </div>
+            </li>
+            <li>
+              <div class="team-member modern-card animate-card">
+                <img src="../assets/images/girl1.jpg" alt="Janice, Executive Head" class="team-img w-100" />
+                <h3 class="h3 card-title">Janice</h3>
+                <p>Executive Head</p>
+                <p class="team-bio">Janice ensures our fleet is ready and our operations run smoothly, delivering
+                  top-quality service.</p>
+              </div>
+            </li>
+            <li>
+              <div class="team-member modern-card animate-card">
+                <img src="../assets/images/girl2.jpg" alt="Amrita, Team Manager" class="team-img w-100" />
+                <h3 class="h3 card-title">Amrita</h3>
+                <p>Team Manager</p>
+                <p class="team-bio">Amrita leads our support team, ensuring every customer has a hassle-free experience.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-        <!-- LOCATIONS SECTION -->
-        <section class="section locations-section modern-section">
-          <div class="container">
-            <h2 class="h2 section-title gradient-text">🗺️ Where We Operate</h2>
-            <div class="locations-list">
-              <a href="../index.html#home" class="location-card modern-card animate-card">
-                <div class="location-card-content">
-                  <h3 class="h3 card-title">Bhopal</h3>
-                  <p>Explore the city of lakes with our reliable rental cars, perfect for urban adventures.</p>
-                  <span class="card-link modern-btn">Rent in Bhopal</span>
-                </div>
-              </a>
-              <a href="../index.html#home" class="location-card modern-card animate-card">
-                <div class="location-card-content">
-                  <h3 class="h3 card-title">Indore</h3>
-                  <p>Navigate Indore's vibrant streets with our diverse fleet, from compact to luxury vehicles.</p>
-                  <span class="card-link modern-btn">Rent in Indore</span>
-                </div>
-              </a>
-              <a href="../index.html#home" class="location-card modern-card animate-card">
-                <div class="location-card-content">
-                  <h3 class="h3 card-title">Ujjain</h3>
-                  <p>Discover Ujjain's spiritual and cultural heritage with our convenient rental options.</p>
-                  <span class="card-link modern-btn">Rent in Ujjain</span>
-                </div>
-              </a>
-            </div>
+      <!-- LOCATIONS SECTION -->
+      <section class="section locations-section modern-section">
+        <div class="container">
+          <h2 class="h2 section-title gradient-text">🗺️ Where We Operate</h2>
+          <div class="locations-list">
+            <a href="../index.html#home" class="location-card modern-card animate-card">
+              <div class="location-card-content">
+                <h3 class="h3 card-title">Bhopal</h3>
+                <p>Explore the city of lakes with our reliable rental cars, perfect for urban adventures.</p>
+                <span class="card-link modern-btn">Rent in Bhopal</span>
+              </div>
+            </a>
+            <a href="../index.html#home" class="location-card modern-card animate-card">
+              <div class="location-card-content">
+                <h3 class="h3 card-title">Indore</h3>
+                <p>Navigate Indore's vibrant streets with our diverse fleet, from compact to luxury vehicles.</p>
+                <span class="card-link modern-btn">Rent in Indore</span>
+              </div>
+            </a>
+            <a href="../index.html#home" class="location-card modern-card animate-card">
+              <div class="location-card-content">
+                <h3 class="h3 card-title">Ujjain</h3>
+                <p>Discover Ujjain's spiritual and cultural heritage with our convenient rental options.</p>
+                <span class="card-link modern-btn">Rent in Ujjain</span>
+              </div>
+            </a>
           </div>
-        </section>
-      </article>
-      <a href="./about.html" style="
+        </div>
+      </section>
+    </article>
+    <a href="./about.html" style="
         position: fixed;
         bottom: 30px;
         right: 30px;
@@ -915,113 +1217,118 @@
         text-decoration: none;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         z-index: 999;
-        transition: background-color 0.3s;"
-        onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
-        <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
-      </a>
-    </main>
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <a href="#" class="logo">
-              <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
-            </a>
-            <p class="footer-text">
-              Search for cheap rental cars in Madhya Pradesh. We offer our
-              customers an attractive and fun selection of vehicles as well as
-              an opportunity to rent their cars when not in use.
-            </p>
-          </div>
-          <ul class="footer-list">
-            <li><p class="footer-list-title">Company</p></li>
-            <li><a href="about.html" class="footer-link">About us</a></li>
-            <li><a href="pricing.html" class="footer-link">Pricing plans</a></li>
-            <li><a href="../blog.html" class="footer-link">Our blog</a></li>
-            <li><a href="../ContactUs.html" class="footer-link">Contacts</a></li>
-          </ul>
-          <ul class="footer-list">
-            <li><p class="footer-list-title">Support</p></li>
-            <li><a href="help-center.html" class="footer-link">Help center</a></li>
-            <li><a href="Askaques.html" class="footer-link">Ask a question</a></li>
-            <li><a href="../privacypolicy.html" class="footer-link">Privacy policy</a></li>
-            <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
-          </ul>
-        </div>
-        <div class="footer-bottom">
-          <ul class="social-list">
-            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
-          </ul>
-          <p class="copyright">
-            © 2024 <a href="#">VehiGo</a>. All Rights Reserved.
+        transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0056b3'"
+      onmouseout="this.style.backgroundColor='#007BFF'">
+      <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
+    </a>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
+          </a>
+          <p class="footer-text">
+            Search for cheap rental cars in Madhya Pradesh. We offer our
+            customers an attractive and fun selection of vehicles as well as
+            an opportunity to rent their cars when not in use.
           </p>
         </div>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Company</p>
+          </li>
+          <li><a href="about.html" class="footer-link">About us</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing plans</a></li>
+          <li><a href="../blog.html" class="footer-link">Our blog</a></li>
+          <li><a href="../ContactUs.html" class="footer-link">Contacts</a></li>
+        </ul>
+        <ul class="footer-list">
+          <li>
+            <p class="footer-list-title">Support</p>
+          </li>
+          <li><a href="help-center.html" class="footer-link">Help center</a></li>
+          <li><a href="Askaques.html" class="footer-link">Ask a question</a></li>
+          <li><a href="../privacypolicy.html" class="footer-link">Privacy policy</a></li>
+          <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
+        </ul>
       </div>
-    </footer>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const themeToggle = document.getElementById('theme-toggle');
-        if (themeToggle) {
-          // Load theme from localStorage
-          if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-mode');
-            themeToggle.checked = true;
-          }
-          
-          // Add event listener
-          themeToggle.addEventListener('change', function (e) {
-            e.stopPropagation();
-            document.body.classList.toggle('dark-mode', this.checked);
-            localStorage.setItem('theme', this.checked ? 'dark' : 'light');
-          });
-          
-          document.querySelector('.theme-switch')?.addEventListener('click', e => e.stopPropagation());
-        } else {
-          // Apply theme if toggle is not present
-          if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-mode');
-          }
+      <div class="footer-bottom">
+        <ul class="social-list">
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
+        </ul>
+        <p class="copyright">
+          © 2024 <a href="#">VehiGo</a>. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        // Load theme from localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+          document.body.classList.add('dark-mode');
+          themeToggle.checked = true;
         }
 
-        // Testimonials Carousel
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const testimonialsContainer = document.querySelector('.testimonials-container');
-        if (prevBtn && nextBtn && testimonialsContainer) {
-            let scrollAmount = 0;
-            const cardWidth = testimonialsContainer.querySelector('.testimonial-card').offsetWidth + 30; // card width + gap
-            const maxScroll = testimonialsContainer.scrollWidth - testimonialsContainer.clientWidth;
-
-            nextBtn.addEventListener('click', () => {
-                scrollAmount = Math.min(scrollAmount + cardWidth, maxScroll);
-                testimonialsContainer.style.transform = `translateX(-${scrollAmount}px)`;
-            });
-
-            prevBtn.addEventListener('click', () => {
-                scrollAmount = Math.max(scrollAmount - cardWidth, 0);
-                testimonialsContainer.style.transform = `translateX(-${scrollAmount}px)`;
-            });
-        }
-
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.animate-card, .animate-section').forEach(el => {
-            observer.observe(el);
+        // Add event listener
+        themeToggle.addEventListener('change', function (e) {
+          e.stopPropagation();
+          document.body.classList.toggle('dark-mode', this.checked);
+          localStorage.setItem('theme', this.checked ? 'dark' : 'light');
         });
+
+        document.querySelector('.theme-switch')?.addEventListener('click', e => e.stopPropagation());
+      } else {
+        // Apply theme if toggle is not present
+        if (localStorage.getItem('theme') === 'dark') {
+          document.body.classList.add('dark-mode');
+        }
+      }
+
+      // Testimonials Carousel
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const testimonialsContainer = document.querySelector('.testimonials-container');
+      if (prevBtn && nextBtn && testimonialsContainer) {
+        let scrollAmount = 0;
+        const cardWidth = testimonialsContainer.querySelector('.testimonial-card').offsetWidth + 30; // card width + gap
+        const maxScroll = testimonialsContainer.scrollWidth - testimonialsContainer.clientWidth;
+
+        nextBtn.addEventListener('click', () => {
+          scrollAmount = Math.min(scrollAmount + cardWidth, maxScroll);
+          testimonialsContainer.style.transform = `translateX(-${scrollAmount}px)`;
+        });
+
+        prevBtn.addEventListener('click', () => {
+          scrollAmount = Math.max(scrollAmount - cardWidth, 0);
+          testimonialsContainer.style.transform = `translateX(-${scrollAmount}px)`;
+        });
+      }
+
+      // Intersection Observer for animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.animate-card, .animate-section').forEach(el => {
+        observer.observe(el);
       });
-    </script>
-    <script src="../assets/js/script.js"></script>
-  </body>
+    });
+  </script>
+  <script src="../assets/js/script.js"></script>
+</body>
+
 </html>
