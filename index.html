@@ -57,7 +57,7 @@
             </li>
 
             <li>
-              <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+              <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
             </li>
             <!-- changes -->
              <li>
@@ -1213,7 +1213,7 @@
     <a href="./index.html" style="
       position: fixed;
       bottom: 30px;
-      right: 30px;
+      left: 30px;
       background-color: #007BFF;
       color: white;
       border-radius: 50%;
@@ -1229,5 +1229,36 @@
     " onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
       <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
     </a>
+      <!-- Scroll Buttons -->
+<button id="scrollTopBtn" style="
+    position: fixed; bottom: 80px; right: 20px; background: #007bff; color: white;
+    border: none; outline: none; width: 50px; height: 50px; border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px;
+    display: none; z-index: 999;">&#9650;</button>
+
+<button id="scrollBottomBtn" style="
+    position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white;
+    border: none; outline: none; width: 50px; height: 50px; border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px;
+    display: none; z-index: 999;">&#9660;</button>
+
+<script>
+  const topBtn = document.getElementById("scrollTopBtn");
+  const bottomBtn = document.getElementById("scrollBottomBtn");
+
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    bottomBtn.style.display = (window.innerHeight + window.scrollY < document.body.scrollHeight - 200) ? "block" : "none";
+  });
+
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  bottomBtn.addEventListener("click", () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  });
+</script>
+
   </body>
 </html>

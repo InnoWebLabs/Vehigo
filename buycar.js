@@ -47,3 +47,16 @@
         );
       });
     });
+    // Buy Car Page Script
+    document.addEventListener("DOMContentLoaded", () => {
+  const searchBar = document.getElementById("searchBar");
+  const carCards = document.querySelectorAll(".car-card");
+
+  searchBar.addEventListener("input", () => {
+    const searchTerm = searchBar.value.toLowerCase();
+    carCards.forEach(card => {
+      const carName = card.querySelector("h2").textContent.toLowerCase();
+      card.style.display = carName.includes(searchTerm) ? "block" : "none";
+    });
+  });
+});

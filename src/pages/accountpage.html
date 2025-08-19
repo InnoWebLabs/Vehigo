@@ -508,6 +508,38 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+    <!-- Scroll Buttons -->
+<button id="scrollTopBtn" style="
+    position: fixed; bottom: 80px; right: 20px; background: #007bff; color: white;
+    border: none; outline: none; width: 50px; height: 50px; border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px;
+    display: none; z-index: 999;">&#9650;</button>
+
+<button id="scrollBottomBtn" style="
+    position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white;
+    border: none; outline: none; width: 50px; height: 50px; border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px;
+    display: none; z-index: 999;">&#9660;</button>
+
+<script>
+  const topBtn = document.getElementById("scrollTopBtn");
+  const bottomBtn = document.getElementById("scrollBottomBtn");
+
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    bottomBtn.style.display = (window.innerHeight + window.scrollY < document.body.scrollHeight - 200) ? "block" : "none";
+  });
+
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  bottomBtn.addEventListener("click", () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  });
+</script>
+
+
 </body>
 
 </html>
