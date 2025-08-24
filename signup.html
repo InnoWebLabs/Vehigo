@@ -1,1282 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <title>Vehigo - Signup</title>
-  
-  <!-- CSS files for navbar functionality -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/dark.css" />
-  
-  <!-- Font Awesome for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
-    rel="stylesheet"
-  />
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* Animated Background Elements */
-    .bg-animation {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .bg-animation::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, 
-        rgba(255, 255, 255, 0.03) 0%, 
-        transparent 50%, 
-        rgba(255, 255, 255, 0.03) 100%);
-      animation: rotate 20s linear infinite;
-    }
-
-    .floating-shapes {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .shape {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .shape:nth-child(1) {
-      width: 80px;
-      height: 80px;
-      top: 15%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .shape:nth-child(2) {
-      width: 120px;
-      height: 120px;
-      top: 70%;
-      right: 15%;
-      animation-delay: 2s;
-    }
-
-    .shape:nth-child(3) {
-      width: 60px;
-      height: 60px;
-      bottom: 15%;
-      left: 20%;
-      animation-delay: 4s;
-    }
-
-    .shape:nth-child(4) {
-      width: 90px;
-      height: 90px;
-      top: 40%;
-      right: 30%;
-      animation-delay: 1s;
-    }
-
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(180deg); }
-    }
-
-    /* Signup specific styles - navbar styles are handled by style.css */
-    /* Removed conflicting navbar styles to use the same navbar CSS as home page */
-
-    /* Main Content */
-    .signup-main-content {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      padding-top: 120px; /* Add top padding to account for fixed navbar */
-      position: relative;
-      z-index: 1; /* Reduced z-index to allow navbar to be clickable */
-    }
-
-    /* Responsive adjustments for smaller screens */
-    @media (max-width: 768px) {
-      .signup-main-content {
-        padding-top: 100px; /* Slightly less padding on mobile */
-        padding: 20px 15px;
-      }
-      
-      .signup-form-container {
-        max-width: 95%;
-        min-height: 650px;
-      }
-      
-      .form-content {
-        padding: 40px 30px 30px;
-      }
-      
-      .signup-header {
-        padding: 40px 30px;
-      }
-    }
-
-    /* Ensure navbar is accessible */
-    .header {
-      z-index: 1000 !important;
-    }
-
-    .navbar {
-      z-index: 1001 !important;
-    }
-
-    .overlay {
-      z-index: 999 !important;
-    }
-
-    .nav-toggle-btn {
-      z-index: 1002 !important;
-    }
-
-    /* Dark mode styles for signup page */
-    body.dark-mode .signup-form-container {
-      background: rgba(45, 45, 45, 0.95) !important;
-      border: 1px solid rgba(255, 255, 255, 0.2) !important;
-      color: #ffffff !important;
-      backdrop-filter: blur(20px) !important;
-    }
-
-    body.dark-mode .signup-header {
-      background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
-      color: #ffffff !important;
-    }
-
-    body.dark-mode .signup-header::before {
-      background: none !important;
-    }
-
-    body.dark-mode .signup-header h2 {
-      color: #ffffff !important;
-    }
-
-    body.dark-mode .signup-header p {
-      color: #e2e8f0 !important;
-    }
-
-    body.dark-mode .field label {
-      color: #e2e8f0 !important;
-    }
-
-    body.dark-mode .input {
-      background: rgba(55, 55, 55, 0.8) !important;
-      border: 1px solid rgba(255, 255, 255, 0.2) !important;
-      color: #ffffff !important;
-    }
-
-    body.dark-mode .input:focus {
-      border-color: #4299e1 !important;
-      background: rgba(55, 55, 55, 0.9) !important;
-    }
-
-    body.dark-mode .input::placeholder {
-      color: #a0aec0 !important;
-    }
-
-    body.dark-mode .signup-btn {
-      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%) !important;
-      color: #ffffff !important;
-    }
-
-    body.dark-mode .signup-btn:hover {
-      background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%) !important;
-    }
-
-    body.dark-mode .form-link a {
-      color: #4299e1 !important;
-    }
-
-    body.dark-mode .form-link a:hover {
-      color: #3182ce !important;
-    }
-
-    body.dark-mode .input.error {
-      border-color: #fc8181 !important;
-      background: rgba(252, 129, 129, 0.1) !important;
-    }
-
-    body.dark-mode .input.success {
-      border-color: #68d391 !important;
-      background: rgba(104, 211, 145, 0.1) !important;
-    }
-
-    body.dark-mode .error-message {
-      color: #fc8181 !important;
-    }
-
-    body.dark-mode .success-message {
-      color: #68d391 !important;
-    }
-
-    body.dark-mode .password-toggle {
-      color: #a0aec0 !important;
-    }
-
-    body.dark-mode .password-toggle:hover {
-      color: #4299e1 !important;
-    }
-
-    body.dark-mode .icon {
-      color: #a0aec0 !important;
-    }
-
-    body.dark-mode .field label svg {
-      color: #a0aec0 !important;
-    }
-
-    .signup-form-container {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      overflow: visible;
-      width: 100%;
-      max-width: 520px;
-      min-height: 700px;
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      animation: slideUp 0.8s ease-out;
-    }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .signup-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-align: center;
-      padding: 50px 40px;
-      position: relative;
-    }
-
-    .signup-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    }
-
-    .signup-icon {
-      width: 80px;
-      height: 80px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .signup-header h2 {
-      font-size: 32px;
-      margin-bottom: 8px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .signup-header p {
-      opacity: 0.9;
-      font-size: 16px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .form-content {
-      padding: 50px 40px 40px;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 10px;
-    }
-
-    .field {
-      margin-bottom: 25px;
-      position: relative;
-      flex: 1;
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 8px;
-      color: #555;
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .input-group {
-      position: relative;
-    }
-
-    .input {
-      width: 100%;
-      padding: 10px 10px;
-      border: 2px solid #e1e5e9;
-      border-radius: 12px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      background: #f8f9fa;
-      outline: none;
-    }
-
-    .input:focus {
-      border-color: #667eea;
-      background: white;
-      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .input.error {
-      border-color: #e74c3c;
-      background: #fef5f5;
-    }
-
-    .input.success {
-      border-color: #27ae60;
-      background: #f8fff8;
-    }
-
-    .password-toggle {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: #666;
-      cursor: pointer;
-      padding: 5px;
-      border-radius: 4px;
-      transition: color 0.3s ease;
-    }
-
-    .password-toggle:hover {
-      color: #667eea;
-    }
-
-    .error-message {
-      color: #e74c3c;
-      font-size: 14px;
-      margin-top: 8px;
-      display: flex;
-      align-items: center;
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all 0.3s ease;
-    }
-
-    .error-message.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .success-message {
-      color: #27ae60;
-      font-size: 14px;
-      margin-top: 8px;
-      display: flex;
-      align-items: center;
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all 0.3s ease;
-    }
-
-    .success-message.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .signup-btn {
-      width: 100%;
-      padding: 16px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      margin-top:10px;
-    }
-
-    .signup-btn:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-    }
-
-    .signup-btn:active {
-      transform: translateY(0);
-    }
-
-    .signup-btn:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-    }
-
-    .btn-text {
-      transition: opacity 0.3s ease;
-    }
-
-    .loading-spinner {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      border-top: 2px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .signup-btn.loading .btn-text {
-      opacity: 0;
-    }
-
-    .signup-btn.loading .loading-spinner {
-      opacity: 1;
-    }
-
-    @keyframes spin {
-      0% { transform: translate(-50%, -50%) rotate(0deg); }
-      100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    .form-link {
-      text-align: center;
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid #e1e5e9;
-      color: #666;
-    }
-
-    .form-link a {
-      color: #667eea;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .form-link a:hover {
-      color: #764ba2;
-    }
-
-    .strength-meter {
-      margin-top: 8px;
-      height: 4px;
-      background: #e1e5e9;
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .strength-fill {
-      height: 100%;
-      transition: all 0.3s ease;
-      border-radius: 2px;
-    }
-
-    .strength-text {
-      font-size: 12px;
-      margin-top: 4px;
-      font-weight: 500;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .container {
-        padding: 0 15px;
-      }
-      
-      .signup-container {
-        margin: 20px 10px;
-        max-width: none;
-      }
-      
-      .form-content {
-        padding: 30px 20px 20px;
-        max-height: 60vh;
-      }
-      
-      .signup-header {
-        padding: 30px 20px;
-      }
-      
-      .signup-header h2 {
-        font-size: 28px;
-      }
-
-      .form-row {
-        flex-direction: column;
-        gap: 0;
-      }
-    }
-
-    /* Icon styles */
-    .icon {
-      width: 16px;
-      height: 16px;
-      margin-right: 10px;
-    }
-
-    .user-plus-icon {
-      width: 40px;
-      height: 32px;
-      fill: white;
-    }
-
-  .google-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #ffffff;
-  color: #444;
-  border: 1px solid #ccc;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VehiGo - Signup</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<!-- Google sign-in -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<style>
+:root {
+  --primary-color: #007bff;
+  --neon-color: #00ffc8;
 }
-
-
-.google-btn:hover {
-  background-color: #f7f7f7;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-}
-
-.google-btn-img{
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-}
-  </style>
+body { margin:0;padding:0;font-family:'Poppins', sans-serif; transition:0.4s;}
+body.light-mode { background:#f4faff; color:#111;}
+body.dark-mode { background:linear-gradient(135deg,#0d0d0d,#1a1a1a); color:var(--neon-color);}
+.container { width:400px; margin:60px auto; padding:40px; border-radius:15px; text-align:center; transition:all 0.4s ease;}
+body.light-mode .container { background:#ffffff; box-shadow:0 0 20px rgba(0,123,255,0.2);}
+body.dark-mode .container { background:rgba(20,20,20,0.95); box-shadow:0 0 40px rgba(0,255,200,0.4);}
+h1 { font-family:'Orbitron',sans-serif; font-size:2.5rem; margin-bottom:10px;}
+h1.light-mode { color:#007bff;}
+h1.dark-mode { color:var(--neon-color);}
+p.description { text-align:center;margin-bottom:25px;}
+input { width:100%; padding:12px; margin:10px 0; border-radius:10px; border:none; outline:none; font-size:14px; transition:0.3s;}
+body.light-mode input { background:#fff; color:#111; border:1px solid #007bff33;}
+body.dark-mode input { background:#222; color:#fff;}
+input:focus { border:2px solid var(--primary-color);}
+button { width:100%; padding:12px; margin-top:15px; border-radius:10px; border:none; font-size:16px; font-weight:600; cursor:pointer; transition:0.3s;}
+body.light-mode button { background:var(--primary-color); color:#fff;}
+body.light-mode button:hover { background:#0056b3;}
+body.dark-mode button { background:var(--neon-color); color:#000;}
+body.dark-mode button:hover { background:#00e6b3;}
+.social-login { margin:20px 0;}
+.social-login button { display:flex; align-items:center; justify-content:center; gap:10px; padding:12px; width:100%; border-radius:10px; margin:8px 0; border:none; cursor:pointer; font-weight:600; transition:0.3s;}
+body.light-mode .social-login button { background:#fff;color:#007bff;border:1px solid #007bff33;}
+body.dark-mode .social-login button { background:#111;color:var(--neon-color);border:1px solid #333;}
+.social-login button:hover { transform:scale(1.03);}
+.social-login img { width:20px;}
+.footer { text-align:center;margin-top:20px;font-size:12px;}
+.toggle-mode { position:absolute; top:20px; right:20px; background:none; border:none; cursor:pointer; font-size:22px; transition:0.3s;}
+.toggle-mode:hover { transform:scale(1.2);}
+</style>
 </head>
-<body>
-  <!-- Animated Background -->
-  <div class="bg-animation"></div>
-  <div class="floating-shapes">
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-  </div>
-
-   <!-- Header -->
-  <header class="header" data-header>
-    <div class="container">
-      <div class="overlay" data-overlay></div>
-
-      <a href="index.html" class="logo">
-        <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
-      </a>
-
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
-          <li>
-            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
-          </li>
-
-          <li>
-            <a href="#featured-car" class="navbar-link" data-nav-link
-              >Explore cars</a
-            >
-          </li>
-
-          <li>
-            <a href="#" class="navbar-link" data-nav-link>About us</a>
-          </li>
-
-          <li>
-            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-          </li>
-
-          <li>
-            <a href="offline.html" class="navbar-link" data-nav-link
-              >Offline Centers</a
-            >
-          </li>
-
-           <li>
-            <a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <div class="header-contact">
-          <a href="tel:1800100100" class="contact-link">1800-100-100</a>
-
-          <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
-        </div>
-        <!-- Theme Toggle Switch with SVG icons -->
-        <label class="theme-switch" for="theme-toggle">
-          <input type="checkbox" id="theme-toggle" />
-          <span class="slider">
-            <span class="icon sun" aria-label="Light mode">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            </span>
-            <span class="icon moon" aria-label="Dark mode">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
-            </span>
-          </span>
-        </label>
-
-        <!-- home.html -->
-        <button id="logoutBtn" style="display: none">Logout</button>
-
-        <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
-          <ion-icon name="car-outline"></ion-icon>
-
-          <span id="aria-label-txt">Explore cars</span>
-        </a>
-
-        <a href="./login.html" class="btn user-btn" aria-label="Profile">
-          <ion-icon name="person-outline"></ion-icon>
-        </a>
-
-        <button
-          class="nav-toggle-btn"
-          data-nav-toggle-btn
-          aria-label="Toggle Menu"
-        >
-          <span class="one"></span>
-          <span class="two"></span>
-          <span class="three"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <main class="signup-main-content">
-    <div class="signup-form-container">
-      <!-- Signup Header -->
-      <div class="signup-header">
-        <div class="signup-icon">
-          <svg class="user-plus-icon" viewBox="0 0 24 24" fill="white">
-            <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M12.5 11H15M15 11H17.5M15 11V8.5M15 11V13.5M8.5 11C10.7091 11 12.5 9.20914 12.5 7C12.5 4.79086 10.7091 3 8.5 3C6.29086 3 4.5 4.79086 4.5 7C4.5 9.20914 6.29086 11 8.5 11Z"/>
-          </svg>
-        </div>
-        <h2>Create Account</h2>
-        <p>Join VehiGo today and get started</p>
-      </div>
-
-      <!-- Form Content -->
-      <div class="form-content">
-        <form id="signupForm">
-          <!-- Name Field -->
-          <div class="field" id="fullName">
-            <label for="name">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12ZM12 14C8.13401 14 1 15.934 1 19.5V22H23V19.5C23 15.934 15.866 14 12 14Z"/>
-              </svg>
-              Full Name
-            </label>
-            <div class="input-group">
-              <input id="name" type="text" class="input" placeholder="Enter your full name" required>
-            </div>
-            <div id="nameError" class="error-message">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              <span></span>
-            </div>
-          </div>
-
-          <!-- Email and Phone Row -->
-          <div class="form-row" >
-            <div class="field" id="emailField">
-              <label for="email">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12.713L.015 3H24L12 12.713zm0 2.574L0 6.713V21h24V6.713L12 15.287z"/>
-                </svg>
-                Email
-              </label>
-              <div class="input-group">
-                <input id="email" type="email" class="input" placeholder="Enter your email" required>
-              </div>
-              <div id="emailError" class="error-message">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                <span></span>
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="phone">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
-                </svg>
-                Phone
-              </label>
-              <div class="input-group">
-                <input id="phone" type="tel" class="input" placeholder="Phone number" required>
-              </div>
-              <div id="phoneError" class="error-message">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                <span></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Password Field -->
-          <div class="field" id="passwordField">
-            <label for="password">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 1C8.676 1 6 3.676 6 7V8C4.343 8 3 9.343 3 11V20C3 21.657 4.343 23 6 23H18C19.657 23 21 21.657 21 20V11C21 9.343 19.657 8 18 8V7C18 3.676 15.324 1 12 1ZM12 3C14.324 3 16 4.676 16 7V8H8V7C8 4.676 9.676 3 12 3Z"/>
-              </svg>
-              Password
-            </label>
-            <div class="input-group">
-              <input id="password" type="password" class="input" placeholder="Create a strong password" required>
-              <button type="button" class="password-toggle" id="togglePassword">
-                <svg id="eyeIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: block;">
-                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-                </svg>
-                <svg id="eyeOffIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
-                  <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
-                </svg>
-              </button>
-            </div>
-            <div class="strength-meter">
-              <div id="strengthFill" class="strength-fill"></div>
-            </div>
-            <div id="strengthText" class="strength-text"></div>
-            <div id="passwordError" class="error-message">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              <span></span>
-            </div>
-          </div>
-          <!-- UID input box -->
-          <div>
-            <input type="hidden" id="uid" name="uid" />
-          </div>
-          <!-- Address Field -->
-          <div class="field">
-            <label for="address">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z"/>
-              </svg>
-              Address
-            </label>
-            <div class="input-group">
-              <input id="address" type="text" class="input" placeholder="Enter your address" required>
-            </div>
-            <div id="addressError" class="error-message">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              <span></span>
-            </div>
-          </div>
-
-          <!-- Success Message -->
-          <div id="successMessage" class="success-message">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-            </svg>
-            <span></span>
-          </div>
-
-        <!-- Form Link -->
-        <div class="form-link">
-          <span>Already have an account? <a href="login.html">Sign In</a></span>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <script type="module">
-    let auth_provider;
-    let isGoogleSignup = false;
-    // Form elements
-    const signupForm = document.getElementById('signupForm');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const phoneInput = document.getElementById('phone');
-    const passwordInput = document.getElementById('password');
-    const uidInput=document.getElementById('uid')
-    const addressInput = document.getElementById('address');
-    const togglePasswordBtn = document.getElementById('togglePassword');
-    const eyeIcon = document.getElementById('eyeIcon');
-    const eyeOffIcon = document.getElementById('eyeOffIcon');
-    const signupBtn = document.getElementById('signupBtn');
-    const strengthFill = document.getElementById('strengthFill');
-    const strengthText = document.getElementById('strengthText');
-    const successMessage = document.getElementById('successMessage');
-
-    // Error elements
-    const nameError = document.getElementById('nameError');
-    const emailError = document.getElementById('emailError');
-    const phoneError = document.getElementById('phoneError');
-    const passwordError = document.getElementById('passwordError');
-    const addressError = document.getElementById('addressError');
-
-    // Password toggle functionality
-    togglePasswordBtn.addEventListener('click', function() {
-      const isPassword = passwordInput.type === 'password';
-      passwordInput.type = isPassword ? 'text' : 'password';
-      eyeIcon.style.display = isPassword ? 'none' : 'block';
-      eyeOffIcon.style.display = isPassword ? 'block' : 'none';
-    });
-
-    // Password strength checker
-    passwordInput.addEventListener('input', function() {
-      const password = passwordInput.value;
-      const strength = checkPasswordStrength(password);
-      updatePasswordStrength(strength);
-      clearError(passwordInput, passwordError);
-    });
-
-    // Real-time validation
-    nameInput.addEventListener('input', function() {
-      clearError(nameInput, nameError);
-      validateName(nameInput.value, false);
-    });
-
-    emailInput.addEventListener('input', function() {
-      clearError(emailInput, emailError);
-      validateEmail(emailInput.value, false);
-    });
-
-    phoneInput.addEventListener('input', function() {
-      clearError(phoneInput, phoneError);
-      validatePhone(phoneInput.value, false);
-    });
-
-    addressInput.addEventListener('input', function() {
-      clearError(addressInput, addressError);
-      validateAddress(addressInput.value, false);
-    });
-
-    // Form submission
-    signupForm.addEventListener('submit',async function(e) {
-      e.preventDefault();
-      auth_provider='email'
-
-      const name = nameInput.value.trim();
-      const email = emailInput.value.trim();
-      const phone_number = phoneInput.value.trim();
-      const address = addressInput.value.trim();
-      
-      // Clear previous messages
-      clearAllMessages();
-      
-      // Validate inputs
-      const isNameValid = validateName(name, true);
-      const isEmailValid = validateEmail(email, true);
-      const isPhoneValid = validatePhone(phone_number, true);
-      const isAddressValid = validateAddress(address, true);
-
-      let password=''
-      let firebase_uid=''
-
-      if(!isGoogleSignup){
-          password = passwordInput.value.trim();
-         const isPasswordValid = validatePassword(password, true);
-         if(!isPasswordValid) return;
-         auth_provider = 'email';
-      }else{
-         firebase_uid=uidInput.value.trim()
-         if(!firebase_uid) return;
-        auth_provider = 'google';
-      }
-      
-      if (!isNameValid || !isEmailValid || !isPhoneValid  || !isAddressValid || !auth_provider) {
-        return;
-      }
-      
-      // Show loading state
-      showLoading(true);
-      
-
-      try {
-       const requestBody =
-      auth_provider === 'email'
-        ? {
-            name,
-            email,
-            phone_number,
-            address,
-            password,
-            auth_provider,
-          }
-        : {
-            name,
-            email,
-            phone_number,
-            address,
-            firebase_uid,
-            auth_provider,
-          };
-
-    const resp = await fetch('http://localhost:5001/api/auth/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(requestBody),
-    });
-
-    const data = await resp.json();
-
-    if (!resp.ok) {
-      throw new Error(data.message || 'Signup failed');
-    }
-
-    showLoading(false);
-    showSuccessMessage('Account created successfully! Welcome to VehiGo!');
-
-    setTimeout(() => {
-      signupForm.reset();
-      updatePasswordStrength({ score: 0, text: '', color: '' });
-      clearAllMessages();
-       window.location.href = "login.html";
-    }, 1500);
-      } catch (error) {
-        showLoading(false);
-         showError(error.message || 'An error occurred during signup');
-       
-      }
-      
-      // Simulate API call
-      //add auth_provider in the fetch request 
-      // setTimeout(() => {
-      //   showLoading(false);
-      //   showSuccessMessage('Account created successfully! Welcome to VehiGo!');
-        
-      //   // Reset form after success
-      //   setTimeout(() => {
-      //     signupForm.reset();
-      //     updatePasswordStrength({ score: 0, text: '', color: '' });
-      //     clearAllMessages();
-      //   }, 3000);
-      // }, 2000);
-    });
-
-    // Validation functions
-    function validateName(name, showError = true) {
-      if (!name) {
-        if (showError) showError(nameInput, nameError, 'Full name is required');
-        return false;
-      }
-      
-      if (name.length < 2) {
-        if (showError) showError(nameInput, nameError, 'Name must be at least 2 characters');
-        return false;
-      }
-      
-      if (!/^[a-zA-Z\s]+$/.test(name)) {
-        if (showError) showError(nameInput, nameError, 'Name can only contain letters and spaces');
-        return false;
-      }
-      
-      if (showError) showSuccess(nameInput);
-      return true;
-    }
-
-    function validateEmail(email, showError = true) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      
-      if (!email) {
-        if (showError) showError(emailInput, emailError, 'Email is required');
-        return false;
-      }
-      
-      if (!emailRegex.test(email)) {
-        if (showError) showError(emailInput, emailError, 'Please enter a valid email address');
-        return false;
-      }
-      
-      if (showError) showSuccess(emailInput);
-      return true;
-    }
-
-    function validatePhone(phone, showError = true) {
-      const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-      
-      if (!phone) {
-        if (showError) showError(phoneInput, phoneError, 'Phone number is required');
-        return false;
-      }
-      
-      if (!phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''))) {
-        if (showError) showError(phoneInput, phoneError, 'Please enter a valid phone number');
-        return false;
-      }
-      
-      if (showError) showSuccess(phoneInput);
-      return true;
-    }
-
-    function validatePassword(password, showError = true) {
-      if (!password) {
-        if (showError) showError(passwordInput, passwordError, 'Password is required');
-        return false;
-      }
-      
-      if (password.length < 8) {
-        if (showError) showError(passwordInput, passwordError, 'Password must be at least 8 characters long');
-        return false;
-      }
-      
-      if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password)) {
-        if (showError) showError(passwordInput, passwordError, 'Password must contain uppercase, lowercase, and number');
-        return false;
-      }
-      
-      if (showError) showSuccess(passwordInput);
-      return true;
-    }
-
-    function validateAddress(address, showError = true) {
-      if (!address) {
-        if (showError) showError(addressInput, addressError, 'Address is required');
-        return false;
-      }
-      
-      if (address.length < 10) {
-        if (showError) showError(addressInput, addressError, 'Please enter a complete address');
-        return false;
-      }
-      
-      if (showError) showSuccess(addressInput);
-      return true;
-    }
-
-    // Password strength checker
-    function checkPasswordStrength(password) {
-      let score = 0;
-      let feedback = [];
-
-      if (password.length >= 8) score += 1;
-      else feedback.push('at least 8 characters');
-
-      if (/[a-z]/.test(password)) score += 1;
-      else feedback.push('lowercase letter');
-
-      if (/[A-Z]/.test(password)) score += 1;
-      else feedback.push('uppercase letter');
-
-      if (/\d/.test(password)) score += 1;
-      else feedback.push('number');
-
-      if (/[^A-Za-z0-9]/.test(password)) score += 1;
-
-      const strength = {
-        0: { text: '', color: '', width: '0%' },
-        1: { text: 'Very Weak', color: '#e74c3c', width: '20%' },
-        2: { text: 'Weak', color: '#f39c12', width: '40%' },
-        3: { text: 'Fair', color: '#f1c40f', width: '60%' },
-        4: { text: 'Good', color: '#27ae60', width: '80%' },
-        5: { text: 'Strong', color: '#2ecc71', width: '100%' }
-      };
-
-      return { ...strength[score], score, feedback };
-    }
-
-    function updatePasswordStrength(strength) {
-      strengthFill.style.width = strength.width;
-      strengthFill.style.backgroundColor = strength.color;
-      strengthText.textContent = strength.text;
-      strengthText.style.color = strength.color;
-    }
-
-    // UI helper functions
-    function showError(input, errorElement, message) {
-      input.classList.add('error');
-      input.classList.remove('success');
-      errorElement.querySelector('span').textContent = message;
-      errorElement.classList.add('show');
-    }
-
-    function showSuccess(input) {
-      input.classList.add('success');
-      input.classList.remove('error');
-    }
-
-    function clearError(input, errorElement) {
-      input.classList.remove('error', 'success');
-      errorElement.classList.remove('show');
-    }
-
-    function clearAllMessages() {
-      clearError(nameInput, nameError);
-      clearError(emailInput, emailError);
-      clearError(phoneInput, phoneError);
-      clearError(passwordInput, passwordError);
-      clearError(addressInput, addressError);
-      successMessage.classList.remove('show');
-    }
-
-    function showSuccessMessage(message) {
-      successMessage.querySelector('span').textContent = message;
-      successMessage.classList.add('show');
-    }
-
-    function showLoading(loading) {
-      if (loading) {
-        signupBtn.classList.add('loading');
-        signupBtn.disabled = true;
-      } else {
-        signupBtn.classList.remove('loading');
-        signupBtn.disabled = false;
-      }
-    }
-
-    // Add floating animation delay
-    document.addEventListener('DOMContentLoaded', function() {
-      const shapes = document.querySelectorAll('.shape');
-      shapes.forEach((shape, index) => {
-        shape.style.animationDelay = `${index * 1.5}s`;
-      });
-    });
-
-    // Add smooth scrolling and animations
-    window.addEventListener('load', function() {
-      document.body.style.opacity = '1';
-    });
-  
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
-    import { GoogleAuthProvider, getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-
-
-    const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: "",
-    measurementId: ""
-    };
-
-
-    const app = initializeApp(firebaseConfig);
-    const auth =getAuth(app)
-    const provider = new GoogleAuthProvider();
-
-    provider.setCustomParameters({
-    prompt: 'consent' 
-     });
-
-    document.getElementById('googleBtn').addEventListener('click', async function (e) {
-      e.preventDefault(); 
-      try {
-    const result = await signInWithPopup(auth, provider);
-    const user = result.user;
-    if (user){
-    isGoogleSignup=true
-    const name = user.displayName;
-    const email = user.email;
-    const uid = user.uid;
-    uidInput.value=uid
-
-    nameInput.value = name;
-    nameInput.readOnly =true;
-    emailInput.value = email;
-    emailInput.readOnly=true;
-    
-    nameInput.style.display = 'block';
-    document.getElementById("emailField").style.display = 'block';
-    phoneInput.parentElement.parentElement.style.display = 'block'; // Phone
-    addressInput.parentElement.parentElement.style.display = 'block'; // Address
-    document.getElementById("passwordField").style.display = 'none';
-    passwordInput.required=false;
-    document.getElementById("googleBtn").style.display = 'none';
-      }} catch (error) {
-        console.log(error)
-      }
+<body class="light-mode">
+
+<button class="toggle-mode" id="toggleMode" style="width: 2cm; background-color: tra;">☀</button>
+
+<div class="container">
+<h1>VehiGo</h1>
+<p class="description">Signup and drive your dream ride today!</p>
+
+<form id="signupForm">
+  <input type="text" placeholder="Full Name" id="name" required>
+  <input type="email" placeholder="Email" id="email" required>
+  <input type="password" placeholder="Password" id="password" required>
+  <input type="tel" placeholder="Phone Number" id="phone" required>
+  <button type="submit">Sign Up</button>
+</form>
+
+<div class="social-login">
+  <p>Or signup with</p>
+  <button id="googleBtn"><img src="https://img.icons8.com/color/48/google-logo.png"/> Google</button>
+  <button id="microsoftBtn"><img src="https://img.icons8.com/color/48/microsoft.png"/> Microsoft</button>
+  <button id="facebookBtn"><img src="https://img.icons8.com/color/48/facebook-new.png"/> Facebook</button>
+  <button id="phoneBtn"><img src="https://img.icons8.com/ios-filled/50/007bff/phone.png"/> Phone</button>
+</div>
+
+<div class="footer">
+  Already have an account? <a href="login.html">Login here</a>
+</div>
+</div>
+
+<script>
+  // Toggle dark/light mode with sun/moon
+  const toggleBtn = document.getElementById("toggleMode");
+  toggleBtn.addEventListener("click", ()=>{
+    document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("light-mode");
+    toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "🌙" : "☀";
+  });
+
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "YOUR_FIREBASE_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  // Signup with email/password
+  document.getElementById("signupForm").addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    auth.createUserWithEmailAndPassword(email, password)
+    .then((userCredential)=>{
+      alert("Signup successful!");
+      console.log(userCredential.user);
     })
-  </script>
-  
-  <!-- JavaScript files for navbar functionality -->
-  <script src="./assets/js/script.js"></script>
-  <script src="./scripts/logout.js"></script>
-  <script
-    type="module"
-    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-  ></script>
+    .catch((err)=>{alert(err.message);});
+  });
 
+  // Google Auth
+  google.accounts.id.initialize({
+    client_id: "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
+    callback: (response)=>{alert("Google login success! Token in console."); console.log(response);}
+  });
+  document.getElementById("googleBtn").addEventListener("click", ()=>{
+    google.accounts.id.prompt();
+  });
 
+  // Microsoft Auth
+  const msalConfig = {
+    auth: { clientId:"YOUR_MICROSOFT_CLIENT_ID", authority:"https://login.microsoftonline.com/common", redirectUri:window.location.href }
+  };
+  const msalInstance = new msal.PublicClientApplication(msalConfig);
+  document.getElementById("microsoftBtn").addEventListener("click", async()=>{
+    try{
+      const loginResponse = await msalInstance.loginPopup({scopes:["user.read"]});
+      alert("Microsoft login success! Check console."); console.log(loginResponse);
+    }catch(err){console.error(err);}
+  });
+
+  // Facebook Auth
+  window.fbAsyncInit = function() {
+    FB.init({appId:"YOUR_FACEBOOK_APP_ID", cookie:true, xfbml:true, version:"v18.0"});
+  };
+  document.getElementById("facebookBtn").addEventListener("click", ()=>{
+    FB.login(response=>{
+      if(response.authResponse){alert("Facebook login success!"); console.log(response);}
+      else console.log("Facebook login cancelled");
+    }, {scope:"email,public_profile"});
+  });
+
+  // Phone Auth
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('phoneBtn', {size:'invisible'});
+  document.getElementById("phoneBtn").addEventListener("click", ()=>{
+    const phoneNumber = prompt("Enter phone number (+countrycode):");
+    auth.signInWithPhoneNumber(phoneNumber, window.recaptchaVerifier)
+    .then(confirmationResult => {
+      const otp = prompt("Enter OTP:");
+      return confirmationResult.confirm(otp);
+    })
+    .then(result=>{alert("Phone login success!"); console.log(result.user);})
+    .catch(err=>{alert(err.message); console.error(err);});
+  });
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script src="https://alcdn.msauth.net/browser/2.35.0/js/msal-browser.min.js"></script>
+
+<!-- Footer --> 
+ <footer class="footer"> <div class="container" style="width: 35cm; text-align: center; background-color: rgb(221, 220, 219);"> <p>&copy; 2023 VehiGo. All rights reserved.</p>
+    </div> </footer> 
 
 </body>
 </html>
