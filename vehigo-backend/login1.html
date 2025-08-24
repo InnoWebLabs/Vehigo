@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VehiGo - Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<!-- Google sign-in -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<style>
+:root { --primary-color: #007bff; --neon-color: #00ffc8;}
+body { margin:0; padding:0; font-family:'Poppins', sans-serif; transition:0.4s;}
+body.light-mode { background:#f4faff; color:#111;}
+body.dark-mode { background:linear-gradient(135deg,#0d0d0d,#1a1a1a); color:var(--neon-color);}
+.container { width:400px; margin:60px auto; padding:40px; border-radius:15px; text-align:center; transition:all 0.4s ease;}
+body.light-mode .container { background:#ffffff; box-shadow:0 0 20px rgba(0,123,255,0.2);}
+body.dark-mode .container { background:rgba(20,20,20,0.95); box-shadow:0 0 40px rgba(0,255,200,0.4);}
+h1 { font-family:'Orbitron',sans-serif; font-size:2.5rem; margin-bottom:10px;}
+h1.light-mode { color:#007bff;}
+h1.dark-mode { color:var(--neon-color);}
+p.description { text-align:center;margin-bottom:25px;}
+input { width:100%; padding:12px; margin:10px 0; border-radius:10px; border:none; outline:none; font-size:14px; transition:0.3s;}
+body.light-mode input { background:#fff; color:#111; border:1px solid #007bff33;}
+body.dark-mode input { background:#222; color:#fff;}
+input:focus { border:2px solid var(--primary-color);}
+button { width:100%; padding:12px; margin-top:15px; border-radius:10px; border:none; font-size:16px; font-weight:600; cursor:pointer; transition:0.3s;}
+body.light-mode button { background:var(--primary-color); color:#fff;}
+body.light-mode button:hover { background:#0056b3;}
+body.dark-mode button { background:var(--neon-color); color:#000;}
+body.dark-mode button:hover { background:#00e6b3;}
+.social-login { margin:20px 0;}
+.social-login button { display:flex; align-items:center; justify-content:center; gap:10px; padding:12px; width:100%; border-radius:10px; margin:8px 0; border:none; cursor:pointer; font-weight:600; transition:0.3s;}
+body.light-mode .social-login button { background:#fff;color:#007bff;border:1px solid #007bff33;}
+body.dark-mode .social-login button { background:#111;color:var(--neon-color);border:1px solid #333;}
+.social-login button:hover { transform:scale(1.03);}
+.social-login img { width:20px;}
+.footer { text-align:center;margin-top:20px;font-size:12px;}
+.toggle-mode { position:absolute; top:20px; right:20px; background:none; border:none; cursor:pointer; font-size:22px; transition:0.3s;}
+.toggle-mode:hover { transform:scale(1.2);}
+</style>
+</head>
+<body class="light-mode">
+
+<button class="toggle-mode" id="toggleMode" style="width: 2cm; background-color: tra;">☀️</button>
+
+<div class="container">
+<h1>VehiGo</h1>
+<p class="description">Login to your account and hit the road!</p>
+
+<form id="loginForm">
+  <input type="email" placeholder="Email" id="email" required>
+  <input type="password" placeholder="Password" id="password" required>
+  <button type="submit">Login</button>
+</form>
+
+<div class="social-login">
+  <p>Or login with</p>
+  <button id="googleBtn"><img src="https://img.icons8.com/color/48/google-logo.png"/> Google</button>
+  <button id="microsoftBtn"><img src="https://img.icons8.com/color/48/microsoft.png"/> Microsoft</button>
+  <button id="facebookBtn"><img src="https://img.icons8.com/color/48/facebook-new.png"/> Facebook</button>
+  <button id="phoneBtn"><img src="https://img.icons8.com/ios-filled/50/007bff/phone.png"/> Phone</button>
+</div>
+
+<div class="footer">
+  Don't have an account? <a href="signup1.html">Sign up here</a>
+</div>
+</div>
+
+<script>
+  // Toggle dark/light mode with sun/moon
+  const toggleBtn = document.getElementById("toggleMode");
+  toggleBtn.addEventListener("click", ()=>{
+    document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("light-mode");
+    toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "🌙" : "☀️";
+  });
+
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "YOUR_FIREBASE_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  // Login with email/password
+  document.getElementById("loginForm").addEventListener("submit",(e)=>{
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    auth.signInWithEmailAndPassword(email,password)
+    .then((userCredential)=>{
+      alert("Login Successful! 🚗");
+      console.log(userCredential.user);
+    })
+    .catch((err)=>{alert(err.message);});
+  });
+
+  // Google Auth
+  google.accounts.id.initialize({
+    client_id: "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
+    callback: (response)=>{alert("Google login success!"); console.log(response);}
+  });
+  document.getElementById("googleBtn").addEventListener("click",()=>{google.accounts.id.prompt();});
+
+  // Microsoft Auth
+  const msalConfig = { auth:{ clientId:"YOUR_MICROSOFT_CLIENT_ID", authority:"https://login.microsoftonline.com/common", redirectUri:window.location.href }};
+  const msalInstance = new msal.PublicClientApplication(msalConfig);
+  document.getElementById("microsoftBtn").addEventListener("click", async()=>{
+    try{ const loginResponse = await msalInstance.loginPopup({scopes:["user.read"]});
+      alert("Microsoft login success!"); console.log(loginResponse);}
+    catch(err){console.error(err);}
+  });
+
+  // Facebook Auth
+  window.fbAsyncInit = function() { FB.init({appId:"YOUR_FACEBOOK_APP_ID", cookie:true, xfbml:true, version:"v18.0"});};
+  document.getElementById("facebookBtn").addEventListener("click", ()=>{
+    FB.login(response=>{ if(response.authResponse){alert("Facebook login success!"); console.log(response);}
+    else console.log("Facebook login cancelled"); }, {scope:"email,public_profile"});
+  });
+
+  // Phone Auth
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('phoneBtn',{size:'invisible'});
+  document.getElementById("phoneBtn").addEventListener("click", ()=>{
+    const phoneNumber = prompt("Enter phone number (+countrycode):");
+    auth.signInWithPhoneNumber(phoneNumber, window.recaptchaVerifier)
+    .then(confirmationResult=>{
+      const otp = prompt("Enter OTP:");
+      return confirmationResult.confirm(otp);
+    })
+    .then(result=>{alert("Phone login success!"); console.log(result.user);})
+    .catch(err=>{alert(err.message); console.error(err);});
+  });
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script src="https://alcdn.msauth.net/browser/2.35.0/js/msal-browser.min.js"></script>
+
+<!-- Footer --> 
+ <footer class="footer"> <div class="container" style="width: 35cm; text-align: center; background-color: rgb(221, 220, 219);"> <p>&copy; 2023 VehiGo. All rights reserved.</p>
+    </div> </footer> 
+</body>
+</html>
