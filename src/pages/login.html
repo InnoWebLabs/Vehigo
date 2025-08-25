@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../assets/images/Vehigo.svg" type="image/svg+xml" />
 
     <title>Vehigo - Rent your favourite car</title>
 
@@ -24,8 +24,8 @@
 
   <body>
     <header class="header" data-header>
-      <div class="container">
-        <div class="overlay" data-overlay></div>
+      <div class="container" style="background-color: #0171d3">
+        <!-- <div class="overlay" data-overlay></div> -->
 
         <a href="../index.html" class="logo">
           <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
@@ -62,13 +62,20 @@
 
         <div class="header-actions">
           <div class="header-contact">
-            <a href="tel:1800100100" class="contact-link">1800-100-100</a>
+            <a href="tel:1800100100" class="contact-link" style="text-decoration: none;color:white">1800-100-100</a>
 
-            <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+            <span class="contact-time" style="color: white;">Mon - Sat: 9:00 am - 6:00 pm</span>
           </div>
         </div>
       </div>
     </header>
+
+
+    <div class="message">
+  <h1 class="title">👋 Hey there!!</h1>
+  <p class="subtitle">Welcome to <span class="brand">VehiGo</span></p>
+</div>
+
     <div class="body_tag">
       <section class="container forms">
         <div class="form login">
@@ -201,173 +208,169 @@
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const container = document.querySelector(".forms");
-        const signUpLink = document.querySelector(".signup-link");
-        const logInLink = document.querySelector(".login-link");
-        const eyeIcons = document.querySelectorAll(".eye-icon");
-        const signupForm = document.getElementById("signupForm");
-        const loginForm = document.getElementById("loginForm");
-        const signupErrorMessage = document.getElementById("errorMessage");
-        const loginMessage = document.getElementById("loginMessage");
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".forms");
+    const signUpLink = document.querySelector(".signup-link");
+    const logInLink = document.querySelector(".login-link");
+    const eyeIcons = document.querySelectorAll(".eye-icon");
+    const signupForm = document.getElementById("signupForm");
+    const loginForm = document.getElementById("loginForm");
+    const signupErrorMessage = document.getElementById("errorMessage");
+    const loginMessage = document.getElementById("loginMessage");
 
-        // Show/Hide password functionality
-        eyeIcons.forEach((eyeIcon) => {
-          eyeIcon.addEventListener("click", () => {
-            const passwordField = eyeIcon.previousElementSibling;
-            if (passwordField.type === "password") {
-              passwordField.type = "text";
-              eyeIcon.classList.replace("bx-hide", "bx-show");
-            } else {
-              passwordField.type = "password";
-              eyeIcon.classList.replace("bx-show", "bx-hide");
-            }
-          });
-        });
-
-        // Toggle between login and signup forms
-        signUpLink.addEventListener("click", (e) => {
-          e.preventDefault();
-          container.classList.add("show-signup");
-        });
-
-        logInLink.addEventListener("click", (e) => {
-          e.preventDefault();
-          container.classList.remove("show-signup");
-        });
-
-        // Handle Signup Form Submission
-        if (signupForm) {
-          signupForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            signupErrorMessage.textContent = "";
-
-            if (!signupForm.checkValidity()) {
-                signupForm.reportValidity();
-                return;
-            }
-9
-            const formData = {
-                username: String(document.getElementById('name').value.trim()),
-                email: String(document.getElementById('signupEmail').value.trim()),
-                password: String(document.getElementById('signupPassword').value),
-                number: String(document.getElementById('phone_number').value.trim()),
-                address: String(document.getElementById('address').value.trim() || '')
-            };
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("signupEmail").value.trim();
-            const password = document.getElementById("signupPassword").value.trim();
-            const phone_number = document.getElementById("phone_number").value.trim();
-            const address = document.getElementById("address").value.trim();
-
-            if (!name || !email || !password || !phone_number || !address) {
-              signupErrorMessage.textContent = "Please fill in all required fields.";
-              return;
-            }
-
-            try {
-              const res = await fetch("http://localhost:4000/api/auth/signup", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, password, phone_number, address, auth_provider: "email" }),
-              });
-              const result = await res.json();
-              
-              if (res.ok) {
-                localStorage.setItem("userToken", result.token);
-                localStorage.setItem("userInfo", JSON.stringify(result.user));
-                window.location.href = `./about.html?message=Signup successful! Welcome to VehiGo!&type=success`;
-              } else {
-                signupErrorMessage.textContent = result.message || "Signup failed. Please try again.";
-              }
-            } catch (err) {
-              console.error("Frontend error:", err);
-              signupErrorMessage.textContent = "Error connecting to the server.";
-            }
-          });
-        }
-
-        
-        const loginForm = document.getElementById('loginForm');
-        loginForm.addEventListener('submit', async function (e) {
-        // Handle Login Form Submission
-        if (loginForm) {
-          loginForm.addEventListener("submit", async (e) => {
-
-            e.preventDefault();
-            loginMessage.textContent = "";
-
-
-            const spinner = document.getElementById('spinnerOverlay');
-            spinner.style.display = 'flex'; // Show spinner
-
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            console.log(email, password, "jiiiiiiiiiiiiiii")
-
-            try {
-                const res = await fetch('http://localhost:4000/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    credentials: 'include',
-                    body: JSON.stringify({ email, password })
-                    
-                });
-                console.log("res", res)
-                const result = await res.json();
-
-                if (res.ok && result.success) {
-                    localStorage.setItem('userToken', 'logged-in');
-                    localStorage.setItem('userInfo', JSON.stringify({
-                        username: result.user.username || result.user.email,
-                        email: result.user.email,
-                        id: result.user._id
-                    }));
-
-                    // Redirects — spinner can stay until redirect
-                    window.location.href = `./about.html?message=${encodeURIComponent(result.message || 'Login successful')}&type=success`;
-                } else {
-                    spinner.style.display = 'none'; // Hide spinner on error
-                    document.getElementById('loginMessage').textContent = result.message || 'Invalid credentials';
-                    document.getElementById('loginMessage').className = 'error';
-                }
-            } catch (err) {
-                spinner.style.display = 'none'; // Hide spinner on error
-                document.getElementById('loginMessage').textContent = 'Login failed';
-                document.getElementById('loginMessage').className = 'error';
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
-
-            if (!email || !password) {
-              loginMessage.textContent = "Please fill in all fields.";
-              return;
-            }
-
-
-        // Logout function
-        async function logout() {
-            try {
-              const res = await fetch("http://localhost:4000/api/auth/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password, auth_provider: "email" }),
-              });
-              const result = await res.json();
-
-              if (res.ok) {
-                localStorage.setItem("userToken", result.token);
-                localStorage.setItem("userInfo", JSON.stringify(result.user));
-                window.location.href = `./about.html?message=Login successful&type=success`;
-              } else {
-                loginMessage.textContent = result.message || "Invalid credentials";
-              }
-            } catch (err) {
-              console.error("Frontend error:", err);
-              loginMessage.textContent = "Error connecting to server.";
-            }
-          });
+    // Show/Hide password functionality
+    eyeIcons.forEach((eyeIcon) => {
+      eyeIcon.addEventListener("click", () => {
+        const passwordField = eyeIcon.previousElementSibling;
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          eyeIcon.classList.replace("bx-hide", "bx-show");
+        } else {
+          passwordField.type = "password";
+          eyeIcon.classList.replace("bx-show", "bx-hide");
         }
       });
-    </script>
+    });
+
+    // Toggle between login and signup forms
+    signUpLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      container.classList.add("show-signup");
+    });
+
+    logInLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      container.classList.remove("show-signup");
+    });
+
+    // Handle Signup Form Submission
+    if (signupForm) {
+      signupForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        signupErrorMessage.textContent = "";
+
+        if (!signupForm.checkValidity()) {
+          signupForm.reportValidity();
+          return;
+        }
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("signupEmail").value.trim();
+        const password = document.getElementById("signupPassword").value.trim();
+        const phone_number = document.getElementById("phone_number").value.trim();
+        const address = document.getElementById("address").value.trim();
+
+        if (!name || !email || !password || !phone_number || !address) {
+          signupErrorMessage.textContent =
+            "Please fill in all required fields.";
+          return;
+        }
+
+        try {
+          const res = await fetch("http://localhost:4000/api/auth/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name,
+              email,
+              password,
+              phone_number,
+              address,
+              auth_provider: "email",
+            }),
+          });
+          const result = await res.json();
+
+          if (res.ok) {
+            localStorage.setItem("userToken", result.token);
+            localStorage.setItem("userInfo", JSON.stringify(result.user));
+            window.location.href = `./about.html?message=Signup successful! Welcome to VehiGo!&type=success`;
+          } else {
+            signupErrorMessage.textContent =
+              result.message || "Signup failed. Please try again.";
+          }
+        } catch (err) {
+          console.error("Frontend error:", err);
+          signupErrorMessage.textContent =
+            "Error connecting to the server.";
+        }
+      });
+    }
+
+    // Handle Login Form Submission
+    if (loginForm) {
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        loginMessage.textContent = "";
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        if (!email || !password) {
+          loginMessage.textContent = "Please fill in all fields.";
+          loginMessage.className = "error";
+          return;
+        }
+
+        const spinner = document.getElementById("spinnerOverlay");
+        spinner.style.display = "flex"; // Show spinner
+
+        try {
+          const res = await fetch("http://localhost:4000/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({ email, password }),
+          });
+
+          const result = await res.json();
+
+          if (res.ok && result.success) {
+            localStorage.setItem("userToken", "logged-in");
+            localStorage.setItem(
+              "userInfo",
+              JSON.stringify({
+                username: result.user.username || result.user.email,
+                email: result.user.email,
+                id: result.user._id,
+              })
+            );
+
+            window.location.href = `./about.html?message=${encodeURIComponent(
+              result.message || "Login successful"
+            )}&type=success`;
+          } else {
+            spinner.style.display = "none"; // Hide spinner on error
+            loginMessage.textContent = result.message || "Invalid credentials";
+            loginMessage.className = "error";
+          }
+        } catch (err) {
+          spinner.style.display = "none"; // Hide spinner on error
+          console.error("Frontend error:", err);
+          loginMessage.textContent = "Login failed";
+          loginMessage.className = "error";
+        }
+      });
+    }
+
+    // Logout function
+    async function logout() {
+      try {
+        const res = await fetch("http://localhost:4000/api/auth/logout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+        });
+        if (res.ok) {
+          localStorage.removeItem("userToken");
+          localStorage.removeItem("userInfo");
+          window.location.href = "./index.html";
+        }
+      } catch (err) {
+        console.error("Logout error:", err);
+      }
+    }
+  });
+</script>
+
   </body>
 </html>
