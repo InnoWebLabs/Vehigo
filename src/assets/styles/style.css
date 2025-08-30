@@ -1081,10 +1081,11 @@ button, a { transition: var(--transition); }
 
 .footer {
   color: var(--independence);
-  background-color: black;
-  padding: 3rem 1rem;
+  background-color: hsl(204deg 83.2% 63.42%);
+  padding: 2rem 1rem;
+  margin-top: 5rem;
   font-family: 'Segoe UI', sans-serif;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: white;
 }
 
