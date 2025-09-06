@@ -19,6 +19,7 @@
   <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<<<<<<< HEAD
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -478,6 +479,11 @@
       }
     }
   </style>
+=======
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+>>>>>>> ddf731fc690874f6b02aec7f23988e3734994d29
   
   <!-- ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -492,6 +498,7 @@
   <div id="app">
     <!-- Message Display for Login Success -->
     <div id="messageDisplay" style="
+<<<<<<< HEAD
       position: fixed;
       top: 20px;
       right: 20px;
@@ -575,6 +582,39 @@
             body.dark-theme { background-color: #121212; color: #f5f5f5; }
           </style>
 
+=======
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 600;
+        z-index: 1000;
+        display: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      ">
+      <span id="messageText"></span>
+      <button onclick="closeMessage()" style="
+          background: none;
+          border: none;
+          color: white;
+          margin-left: 10px;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: bold;
+        ">&times;</button>
+    </div>
+
+    <header class="header" data-header>
+      <div class="container">
+        <a href="../index.html" class="logo">
+          <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
+        </a>
+
+        <div class="header_nav">
+>>>>>>> ddf731fc690874f6b02aec7f23988e3734994d29
           <label class="theme-switch" for="theme-toggle">
             <input type="checkbox" id="theme-toggle" />
             <span class="slider">
@@ -598,6 +638,7 @@
               </span>
             </span>
           </label>
+<<<<<<< HEAD
 
           <script>
             const toggle = document.getElementById("theme-toggle");
@@ -624,10 +665,24 @@
             <ion-icon name="person-outline"></ion-icon>
           </a>
 
+=======
+          
+>>>>>>> ddf731fc690874f6b02aec7f23988e3734994d29
           <button id="logoutBtn" class="btn user-btn" style="display: none;" aria-label="Logout">
             <ion-icon name="log-out-outline"></ion-icon>
           </button>
 
+<<<<<<< HEAD
+=======
+          <a href="#featured-car" class="btn_explore" aria-labelledby="aria-label-txt">
+            <span id="aria-label-txt">Explore cars</span>
+          </a>
+          
+          <a href="./login.html" class="btn user-btn" id="loginBtn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+          </a>
+          
+>>>>>>> ddf731fc690874f6b02aec7f23988e3734994d29
           <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
             <span class="one"></span>
             <span class="two"></span>
@@ -637,6 +692,7 @@
       </div>
     </header>
 
+<<<<<<< HEAD
     <!-- Quick Links Bar -->
     <nav aria-label="Section links" style="background:#ffffff; border-bottom:1px solid #e5e7eb; margin-top:70px; position:sticky; top:70px; z-index:3;">
       <div class="container" style="display:flex; flex-wrap:wrap; gap:36px; align-items:center; justify-content:center; padding:12px 20px;">
@@ -657,6 +713,13 @@
         <!-- ABOUT SECTION -->
         <section class="section about-section modern-section animate-section" style="padding-top: 120px;">
           <div class="container">
+=======
+    <main class="aboutus-container">
+      <article>
+        <!-- ABOUT SECTION -->
+        <section class="section about-section modern-section animate-section">
+          <div class="container1">
+>>>>>>> ddf731fc690874f6b02aec7f23988e3734994d29
             <div class="about-content animate-card">
               <h1 class="h1 gradient-text">About VehiGo</h1>
               <p class="hero-text">Seamless Rentals, Endless Adventures!</p>
@@ -670,6 +733,7 @@
                 every need. With transparent pricing and exceptional customer
                 support, VehiGo is your trusted partner for every journey.
               </p>
+<<<<<<< HEAD
               <a href="../../index.html#featured-car" class="btn">Explore Our Cars</a>
             </div>
                          <div class="about-banner">
@@ -979,17 +1043,295 @@
           </div>
           <p style="text-align: center; font-size: 14px; color: white;">
             © <span id="copyright-year">2024</span> VehiGo — All rights reserved.
+=======
+              <a href="../index.html#featured-car" class="btn">Explore Our Cars</a>
+            </div>
+            <div class="about-banner">
+              <img src="../assets/images/hero_banner_mustang.png" alt="VehiGo car rental" loading="lazy" class="w-100" />
+            </div>
+          </div>
+        </section>
+
+        <!-- WHY SECTION -->
+        <section class="section why-section modern-section">
+          <div class="container">
+            <h2 data-aos="fade-up" data-aos-delay="100" class="h2 section-title gradient-text">🚗 Why Choose VehiGo?</h2>
+            <ul data-aos="fade-up" data-aos-delay="100" class="why-list">
+              <li class="why-card modern-card animate-card">
+                <div class="card-icon"><ion-icon name="car-outline"></ion-icon></div>
+                <h3 class="h3 card-title">Diverse Fleet</h3>
+                <p>From compact Swift Dzire to spacious Toyota Fortuner, choose from a wide range of vehicles.</p>
+              </li>
+              <li class="why-card modern-card animate-card">
+                <div class="card-icon"><ion-icon name="cash-outline"></ion-icon></div>
+                <h3 class="h3 card-title">Transparent Pricing</h3>
+                <p>No hidden fees—just pay for what you rent, with clear and competitive rates.</p>
+              </li>
+              <li class="why-card modern-card animate-card">
+                <div class="card-icon"><ion-icon name="location-outline"></ion-icon></div>
+                <h3 class="h3 card-title">Flexible Locations</h3>
+                <p>Convenient pickup and drop-off options across Bhopal, Indore, and Ujjain.</p>
+              </li>
+              <li class="why-card modern-card animate-card">
+                <div class="card-icon"><ion-icon name="headset-outline"></ion-icon></div>
+                <h3 class="h3 card-title">Top-Notch Support</h3>
+                <p>Our friendly team is available to assist you 24/7, ensuring a hassle-free experience.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="section reviews modern-section" id="reviews">
+          <div class="container">
+            <h2 data-aos="fade-up" class="h2 section-title gradient-text">💬 What Our Customers Say</h2>
+            <div data-aos="fade-up" data-aos-delay="100" class="testimonials-carousel">
+              <button class="carousel-btn prev-btn" id="prevBtn">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+              </button>
+              <div data-aos="fade-up" data-aos-delay="100" class="testimonials-container">
+                <div class="testimonial-card modern-card animate-card">
+                  <div class="testimonial-header">
+                    <div class="customer-avatar">
+                      <img src="https://placehold.co/60x60/007BFF/white?text=RS" alt="Rahul Sharma" />
+                    </div>
+                    <div class="customer-info">
+                      <h4 class="customer-name">Rahul Sharma</h4>
+                      <p class="customer-role">Verified Customer</p>
+                      <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"I recently rented a car from VehiGo, and I couldn't be happier with the experience. The staff was incredibly friendly and helpful throughout the entire process."</p>
+                  </div>
+                </div>
+                <div class="testimonial-card modern-card animate-card">
+                  <div class="testimonial-header">
+                    <div class="customer-avatar">
+                      <img src="https://placehold.co/60x60/28a745/white?text=AP" alt="Alok Patel" />
+                    </div>
+                    <div class="customer-info">
+                      <h4 class="customer-name">Alok Patel</h4>
+                      <p class="customer-role">Verified Customer</p>
+                      <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"Renting a car from VehiGo was a breeze! The staff was friendly, the car was clean and well-maintained, and the whole process was seamless."</p>
+                  </div>
+                </div>
+                <div class="testimonial-card modern-card animate-card">
+                  <div class="testimonial-header">
+                    <div class="customer-avatar">
+                      <img src="https://placehold.co/60x60/ffc107/black?text=AG" alt="Aaru Gupta" />
+                    </div>
+                    <div class="customer-info">
+                      <h4 class="customer-name">Aaru Gupta</h4>
+                      <p class="customer-role">Verified Customer</p>
+                      <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"VehiGo is my top choice for renting a car. Their service is consistently outstanding and professional. Highly recommended!"</p>
+                  </div>
+                </div>
+                <div class="testimonial-card modern-card animate-card">
+                  <div class="testimonial-header">
+                    <div class="customer-avatar">
+                      <img src="https://placehold.co/60x60/dc3545/white?text=PJ" alt="Prateeksha Joshi" />
+                    </div>
+                    <div class="customer-info">
+                      <h4 class="customer-name">Prateeksha Joshi</h4>
+                      <p class="customer-role">Verified Customer</p>
+                      <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"Overall a wonderful experience! The car was spacious, comfortable, and fuel-efficient. The booking process was simple and quick."</p>
+                  </div>
+                </div>
+                <div class="testimonial-card modern-card animate-card">
+                  <div class="testimonial-header">
+                    <div class="customer-avatar">
+                      <img src="https://placehold.co/60x60/6f42c1/white?text=RM" alt="Rohit Mehta" />
+                    </div>
+                    <div class="customer-info">
+                      <h4 class="customer-name">Rohit Mehta</h4>
+                      <p class="customer-role">Verified Customer</p>
+                      <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"I have been a loyal customer for several years. Their diverse fleet and exceptional customer service are unmatched in the region."</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-btn next-btn" id="nextBtn">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- TEAM SECTION -->
+        <section class="section team-section modern-section">
+          <div class="container">
+            <h2 data-aos="fade-up" class="h2 section-title gradient-text">👥 Meet Our Team</h2>
+            <ul class="team-list has-scrollbar">
+              <li data-aos="fade-up">
+                <div class="team-member modern-card animate-card">
+                  <img src="../assets/images/guy1.jpg" alt="John, Financial Head" class="team-img w-100" />
+                  <h3 class="h3 card-title">John</h3>
+                  <p>Financial Head</p>
+                  <p class="team-bio">With a passion for travel and innovation, John founded VehiGo to make car rentals accessible and seamless for everyone.</p>
+                </div>
+              </li>
+              <li data-aos="fade-up">
+                <div class="team-member modern-card animate-card">
+                  <img src="../assets/images/girl1.jpg" alt="Janice, Executive Head" class="team-img w-100" />
+                  <h3 class="h3 card-title">Janice</h3>
+                  <p>Executive Head</p>
+                  <p class="team-bio">Janice ensures our fleet is always ready and our operations run smoothly, delivering top-quality service to every customer.</p>
+                </div>
+              </li>
+              <li data-aos="fade-up">
+                <div class="team-member modern-card animate-card">
+                  <img src="../assets/images/girl2.jpg" alt="Amrita, Team Manager" class="team-img w-100" />
+                  <h3 class="h3 card-title">Amrita</h3>
+                  <p>Team Manager</p>
+                  <p class="team-bio">Amrita leads our support team with dedication, ensuring every customer has a hassle-free and memorable experience.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- LOCATIONS SECTION -->
+        <section class="section locations-section modern-section">
+          <div data-aos="flip-right" data-aos-delay="50" class="container">
+            <h2 class="h2 section-title gradient-text">🗺️ Where We Operate</h2>
+            <div class="locations-list">
+              <a href="../index.html#home" class="location-card modern-card animate-card">
+                <div class="location-card-content">
+                  <h3 class="h3 card-title">Bhopal</h3>
+                  <p>Explore the city of lakes with our reliable rental cars, perfect for urban adventures and business trips.</p>
+                  <span class="card-link modern-btn">Rent in Bhopal</span>
+                </div>
+              </a>
+              <a href="../index.html#home" class="location-card modern-card animate-card">
+                <div class="location-card-content">
+                  <h3 class="h3 card-title">Indore</h3>
+                  <p>Navigate Indore's vibrant streets with our diverse fleet, from compact city cars to luxury vehicles for special occasions.</p>
+                  <span class="card-link modern-btn">Rent in Indore</span>
+                </div>
+              </a>
+              <a href="../index.html#home" class="location-card modern-card animate-card">
+                <div class="location-card-content">
+                  <h3 class="h3 card-title">Ujjain</h3>
+                  <p>Discover Ujjain's spiritual and cultural heritage with our convenient rental options for pilgrims and tourists.</p>
+                  <span class="card-link modern-btn">Rent in Ujjain</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <img data-aos="fade-up" src="../assets/images/vehigologo.png" alt="VehiGo logo" class="logo_header"/>
+            </a>
+            <p data-aos="fade-up" class="footer-text">
+              Search for cheap rental cars in Madhya Pradesh. We offer our
+              customers an attractive and fun selection of vehicles as well as
+              an opportunity to rent their cars when not in use. Experience
+              reliable, affordable, and convenient car rental services across
+              Bhopal, Indore, and Ujjain.
+            </p>
+          </div>
+          <ul class="footer-list">
+            <li data-aos="fade-up">
+              <p class="footer-list-title">Company</p>
+            </li>
+            <li data-aos="fade-up"><a href="about.html" class="footer-link">About us</a></li>
+            <li data-aos="fade-up"><a href="pricing.html" class="footer-link">Pricing plans</a></li>
+            <li data-aos="fade-up"><a href="../blog.html" class="footer-link">Our blog</a></li>
+            <li data-aos="fade-up"><a href="../../ContactUs.html" class="footer-link">Contact Us</a></li>
+          </ul>
+          <ul class="footer-list">
+            <li data-aos="fade-up">
+              <p class="footer-list-title">Support</p>
+            </li>
+            <li data-aos="fade-up"><a href="help-center.html" class="footer-link">Help center</a></li>
+            <li data-aos="fade-up"><a href="Askaques.html" class="footer-link">Ask a question</a></li>
+            <li data-aos="fade-up"><a href="../../privacypolicy.html" class="footer-link">Privacy policy</a></li>
+            <li data-aos="fade-up"><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <ul data-aos="fade-up" class="social-list">
+            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
+          </ul>
+          <p class="copyright">
+            © 2024 <a href="#">VehiGo</a>. All Rights Reserved.
+>>>>>>> ddf731fc690874f6b02aec7f23988e3734994d29
           </p>
         </div>
       </div>
     </footer>
   </div>
 
+<<<<<<< HEAD
   <!-- Scripts -->
   <script src="../../assets/js/script.js"></script>
   <script src="../../scripts/logout.js"></script>
   <script src="../../preloader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+=======
+  <!-- Scroll to Top Button -->
+  <a href="./about.html" style="
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: background-color 0.3s;
+  " onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
+    <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
+  </a>
+
+  <!-- Scroll Buttons -->
+  <button id="scrollTopBtn" style="
+    position: fixed; bottom: 80px; right: 20px; background: #007bff; color: white;
+    border: none; outline: none; width: 50px; height: 50px; border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px;
+    display: none; z-index: 999;">&#9650;</button>
+
+  <button id="scrollBottomBtn" style="
+    position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white;
+    border: none; outline: none; width: 50px; height: 50px; border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px;
+    display: none; z-index: 999;">&#9660;</button>
+
+>>>>>>> ddf731fc690874f6b02aec7f23988e3734994d29
   <script>
     // Initialize AOS
     AOS.init({
@@ -1139,6 +1481,38 @@
       const messageDisplay = document.getElementById('messageDisplay');
       messageDisplay.style.display = 'none';
     }
+
+    // Scroll button functionality
+    const topBtn = document.getElementById("scrollTopBtn");
+    const bottomBtn = document.getElementById("scrollBottomBtn");
+
+    window.addEventListener("scroll", () => {
+      topBtn.style.display = window.scrollY > 200 ? "block" : "none";
+      bottomBtn.style.display = (window.innerHeight + window.scrollY < document.body.scrollHeight - 200) ? "block" : "none";
+    });
+
+    topBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    bottomBtn.addEventListener("click", () => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    });
   </script>
+<<<<<<< HEAD
+=======
+
+  <script src="../../scripts/logout.js"></script>
+  <script src="../assets/js/script.js"></script>
+  <script src="../../preloader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 650,
+      easing: 'ease-in-out', 
+      once: true,
+    });
+  </script>
+>>>>>>> ddf731fc690874f6b02aec7f23988e3734994d29
 </body>
 </html>
