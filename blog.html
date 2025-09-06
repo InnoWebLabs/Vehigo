@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="src/assets/styles/style.css" />
     <link rel="stylesheet" href="assets/css/blog-enhanced.css" />
+    <link rel="stylesheet" href="assets/css/dark.css" />
 
     <link rel="stylesheet" href="preloader.css"/>
 
@@ -62,7 +63,6 @@
                     </li>
 
                     <!-- 🌙 Dark Mode Toggle Button -->
-                    <!-- Removed dark mode toggle button -->
                 </ul>
             </nav>
 
@@ -317,6 +317,34 @@
   </div>  
   <script src="preloader.js"></script>
   <script src="assets/js/blog-enhanced.js"></script>
+  
+  <script>
+    // Dark mode functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        // Load theme from localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+          document.body.classList.add('dark-mode');
+          themeToggle.checked = true;
+        }
+
+        // Add event listener
+        themeToggle.addEventListener('change', function (e) {
+          e.stopPropagation();
+          document.body.classList.toggle('dark-mode', this.checked);
+          localStorage.setItem('theme', this.checked ? 'dark' : 'light');
+        });
+
+        document.querySelector('.theme-switch')?.addEventListener('click', e => e.stopPropagation());
+      } else {
+        // Apply theme if toggle is not present
+        if (localStorage.getItem('theme') === 'dark') {
+          document.body.classList.add('dark-mode');
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>
