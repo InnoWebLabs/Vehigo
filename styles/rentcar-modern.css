@@ -27,6 +27,7 @@
 .rentcar-main-content {
   animation: pageSlideIn 0.8s ease-out;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  /* background-color: #27ae60; */
   min-height: 100vh;
   padding: 120px 20px 50px;
 }
@@ -40,10 +41,11 @@
 .rentcar-main-content h1 {
   text-align: center;
   font-size: 2.5rem;
+  font-weight: bold;
   /* background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
-  color: white;
+  color: black;
   background-clip: text;
   animation: titleGlow 2s ease-in-out infinite alternate;  
   margin: 2rem;
@@ -662,7 +664,8 @@ hr {
 
 /* Gradient Background Animation */
 .rentcar-main-content {
-  background: linear-gradient(45deg, #f5f7fa, #c3cfe2, #667eea, #764ba2);
+  /* background: linear-gradient(#f5f7fa); */
+  background-color: white;
   background-size: 400% 400%;
   animation: gradientFlow 15s ease infinite;
 }
