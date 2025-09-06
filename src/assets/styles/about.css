@@ -931,6 +931,23 @@ input:checked + .slider:before {
   --ionicon-stroke-width: 40px;
 }
 
+.links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.links a{
+  color: #111;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+}
+body.dark-mode .links a{
+  color: white;
+}
+
 /* .btn::before {
   content: "";
   position: absolute;
