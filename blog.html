@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -12,8 +13,452 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="src/assets/styles/style.css" />
     <link rel="stylesheet" href="assets/css/blog-enhanced.css" />
+    <link rel="stylesheet" href="assets/css/dark.css" />
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="preloader.css"/>
+    
+    <!-- Custom Navbar and Theme Toggle Styles -->
+    <style>
+      /* Navbar Styling */
+      .header {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.1) !important;
+        border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+        backdrop-filter: blur(10px) !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+      }
+      
+      .dark-theme .header {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+      }
+      
+      .navbar-brand img {
+        height: 40px !important;
+        transition: transform 0.3s ease !important;
+      }
+      
+      .navbar-brand:hover img {
+        transform: scale(1.05) !important;
+      }
+      
+      .nav-link {
+        color: #374151 !important;
+        font-weight: 500 !important;
+        padding: 10px 15px !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+        position: relative !important;
+      }
+      
+      .nav-link:hover {
+        color: #2563eb !important;
+        background: rgba(37, 100, 235, 0.1) !important;
+        transform: translateY(-1px) !important;
+      }
+      
+      .dark-theme .nav-link {
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .nav-link:hover {
+        color: #60a5fa !important;
+        background: rgba(96, 165, 250, 0.1) !important;
+      }
+      
+      /* Theme Toggle Button */
+      .theme-toggle-btn {
+        border-radius: 25px !important;
+        padding: 10px 20px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        border: 2px solid #e5e7eb !important;
+        background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important;
+        color: #374151 !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+      }
+      
+      .theme-toggle-btn:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+        border-color: #2563eb !important;
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+        color: #2563eb !important;
+      }
+      
+      .theme-toggle-btn.btn-outline-light {
+        border-color: rgba(255,255,255,0.3) !important;
+        background: rgba(255,255,255,0.1) !important;
+        color: white !important;
+        backdrop-filter: blur(10px) !important;
+      }
+      
+      .theme-toggle-btn.btn-outline-light:hover {
+        background: rgba(255,255,255,0.2) !important;
+        border-color: rgba(255,255,255,0.5) !important;
+        color: white !important;
+      }
+      
+      /* Login Button */
+      .btn-vehigo {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+        border: none !important;
+        border-radius: 25px !important;
+        padding: 10px 20px !important;
+        font-weight: 600 !important;
+        color: white !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
+      }
+      
+      .btn-vehigo:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+      }
+      
+      /* Mobile Menu */
+      .navbar-toggler {
+        border: none !important;
+        padding: 8px !important;
+        border-radius: 8px !important;
+        background: rgba(0,0,0,0.05) !important;
+      }
+      
+      .dark-theme .navbar-toggler {
+        background: rgba(255,255,255,0.1) !important;
+      }
+      
+      .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.2rem rgba(37, 100, 235, 0.25) !important;
+      }
+      
+      /* Comprehensive Dark Mode Styles */
+      .dark-theme {
+        background-color: #0f0f0f !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme body {
+        background-color: #0f0f0f !important;
+        color: #e5e7eb !important;
+      }
+      
+      /* Hero Section Dark Mode */
+      .dark-theme .hero-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .hero-title {
+        color: #ffffff !important;
+      }
+      
+      .dark-theme .hero-subtitle {
+        color: #d1d5db !important;
+      }
+      
+      /* Cards Dark Mode */
+      .dark-theme .card {
+        background-color: #1f2937 !important;
+        border: 1px solid #374151 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .card-header {
+        background-color: #111827 !important;
+        border-bottom: 1px solid #374151 !important;
+        color: #ffffff !important;
+      }
+      
+      .dark-theme .card-body {
+        background-color: #1f2937 !important;
+        color: #e5e7eb !important;
+      }
+      
+      /* Text Colors Dark Mode */
+      .dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme h5, .dark-theme h6 {
+        color: #ffffff !important;
+      }
+      
+      .dark-theme p {
+        color: #d1d5db !important;
+      }
+      
+      .dark-theme .text-muted {
+        color: #9ca3af !important;
+      }
+      
+      /* Buttons Dark Mode */
+      .dark-theme .btn-primary {
+        background-color: #2563eb !important;
+        border-color: #2563eb !important;
+        color: #ffffff !important;
+      }
+      
+      .dark-theme .btn-primary:hover {
+        background-color: #1d4ed8 !important;
+        border-color: #1d4ed8 !important;
+      }
+      
+      .dark-theme .btn-outline-primary {
+        color: #60a5fa !important;
+        border-color: #60a5fa !important;
+      }
+      
+      .dark-theme .btn-outline-primary:hover {
+        background-color: #60a5fa !important;
+        color: #1f2937 !important;
+      }
+      
+      /* Sections Dark Mode */
+      .dark-theme .section {
+        background-color: #111827 !important;
+      }
+      
+      .dark-theme .section-alt {
+        background-color: #0f0f0f !important;
+      }
+      
+      /* Blog Cards Dark Mode */
+      .dark-theme .blog-card {
+        background-color: #1f2937 !important;
+        border: 1px solid #374151 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .blog-card:hover {
+        background-color: #374151 !important;
+        border-color: #4b5563 !important;
+      }
+      
+      .dark-theme .blog-title {
+        color: #ffffff !important;
+      }
+      
+      .dark-theme .blog-meta {
+        color: #9ca3af !important;
+      }
+      
+      .dark-theme .blog-excerpt {
+        color: #d1d5db !important;
+      }
+      
+      /* Footer Dark Mode */
+      .dark-theme .footer {
+        background-color: #111827 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .footer h5 {
+        color: #ffffff !important;
+      }
+      
+      .dark-theme .footer-link {
+        color: #d1d5db !important;
+      }
+      
+      .dark-theme .footer-link:hover {
+        color: #60a5fa !important;
+      }
+      
+      /* Form Elements Dark Mode */
+      .dark-theme .form-control {
+        background-color: #374151 !important;
+        border-color: #4b5563 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .form-control:focus {
+        background-color: #374151 !important;
+        border-color: #60a5fa !important;
+        color: #e5e7eb !important;
+        box-shadow: 0 0 0 0.2rem rgba(96, 165, 250, 0.25) !important;
+      }
+      
+      .dark-theme .form-label {
+        color: #d1d5db !important;
+      }
+      
+      /* Badges Dark Mode */
+      .dark-theme .badge {
+        background-color: #374151 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .badge-primary {
+        background-color: #2563eb !important;
+        color: #ffffff !important;
+      }
+      
+      /* Alerts Dark Mode */
+      .dark-theme .alert {
+        background-color: #1f2937 !important;
+        border-color: #374151 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .alert-success {
+        background-color: #064e3b !important;
+        border-color: #065f46 !important;
+        color: #a7f3d0 !important;
+      }
+      
+      .dark-theme .alert-danger {
+        background-color: #7f1d1d !important;
+        border-color: #991b1b !important;
+        color: #fca5a5 !important;
+      }
+      
+      /* Tables Dark Mode */
+      .dark-theme .table {
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgba(55, 65, 81, 0.3) !important;
+      }
+      
+      .dark-theme .table-hover tbody tr:hover {
+        background-color: rgba(55, 65, 81, 0.5) !important;
+      }
+      
+      /* Progress Bars Dark Mode */
+      .dark-theme .progress {
+        background-color: #374151 !important;
+      }
+      
+      .dark-theme .progress-bar {
+        background-color: #2563eb !important;
+      }
+      
+      /* List Groups Dark Mode */
+      .dark-theme .list-group-item {
+        background-color: #1f2937 !important;
+        border-color: #374151 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .list-group-item:hover {
+        background-color: #374151 !important;
+      }
+      
+      /* Modals Dark Mode */
+      .dark-theme .modal-content {
+        background-color: #1f2937 !important;
+        border-color: #374151 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .modal-header {
+        border-bottom-color: #374151 !important;
+      }
+      
+      .dark-theme .modal-footer {
+        border-top-color: #374151 !important;
+      }
+      
+      /* Dropdowns Dark Mode */
+      .dark-theme .dropdown-menu {
+        background-color: #1f2937 !important;
+        border-color: #374151 !important;
+      }
+      
+      .dark-theme .dropdown-item {
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .dropdown-item:hover {
+        background-color: #374151 !important;
+        color: #ffffff !important;
+      }
+      
+      /* Nav Pills Dark Mode */
+      .dark-theme .nav-pills .nav-link {
+        color: #d1d5db !important;
+      }
+      
+      .dark-theme .nav-pills .nav-link.active {
+        background-color: #2563eb !important;
+        color: #ffffff !important;
+      }
+      
+      /* Breadcrumb Dark Mode */
+      .dark-theme .breadcrumb {
+        background-color: #1f2937 !important;
+      }
+      
+      .dark-theme .breadcrumb-item a {
+        color: #60a5fa !important;
+      }
+      
+      .dark-theme .breadcrumb-item.active {
+        color: #9ca3af !important;
+      }
+      
+      /* Pagination Dark Mode */
+      .dark-theme .page-link {
+        background-color: #1f2937 !important;
+        border-color: #374151 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .page-link:hover {
+        background-color: #374151 !important;
+        border-color: #4b5563 !important;
+        color: #ffffff !important;
+      }
+      
+      .dark-theme .page-item.active .page-link {
+        background-color: #2563eb !important;
+        border-color: #2563eb !important;
+        color: #ffffff !important;
+      }
+      
+      /* Blog Specific Dark Mode */
+      .dark-theme .blog-container {
+        background-color: #0f0f0f !important;
+      }
+      
+      .dark-theme .blog-sidebar {
+        background-color: #1f2937 !important;
+        border: 1px solid #374151 !important;
+      }
+      
+      .dark-theme .blog-content {
+        background-color: #1f2937 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .blog-tags {
+        background-color: #374151 !important;
+        color: #e5e7eb !important;
+      }
+      
+      .dark-theme .blog-author {
+        background-color: #111827 !important;
+        border: 1px solid #374151 !important;
+      }
+      
+      .dark-theme .blog-comments {
+        background-color: #1f2937 !important;
+        border: 1px solid #374151 !important;
+      }
+      
+      .dark-theme .comment-item {
+        background-color: #111827 !important;
+        border: 1px solid #374151 !important;
+      }
+    </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,78 +472,48 @@
     <div class="spinner"></div>
   </div>
   <div id="app">
-    <header class="header" data-header>
-        <div class="container">
-            <div class="overlay" data-overlay></div>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar navbar-expand-xl container py-2">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Vehigo Home">
+          <img src="./assets/images/vehigologo.png" alt="Vehigo" />
+        </a>
 
-            <a href="index.html" class="logo">
-                <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
-            </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <nav class="navbar" data-navbar>
-                <ul class="navbar-list">
-                    <li>
-                        <a href="index.html" class="navbar-link" data-nav-link>Home</a>
-                    </li>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#featured-car">Explore cars</a></li>
+            <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
+            <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
 
-                    <li>
-                        <a href="featured-car.html" class="navbar-link" data-nav-link>Explore cars</a>
-                    </li>
+            <!-- Theme switch -->
+            <li class="nav-item">
+              <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
+                <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+              </button>
+            </li>
 
-                    <li>
-                        <a href="./src/pages/about.html" class="navbar-link" data-nav-link>About us</a>
-                    </li>
-
-                    <li>
-                        <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
-                    </li>
-
-                    <li>
-                        <a href="offline.html" class="navbar-link" data-nav-link>Offline Centers</a>
-                    </li>
-
-                    <li>
-                        <a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
-                    </li>
-
-                    <!-- 🌙 Dark Mode Toggle Button -->
-                    <!-- Removed dark mode toggle button -->
-                </ul>
-            </nav>
-
-            <div class="header-actions">
-                <div class="header-contact">
-                    <a href="tel:1800100100" class="contact-link">1800-100-100</a>
-
-                    <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
-                </div>
-                <!-- Theme Toggle Switch with SVG icons -->
-                <label class="theme-switch" for="theme-toggle">
-                    <input type="checkbox" id="theme-toggle" />
-                    <span class="slider">
-                        <span class="icon sun" aria-label="Light mode">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="5" />
-                                <line x1="12" y1="1" x2="12" y2="3" />
-                                <line x1="12" y1="21" x2="12" y2="23" />
-                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                                <line x1="1" y1="12" x2="3" y2="12" />
-                                <line x1="21" y1="12" x2="23" y2="12" />
-                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                            </svg>
-                        </span>
-                        <span class="icon moon" aria-label="Dark mode">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
-                            </svg>
-                        </span>
-                    </span>
-                </label>
-            </div>
+            <!-- Login & Logout -->
+            <li class="nav-item">
+              <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+                <i class="fa-regular fa-user"></i> <span>Login</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
     <br>
     <main>
@@ -314,9 +729,109 @@
             </section>
         </article>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">
+              <img src="./assets/images/vehigologo.png" alt="VehiGo logo" class="logo_header"/>
+            </a>
+            <p class="footer-text">
+              Search for cheap rental cars in Madhya Pradesh. We offer our
+              customers an attractive and fun selection of vehicles as well as
+              an opportunity to rent their cars when not in use. Experience
+              reliable, affordable, and convenient car rental services across
+              Bhopal, Indore, and Ujjain.
+            </p>
+          </div>
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
+            <li><a href="./src/pages/about.html" class="footer-link">About us</a></li>
+            <li><a href="./src/pages/pricing.html" class="footer-link">Pricing plans</a></li>
+            <li><a href="blog.html" class="footer-link">Our blog</a></li>
+            <li><a href="./ContactUs.html" class="footer-link">Contact Us</a></li>
+          </ul>
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Support</p>
+            </li>
+            <li><a href="./src/pages/help-center.html" class="footer-link">Help center</a></li>
+            <li><a href="./src/pages/Askaques.html" class="footer-link">Ask a question</a></li>
+            <li><a href="./privacypolicy.html" class="footer-link">Privacy policy</a></li>
+            <li><a href="./tandc.html" class="footer-link">Terms & conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <ul class="social-list">
+            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
+          </ul>
+          <p class="copyright">
+            © 2024 <a href="#">VehiGo</a>. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="preloader.js"></script>
   <script src="assets/js/blog-enhanced.js"></script>
+  
+  <script>
+    // Dark mode functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const themeToggle = document.getElementById('themeToggle');
+      if (themeToggle) {
+        // Load theme from localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.body.classList.add('dark-theme');
+          themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+          themeToggle.classList.remove('btn-outline-secondary');
+          themeToggle.classList.add('btn-outline-light');
+        } else {
+          document.body.classList.remove('dark-theme');
+          themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+          themeToggle.classList.remove('btn-outline-light');
+          themeToggle.classList.add('btn-outline-secondary');
+        }
+
+        // Add event listener
+        themeToggle.addEventListener('click', function (e) {
+          e.preventDefault();
+          const isDark = document.body.classList.contains('dark-theme');
+          
+          if (isDark) {
+            document.body.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
+            themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+            themeToggle.classList.remove('btn-outline-light');
+            themeToggle.classList.add('btn-outline-secondary');
+          } else {
+            document.body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+            themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+            themeToggle.classList.remove('btn-outline-secondary');
+            themeToggle.classList.add('btn-outline-light');
+          }
+        });
+      } else {
+        // Apply theme if toggle is not present
+        if (localStorage.getItem('theme') === 'dark') {
+          document.body.classList.add('dark-theme');
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>

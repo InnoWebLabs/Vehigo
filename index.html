@@ -573,11 +573,135 @@
     .floating-icon:nth-child(4) {
       animation-delay: 1.5s;
     }
+
+    /* Light theme overrides for footer readability */
+    body:not(.dark-theme) .footer-logo{ filter: none; }
+    body:not(.dark-theme) .footer-column h6{ color: var(--vehigo-text); }
+    body:not(.dark-theme) .footer-description,
+    body:not(.dark-theme) .footer-tagline{ color: var(--vehigo-text); opacity: 0.95; }
+    body:not(.dark-theme) .footer-links a{ color: rgba(0,0,0,0.9); }
+    body:not(.dark-theme) .footer-links a:hover{ color: var(--vehigo-primary-3); }
+    body:not(.dark-theme) .social-link{
+      background: rgba(0,0,0,0.06);
+      color: var(--vehigo-text);
+      border-color: rgba(0,0,0,0.08);
+    }
+    body:not(.dark-theme) .social-link:hover{
+      background: rgba(0,0,0,0.12);
+      color: var(--vehigo-text);
+    }
+    body:not(.dark-theme) .contact-info{
+      background: rgba(0,0,0,0.04);
+      border-color: rgba(0,0,0,0.1);
+    }
+    body:not(.dark-theme) .contact-text{ color: var(--vehigo-text); }
+    body:not(.dark-theme) .contact-text a{ color: var(--vehigo-primary-3); }
+    body:not(.dark-theme) .footer-bottom{ border-top: 1px solid rgba(0,0,0,0.12); background: rgba(0,0,0,0.03); }
+    body:not(.dark-theme) .footer-bottom-links a{ color: rgba(0,0,0,0.85); }
+    body:not(.dark-theme) .footer-bottom-links a:hover{ color: var(--vehigo-primary-3); }
     /* Utility */
     .tilt{ transform-style: preserve-3d; }
     .no-results{
       background: var(--vehigo-card); border:1px dashed var(--vehigo-border); border-radius: var(--radius-lg);
       padding: 18px; text-align:center; font-weight:700; opacity:.8;
+    }
+    
+    /* Theme Toggle Button Styles */
+    .theme-toggle-btn {
+
+      border-radius: 25px !important;
+      padding: 10px 20px !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease !important;
+      border: 2px solid #e5e7eb !important;
+      background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important;
+      color: #374151 !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .theme-toggle-btn:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+      border-color: #2563eb !important;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+      color: #2563eb !important;
+    }
+    
+    .theme-toggle-btn.btn-outline-light {
+      border-color: rgba(255,255,255,0.3) !important;
+      background: rgba(255,255,255,0.1) !important;
+      color: white !important;
+      backdrop-filter: blur(10px) !important;
+    }
+    
+    .theme-toggle-btn.btn-outline-light:hover {
+      background: rgba(255,255,255,0.2) !important;
+      border-color: rgba(255,255,255,0.5) !important;
+      color: white !important;
+    }
+    
+    /* Navbar Styling */
+    .header {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1) !important;
+      border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+      backdrop-filter: blur(10px) !important;
+    }
+    
+    .dark-theme .header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
+      border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    
+    .navbar-brand img {
+      height: 40px !important;
+      transition: transform 0.3s ease !important;
+    }
+    
+    .navbar-brand:hover img {
+      transform: scale(1.05) !important;
+    }
+    
+    .nav-link {
+      color: #374151 !important;
+      font-weight: 500 !important;
+      padding: 10px 15px !important;
+      border-radius: 8px !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .nav-link:hover {
+      color: #2563eb !important;
+      background: rgba(37, 100, 235, 0.1) !important;
+      transform: translateY(-1px) !important;
+    }
+    
+    .dark-theme .nav-link {
+      color: #e5e7eb !important;
+    }
+    
+    .dark-theme .nav-link:hover {
+      color: #60a5fa !important;
+      background: rgba(96, 165, 250, 0.1) !important;
+    }
+    
+    .btn-vehigo {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      padding: 10px 20px !important;
+      font-weight: 600 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
+    }
+    
+    .btn-vehigo:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
     }
   </style>
 </head>
@@ -610,8 +734,8 @@
 
           <!-- Theme switch -->
           <li class="nav-item">
-            <button id="themeToggle" class="theme-switch" type="button" aria-pressed="true">
-              <i class="fa-solid fa-moon"></i><span class="label">Dark</span>
+            <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
+              <i class="fa-solid fa-gear"></i><span class="label">Light</span>
             </button>
           </li>
 
@@ -1236,22 +1360,30 @@
       const savedTheme = localStorage.getItem('theme');
       if(savedTheme==='light'){
         document.body.classList.remove('dark-theme');
-        themeToggle.setAttribute('aria-pressed','false');
-        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i><span class="label">Light</span>';
+        themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+        themeToggle.classList.remove('btn-outline-light');
+        themeToggle.classList.add('btn-outline-secondary');
       } else {
         document.body.classList.add('dark-theme');
-        themeToggle.setAttribute('aria-pressed','true');
-        themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i><span class="label">Dark</span>';
+        themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+        themeToggle.classList.remove('btn-outline-secondary');
+        themeToggle.classList.add('btn-outline-light');
       }
 
       themeToggle.addEventListener('click', ()=>{
         document.body.classList.toggle('dark-theme');
         const isDark = document.body.classList.contains('dark-theme');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-        themeToggle.innerHTML = isDark
-          ? '<i class="fa-solid fa-moon"></i><span class="label">Dark</span>'
-          : '<i class="fa-solid fa-sun"></i><span class="label">Light</span>';
+        
+        if (isDark) {
+          themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+          themeToggle.classList.remove('btn-outline-secondary');
+          themeToggle.classList.add('btn-outline-light');
+        } else {
+          themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+          themeToggle.classList.remove('btn-outline-light');
+          themeToggle.classList.add('btn-outline-secondary');
+        }
       });
 
       // Preloader
@@ -1351,3 +1483,4 @@
   </script>
 </body>
 </html>
+

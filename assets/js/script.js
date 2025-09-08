@@ -21,8 +21,35 @@ navToggleBtn.addEventListener("click", function(e) {
 });
 
 overlay.addEventListener("click", function(e) {
-  e.stopPropagation();
+  // Close the nav first
   navToggleFunc();
+
+  // Attempt to activate the element beneath the overlay at the click point
+  // This makes a single click both close the overlay and follow links
+  const clickX = e.clientX;
+  const clickY = e.clientY;
+
+  // Temporarily disable pointer events to detect the element beneath
+  const prevPointerEvents = overlay.style.pointerEvents;
+  overlay.style.pointerEvents = "none";
+  const elementBeneath = document.elementFromPoint(clickX, clickY);
+  overlay.style.pointerEvents = prevPointerEvents || "";
+
+  if (elementBeneath) {
+    // If it's a link, navigate directly
+    if (elementBeneath.tagName === 'A' && elementBeneath.href) {
+      window.location.href = elementBeneath.href;
+      return;
+    }
+    // If inside a link, find nearest anchor
+    const anchorParent = elementBeneath.closest && elementBeneath.closest('a[href]');
+    if (anchorParent && anchorParent.href) {
+      window.location.href = anchorParent.href;
+      return;
+    }
+    // Otherwise, trigger a click on the underlying element
+    elementBeneath.click && elementBeneath.click();
+  }
 });
 
 for (let i = 0; i < navbarLinks.length; i++) {

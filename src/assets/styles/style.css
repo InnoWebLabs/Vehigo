@@ -1080,13 +1080,12 @@ button, a { transition: var(--transition); }
 \*-----------------------------------*/
 
 .footer {
-  color: var(--independence);
+  color: var(--eerie-black);
   background-color: hsl(204deg 83.2% 63.42%);
   padding: 2rem 1rem;
   margin-top: 5rem;
   font-family: 'Segoe UI', sans-serif;
   font-size: 1rem;
-  color: white;
 }
 
 .footer a {
@@ -1110,7 +1109,7 @@ button, a { transition: var(--transition); }
 .footer-text {
   font-size: var(--fs-6);
   line-height: 1.8;
-  color: white;
+  color: var(--eerie-black);
 }
 
 .footer-list {
@@ -1128,8 +1127,7 @@ button, a { transition: var(--transition); }
   font-weight: 700;
   font-size: 1.6rem;
   margin-bottom: 0.75rem;
-  /* color: var(--space-cadet); */
-  color: white;
+  color: var(--space-cadet);
 }
 
 .footer-link {
