@@ -1,111 +1,189 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
-    background-color: #333333;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
 }
 
-.container{
+.container {
     width: 1200px;
-    height: 950px;
-    margin: 20px 20px ;
-    background-color: rgb(1, 28, 28);
-    border: 8px solid rgb(4, 4, 17);
-    border-radius: 0%;
-    /* Add smooth transition */
+    min-height: 950px;
+    margin: 20px;
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+    border: 2px solid #4a90e2;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 /* Container hover effect */
 .container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-    border-color: #4a90e2;
-    background-color: rgb(2, 35, 35);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(74, 144, 226, 0.2);
+    border-color: #64b5f6;
+    background: linear-gradient(145deg, #0f2027, #2c5364, #203a43);
 }
 
-#blog-title{
-    color: white; 
+#blog-title {
+    color: #ffffff;
     text-align: center;
-    margin: 5px;
-    /* Add smooth transition */
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    margin: 20px 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
 /* Blog title hover effect */
 #blog-title:hover {
-    color: #4a90e2;
-    text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+    color: #64b5f6;
+    text-shadow: 0 0 15px rgba(100, 181, 246, 0.6);
     cursor: pointer;
+    transform: scale(1.02);
 }
 
-#blog-author{
-    color: white;
+#blog-author {
+    color: #e0e0e0;
     text-align: left;
-    margin: 5px 5px ;
-    /* Add smooth transition */
-    transition: color 0.3s ease;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
 }
 
 /* Blog author hover effect */
 #blog-author:hover {
-    color: #4a90e2;
+    color: #64b5f6;
     cursor: pointer;
+    text-shadow: 0 0 8px rgba(100, 181, 246, 0.4);
 }
 
-#blog-date{
-    color: white;
+#blog-date {
+    color: #e0e0e0;
     text-align: left;
-    margin: 5px 5px;
-    /* Add smooth transition */
-    transition: color 0.3s ease;
+    margin: 10px 0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 /* Blog date hover effect */
 #blog-date:hover {
-    color: #4a90e2;
+    color: #64b5f6;
     cursor: pointer;
+    text-shadow: 0 0 8px rgba(100, 181, 246, 0.4);
 }
 
-#blog-image{
+#blog-image {
     display: block;
     margin: 30px auto;
     width: 300px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    /* Add smooth transition */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
     cursor: pointer;
+    border: 2px solid transparent;
 }
 
 /* Blog image hover effect */
 #blog-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.3);
-    filter: brightness(1.1) contrast(1.1);
+    transform: scale(1.08) rotateY(5deg);
+    box-shadow: 0 15px 35px rgba(100, 181, 246, 0.4);
+    filter: brightness(1.15) contrast(1.1);
+    border-color: #64b5f6;
 }
 
-#blog-content{
-    margin : 20px 5px;
-    color: white;
-    /* Add smooth transition */
-    transition: color 0.3s ease;
+#blog-content {
+    margin: 30px 0;
+    color: #ffffff;
+    line-height: 1.6;
+    transition: all 0.3s ease;
 }
 
-/* Blog content hover effect */
+/* Blog content hover effect - target specific elements instead of the whole container */
 #blog-content:hover {
-    color: #f0f0f0;
+    color: #f5f5f5;
 }
 
-p{
-    text-align: center;
-    justify-content: center;
-    padding: 20px 20px;
-    /* Add smooth transition */
-    transition: color 0.3s ease, transform 0.2s ease;
+/* Style paragraphs specifically */
+#blog-content p {
+    color: #e8e8e8;
+    text-align: justify;
+    padding: 15px 25px;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid #4a90e2;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+/* Paragraph hover effect */
+#blog-content p:hover {
+    color: #ffffff;
+    background: rgba(100, 181, 246, 0.1);
+    border-left-color: #64b5f6;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(100, 181, 246, 0.2);
+}
+
+/* List styling for better readability */
+#blog-content ul {
+    color: #e8e8e8;
+    margin: 20px 0;
+    padding-left: 40px;
+}
+
+#blog-content li {
+    color: #e8e8e8;
+    margin: 10px 0;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+#blog-content li:hover {
+    color: #64b5f6;
+    cursor: pointer;
+    transform: translateX(5px);
+}
+
+/* Enhanced typography */
+#blog-content h2, #blog-content h3 {
+    color: #64b5f6;
+    margin: 25px 0 15px 0;
+    text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+    background: rgba(100, 181, 246, 0.3);
+    color: #ffffff;
+}
+
+/* Loading animation for container */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeInUp 0.8s ease-out;
 }

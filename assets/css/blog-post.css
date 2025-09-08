@@ -1,0 +1,251 @@
+/*-----------------------------------*\
+  #CLEAN BLOG POST STYLES
+\*-----------------------------------*/
+
+/**
+ * Clean, readable blog post styling
+ * Focus on readability and professional appearance
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f8fafc;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.blog-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.07),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.blog-container:hover {
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.15),
+    0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Blog header with image */
+.blog-header {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.blog-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-header:hover img {
+  transform: scale(1.02);
+}
+
+/* Main content area with white background */
+.blog-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 40px 40px 20px 40px;
+  line-height: 1.3;
+}
+
+.blog-meta {
+  font-size: 1rem;
+  color: #718096;
+  margin: 0 40px 30px 40px;
+  padding: 16px 20px;
+  background: #f7fafc;
+  border-radius: 8px;
+  border-left: 4px solid #4299e1;
+}
+
+.blog-meta strong {
+  color: #4299e1;
+  font-weight: 600;
+}
+
+.blog-content {
+  margin: 0 40px 40px 40px;
+  font-size: 1.1rem;
+  color: #2d3748;
+  line-height: 1.8;
+}
+
+.blog-content p {
+  margin-bottom: 20px;
+  color: #2d3748;
+}
+
+.blog-content p:first-child {
+  font-size: 1.2rem;
+  color: #1a202c;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* List styling */
+.blog-content ul {
+  margin: 24px 0;
+  padding: 0;
+}
+
+.blog-content li {
+  list-style: none;
+  margin: 12px 0;
+  padding: 16px 20px;
+  background: #f7fafc;
+  border-radius: 8px;
+  border-left: 4px solid #4299e1;
+  color: #2d3748;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.blog-content li::before {
+  content: '•';
+  color: #4299e1;
+  font-weight: bold;
+  position: absolute;
+  left: 8px;
+  top: 16px;
+}
+
+.blog-content li:hover {
+  background: #edf2f7;
+  transform: translateX(4px);
+}
+
+.blog-content strong {
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.blog-content h3 {
+  font-size: 1.5rem;
+  color: #1a202c;
+  margin: 32px 0 16px 0;
+  font-weight: 600;
+}
+
+/* Author section */
+.author {
+  background: #4299e1;
+  color: white;
+  padding: 20px 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+/* Back button */
+.back-btn {
+  display: inline-block;
+  margin: 30px 40px 40px 40px;
+  padding: 12px 24px;
+  background: #4299e1;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(66, 153, 225, 0.3);
+}
+
+.back-btn:hover {
+  background: #3182ce;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(66, 153, 225, 0.4);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  .blog-container {
+    margin: 0 10px;
+  }
+  
+  .blog-title {
+    font-size: 1.75rem;
+    margin: 30px 25px 15px 25px;
+  }
+  
+  .blog-meta {
+    margin: 0 25px 25px 25px;
+    font-size: 0.9rem;
+    padding: 12px 16px;
+  }
+  
+  .blog-content {
+    margin: 0 25px 30px 25px;
+    font-size: 1rem;
+  }
+  
+  .blog-content p:first-child {
+    font-size: 1.1rem;
+  }
+  
+  .author {
+    padding: 16px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .back-btn {
+    margin: 25px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .blog-header {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-title {
+    font-size: 1.5rem;
+    margin: 25px 20px 12px 20px;
+  }
+  
+  .blog-meta {
+    margin: 0 20px 20px 20px;
+  }
+  
+  .blog-content {
+    margin: 0 20px 25px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .author {
+    padding: 14px 20px;
+  }
+  
+  .back-btn {
+    margin: 20px;
+  }
+  
+  .blog-header {
+    height: 180px;
+  }
+}

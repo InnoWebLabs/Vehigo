@@ -202,16 +202,7 @@
   }
 }
 
-/* Enhanced Card Hover Effects */
-.why-card.modern-card:hover,
-.team-member.modern-card:hover,
-.location-card.modern-card:hover {
-  animation: pulse 0.6s ease-in-out;
-}
 
-.about-content.animate-card:hover {
-  animation: float 2s ease-in-out infinite;
-}
 
 /* Dark Mode Enhancements for Testimonials */
 .dark-mode .testimonial-card {

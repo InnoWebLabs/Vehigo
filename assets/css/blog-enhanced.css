@@ -1,0 +1,288 @@
+/*-----------------------------------*\
+  #ENHANCED BLOG STYLES
+\*-----------------------------------*/
+
+/**
+ * Modern Blog Design Enhancement for VehiGo
+ * Maintains functionality while improving visual design
+ */
+
+/* Enhanced Blog Section - Minimal background changes */
+.section.blog {
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+/* Enhanced Section Title */
+.blog .section-title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: var(--fs-1);
+  color: inherit; /* Use inherited color from existing theme */
+  font-weight: var(--fw-600);
+  position: relative;
+}
+
+.blog .section-subtitle {
+  text-align: center;
+  font-size: var(--fs-6);
+  color: var(--manatee);
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--carolina-blue), var(--blue-jeans));
+  border-radius: 2px;
+}
+
+/* Enhanced Blog Wrapper - Removed Navigation Arrows */
+.blog-wrapper {
+  position: relative;
+  padding: 0; /* Remove padding for arrows since we're removing them */
+}
+
+/* Modern Grid Layout for Blog Cards - Show All Posts */
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: visible;
+}
+
+/* Enhanced Blog Card Design */
+.blog-card {
+  background: var(--alice-blue-2); /* Use original background color */
+  border-radius: 20px;
+  border: 1px solid var(--white); /* Use original border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  transform: translateY(0);
+}
+
+.blog-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(74, 144, 226, 0.15);
+  border-color: var(--carolina-blue);
+}
+
+/* Enhanced Card Banner */
+.blog-card .card-banner {
+  aspect-ratio: 16 / 10;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-card .card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.blog-card:hover .card-banner img {
+  transform: scale(1.08);
+}
+
+/* Enhanced Card Badge */
+.blog-card .card-badge {
+  position: absolute;
+  bottom: 20px; /* Use original position */
+  left: 20px;
+  --height: 30px;
+  --width: 92px;
+  color: black; /* Use original color */
+  transition: all 0.3s ease;
+}
+
+
+
+/* Enhanced Card Content */
+.blog-card .card-content {
+  padding: 30px;
+  position: relative;
+}
+
+.blog-card .card-title {
+  margin-bottom: 20px;
+  font-size: var(--fs-4);
+  line-height: 1.4;
+  color: black; /* Use original color */
+  font-weight: var(--fw-600);
+}
+
+.blog-card .card-title > a {
+  color: inherit;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.blog-card .card-title > a:hover {
+  color: var(--carolina-blue);
+}
+
+/* Enhanced Card Meta */
+.blog-card .card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--alice-blue-4);
+}
+
+.blog-card .publish-date,
+.blog-card .comments {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-6);
+  color: var(--manatee);
+  font-weight: 500;
+}
+
+.blog-card .publish-date ion-icon,
+.blog-card .comments ion-icon {
+  font-size: 16px;
+  color: var(--carolina-blue);
+}
+
+/* Enhanced Author Section */
+.blog-card .card-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.blog-card .author-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--alice-blue-4);
+  transition: border-color 0.3s ease;
+}
+
+.blog-card:hover .author-img {
+  border-color: var(--carolina-blue);
+}
+
+.blog-card .author-name {
+  font-size: var(--fs-6);
+  color: var(--independence);
+  font-weight: var(--fw-600);
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile Responsive Enhancements */
+@media (max-width: 768px) {
+  .blog-wrapper {
+    padding: 0;
+  }
+  
+  .blog-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .blog-card .card-content {
+    padding: 20px;
+  }
+  
+  .blog .section-title {
+    font-size: var(--fs-2);
+    margin-bottom: 15px;
+  }
+
+  .blog .section-subtitle {
+    margin-bottom: 30px;
+    font-size: var(--fs-7);
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .blog-card .card-content {
+    padding: 15px;
+  }
+  
+  .blog-card .card-title {
+    font-size: var(--fs-5);
+  }
+  
+  .blog-card .card-meta {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
+/* Tablet View */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .blog-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Large Desktop - Show 3 columns for better layout with 5 posts */
+@media (min-width: 1025px) and (max-width: 1399px) {
+  .blog-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Extra Large Desktop - Show all 5 posts in optimal layout */
+@media (min-width: 1400px) {
+  .blog-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+/* Animation for Page Load */
+.blog-card {
+  opacity: 0;
+  animation: slideInUp 0.6s ease forwards;
+}
+
+.blog-card:nth-child(1) { animation-delay: 0.1s; }
+.blog-card:nth-child(2) { animation-delay: 0.2s; }
+.blog-card:nth-child(3) { animation-delay: 0.3s; }
+.blog-card:nth-child(4) { animation-delay: 0.4s; }
+.blog-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure compatibility with existing theme system */

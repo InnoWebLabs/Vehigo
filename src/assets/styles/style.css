@@ -1328,6 +1328,7 @@ button, a { transition: var(--transition); }
     display: flex;
     align-items: center;
     z-index: 1;
+    margin-left: 40px;
   }
 
   .hero-form {
@@ -1348,13 +1349,13 @@ button, a { transition: var(--transition); }
 
   .hero-banner {
     display: block;
-    background: url("../images/hero_banner_mustang.png") no-repeat;
+    background: url("../images/vehigo-homepage.png") no-repeat;
     background-size: cover;
     background-position: left;
     position: absolute;
     top: 100px;
     bottom: 50px;
-    left: 65%;
+    left: 60%;
     width: 40%;
     border-radius: 30px;
     z-index: -1;

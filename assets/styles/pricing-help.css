@@ -94,6 +94,13 @@
     color: #555;
 }
 
+.check-icon {
+    color: #28a745;
+    font-size: 1rem;
+    font-weight: bold;
+    min-width: 20px;
+}
+
 .pricing-features i {
     color: #28a745;
     font-size: 0.9rem;
@@ -147,10 +154,12 @@
     transform: translateY(-5px);
 }
 
-.service-card i {
+.service-card i,
+.service-icon {
     font-size: 3rem;
     color: #007BFF;
     margin-bottom: 1rem;
+    display: block;
 }
 
 .service-card h3 {

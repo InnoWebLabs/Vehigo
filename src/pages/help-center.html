@@ -78,6 +78,41 @@
         .support-card h3 { margin:6px 0 4px; }
 
         @media (max-width: 640px) { .help-hero h1 { font-size: 2.1rem; } }
+
+        /* Login Button Styles */
+        .btn.user-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-width: 44px;
+            height: 44px;
+        }
+
+        .btn.user-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn.user-btn ion-icon {
+            font-size: 18px;
+        }
+
+        .header-action {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
     </style>
 </head>
 <body>
@@ -108,8 +143,12 @@
             </nav>
 
             <div class="header-action">
-                <button class="header-action-btn" aria-label="User" data-nav-toggler>
-                    <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                <a href="login.html" class="btn user-btn" id="loginBtn" aria-label="Profile">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+
+                <button id="logoutBtn" class="btn user-btn" style="display: none;" aria-label="Logout">
+                    <ion-icon name="log-out-outline"></ion-icon>
                 </button>
 
                 <button class="header-action-btn" aria-label="Open menu" data-nav-toggler>
@@ -438,6 +477,38 @@
             var yearSpan = document.getElementById('copyright-year');
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Check login status and update button visibility
+            checkLoginStatus();
+        });
+
+        function checkLoginStatus() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const loginBtn = document.getElementById('loginBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+
+            if (isLoggedIn) {
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'inline-flex';
+            } else {
+                loginBtn.style.display = 'inline-flex';
+                logoutBtn.style.display = 'none';
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userData');
+            checkLoginStatus();
+            window.location.href = '../../index.html';
+        }
+
+        // Add logout button event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', logout);
             }
         });
 

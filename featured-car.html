@@ -186,7 +186,7 @@
     .card:hover{ transform: translateY(-6px) rotateX(0.4deg) rotateY(-0.4deg); border-color: rgba(124,58,237,.35); }
     .card:focus-within{ outline: none; box-shadow: var(--ring); }
 
-    .card-banner{ position:relative; overflow:hidden; aspect-ratio: 16/10; }
+    .card-banner{ position:relative; overflow:hidden; aspect-ratio: 16/10;  transition: border-radius 0.3s ease-in-out;}
     .card-banner img{
       width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.02) translateZ(0);
       transition: transform .5s ease;
@@ -257,6 +257,8 @@
         animation: none !important; transition: none !important; transform: none !important;
       }
     }
+
+
   </style>
 </head>
 <body>
@@ -410,7 +412,7 @@
 
           <!-- 4 -->
           <li class="reveal">
-            <article class="card" tabindex="0" data-tilt>
+            <article class="card" tabindex="0" data-tilt >
               <figure class="card-banner">
                 <img src="./assets/images/fortuner.jpg" alt="Toyota Fortuner black SUV"/>
                 <span class="badge-year">2020</span>

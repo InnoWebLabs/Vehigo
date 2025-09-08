@@ -159,7 +159,18 @@
                   id="signupPassword"
                   name="password"
                   type="password"
-                  placeholder="Create password"
+                  placeholder="password"
+                  class="password"
+                  required
+                />
+                <i class="bx bx-hide eye-icon"></i>
+              </div>
+              <div class="field input-field">
+                <input
+                  id="confirmPassword"
+                  name="confirm_password"
+                  type="password"
+                  placeholder="Confirm password"
                   class="password"
                   required
                 />
@@ -258,6 +269,7 @@
         const name = document.getElementById("name").value.trim();
         const email = document.getElementById("signupEmail").value.trim();
         const password = document.getElementById("signupPassword").value.trim();
+        const confirmPassword = document.getElementById("confirmPassword").value.trim();
         const phone_number = document.getElementById("phone_number").value.trim();
         const address = document.getElementById("address").value.trim();
 
@@ -266,7 +278,10 @@
             "Please fill in all required fields.";
           return;
         }
-
+        if (password !== confirmPassword) {
+              signupErrorMessage.textContent = "Passwords do not match.";
+              return;
+        }
         try {
           const res = await fetch("http://localhost:4000/api/auth/signup", {
             method: "POST",
