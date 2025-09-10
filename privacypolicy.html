@@ -1,90 +1,324 @@
-<link rel="stylesheet" href="./assets/css/style.css" />
-<a href="index.html" class="logo">
-  <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
-</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | VehiGo</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: hsl(204, 91%, 53%);
+            color: #333;
+            overflow-x: hidden;
+            animation: fadeInBody 1s ease-in;
+        }
 
+        /* Header Styles */
+        .header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            background: #f5f5f5 !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+            z-index: 1000 !important;
+            padding: 15px 0 !important;
+            display: flex !important;
+            align-items: center !important;
+        }
 
+        .header .container {
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 20px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+        }
+
+        .header .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .header .logo {
+            color: #000 !important;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .navbar {
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .navbar-list {
+            display: flex !important;
+            list-style: none !important;
+            gap: 30px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            color: #000 !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-link:hover {
+            color: hsl(204, 91%, 53%);
+        }
+
+        .header-actions {
+            display: flex !important;
+            align-items: center !important;
+            gap: 20px !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .header-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .contact-link {
+            color: #000 !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .contact-time {
+            font-size: 12px;
+            color: #000 !important;
+        }
+
+        .btn.user-btn {
+            background: hsl(204, 91%, 53%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn.user-btn:hover {
+            background: hsl(204, 91%, 43%);
+        }
+
+        .nav-toggle-btn {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nav-toggle-btn span {
+            width: 25px;
+            height: 3px;
+            background: #000 !important;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+            .header-contact {
+                display: none;
+            }
+            .nav-toggle-btn {
+                display: flex;
+            }
+        }
+
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            color: #fff;
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            animation: fadeInForm 1.3s ease;
+        }
+
+        @keyframes fadeInForm {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: hsl(204, 91%, 53%);
+            border-bottom: 2px solid hsl(204, 91%, 53%);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin: 20px 0 10px;
+            color: hsl(204, 91%, 40%);
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: hsl(204, 91%, 53%);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+            border-left: 4px solid hsl(204, 91%, 53%);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #fef3c7, #fef7cd);
+            border: 1px solid #f59e0b;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .contact-info h3 {
+            color: #92400e;
+            margin-top: 0;
+        }
+
+        .contact-info p {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: hsl(204, 91%, 53%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 153, 255, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            background: hsl(204, 91%, 43%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 153, 255, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                width: 90%;
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
 <header class="header" data-header>
   <div class="container">
-    <div class="overlay" data-overlay></div>
-
     <a href="index.html" class="logo">
-      <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
+                <img src="./assets/images/vehigologo.png" alt="VehiGo logo">
     </a>
 
     <nav class="navbar" data-navbar>
       <ul class="navbar-list">
-        <li>
-          <a href="index.html" class="navbar-link" data-nav-link>Home</a>
-        </li>
-
-        <li>
-          <a href="#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
-        </li>
-
-        <li>
-          <a href="#" class="navbar-link" data-nav-link>About us</a>
-        </li>
-
-        <li>
-          <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-        </li>
-
+                    <li><a href="index.html" class="navbar-link" data-nav-link>Home</a></li>
+                    <li><a href="featured-car.html" class="navbar-link" data-nav-link>Explore cars</a></li>
+                    <li><a href="src/pages/about.html" class="navbar-link" data-nav-link>About us</a></li>
+                    <li><a href="blog.html" class="navbar-link" data-nav-link>Blog</a></li>
+                    <li><a href="src/pages/bill.html" class="navbar-link" data-nav-link>Fare Calculator</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
       <div class="header-contact">
         <a href="tel:1800100100" class="contact-link">1800-100-100</a>
-
         <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
       </div>
-      <!-- Theme Toggle Switch with SVG icons -->
-      <label class="theme-switch" for="theme-toggle">
-        <input type="checkbox" id="theme-toggle" />
-        <span class="slider">
-          <span class="icon sun" aria-label="Light mode">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5" />
-              <line x1="12" y1="1" x2="12" y2="3" />
-              <line x1="12" y1="21" x2="12" y2="23" />
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-              <line x1="1" y1="12" x2="3" y2="12" />
-              <line x1="21" y1="12" x2="23" y2="12" />
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-            </svg>
-          </span>
-          <span class="icon moon" aria-label="Dark mode">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
-            </svg>
-          </span>
-        </span>
-      </label>
-      <li>
-        <a href="./src/pages/about.html" class="navbar-link" data-nav-link>About us</a>
-      </li>
 
-      <li>
-        <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-      </li>
-      <!-- home.html -->
-      <button id="logoutBtn" style="display: none;">Logout</button>
-
-
-
-
-      <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
-        <ion-icon name="car-outline"></ion-icon>
-
-        <span id="aria-label-txt">Explore cars</span>
-      </a>
-
-      <a href="./src/pages/login.html" class="btn user-btn" aria-label="Profile">
+                <a href="src/pages/login.html" class="btn user-btn" aria-label="Profile">
         <ion-icon name="person-outline"></ion-icon>
       </a>
 
@@ -97,214 +331,194 @@
   </div>
 </header>
 
+    <h1>Privacy Policy</h1>
 
-<div style="margin-top: 30px; margin-left: 10px;margin-bottom: 10px;">
-  <h1 style="margin-top: 50px; text-align: center;">PRIVACY POLICY</h1>
-  <br>
-  <br>
+    <main>
+        <section>
   <h2>1. Introduction</h2>
-  <p>Welcome to vehigo. We are committed to protecting your privacy and handling your data in an open and transparent
-    manner. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit
-    our website (the "Service"). Please read this policy carefully. If you do not agree with the terms of this privacy
-    policy, please do not access the site.</p>
+            <p>Welcome to VehiGo. We are committed to protecting your privacy and handling your data in an open and transparent manner. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our car rental services.</p>
 
-  <br>
+            <div class="highlight-box">
+                <p><strong>Important:</strong> Please read this policy carefully. If you do not agree with the terms of this privacy policy, please do not access our services.</p>
+            </div>
 
   <h2>2. Information We Collect</h2>
-  <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
+            <p>We may collect information about you in a variety of ways. The information we may collect includes:</p>
 
-  <p><strong>Personal Data:</strong> Personally identifiable information, such as your name, shipping address, email
-    address, and telephone number, and demographic information, such as your age, gender, hometown, and interests, that
-    you voluntarily give to us when you register with the Site or when you choose to participate in various activities
-    related to the Site, such as online chat and message boards.</p>
+            <h3>Personal Data</h3>
+            <p>Personally identifiable information, such as:</p>
+            <ul>
+                <li>Your name, email address, and phone number</li>
+                <li>Shipping and billing addresses</li>
+                <li>Driver's license information</li>
+                <li>Payment information (credit card details, billing address)</li>
+                <li>Demographic information (age, gender, preferences)</li>
+            </ul>
 
-  <p><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as
-    your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly
-    before and after accessing the Site.</p>
+            <h3>Derivative Data</h3>
+            <p>Information our servers automatically collect when you access our services:</p>
+            <ul>
+                <li>IP address and browser type</li>
+                <li>Operating system and device information</li>
+                <li>Access times and pages viewed</li>
+                <li>Referring website addresses</li>
+            </ul>
 
-  <p><strong>Financial Data:</strong> Financial information, such as data related to your payment method (e.g., valid
-    credit card number, card brand, expiration date) that we may collect when you purchase, order, return, exchange, or
-    request information about our services from the Site.</p>
-
-  <br>
+            <h3>Financial Data</h3>
+            <p>Financial information related to your payment methods, including:</p>
+            <ul>
+                <li>Credit card numbers and expiration dates</li>
+                <li>Bank account information</li>
+                <li>Payment history and transaction records</li>
+            </ul>
 
   <h2>3. How We Use Your Information</h2>
-  <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized
-    experience. Specifically, we may use information collected about you via the Site to:</p>
+            <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you to:</p>
 
-  <ul>
-    <li>Create and manage your account.</li>
-    <li>Process your transactions and send you related information.</li>
-    <li>Enable user-to-user communications.</li>
-    <li>Request feedback and contact you about your use of the Site.</li>
-    <li>Deliver targeted advertising, coupons, newsletters, and other information regarding promotions and the Site to
-      you.</li>
-    <li>Resolve disputes and troubleshoot problems.</li>
-    <li>Respond to product and customer service requests.</li>
+            <ul>
+                <li><strong>Account Management:</strong> Create and manage your VehiGo account</li>
+                <li><strong>Service Delivery:</strong> Process your car rental transactions and send related information</li>
+                <li><strong>Communication:</strong> Enable user-to-user communications and customer support</li>
+                <li><strong>Feedback:</strong> Request feedback and contact you about your use of our services</li>
+                <li><strong>Marketing:</strong> Deliver targeted advertising, promotions, and newsletters</li>
+                <li><strong>Support:</strong> Resolve disputes and troubleshoot problems</li>
+                <li><strong>Customer Service:</strong> Respond to product and customer service requests</li>
+                <li><strong>Legal Compliance:</strong> Comply with legal obligations and protect our rights</li>
   </ul>
 
-  <br>
-
   <h2>4. Disclosure of Your Information</h2>
-  <p>We may share information we have collected about you in certain situations. Your information may be disclosed as
-    follows:</p>
+            <p>We may share information we have collected about you in certain situations:</p>
 
-  <p><strong>By Law or to Protect Rights:</strong> If we believe the release of information about you is necessary to
-    respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights,
-    property, and safety of others, we may share your information as permitted or required by any applicable law, rule,
-    or regulation.</p>
+            <h3>By Law or to Protect Rights</h3>
+            <p>If we believe the release of information about you is necessary to respond to legal process, investigate potential violations of our policies, or protect the rights, property, and safety of others.</p>
 
-  <p><strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform
-    services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services,
-    customer service, and marketing assistance.</p>
+            <h3>Third-Party Service Providers</h3>
+            <p>We may share your information with third parties that perform services for us, including:</p>
+            <ul>
+                <li>Payment processing</li>
+                <li>Data analysis and storage</li>
+                <li>Email delivery services</li>
+                <li>Customer service support</li>
+                <li>Marketing assistance</li>
+            </ul>
 
-  <p><strong>Marketing Communications:</strong> With your consent, or with an opportunity for you to withdraw consent,
-    we may share your information with third parties for marketing purposes, as permitted by law.</p>
+            <h3>Marketing Communications</h3>
+            <p>With your consent, we may share your information with third parties for marketing purposes, as permitted by law.</p>
 
-  <br>
+            <h2>5. Data Security</h2>
+            <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+            <ul>
+                <li>SSL encryption for data transmission</li>
+                <li>Secure servers and databases</li>
+                <li>Regular security audits and updates</li>
+                <li>Access controls and authentication</li>
+            </ul>
 
-  <h2>5. Contact Us</h2>
-  <p>If you have questions or comments about this Privacy Policy, please contact us at: <a
-      href="mailto:privacy@travelgrid.com">privacy@vehigo.com</a></p>
-  <a href="./privacypolicy.html" style="
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #007BFF;
-  color: white;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  transition: background-color 0.3s;
-" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
-    <ion-icon name="chevron-up-outline" style="font-size: 24px;">Up</ion-icon>
-  </a>
+            <h2>6. Your Rights</h2>
+            <p>You have certain rights regarding your personal information:</p>
+            <ul>
+                <li><strong>Access:</strong> Request access to your personal data</li>
+                <li><strong>Correction:</strong> Request correction of inaccurate data</li>
+                <li><strong>Deletion:</strong> Request deletion of your personal data</li>
+                <li><strong>Portability:</strong> Request transfer of your data to another service</li>
+                <li><strong>Objection:</strong> Object to processing of your personal data</li>
+            </ul>
 
+            <h2>7. Contact Us</h2>
+            <div class="contact-info">
+                <h3>Privacy Questions?</h3>
+                <p>If you have questions or comments about this Privacy Policy, please contact us:</p>
+                <p><strong>Email:</strong> <a href="mailto:privacy@vehigo.com">privacy@vehigo.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:1800100100">1800-100-100</a></p>
+                <p><strong>Address:</strong> VehiGo Privacy Team, Madhya Pradesh, India</p>
 </div>
+        </section>
+    </main>
 
-
-
-
-
-
-
-
+    <!-- Footer -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="#" class="logo">
-          <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
-        </a>
-
-        <p class="footer-text">
-          Search for cheap rental cars in Madhya Pradesh. We offer our
-          customers an attractive and fun selection of vehicles as well as
-          an opportunity to rent their cars when not in use.
+        <div class="container" style="max-width: 1200px; margin: auto;">
+            <!-- Main Footer Section -->
+            <div class="footer-top" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem;">
+                <!-- Brand Section -->
+                <div class="footer-brand" style="flex: 1 1 300px;">
+                    <a href="index.html" class="logo">
+                        <img src="./assets/images/vehigologo.png" alt="VehiGo logo" style="width: 160px;" />
+                    </a>
+                    <p class="footer-text" style="margin-top: 1rem; line-height: 1.6;">
+                        🚗 <strong>Find affordable rental cars across Madhya Pradesh!</strong><br>
+                        Choose from a wide range of vehicles, or rent out your own when not in use. We make car rental easy, accessible, and efficient for everyone.
         </p>
       </div>
 
+                <!-- Company and Support Section -->
+                <div style="display: flex; gap: 3rem;">
+                    <!-- Company Section -->
       <ul class="footer-list">
-        <li>
-          <p class="footer-list-title">Company</p>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">About us</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Pricing plans</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Our blog</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Contacts</a>
-        </li>
+                        <li><p class="footer-list-title">Company</p></li>
+                        <li><a href="src/pages/about.html" class="footer-link">About us</a></li>
+                        <li><a href="src/pages/pricing.html" class="footer-link">Pricing plans</a></li>
+                        <li><a href="blog.html" class="footer-link">Our blog</a></li>
+                        <li><a href="ContactUs.html" class="footer-link">Contact us</a></li>
       </ul>
 
+                    <!-- Support Section -->
       <ul class="footer-list">
-        <li>
-          <p class="footer-list-title">Support</p>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Help center</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Ask a question</a>
-        </li>
-
-        <li>
-          <a href="./privacypolicy.html" class="footer-link">Privacy policy</a>
-        </li>
-
-        <li>
-          <a href="./tandc.html" class="footer-link">Terms & conditions</a>
-        </li>
+                        <li><p class="footer-list-title">Support</p></li>
+                        <li><a href="src/pages/help-center.html" class="footer-link">Help center</a></li>
+                        <li><a href="src/pages/Askaques.html" class="footer-link">Ask a question</a></li>
+                        <li><a href="privacypolicy.html" class="footer-link">Privacy policy</a></li>
+                        <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
       </ul>
+                </div>
 
-      <!-- <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title"> </p>
-          </li>
-
-        </ul> -->
+                <!-- Social Icons Section -->
+                <div class="social-icons" style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
+                    <a href="https://www.linkedin.com" target="_blank" style="font-size: 24px; color: #0077b5;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" style="font-size: 24px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" style="font-size: 24px; color: #e1306c;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com" target="_blank" style="font-size: 24px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+                </div>
     </div>
 
-    <div class="footer-bottom">
-      <ul class="social-list">
-        <li>
-          <a href="https://facebook.com/vehigo" class="social-link" target="_blank" rel="noopener">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://instagram.com/vehigo" class="social-link" target="_blank" rel="noopener">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://twitter.com/vehigo" class="social-link" target="_blank" rel="noopener">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://linkedin.com/company/vehigo" class="social-link" target="_blank" rel="noopener">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="mailto:contact@vehigo.com" class="social-link">
-            <ion-icon name="mail-outline"></ion-icon>
-          </a>
-        </li>
-      </ul>
-
-      <p class="copyright">
-        &copy; <span id="copyright-year"></span> <a href="#">VehiGo</a>. All rights reserved. Contact us at <a href="mailto:contact@vehigo.com">contact@vehigo.com</a>
-      </p>
+            <!-- Copyright Section -->
+            <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb;">
+                <p style="font-size: 14px; color: #333;">© <span id="copyright-year">2023</span> Vehigo — All rights reserved.</p>
     </div>
   </div>
 </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
+
 <script>
-  const yearEl = document.getElementById('copyright-year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            var yearSpan = document.getElementById('copyright-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
 </script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
