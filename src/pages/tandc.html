@@ -9,6 +9,79 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 
   <style>
+    /* SIMPLE HEADER STYLES */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #f5f5f5;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 15px 0;
+    }
+
+    .header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .navbar-list {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-link {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .contact-link {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .contact-time {
+      font-size: 12px;
+      color: #000;
+    }
+
+    .btn.user-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
@@ -149,49 +222,27 @@
 </head>
 <header class="header" data-header>
     <div class="container">
-
-      <div class="overlay" data-overlay></div>
-
-      <a href="index.html" class="logo">
-        <img src="../.././assets/images/vehigologo.png" alt="VehiGo logo">
+      <a href="../../index.html" class="logo">
+        <img src="../../assets/images/vehigologo.png" alt="VehiGo logo">
       </a>
 
-<nav class="navbar" data-navbar>
-  <ul class="navbar-list">
-
-    <li>
-      <a href="index.html" class="navbar-link" data-nav-link>Home</a>
-    </li>
-
-    <li>
-      <a href="index.html#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
-    </li>
-
-    <li>
-      <a href="pages/about.html" class="navbar-link" data-nav-link>About us</a>
-    </li>
-
-    <li>
-      <a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a>
-    </li>
-
-    <li>
-      <a href="./pages/bill.html" class="navbar-link" data-nav-link>Fare Calculator</a>
-    </li>
-
-  </ul>
-</nav>
-
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="../../index.html" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="../../featured-car.html" class="navbar-link" data-nav-link>Explore cars</a></li>
+          <li><a href="about.html" class="navbar-link" data-nav-link>About us</a></li>
+          <li><a href="../../blog.html" class="navbar-link" data-nav-link>Blog</a></li>
+          <li><a href="bill.html" class="navbar-link" data-nav-link>Fare Calculator</a></li>
+        </ul>
+      </nav>
 
       <div class="header-actions">
-
         <div class="header-contact">
           <a href="tel:1800100100" class="contact-link">1800-100-100</a>
-
           <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
         </div>
 
-        <a href="./pages/login.html" class="btn user-btn" aria-label="Profile">
+        <a href="login.html" class="btn user-btn" aria-label="Profile">
           <ion-icon name="person-outline"></ion-icon>
         </a>
 
@@ -200,9 +251,7 @@
           <span class="two"></span>
           <span class="three"></span>
         </button>
-
       </div>
-
     </div>
   </header>
 
