@@ -174,6 +174,7 @@ body.dark-mode .footer-link {
 .about-section {
   /* background: var(--gradient); */
   margin:none; /* No gap below header */
+  margin-top: 40px;
   margin-bottom: 30px;
   box-shadow: var(--shadow-1);
 }

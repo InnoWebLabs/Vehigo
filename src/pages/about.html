@@ -23,13 +23,13 @@
 
   <style>
     :root { --vehigo-blue: #3b82f6; --vehigo-blue-dark: #2563eb; }
-    .header { background: linear-gradient(180deg, var(--vehigo-blue) 0%, var(--vehigo-blue-dark) 100%) !important; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 0 rgba(0,0,0,0.15); }
-    .navbar { padding-top: 8px !important; padding-bottom: 8px !important; }
+    .header { background: linear-gradient(180deg, var(--vehigo-blue) 0%, var(--vehigo-blue-dark) 100%) !important; top: 0; z-index: 1000; box-shadow: 0 2px 0 rgba(0,0,0,0.15); }
+    .navbar { padding-top: 8px !important; padding-bottom: 8px !important; margin-left: 20px; }
     .navbar-brand img { height: 40px; }
     .navbar-nav { gap: 6px; align-items: center; }
     .nav-link { color: #eaf2ff !important; font-weight: 600; border-radius: 10px; padding: 8px 12px !important; }
     .nav-link:hover { background: rgba(255,255,255,0.14); color: #ffffff !important; }
-    .nav-link[href$='featured-car.html'] { background: rgba(255,255,255,0.22); border-radius: 9999px; padding: 8px 16px !important; font-weight: 700; color: #ffffff !important; }
+    .nav-link[href$='featured-car.html'] {  border-radius: 9999px; padding: 8px 16px !important; }
     .nav-link[href$='featured-car.html']:hover { background: rgba(255,255,255,0.3); }
     .theme-toggle-btn { border-radius: 9999px; padding: 8px 12px; font-weight: 700; backdrop-filter: blur(6px); }
     .theme-toggle-btn.btn-outline-light { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: #fff !important; }
