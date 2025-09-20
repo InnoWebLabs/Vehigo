@@ -405,3 +405,134 @@ a.google span {
     background: #357abd;
     transform: scale(1.02);
   }
+
+/* Terms and Conditions Checkbox Styles */
+.terms-field {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.terms-checkbox-container {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.terms-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.terms-checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border: 2px solid #0171d3;
+  border-radius: 5px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all 0.3s ease;
+  min-width: 22px;
+}
+
+.terms-checkbox-label input[type="checkbox"]:checked + .checkmark {
+  background-color: #0171d3;
+  border-color: #0171d3;
+}
+
+.terms-checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.terms-text {
+  flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.terms-link {
+  color: #0171d3;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  display: inline;
+}
+
+.terms-link:hover {
+  color: #2b8de3;
+  text-decoration: underline;
+}
+
+/* Disabled submit button when checkbox is not checked */
+#signup-submit-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Add spacing after terms checkbox */
+.terms-field {
+  margin: 20px 0 30px 0;
+}
+
+/* Add spacing before form links */
+.form-link {
+  margin-top: 25px;
+}
+
+/* Error message for terms checkbox */
+.terms-error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 8px;
+  display: none;
+  font-weight: 500;
+}
+
+.terms-checkbox-container.error {
+  border-color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.15);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .terms-checkbox-container {
+    padding: 15px;
+  }
+  
+  .terms-checkbox-label {
+    font-size: 14px;
+    gap: 12px;
+  }
+  
+  .checkmark {
+    width: 20px;
+    height: 20px;
+  }
+}

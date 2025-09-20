@@ -115,13 +115,83 @@
                     <label for="Aadhar">Upload your Aadhar Card: <input id="Aadhar" type="file" name="file"
                             class="field" /></label>
                 </fieldset>
-                <input type="submit" value="Submit" />
+                
+                <!-- Terms and Conditions Checkbox -->
+                <fieldset>
+                    <div class="terms-checkbox-container">
+                        <label class="terms-checkbox-label">
+                            <input type="checkbox" id="terms-checkbox" name="terms-checkbox" required />
+                            <span class="checkmark"></span>
+                            I have read and agree to the 
+                            <a href="tandc.html" target="_blank" class="terms-link">Terms and Conditions of Vehigo</a>
+                        </label>
+                    </div>
+                </fieldset>
+                
+                <input type="submit" value="Submit" id="submit-btn" />
             </form>
         </main>
 
     </div>
     <!-- JavaScript -->
     <script src="scripts/loginscript.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+            const termsCheckbox = document.getElementById("terms-checkbox");
+            const submitBtn = document.getElementById("submit-btn");
+            const termsContainer = document.querySelector(".terms-checkbox-container");
+            
+            // Initially disable submit button
+            submitBtn.disabled = true;
+            
+            // Add error message element
+            const errorMessage = document.createElement("div");
+            errorMessage.className = "terms-error";
+            errorMessage.textContent = "You must agree to the Terms and Conditions to continue.";
+            termsContainer.appendChild(errorMessage);
+            
+            // Checkbox change event
+            termsCheckbox.addEventListener("change", function() {
+                if (this.checked) {
+                    submitBtn.disabled = false;
+                    termsContainer.classList.remove("error");
+                    errorMessage.style.display = "none";
+                } else {
+                    submitBtn.disabled = true;
+                    termsContainer.classList.add("error");
+                    errorMessage.style.display = "block";
+                }
+            });
+            
+            // Form submit event
+            form.addEventListener("submit", function(e) {
+                if (!termsCheckbox.checked) {
+                    e.preventDefault();
+                    termsContainer.classList.add("error");
+                    errorMessage.style.display = "block";
+                    termsCheckbox.focus();
+                    
+                    // Scroll to terms section
+                    termsContainer.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                    
+                    return false;
+                }
+            });
+            
+            // Remove error styling when user starts checking the checkbox
+            termsCheckbox.addEventListener("focus", function() {
+                if (termsContainer.classList.contains("error")) {
+                    termsContainer.classList.remove("error");
+                    errorMessage.style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 
 
