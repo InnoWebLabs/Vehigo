@@ -206,8 +206,22 @@
                 />
               </div>
 
+              <!-- Terms and Conditions Checkbox -->
+              <div class="field terms-field">
+                <div class="terms-checkbox-container">
+                  <label class="terms-checkbox-label">
+                    <input type="checkbox" id="terms-checkbox" name="terms-checkbox" required />
+                    <span class="checkmark"></span>
+                    <span class="terms-text">
+                      I have read and agree to the 
+                      <a href="../../tandc.html" target="_blank" class="terms-link">Terms and Conditions of Vehigo</a>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
               <div class="field button-field">
-                <button type="submit">Signup</button>
+                <button type="submit" id="signup-submit-btn">Signup</button>
               </div>
             </form>
 
@@ -317,11 +331,53 @@
       container.classList.remove("show-signup");
     });
 
+    // Terms and Conditions Checkbox Validation
+    const termsCheckbox = document.getElementById("terms-checkbox");
+    const signupSubmitBtn = document.getElementById("signup-submit-btn");
+    const termsContainer = document.querySelector(".terms-checkbox-container");
+    
+    // Initially disable submit button
+    signupSubmitBtn.disabled = true;
+    
+    // Add error message element
+    const termsErrorMessage = document.createElement("div");
+    termsErrorMessage.className = "terms-error";
+    termsErrorMessage.textContent = "You must agree to the Terms and Conditions to continue.";
+    termsContainer.appendChild(termsErrorMessage);
+    
+    // Checkbox change event
+    termsCheckbox.addEventListener("change", function() {
+      if (this.checked) {
+        signupSubmitBtn.disabled = false;
+        termsContainer.classList.remove("error");
+        termsErrorMessage.style.display = "none";
+      } else {
+        signupSubmitBtn.disabled = true;
+        termsContainer.classList.add("error");
+        termsErrorMessage.style.display = "block";
+      }
+    });
+
     // Handle Signup Form Submission
     if (signupForm) {
       signupForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         signupErrorMessage.textContent = "";
+
+        // Check terms and conditions first
+        if (!termsCheckbox.checked) {
+          termsContainer.classList.add("error");
+          termsErrorMessage.style.display = "block";
+          termsCheckbox.focus();
+          
+          // Scroll to terms section
+          termsContainer.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+          });
+          
+          return;
+        }
 
         if (!signupForm.checkValidity()) {
           signupForm.reportValidity();

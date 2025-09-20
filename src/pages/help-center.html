@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/styles/pricing-help.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/dark.css">
     <style>
         /* Hero */
         .help-hero {
@@ -116,6 +117,168 @@
             align-items: center;
             gap: 12px;
         }
+
+        /* Theme Toggle Button */
+        .theme-toggle-btn {
+            border-radius: 25px !important;
+            padding: 10px 20px !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            border: 2px solid #e5e7eb !important;
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important;
+            color: #374151 !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        }
+        
+        .theme-toggle-btn:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+            border-color: #2563eb !important;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+            color: #2563eb !important;
+        }
+
+        .theme-toggle-btn.btn-outline-light {
+            border-color: rgba(255, 255, 255, 0.3) !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+            backdrop-filter: blur(10px) !important;
+        }
+
+        .theme-toggle-btn.btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+            border-color: rgba(255, 255, 255, 0.5) !important;
+            color: white !important;
+        }
+
+        /* Dark Mode Styles */
+        .dark-theme {
+            background-color: #0f172a !important;
+            color: #e2e8f0 !important;
+        }
+
+        .dark-theme .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
+            border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        }
+
+        .dark-theme .navbar-link {
+            color: #e5e7eb !important;
+        }
+
+        .dark-theme .navbar-link:hover {
+            color: #60a5fa !important;
+            background: rgba(96, 165, 250, 0.1) !important;
+        }
+
+        .dark-theme nav[aria-label="Section links"] {
+            background: #1f2937 !important;
+            border-bottom: 1px solid #374151 !important;
+        }
+
+        .dark-theme nav[aria-label="Section links"] a {
+            color: #e5e7eb !important;
+        }
+
+        .dark-theme nav[aria-label="Section links"] a:hover {
+            background: #374151 !important;
+            color: #f3f4f6 !important;
+        }
+
+        .dark-theme .help-categories {
+            background: #1f2937 !important;
+        }
+
+        .dark-theme .category-card {
+            background: linear-gradient(180deg, #374151, #4b5563) !important;
+            border: 1px solid #4b5563 !important;
+            color: #e5e7eb !important;
+        }
+
+        .dark-theme .category-card h3 {
+            color: #f3f4f6 !important;
+        }
+
+        .dark-theme .category-card p {
+            color: #d1d5db !important;
+        }
+
+        .dark-theme .category-card:hover {
+            background: #4b5563 !important;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.3) !important;
+        }
+
+        .dark-theme .faq-section {
+            background: #111827 !important;
+        }
+
+        .dark-theme .faq-category h2 {
+            color: #f3f4f6 !important;
+        }
+
+        .dark-theme .faq-item {
+            background: #374151 !important;
+            border: 1px solid #4b5563 !important;
+        }
+
+        .dark-theme .faq-question h3 {
+            color: #f3f4f6 !important;
+        }
+
+        .dark-theme .faq-answer {
+            color: #d1d5db !important;
+        }
+
+        .dark-theme .contact-support {
+            background: linear-gradient(180deg, #1f2937, #374151) !important;
+        }
+
+        .dark-theme .contact-support h2 {
+            color: #f3f4f6 !important;
+        }
+
+        .dark-theme .contact-support p {
+            color: #d1d5db !important;
+        }
+
+        .dark-theme .support-card {
+            background: #374151 !important;
+            border: 1px solid #4b5563 !important;
+        }
+
+        .dark-theme .support-card h3 {
+            color: #f3f4f6 !important;
+        }
+
+        .dark-theme .support-card p {
+            color: #d1d5db !important;
+        }
+
+        .dark-theme .footer {
+            background: #111827 !important;
+        }
+
+        .dark-theme .footer-text {
+            color: #d1d5db !important;
+        }
+
+        .dark-theme .footer-list-title {
+            color: #f3f4f6 !important;
+        }
+
+        .dark-theme .footer-link {
+            color: #d1d5db !important;
+        }
+
+        .dark-theme .footer-link:hover {
+            color: #60a5fa !important;
+        }
+
+        .dark-theme .copyright {
+            color: #9ca3af !important;
+        }
     </style>
 </head>
 <body>
@@ -146,6 +309,11 @@
             </nav>
 
             <div class="header-action">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" class="btn theme-toggle-btn" type="button" aria-label="Toggle theme">
+                    <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+                </button>
+
                 <a href="login.html" class="btn user-btn" id="loginBtn" aria-label="Profile">
                     <ion-icon name="person-outline"></ion-icon>
                 </a>
@@ -448,7 +616,7 @@
           </li>
 
           <li>
-            <a href="src/pages/about.html" class="footer-link">About us</a>
+            <a href="about.html" class="footer-link">About us</a>
           </li>
 
           <li>
@@ -460,7 +628,7 @@
           </li>
 
           <li>
-            <a href="ContactUs.html" class="footer-link">Contacts</a>
+            <a href="../../ContactUs.html" class="footer-link">Contacts</a>
           </li>
         </ul>
 
@@ -478,11 +646,11 @@
           </li>
 
           <li>
-            <a href="privacypolicy.html" class="footer-link">Privacy policy</a>
+            <a href="../../privacypolicy.html" class="footer-link">Privacy policy</a>
           </li>
 
           <li>
-            <a href="tandc.html" class="footer-link">Terms & conditions</a>
+            <a href="../../tandc.html" class="footer-link">Terms & conditions</a>
           </li>
         </ul>
 
@@ -492,19 +660,19 @@
           </li>
 
           <li>
-            <a href="index.html" class="footer-link">Home</a>
+            <a href="../../index.html" class="footer-link">Home</a>
           </li>
 
           <li>
-            <a href="featured-car.html" class="footer-link">Explore Cars</a>
+            <a href="../../featured-car.html" class="footer-link">Explore Cars</a>
           </li>
 
           <li>
-            <a href="src/pages/login.html" class="footer-link">Login</a>
+            <a href="login.html" class="footer-link">Login</a>
           </li>
 
           <li>
-            <a href="registrationPage.html" class="footer-link">Register</a>
+            <a href="../../registrationPage.html" class="footer-link">Register</a>
           </li>
         </ul>
       </div>
@@ -559,6 +727,9 @@
 
             // Check login status and update button visibility
             checkLoginStatus();
+            
+            // Initialize dark mode
+            initializeDarkMode();
         });
 
         function checkLoginStatus() {
@@ -621,6 +792,56 @@
                     item.style.display = 'none';
                 }
             });
+        }
+
+        // Dark Mode Functions
+        function initializeDarkMode() {
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            
+            // Apply the saved theme
+            applyTheme(currentTheme);
+            
+            // Add event listener to theme toggle button
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            const label = themeToggle.querySelector('.label');
+            
+            // Toggle between light and dark themes
+            if (body.classList.contains('dark-theme')) {
+                body.classList.remove('dark-theme');
+                themeToggle.classList.remove('btn-outline-light');
+                label.textContent = 'Light';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark-theme');
+                themeToggle.classList.add('btn-outline-light');
+                label.textContent = 'Dark';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function applyTheme(theme) {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            const label = themeToggle.querySelector('.label');
+            
+            if (theme === 'dark') {
+                body.classList.add('dark-theme');
+                themeToggle.classList.add('btn-outline-light');
+                label.textContent = 'Dark';
+            } else {
+                body.classList.remove('dark-theme');
+                themeToggle.classList.remove('btn-outline-light');
+                label.textContent = 'Light';
+            }
         }
     </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
