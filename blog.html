@@ -37,6 +37,33 @@
         z-index: 1000 !important;
       }
       
+      .header .container-fluid {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+      }
+      
+      .navbar {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .navbar-nav {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin-left: auto !important;
+      }
+      
+      .navbar-nav .nav-item {
+        margin: 0 5px !important;
+      }
+      
+      .navbar-brand {
+        margin-right: auto !important;
+      }
+      
       .dark-theme .header {
         background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
         box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
@@ -481,7 +508,8 @@
   <div id="app">
     <!-- Header -->
     <header class="header">
-      <nav class="navbar navbar-expand-xl container py-2">
+      <div class="container-fluid px-4">
+        <nav class="navbar navbar-expand-xl py-2">
         <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Vehigo Home">
           <img src="./assets/images/vehigologo.png" alt="Vehigo" />
         </a>
@@ -520,7 +548,8 @@
             </li>
           </ul>
         </div>
-      </nav>
+        </nav>
+      </div>
     </header>
     <br>
     <main>
