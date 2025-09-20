@@ -118,3 +118,88 @@ input file-upload-button{
 ::-webkit-file-upload-button:hover{
     background: #2b8de3;
 }
+
+/* Terms and Conditions Checkbox Styles */
+.terms-checkbox-container {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.terms-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+}
+
+.terms-checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #0171d3;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: all 0.3s ease;
+}
+
+.terms-checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background-color: #0171d3;
+    border-color: #0171d3;
+}
+
+.terms-checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.terms-link {
+    color: #0171d3;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.terms-link:hover {
+    color: #2b8de3;
+    text-decoration: underline;
+}
+
+/* Disabled submit button when checkbox is not checked */
+#submit-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Error message for terms checkbox */
+.terms-error {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.terms-checkbox-container.error {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+}
