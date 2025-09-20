@@ -309,6 +309,12 @@
       color: var(--vehigo-text);
     }
 
+    /* Dark mode border colors for form elements */
+    .dark-theme .form-select,
+    .dark-theme .form-control {
+      border: 1px solid white;
+    }
+
     /* Section titles */
     .section-title {
       font-weight: 800;
@@ -2014,6 +2020,97 @@
       updateBlogArrows();
       window.addEventListener('resize', updateBlogArrows);
       blogList.addEventListener('scroll', updateBlogArrows);
+
+      // Chatbot functionality
+      const chatbotToggle = document.getElementById('chatbotToggle');
+      const chatbotWindow = document.getElementById('chatbotWindow');
+      const chatbotClose = document.getElementById('chatbotClose');
+      const chatbotInput = document.getElementById('chatbotInput');
+      const chatbotSend = document.getElementById('chatbotSend');
+      const chatbotMessages = document.getElementById('chatbotMessages');
+      const quickActions = document.querySelectorAll('.qa');
+
+      // Toggle chatbot window
+      chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
+      });
+
+      // Close chatbot window
+      chatbotClose.addEventListener('click', () => {
+        chatbotWindow.style.display = 'none';
+      });
+
+      // Send message function
+      function sendMessage(message) {
+        if (!message.trim()) return;
+
+        // Add user message
+        addMessage(message, 'user');
+        
+        // Clear input
+        chatbotInput.value = '';
+
+        // Bot response
+        setTimeout(() => {
+          const botResponse = getBotResponse(message);
+          addMessage(botResponse, 'bot');
+        }, 500);
+      }
+
+      // Add message to chat
+      function addMessage(message, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `bubble ${sender}`;
+        messageDiv.textContent = message;
+        chatbotMessages.appendChild(messageDiv);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+
+      // Get bot response based on user message
+      function getBotResponse(message) {
+        const msg = message.toLowerCase();
+        
+        if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+          return "Hello! Welcome to Vehigo. How can I help you with your car rental needs today?";
+        } else if (msg.includes('rent') || msg.includes('car')) {
+          return "Great! We have a wide selection of cars available for rent. You can browse our featured cars or use the search form to find the perfect vehicle for your needs.";
+        } else if (msg.includes('price') || msg.includes('cost') || msg.includes('pricing')) {
+          return "Our rental prices start from ₹120/hour for budget cars and go up to ₹490/hour for luxury vehicles. Prices vary based on car type, location, and duration.";
+        } else if (msg.includes('contact') || msg.includes('help') || msg.includes('support')) {
+          return "You can contact us at support@vehigo.com or call 1800-100-100. We're available Monday to Saturday, 9:00 AM to 6:00 PM.";
+        } else if (msg.includes('location') || msg.includes('where')) {
+          return "We operate in Bhopal, Indore, and Ujjain. You can select your preferred location in the search form above.";
+        } else if (msg.includes('how are you') || msg.includes('how can you help')) {
+          return "I'm doing great! I'm here to help you with car rentals, pricing information, booking assistance, and answering any questions about our services.";
+        } else {
+          return "I'm here to help! You can ask me about car rentals, pricing, locations, or any other questions about our services. Try asking about renting a car or our pricing.";
+        }
+      }
+
+      // Send button click
+      chatbotSend.addEventListener('click', () => {
+        sendMessage(chatbotInput.value);
+      });
+
+      // Enter key press
+      chatbotInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          sendMessage(chatbotInput.value);
+        }
+      });
+
+      // Quick action buttons
+      quickActions.forEach(button => {
+        button.addEventListener('click', () => {
+          const message = button.getAttribute('data-msg');
+          sendMessage(message);
+        });
+      });
+
+      // Add welcome message
+      setTimeout(() => {
+        addMessage("Hello! I'm your Vehigo assistant. How can I help you today?", 'bot');
+      }, 1000);
     });
   </script>
 </body>
