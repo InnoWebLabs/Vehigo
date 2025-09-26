@@ -389,13 +389,169 @@
         .dark-theme .newsletter-form input { background: rgba(2,6,23,.7); }
         @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 520px) { .footer-top { grid-template-columns: 1fr; } .payments { flex-wrap: wrap; } }
+
+        /* Dark Theme Styles */
+.dark-theme .pricing-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #e5e7eb;
+}
+
+.dark-theme .pricing-hero::before {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+}
+
+.dark-theme .pricing {
+    background: #1a1a1a;
+    color: #e5e7eb;
+}
+
+.dark-theme .pricing-card {
+    background: #2d2d2d;
+    color: #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .pricing-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .pricing-card.featured {
+    border-color: #60a5fa;
+}
+
+.dark-theme .pricing-header h3 {
+    color: #f3f4f6;
+}
+
+.dark-theme .price {
+    color: #60a5fa;
+}
+
+.dark-theme .pricing-features li {
+    color: #d1d5db;
+}
+
+.dark-theme .pricing-features i {
+    color: #60a5fa;
+}
+
+.dark-theme .pricing-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.dark-theme .pricing-btn:hover {
+    background: #2563eb;
+}
+
+.dark-theme .additional-services {
+    background: #1a1a1a;
+}
+
+.dark-theme .additional-services h2 {
+    color: #f3f4f6;
+}
+
+.dark-theme .service-card {
+    background: #2d2d2d;
+    color: #e5e7eb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .service-card h3 {
+    color: #f3f4f6;
+}
+
+.dark-theme .service-card p {
+    color: #d1d5db;
+}
+
+.dark-theme .service-card .price {
+    color: #60a5fa;
+}
+
+/* Dark theme text color adjustments */
+.dark-theme .period {
+    color: #9ca3af;
+}
+
+.dark-theme .pricing-badge {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Ensure good contrast for all text elements */
+.dark-theme body {
+    background-color: #111827;
+    color: #e5e7eb;
+}
+
+.dark-theme .container {
+    color: inherit;
+}
+
+.dark-mode .navbar-brand img {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .dark-mode .navbar-brand:hover img {
+        opacity: 0.8;
+      }
+
+      .dark-mode .logo img {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .dark-mode .logo:hover img {
+        opacity: 0.8;
+      }
+
+      /* Fix header logo visibility in dark mode */
+.dark-theme .navbar-brand img {
+    filter: brightness(0) invert(1);
+}
+
+/* Fix login button visibility in dark mode */
+.dark-theme .btn-vehigo {
+    background: #3b82f6 !important;
+    color: white !important;
+    border: 1px solid #3b82f6 !important;
+}
+
+.dark-theme .btn-vehigo:hover {
+    background: #2563eb !important;
+    border-color: #2563eb !important;
+    color: white !important;
+}
+
+/* Ensure the login button has proper styling in light mode as well */
+.btn-vehigo {
+    background: #2563eb;
+    color: white;
+    border: 1px solid #2563eb;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-vehigo:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    color: white;
+    transform: translateY(-1px);
+}
     </style>
 </head>
 <body>
     <!-- Header (Bootstrap, matches home) -->
     <header class="header">
       <nav class="navbar navbar-expand-xl navbar-light container py-2">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="../../index.html" aria-label="Vehigo Home">
+        <a class="navbar-brand d-flex align-items-center gap-1" href="index.html" aria-label="Vehigo Home">
           <img src="../../assets/images/vehigologo.png" alt="Vehigo" />
         </a>
 
@@ -560,7 +716,7 @@
       <div class="container">
         <div class="footer-top">
           <div class="footer-brand">
-            <a href="../../index.html" class="logo">
+            <a href="../../index.html" class="navbar-brand d-flex align-items-center gap-1">
               <img src="../../assets/images/vehigologo.png" alt="VehiGo logo">
             </a>
             <p class="footer-text">Search for affordable rental cars across Madhya Pradesh. Rent from a wide range of vehicles or list yours to earn when not in use.</p>
