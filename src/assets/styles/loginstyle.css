@@ -533,7 +533,6 @@ a.google span {
   }
 }
 
-
 /* Default border (blue) */
 .field.terms-field {
   border: none;
@@ -558,4 +557,6 @@ a.google span {
   box-sizing: border-box;
 }
 
-
+#signup-modal{
+  z-index: 500;
+}
