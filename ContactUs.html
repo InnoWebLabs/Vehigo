@@ -81,7 +81,7 @@
 
           <li class="nav-item">
             <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
-              <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+              <i class="fa-solid fa-gear"></i><span class="label">Dark</span>
             </button>
           </li>
 
@@ -229,11 +229,11 @@ themeToggleBtn.addEventListener('click', () => {
   if(document.body.classList.contains('dark-mode')){
     themeToggleBtn.classList.remove('light');
     themeToggleBtn.classList.add('dark');
-    themeToggleBtn.querySelector('.label').textContent = 'Dark';
+    themeToggleBtn.querySelector('.label').textContent = 'Light';
   } else {
     themeToggleBtn.classList.remove('dark');
     themeToggleBtn.classList.add('light');
-    themeToggleBtn.querySelector('.label').textContent = 'Light';
+    themeToggleBtn.querySelector('.label').textContent = 'Dark';
   }
 });
 </script>
