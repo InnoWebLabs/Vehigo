@@ -525,12 +525,90 @@
         background-color: #111827 !important;
         border: 1px solid #374151 !important;
       }
-    </style>
+      /* Footer container */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;   /* space between left, center, right */
+  align-items: center;
+  padding: 12px 20px;
+  flex-wrap: wrap;                  /* stacks on small screens */
+  font-size: 14px;
+  color: #222;                      /* base text color */
+}
+
+/* Social icons (left) */
+.social-list {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-list li a {
+  font-size: 18px;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-list li a:hover {
+  color: #003366; /* dark blue hover */
+}
+
+/* Center text */
+.copyright {
+  margin: 0;
+  text-align: center;
+  flex: 1;  /* pushes it to center between left & right */
+  color: #222;
+}
+
+/* Right side links */
+.footer-inline {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.footer-inline a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.footer-inline a:hover {
+  color: #003366; /* dark blue hover */
+  text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .copyright {
+    order: 2; /* place in middle */
+  }
+
+  .footer-inline {
+    order: 3; /* move below copyright */
+  }
+}
+
+      </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
         rel="stylesheet" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </head>
 
 <body>
@@ -883,19 +961,28 @@
             <li><a href="./tandc.html" class="footer-link">Terms & conditions</a></li>
           </ul>
         </div>
-        <div class="footer-bottom">
-          <ul class="social-list">
-            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
-            <li><a href="#" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
-          </ul>
-          <p class="copyright">
-            © 2024 <a href="#">VehiGo</a>. All Rights Reserved.
-          </p>
-        </div>
+       <div class="footer-bottom">
+  <!-- Left: Social Icons -->
+  <ul class="social-list">
+    <li><a href="https://facebook.com/vehigo" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
+    <li><a href="https://instagram.com/vehigo" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
+    <li><a href="https://twitter.com/vehigo" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a></li>
+    <li><a href="https://linkedin.com/company/vehigo" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+    <li><a href="https://github.com/vehigo" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+    <li><a href="mailto:contact@vehigo.com"><ion-icon name="mail-outline"></ion-icon></a></li>
+  </ul>
+
+  <!-- Center: Copyright -->
+  <p class="copyright">© <span id="about-footer-year"></span> VehiGo. All rights reserved.</p>
+
+  <!-- Right: Links -->
+  <div class="footer-inline">
+    <a href="../../privacypolicy.html">Privacy</a>
+    <a href="tandc.html">Terms</a>
+    <a href="../../ContactUs.html">Contact</a>
+  </div>
+</div>
+
       </div>
     </footer>
   </div>  
