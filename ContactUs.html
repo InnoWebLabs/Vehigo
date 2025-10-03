@@ -112,20 +112,53 @@
       <!-- Contact Form -->
       <div class="contact-form">
         <h2>Send us a Message</h2>
-        <div id="successMessage" class="hidden">
+        <div id="successMessage" class="hidden" role="alert" aria-live="polite">
           <div class="success-icon">✓</div>
           <h3>Message Sent!</h3>
           <p>Our Car experts will get back to you within 24 hours.</p>
         </div>
-        <form id="form" class="form">
-          <label>Your Name</label>
-          <input type="text" name="name" placeholder="Enter your full name" minlength="3" required />
+        <form id="form" class="form" novalidate>
+          <div>
+            <label for="contact-name">Your Name</label>
+            <input 
+              type="text" 
+              id="contact-name"
+              name="name" 
+              placeholder="Enter your full name" 
+              minlength="3" 
+              maxlength="50"
+              autocomplete="name"
+              aria-required="true"
+              required 
+            />
+          </div>
 
-          <label>Email Address</label>
-          <input type="email" name="email" placeholder="Enter your email address" required />
+          <div>
+            <label for="contact-email">Email Address</label>
+            <input 
+              type="email" 
+              id="contact-email"
+              name="email" 
+              placeholder="Enter your email address" 
+              autocomplete="email"
+              aria-required="true"
+              required 
+            />
+          </div>
 
-          <label>Message</label>
-          <textarea name="message" rows="6" placeholder="Tell us about your issue..." minlength="10" required></textarea>
+          <div>
+            <label for="contact-message">Message</label>
+            <textarea 
+              id="contact-message"
+              name="message" 
+              rows="6" 
+              placeholder="Tell us about your issue..." 
+              minlength="10" 
+              maxlength="500"
+              aria-required="true"
+              required
+            ></textarea>
+          </div>
 
           <button type="submit">Send Message</button>
         </form>
@@ -233,25 +266,9 @@ themeToggleBtn.addEventListener('click', () => {
 
 
   <!-- Back to Top Button -->
-  <a href="./ContactUs.html" style="
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #007BFF;
-  color: white;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  transition: background-color 0.3s;
-" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
-  <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
-</a>
+  <a href="#" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
 <script>
   const yearEl = document.getElementById('copyright-year');
   if(yearEl) yearEl.textContent = new Date().getFullYear();
