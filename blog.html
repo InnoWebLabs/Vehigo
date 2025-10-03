@@ -570,6 +570,29 @@
     .footer-bottom .mini-links { display: flex; gap: 12px; }
     .footer-bottom .mini-links a { color: #475569; font-size: 0.95rem; }
     .footer-bottom .mini-links a:hover { color: #2563eb; }
+    .footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-list .footer-link {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
     @media (max-width: 992px) {
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -577,6 +600,7 @@
       .footer-grid { grid-template-columns: 1fr; }
       .newsletter .form { flex-direction: column; }
     }
+    
       </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -949,7 +973,7 @@
             <li><a href="https://github.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon></a></li>
             <li><a href="mailto:contact@vehigo.com" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
           </ul>
-          <p class="copyright">© <span id="about-footer-year"></span> VehiGo. All rights reserved.</p>
+          <p class="copyright"><span id="about-footer-year"></span> @VehiGo. All rights reserved.</p>
           <div class="mini-links">
             <a href="../../privacypolicy.html">Privacy</a>
             <a href="tandc.html">Terms</a>
