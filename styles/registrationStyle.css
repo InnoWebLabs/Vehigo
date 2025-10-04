@@ -203,3 +203,59 @@ input file-upload-button{
     border-color: #dc3545;
     background-color: #f8d7da;
 }
+
+/* Password Strength Indicator Styles */
+.password-strength-container {
+    margin: 10px 0;
+    padding: 8px 0;
+}
+
+.password-strength-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.password-strength-fill {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.password-strength-text {
+    font-size: 12px;
+    font-weight: 500;
+    display: block;
+}
+
+/* Password strength levels */
+.password-strength-container.weak .password-strength-fill {
+    background-color: #dc3545;
+    width: 33.33%;
+}
+
+.password-strength-container.weak .password-strength-text {
+    color: #dc3545;
+}
+
+.password-strength-container.medium .password-strength-fill {
+    background-color: #ffc107;
+    width: 66.67%;
+}
+
+.password-strength-container.medium .password-strength-text {
+    color: #856404;
+}
+
+.password-strength-container.strong .password-strength-fill {
+    background-color: #28a745;
+    width: 100%;
+}
+
+.password-strength-container.strong .password-strength-text {
+    color: #155724;
+}
