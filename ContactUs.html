@@ -245,21 +245,43 @@
 
   -->
 
-  <script>// Dark/Light mode toggle
-const themeToggleBtn = document.getElementById('themeToggle');
-themeToggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  if(document.body.classList.contains('dark-mode')){
+  <script>
+  // Dark/Light mode toggle with persistence
+  const themeToggleBtn = document.getElementById('themeToggle');
+  const body = document.body;
+
+  // Apply saved theme on page load
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
     themeToggleBtn.classList.remove('light');
     themeToggleBtn.classList.add('dark');
     themeToggleBtn.querySelector('.label').textContent = 'Light';
   } else {
+    body.classList.remove('dark-mode');
     themeToggleBtn.classList.remove('dark');
     themeToggleBtn.classList.add('light');
     themeToggleBtn.querySelector('.label').textContent = 'Dark';
   }
-});
+
+  // Toggle theme and save preference
+  themeToggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+      themeToggleBtn.classList.remove('light');
+      themeToggleBtn.classList.add('dark');
+      themeToggleBtn.querySelector('.label').textContent = 'Dark';
+    } else {
+      localStorage.setItem('theme', 'light');
+      themeToggleBtn.classList.remove('dark');
+      themeToggleBtn.classList.add('light');
+      themeToggleBtn.querySelector('.label').textContent = 'Light';
+    }
+  });
 </script>
+
     <script src="./scripts/logout.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
