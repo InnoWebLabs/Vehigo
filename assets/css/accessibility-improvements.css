@@ -1,0 +1,168 @@
+/* Accessibility and UI Improvements CSS */
+
+/* Utility classes to replace inline styles */
+.blog-badge-pos {
+  top: 12px !important;
+  right: 12px !important;
+  padding: 6px 10px !important;
+}
+
+.sortby-width {
+  width: 190px;
+}
+
+.home-link-fixed {
+  bottom: 30px;
+  left: 30px;
+  background-color: var(--vehigo-primary);
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  z-index: 1000;
+}
+
+.scroll-btn-style {
+  bottom: 90px;
+  right: 30px;
+  background: var(--vehigo-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-btn-style:hover {
+  background: var(--vehigo-primary-3);
+  transform: translateY(-2px);
+}
+
+.scroll-bottom-style {
+  bottom: 150px;
+}
+
+.chatbot-close-btn {
+  border-radius: 8px;
+}
+
+/* Feature card background styles */
+.feature-card-bg-1,
+.feature-card-bg-2,
+.feature-card-bg-3,
+.feature-card-bg-4 {
+  background: var(--vehigo-card);
+  border: 1px solid var(--vehigo-border);
+  box-shadow: var(--shadow-1);
+}
+
+.feature-card-bg-1 {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.05) 0%,
+    var(--vehigo-card) 100%
+  );
+}
+
+.feature-card-bg-2 {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.05) 0%,
+    var(--vehigo-card) 100%
+  );
+}
+
+.feature-card-bg-3 {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.05) 0%,
+    var(--vehigo-card) 100%
+  );
+}
+
+.feature-card-bg-4 {
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.05) 0%,
+    var(--vehigo-card) 100%
+  );
+}
+
+/* Main content identifier for skip link */
+#main-content {
+  scroll-margin-top: 80px;
+}
+
+/* Improved focus states for better accessibility */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+  outline: 2px solid var(--vehigo-primary);
+  outline-offset: 2px;
+}
+
+/* Skip link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--vehigo-primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 10000;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+  color: white;
+  text-decoration: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --vehigo-primary: #0052cc;
+    --vehigo-text: #000000;
+    --vehigo-bg: #ffffff;
+  }
+
+  .dark-theme {
+    --vehigo-text: #ffffff;
+    --vehigo-bg: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .header,
+  .footer,
+  .floating-elements,
+  .social-links {
+    display: none !important;
+  }
+
+  .main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
