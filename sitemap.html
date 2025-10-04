@@ -307,7 +307,7 @@
         .nav-link {
             font-weight: 600;
             letter-spacing: .2px;
-            color: var(--vehigo-text);
+            color: hsl(213, 94%, 56%);
             white-space: nowrap;
             padding: .75rem .5rem;
             line-height: 1.1;
@@ -316,12 +316,8 @@
             transition: all 0.3s ease;
         }
 
-        .nav-link:hover {
-            color: var(--vehigo-primary);
-            background: rgba(37, 100, 235, 0.1);
-            transform: translateY(-1px);
-        }
-
+        .nav-link:hover { background: rgba(37, 100, 235, 0.1); color: var(--vehigo-primary) !important; }
+        .nav-link { color: var(--vehigo-text) !important; /* ... */ }
         .dark-theme .nav-link {
             color: #e5e7eb;
         }
@@ -468,7 +464,7 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-xl container py-2">
             <a class="navbar-brand d-flex align-items-center gap-1" href="index.html" aria-label="Vehigo Home">
-                <img src="./assets/images/vehigologo.png" alt="Vehigo" />
+                <img src="./assets/images/vehigologo.png" alt="Vehigo" style="background:white;">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
