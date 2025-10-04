@@ -169,6 +169,25 @@ body {
   box-shadow: 0 0 0 4px rgba(59,120,158,0.1);
 }
 
+.form input.input-error,
+.form textarea.input-error {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.form input.input-error:focus,
+.form textarea.input-error:focus {
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+}
+
+.error-message {
+  display: block;
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
 button[type="submit"] {
   margin-top: 1.5rem;
   width: 100%;
@@ -228,6 +247,16 @@ body.dark-mode .form textarea {
 body.dark-mode .form input::placeholder,
 body.dark-mode .form textarea::placeholder {
   color: #bbb;
+}
+
+body.dark-mode .form input.input-error,
+body.dark-mode .form textarea.input-error {
+  border-color: #ef4444;
+  background-color: #450a0a;
+}
+
+body.dark-mode .error-message {
+  color: #fca5a5;
 }
 
 body.dark-mode button[type="submit"] {
@@ -420,4 +449,41 @@ body.dark .newsletter-row input[type="email"] {
 }
 body.dark .newsletter-row input[type="email"]::placeholder {
   color: #9ca3af;
+}
+
+/* BACK TO TOP BUTTON */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-to-top:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.back-to-top ion-icon {
+  font-size: 24px;
+}
+
+body.dark-mode .back-to-top {
+  background-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+body.dark-mode .back-to-top:hover {
+  background-color: #2563eb;
 }
