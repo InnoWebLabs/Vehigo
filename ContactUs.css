@@ -375,6 +375,18 @@ body.dark .footer-link:hover,
 body.dark .social-link:hover {
   color: #60a5fa;
 }
+/* Dark Mode Logo Fix for Navbar & Footer */
+body.dark-mode .navbar-brand img,
+body.dark-mode .footer-brand img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+  background-color: transparent; /* remove any background */
+}
+
+body.dark-mode .navbar-brand:hover img,
+body.dark-mode .footer-brand:hover img {
+  opacity: 0.8;
+}
 
 .footer a {
   color: inherit;
