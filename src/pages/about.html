@@ -73,7 +73,7 @@
     .dark-theme .section { background: #0f1218; }
 
     /* Modern cards and containers */
-    .modern-card, .testimonial-card, .team-member, .location-card, .why-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 18px; }
+    .modern-card, .testimonial-card, .team-member, .location-card, .why-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 18px; text-decoration: none; }
     .dark-theme .modern-card, .dark-theme .testimonial-card, .dark-theme .team-member, .dark-theme .location-card, .dark-theme .why-card { background: #141a22 !important; border-color: #263241 !important; }
     .dark-theme .card-icon { color: #93c5fd; }
 
@@ -110,7 +110,7 @@
     .dark-theme .footer .social-link { color: #cbd5e1; }
     .footer-list-title { font-weight: 800; margin-bottom: 10px; color: #0f172a; }
     .dark-theme .footer-list-title { color: #e2e8f0; }
-    .footer-link { color: #374151; font-weight: 500; }
+    .footer-link { color: #374151; font-weight: 500; text-decoration: none; }
     .footer-link:hover { color: #2563eb; transform: translateX(2px); }
     .newsletter { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 16px; }
     .dark-theme .newsletter { background: #111827; border-color: #263241; }
@@ -189,6 +189,18 @@
 
 #contributors-list .team-bio a:hover {
   background: linear-gradient(135deg, #24292e, #4078c0);
+}
+.testimonials-container {
+  display: flex;
+  gap: 1.5rem;             
+  overflow-x: auto;         
+  scroll-snap-type: x mandatory;
+  padding-right: 1rem;       
+}
+
+.testimonial-card {
+  flex: 0 0 300px;           
+  scroll-snap-align: start;  
 }
 
   </style>

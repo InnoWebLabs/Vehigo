@@ -20,6 +20,29 @@
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Accessibility and Performance Improvements -->
+  <link rel="stylesheet" href="./assets/css/accessibility-improvements.css">
+
+  <!-- SEO and Meta Improvements -->
+  <meta name="description" content="VehiGo - Your trusted car rental platform. Find affordable, reliable rental cars in Madhya Pradesh. Book instantly with seamless rentals and endless adventures.">
+  <meta name="keywords" content="car rental, vehicle rental, car hire, Madhya Pradesh, Bhopal, Indore, affordable cars, rental service">
+  <meta name="author" content="VehiGo Team">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2563eb">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="VehiGo — Seamless Rentals, Endless Adventures">
+  <meta property="og:description" content="Find affordable, reliable rental cars in Madhya Pradesh. Your trusted car rental platform with instant booking.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vehigo-orpin.vercel.app/">
+  <meta property="og:image" content="https://vehigo-orpin.vercel.app/assets/images/vehigologo.png">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VehiGo — Seamless Rentals, Endless Adventures">
+  <meta name="twitter:description" content="Find affordable, reliable rental cars in Madhya Pradesh. Your trusted car rental platform.">
+  <meta name="twitter:image" content="https://vehigo-orpin.vercel.app/assets/images/vehigologo.png">
 
   <!-- Styles -->
   <style>
@@ -134,6 +157,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      -webkit-backdrop-filter: saturate(140%) blur(8px);
       backdrop-filter: saturate(140%) blur(8px);
       background: #fff;
       border-bottom: 1px solid var(--vehigo-border);
@@ -295,6 +319,9 @@
       font-weight: 600;
       font-size: .9rem;
       cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
       user-select: none;
       transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
     }
@@ -448,6 +475,7 @@
       background: rgba(37, 99, 235, .12);
       color: var(--vehigo-primary-3);
       border: 1px solid rgba(37, 99, 235, .18);
+      -webkit-backdrop-filter: blur(2px);
       backdrop-filter: blur(2px);
     }
 
@@ -604,101 +632,34 @@
     }
 
     /* Blog (responsive) */
-    .blog-wrapper {
-      position: relative;
-    }
+.blog-wrapper {
+  overflow: hidden; /* hide the overflow outside 3 cards */
+  position: relative;
+}
 
-    .blog-list {
-      display: flex;
-      gap: 40px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 8px;
-      margin: 0;
-      list-style: none;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-    }
+.blog-list {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
 
-    .blog-list::-webkit-scrollbar {
-      height: 8px;
-    }
+.blog-list li {
+  flex: 0 0 calc(33.333% - 13.33px); /* 3 cards visible, adjust for gap */
+  list-style: none;
+}
 
-    .blog-list::-webkit-scrollbar-thumb {
-      background: rgba(0, 0, 0, .15);
-      border-radius: 999px;
-    }
+.blog-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
 
-    .blog-card {
-      flex: 0 0 310px;
-      width: 250px;
-      height: 400px;
-      scroll-snap-align: start;
-      background: var(--vehigo-card);
-      border: 1px solid var(--vehigo-border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-1);
-      transition: transform .2s ease, box-shadow .25s ease;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-2);
-    }
-
-    .blog-card .card-banner img {
-      height: 180px;
-      object-fit: cover;
-      width: 100%;
-    }
-
-    @media (max-width: 992px) {
-      .blog-card {
-        flex-basis: 280px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .blog-card {
-        flex-basis: 85vw;
-      }
-
-      .blog-card .card-banner img {
-        height: 160px;
-      }
-    }
-
-    .blog-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--vehigo-card);
-      border: 1px solid var(--vehigo-border);
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      box-shadow: var(--shadow-1);
-      opacity: .95;
-    }
-
-    .blog-arrow.left {
-      left: -6px;
-    }
-
-    .blog-arrow.right {
-      right: -6px;
-    }
-
-    @media (max-width:576px) {
-      .blog-arrow {
-        width: 36px;
-        height: 36px;
-      }
-    }
-
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+/*Blogs*/
     .modern-footer {
       background: linear-gradient(135deg, #4e7fb4 0%, #2563eb 50%, #1e40af 100%);
       color: white;
@@ -724,6 +685,7 @@
       padding: 3rem 0 2rem;
       position: relative;
       background: linear-gradient(360deg, white 0%, #b9cdf8 100%);
+      -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
     }
 
@@ -846,6 +808,7 @@
       text-decoration: none;
       border-radius: 12px;
       transition: all 0.3s ease;
+      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -862,6 +825,7 @@
       padding: 1.5rem;
       border-radius: var(--radius-lg);
       border: 1px solid rgba(255, 255, 255, 0.1);
+      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
     }
 
@@ -1102,6 +1066,7 @@
       border-color: rgba(255, 255, 255, 0.3) !important;
       background: rgba(255, 255, 255, 0.1) !important;
       color: white !important;
+      -webkit-backdrop-filter: blur(10px) !important;
       backdrop-filter: blur(10px) !important;
     }
 
@@ -1116,6 +1081,7 @@
       background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
       backdrop-filter: blur(10px) !important;
     }
 
@@ -1204,6 +1170,9 @@
 </head>
 
 <body class="dark-theme">
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
   <div id="animated-bg" aria-hidden="true"></div>
 
   <!-- Preloader -->
@@ -1348,7 +1317,7 @@
                   class="fa-solid fa-rotate-left"></i> Reset</button>
               <div class="ms-auto d-flex align-items-center gap-2">
                 <label for="sortBy" class="fw-semibold me-1">Sort:</label>
-                <select id="sortBy" class="form-select" style="width:190px;">
+                <select id="sortBy" class="form-select sortby-width">
                   <option value="recommended">Recommended</option>
                   <option value="priceAsc">Price: Low to High</option>
                   <option value="priceDesc">Price: High to Low</option>
@@ -1438,8 +1407,7 @@
       </div>
       <div class="row g-3 mt-1">
         <div class="col-12 col-lg-6" data-aos="fade-up">
-          <div class="p-3 rounded-4"
-            style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
+          <div class="p-3 rounded-4 feature-card-bg-1">
             <div class="d-flex align-items-center gap-3">
               <img
                 src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg"
@@ -1516,7 +1484,7 @@
         <p class="section-sub" data-aos="fade-up" data-aos-delay="70">Tips, news, and essential guides for renters &
           hosts.</p>
 
-        <button class="blog-arrow left" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+
         <ul class="blog-list has-scrollbar" id="blogList">
           <li>
             <div class="blog-card" data-aos="fade-up">
@@ -1633,7 +1601,7 @@
             </div>
           </li>
         </ul>
-        <button class="blog-arrow right" aria-label="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
+       
       </div>
     </div>
   </section>
@@ -1748,7 +1716,7 @@
           <a href="./privacypolicy.html">Privacy</a>
           <a href="./tandc.html">Terms</a>
           <a href="./src/pages/help-center.html">Support</a>
-          <a href="./                     sitemap.html">Sitemap</a>
+          <a href="./sitemap.html">Sitemap</a>
         </div>
       </div>
     </div>
@@ -2052,8 +2020,8 @@
 
       // Blog arrows + responsive behavior
       const blogList = document.getElementById('blogList');
-      const leftArrow = document.querySelector('.blog-arrow.left');
-      const rightArrow = document.querySelector('.blog-arrow.right');
+      //const leftArrow = document.querySelector('.blog-arrow.left');
+      //const rightArrow = document.querySelector('.blog-arrow.right');
 
       function updateBlogArrows() {
         const canScroll = blogList.scrollWidth > blogList.clientWidth + 4;
@@ -2389,6 +2357,27 @@
         currentLangSpan.textContent = langCodes[currentLanguage] || 'EN';
       }
     }
+//Blogs Carousel
+const blogList = document.getElementById('blogList');
+const cards = blogList.children;
+const visibleCards = 3; // show 3 at a time
+let index = 0;
+
+function slideNext() {
+
+  const cardWidth = cards[0].offsetWidth + 20; // 20 = gap from CSS
+  index++;
+
+ 
+  if (index > cards.length - visibleCards) {
+    index = 0;
+  }
+  blogList.style.transform = `translateX(-${cardWidth * index}px)`;
+}
+
+setInterval(slideNext, 3000);
+
+
   </script>
 </body>
 
