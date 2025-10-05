@@ -632,101 +632,34 @@
     }
 
     /* Blog (responsive) */
-    .blog-wrapper {
-      position: relative;
-    }
+.blog-wrapper {
+  overflow: hidden; /* hide the overflow outside 3 cards */
+  position: relative;
+}
 
-    .blog-list {
-      display: flex;
-      gap: 40px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 8px;
-      margin: 0;
-      list-style: none;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-    }
+.blog-list {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
 
-    .blog-list::-webkit-scrollbar {
-      height: 8px;
-    }
+.blog-list li {
+  flex: 0 0 calc(33.333% - 13.33px); /* 3 cards visible, adjust for gap */
+  list-style: none;
+}
 
-    .blog-list::-webkit-scrollbar-thumb {
-      background: rgba(0, 0, 0, .15);
-      border-radius: 999px;
-    }
+.blog-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
 
-    .blog-card {
-      flex: 0 0 310px;
-      width: 250px;
-      height: 400px;
-      scroll-snap-align: start;
-      background: var(--vehigo-card);
-      border: 1px solid var(--vehigo-border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-1);
-      transition: transform .2s ease, box-shadow .25s ease;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-2);
-    }
-
-    .blog-card .card-banner img {
-      height: 180px;
-      object-fit: cover;
-      width: 100%;
-    }
-
-    @media (max-width: 992px) {
-      .blog-card {
-        flex-basis: 280px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .blog-card {
-        flex-basis: 85vw;
-      }
-
-      .blog-card .card-banner img {
-        height: 160px;
-      }
-    }
-
-    .blog-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--vehigo-card);
-      border: 1px solid var(--vehigo-border);
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      box-shadow: var(--shadow-1);
-      opacity: .95;
-    }
-
-    .blog-arrow.left {
-      left: -6px;
-    }
-
-    .blog-arrow.right {
-      right: -6px;
-    }
-
-    @media (max-width:576px) {
-      .blog-arrow {
-        width: 36px;
-        height: 36px;
-      }
-    }
-
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+/*Blogs*/
     .modern-footer {
       background: linear-gradient(135deg, #4e7fb4 0%, #2563eb 50%, #1e40af 100%);
       color: white;
@@ -1551,7 +1484,7 @@
         <p class="section-sub" data-aos="fade-up" data-aos-delay="70">Tips, news, and essential guides for renters &
           hosts.</p>
 
-        <button class="blog-arrow left" aria-label="Scroll left"><i class="fa-solid fa-chevron-left"></i></button>
+
         <ul class="blog-list has-scrollbar" id="blogList">
           <li>
             <div class="blog-card" data-aos="fade-up">
@@ -1668,7 +1601,7 @@
             </div>
           </li>
         </ul>
-        <button class="blog-arrow right" aria-label="Scroll right"><i class="fa-solid fa-chevron-right"></i></button>
+       
       </div>
     </div>
   </section>
@@ -2087,8 +2020,8 @@
 
       // Blog arrows + responsive behavior
       const blogList = document.getElementById('blogList');
-      const leftArrow = document.querySelector('.blog-arrow.left');
-      const rightArrow = document.querySelector('.blog-arrow.right');
+      //const leftArrow = document.querySelector('.blog-arrow.left');
+      //const rightArrow = document.querySelector('.blog-arrow.right');
 
       function updateBlogArrows() {
         const canScroll = blogList.scrollWidth > blogList.clientWidth + 4;
@@ -2424,6 +2357,27 @@
         currentLangSpan.textContent = langCodes[currentLanguage] || 'EN';
       }
     }
+//Blogs Carousel
+const blogList = document.getElementById('blogList');
+const cards = blogList.children;
+const visibleCards = 3; // show 3 at a time
+let index = 0;
+
+function slideNext() {
+
+  const cardWidth = cards[0].offsetWidth + 20; // 20 = gap from CSS
+  index++;
+
+ 
+  if (index > cards.length - visibleCards) {
+    index = 0;
+  }
+  blogList.style.transform = `translateX(-${cardWidth * index}px)`;
+}
+
+setInterval(slideNext, 3000);
+
+
   </script>
 </body>
 
