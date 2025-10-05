@@ -103,13 +103,13 @@
                             required /></label>
                     <label for="Location">Location: <input id="location" name="location" type="text" required /></label>
                     <label for="new-password">Password: <input id="new-password" name="new-password" type="password"
-                            pattern="[a-z0-5]{8,}" required /></label>
-                    <label for="confirm-password">Confirm Password: <input id="confirm-password" name="confirm-password"
-                            type="password" pattern="[a-z0-5]{8,}" required /></label>
-                </fieldset>
-                <fieldset>
-                    <label for="picture">Upload Picture: <input id="picture" type="file" class="field" name="file"
-                            class="custom-file-upload" /></label>
+                            pattern="[a-z0-5]{8,}" required oninput="checkPasswordStrength()" aria-describedby="password-strength-container" /></label>
+                    <div id="password-strength-container" class="password-strength-container" style="display: none;" role="status" aria-live="polite" aria-label="Password strength indicator">
+                        <div id="password-strength-bar" class="password-strength-bar" aria-hidden="true">
+                            <div id="password-strength-fill" class="password-strength-fill"></div>
+                        </div>
+                        <span id="password-strength-text" class="password-strength-text"></span>
+                    </div>
                     <label for="driving-license">Upload Original Driving License: <input id="profile-picture"
                             class="field" type="file" name="file" /></label>
                     <label for="Aadhar">Upload your Aadhar Card: <input id="Aadhar" type="file" name="file"
@@ -191,6 +191,64 @@
                 }
             });
         });
+
+        // Password strength checker function
+        function checkPasswordStrength() {
+            const password = document.getElementById("new-password").value;
+            const strengthContainer = document.getElementById("password-strength-container");
+            const strengthBar = document.getElementById("password-strength-fill");
+            const strengthText = document.getElementById("password-strength-text");
+
+            if (password.length === 0) {
+                strengthContainer.style.display = "none";
+                return;
+            }
+
+            strengthContainer.style.display = "block";
+
+            // Password strength criteria
+            let strength = 0;
+            let feedback = "";
+
+            // Length check
+            if (password.length >= 8) {
+                strength += 1;
+            }
+
+            // Character variety checks
+            if (/[a-z]/.test(password)) {
+                strength += 1;
+            }
+
+            if (/[A-Z]/.test(password)) {
+                strength += 1;
+            }
+
+            if (/[0-9]/.test(password)) {
+                strength += 1;
+            }
+
+            if (/[^A-Za-z0-9]/.test(password)) {
+                strength += 1;
+            }
+
+            // Determine strength level and feedback
+            if (strength < 3) {
+                feedback = "Weak";
+                strengthContainer.className = "password-strength-container weak";
+            } else if (strength < 5) {
+                feedback = "Medium";
+                strengthContainer.className = "password-strength-container medium";
+            } else {
+                feedback = "Strong";
+                strengthContainer.className = "password-strength-container strong";
+            }
+
+            strengthText.textContent = feedback + " password";
+
+            // Update ARIA label for dynamic content
+            strengthContainer.setAttribute("aria-label", `Password strength: ${feedback}`);
+        }
     </script>
 </body>
 
