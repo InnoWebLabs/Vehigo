@@ -330,6 +330,11 @@ img {
   transform: translateY(-5px);
 }
 
+.location-card-content p{
+    color : #000000;
+    padding-top: 20px;
+}
+
 /* ===========================
    Footer
 =========================== */
