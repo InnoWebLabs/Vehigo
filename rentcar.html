@@ -99,7 +99,6 @@
       transform: scale(1.05);
     }
 
-    /* Dark mode logo visibility */
     .dark-theme .logo img {
       filter: brightness(0) invert(1);
       opacity: 1;
@@ -585,7 +584,6 @@
       opacity: 0.95;
     }
 
-    /* Socials */
     .socials {
       display: flex;
       gap: 1rem;
@@ -726,8 +724,6 @@
       <input type="checkbox" id="theme-toggle"/>
       <span class="slider">
         <button class="btn-outline-light" id="themebtn"><i class="fa-solid fa-gear"></i> Dark</button>
-        <!-- <button class="btn-outline-light" id="darkbtn">Dark</button> -->
-        
       </span>
     </label>
     <a href="./src/pages/login.html" class="btn-outline-light" id="loginBtn" style="margin-left: 0.75rem;"><i class="fa-regular fa-user"></i> Login</a>
@@ -845,10 +841,11 @@
         <div class="footer-col">
           <h6>Follow</h6>
           <div class="socials">
-            <a href="https://linkedin.com/company/vehigo" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com/vehigo" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://instagram.com/vehigo" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com/vehigo" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.facebook.com/vehigo" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/vehigo" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/vehigo" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/vehigo" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/vehigo" target="_blank"><i class="fab fa-github"></i></a>
           </div>
         </div>
       </div>
@@ -876,74 +873,39 @@
   
   <!-- SCROLL FUNCTIONS -->
   <script>
-    // Scroll to top function
     function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    
-    // Scroll to bottom function
     function scrollToBottom() {
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     }
-    
-    // Show/hide scroll buttons based on scroll position
     function toggleScrollButtons() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      
       const scrollToTopBtn = document.getElementById('scrollToTop');
       const scrollToBottomBtn = document.getElementById('scrollToBottom');
-      
-      // Show scroll to top button when scrolled down
-      if (scrollTop > 300) {
-        scrollToTopBtn.classList.remove('hidden');
-        scrollToTopBtn.classList.add('visible');
-      } else {
-        scrollToTopBtn.classList.remove('visible');
-        scrollToTopBtn.classList.add('hidden');
-      }
-      
-      // Show scroll to bottom button when not at bottom
-      if (scrollTop < scrollHeight - 100) {
-        scrollToBottomBtn.classList.remove('hidden');
-        scrollToBottomBtn.classList.add('visible');
-      } else {
-        scrollToBottomBtn.classList.remove('visible');
-        scrollToBottomBtn.classList.add('hidden');
-      }
+      if (scrollTop > 300) { scrollToTopBtn.classList.remove('hidden'); scrollToTopBtn.classList.add('visible'); }
+      else { scrollToTopBtn.classList.remove('visible'); scrollToTopBtn.classList.add('hidden'); }
+      if (scrollTop < scrollHeight - 100) { scrollToBottomBtn.classList.remove('hidden'); scrollToBottomBtn.classList.add('visible'); }
+      else { scrollToBottomBtn.classList.remove('visible'); scrollToBottomBtn.classList.add('hidden'); }
     }
-    
-    // Add scroll event listener
     window.addEventListener('scroll', toggleScrollButtons);
-    
-    // Initialize button states
-    document.addEventListener('DOMContentLoaded', function() {
-      toggleScrollButtons();
-    });
+    document.addEventListener('DOMContentLoaded', toggleScrollButtons);
   </script>
   
   <!-- THEME SCRIPT -->
   <script>
     const themebtn = document.getElementById('themebtn');
-
     if(localStorage.getItem("theme") === "dark"){
       document.body.classList.add("dark-theme");
       themebtn.innerHTML = '<i class="fa-solid fa-sun"></i> Light';
     }
-
     themebtn.addEventListener("click", () => {
       if(document.body.classList.contains("dark-theme")){
         document.body.classList.remove('dark-theme');
         localStorage.setItem("theme", "light");
         themebtn.innerHTML = '<i class="fa-solid fa-moon"></i> Dark';
-      }
-      else{
+      } else {
         document.body.classList.add('dark-theme');
         localStorage.setItem("theme", "dark");
         themebtn.innerHTML = '<i class="fa-solid fa-sun"></i> Light';
