@@ -2023,27 +2023,32 @@
 
       // Blog arrows + responsive behavior
       const blogList = document.getElementById('blogList');
-      //const leftArrow = document.querySelector('.blog-arrow.left');
-      //const rightArrow = document.querySelector('.blog-arrow.right');
+      const leftArrow = document.querySelector('.blog-arrow.left');
+      const rightArrow = document.querySelector('.blog-arrow.right');
 
       function updateBlogArrows() {
+        if (!blogList || !leftArrow || !rightArrow) return;
         const canScroll = blogList.scrollWidth > blogList.clientWidth + 4;
         leftArrow.style.display = canScroll ? 'grid' : 'none';
         rightArrow.style.display = canScroll ? 'grid' : 'none';
       }
-      leftArrow.addEventListener('click', () => blogList.scrollBy({ left: -340, behavior: 'smooth' }));
-      rightArrow.addEventListener('click', () => blogList.scrollBy({ left: 340, behavior: 'smooth' }));
+      if (leftArrow && rightArrow && blogList) {
+        leftArrow.addEventListener('click', () => blogList.scrollBy({ left: -340, behavior: 'smooth' }));
+        rightArrow.addEventListener('click', () => blogList.scrollBy({ left: 340, behavior: 'smooth' }));
+      }
 
       // Wheel horizontally on desktop
-      blogList.addEventListener('wheel', (e) => {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-          blogList.scrollLeft += e.deltaY;
-        }
-      }, { passive: true });
+      if (blogList) {
+        blogList.addEventListener('wheel', (e) => {
+          if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            blogList.scrollLeft += e.deltaY;
+          }
+        }, { passive: true });
+      }
 
       updateBlogArrows();
       window.addEventListener('resize', updateBlogArrows);
-      blogList.addEventListener('scroll', updateBlogArrows);
+      if (blogList) blogList.addEventListener('scroll', updateBlogArrows);
 
       // Chatbot functionality
       const chatbotToggle = document.getElementById('chatbotToggle');
@@ -2054,14 +2059,61 @@
       const chatbotMessages = document.getElementById('chatbotMessages');
       const quickActions = document.querySelectorAll('.qa');
 
-      // Toggle chatbot window
-      chatbotToggle.addEventListener('click', () => {
-        chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
+      // Open/close helpers for better touch + keyboard support
+      function openChat() {
+        if (getComputedStyle(chatbotWindow).display === 'none') {
+          chatbotWindow.style.display = 'block';
+          chatbotWindow.setAttribute('aria-modal', 'true');
+          setTimeout(() => { try { chatbotInput && chatbotInput.focus(); } catch (_) {} }, 0);
+        }
+      }
+
+      function closeChat() {
+        chatbotWindow.style.display = 'none';
+        chatbotWindow.setAttribute('aria-modal', 'false');
+      }
+
+      function toggleChat() {
+        const isHidden = getComputedStyle(chatbotWindow).display === 'none';
+        if (isHidden) {
+          openChat();
+        } else {
+          closeChat();
+        }
+      }
+
+      // Click to toggle
+      chatbotToggle.addEventListener('click', toggleChat);
+
+      // Touch to toggle (prevents 300ms delay / duplicate click on some devices)
+      chatbotToggle.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        toggleChat();
+      }, { passive: false });
+
+      // Keyboard accessibility (Enter/Space)
+      chatbotToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleChat();
+        }
       });
 
       // Close chatbot window
-      chatbotClose.addEventListener('click', () => {
-        chatbotWindow.style.display = 'none';
+      chatbotClose.addEventListener('click', closeChat);
+      chatbotClose.addEventListener('touchstart', (e) => { e.preventDefault(); closeChat(); }, { passive: false });
+
+      // Close on ESC
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeChat();
+      });
+
+      // Close when clicking outside the chat window
+      document.addEventListener('click', (e) => {
+        const target = e.target;
+        if (!chatbotWindow.contains(target) && target !== chatbotToggle) {
+          closeChat();
+        }
       });
 
       // Send message function
