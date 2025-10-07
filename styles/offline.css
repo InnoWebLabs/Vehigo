@@ -360,7 +360,7 @@ h1 {
 }
 
 .dark-theme .header {
-  background: rgba(10, 15, 26, .96);
+  background: #1a202c;
 }
 
 /* Dark theme base */
@@ -386,7 +386,7 @@ h1 {
   font-weight: 600;
  
   letter-spacing: .2px;
-  color: var(--vehigo-text);
+  color: #1f2937;
   white-space: nowrap;
   padding: .75rem .5rem;
   line-height: 1.1;
@@ -394,7 +394,7 @@ h1 {
 }
 
 .navbar .nav-link:hover {
-  /* color: var(--vehigo-primary); */
+  color: #2563eb;
 }
 
 .navbar-brand img {
