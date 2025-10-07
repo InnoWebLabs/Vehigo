@@ -250,14 +250,66 @@
     }
 
     /* FOOTER */
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      padding: 1.5rem;
-      background-color: #004a99;
+    /* Modern footer (consistent with home page) */
+    .modern-footer {
+      background: linear-gradient(135deg, #4e7fb4 0%, #2563eb 50%, #1e40af 100%);
       color: white;
-      font-size: 0.9rem;
+      margin-top: 4rem;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      box-shadow: 0 -18px 50px rgba(37, 99, 235, .25);
+      position: relative;
+      overflow: hidden;
     }
+
+    .modern-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+
+    .footer-top {
+      padding: 3rem 0 2rem;
+      position: relative;
+      background: linear-gradient(360deg, white 0%, #b9cdf8 100%);
+      backdrop-filter: blur(20px);
+    }
+
+    .footer-brand-section { margin-bottom: 2.5rem; }
+    .footer-logo { height: 48px; margin-bottom: 1rem; filter: brightness(0) invert(1); }
+    .footer-tagline { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .footer-description { opacity: 0.9; line-height: 1.6; max-width: 400px; }
+
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-column h6 {
+      font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; color: white; position: relative; padding-bottom: 0.5rem;
+    }
+    .footer-column h6::after { content: ''; position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: #ffd700; border-radius: 1px; }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 0.75rem; }
+    .footer-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem; }
+    .footer-links a:hover { color: white; transform: translateX(5px); }
+
+    .social-section h6 { font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; color: white; }
+    .social-links { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+    .social-link { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 12px; transition: all 0.3s ease; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+    .social-link:hover { background: rgba(255,255,255,0.2); color: white; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+
+    .footer-bottom { padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.1); }
+    .footer-bottom-content { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; }
+    .footer-bottom-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-bottom-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease; }
+    .footer-bottom-links a:hover { color: white; }
 
     /* DARK MODE STYLES */
     body.dark-mode {
@@ -323,6 +375,8 @@
         top: 10px;
         right: 10px;
       }
+      .footer-links-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .footer-bottom-content { flex-direction: column; text-align: center; }
     }
 
     /* SMOOTH SCROLL */
@@ -474,8 +528,99 @@
     </main>
   </div>
 
-  <footer>
-    Effective Date: January 20, 2023 &nbsp; | &nbsp; Contact: 1800-100-100
+  <footer class="modern-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand-section">
+          <div class="row">
+            <div class="col-lg-6">
+              <img src="../../assets/images/vehigologo.png" alt="Vehigo" class="footer-logo mb-3">
+              <div class="footer-tagline">
+                <ion-icon name="car-outline"></ion-icon>
+                <strong>Affordable rentals across Madhya Pradesh</strong>
+              </div>
+              <p class="footer-description">
+                Choose from a wide range of vehicles — or rent your own when it's idle. Experience seamless rentals with endless adventures across Bhopal, Indore, and Ujjain.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <div class="contact-info" style="background: rgba(255, 255, 255, 0.08); padding: 1.5rem; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1);">
+                <div class="contact-item" style="display:flex; align-items:center; gap:.75rem; margin-bottom:1rem;">
+                  <ion-icon name="call-outline"></ion-icon>
+                  <div class="contact-text"><a href="tel:1800100100" style="color:white; text-decoration:none;">1800-100-100</a> • Mon–Sat: 9:00am–6:00pm</div>
+                </div>
+                <div class="contact-item" style="display:flex; align-items:center; gap:.75rem; margin-bottom:1rem;">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <div class="contact-text"><a href="mailto:support@vehigo.com" style="color:white; text-decoration:none;">support@vehigo.com</a></div>
+                </div>
+                <div class="contact-item" style="display:flex; align-items:center; gap:.75rem;">
+                  <ion-icon name="location-outline"></ion-icon>
+                  <div class="contact-text">Bhopal, Indore & Ujjain, MP</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-links-grid">
+          <div class="footer-column">
+            <h6>Company</h6>
+            <ul class="footer-links">
+              <li><a href="./about.html"><ion-icon name="business-outline"></ion-icon>About Us</a></li>
+              <li><a href="./pricing.html"><ion-icon name="pricetags-outline"></ion-icon>Pricing Plans</a></li>
+              <li><a href="../../blog.html"><ion-icon name="newspaper-outline"></ion-icon>Our Blog</a></li>
+              <li><a href="../../ContactUs.html"><ion-icon name="mail-outline"></ion-icon>Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h6>Support</h6>
+            <ul class="footer-links">
+              <li><a href="./help-center.html"><ion-icon name="help-circle-outline"></ion-icon>Help Center</a></li>
+              <li><a href="./Askaques.html"><ion-icon name="chatbubbles-outline"></ion-icon>Ask a Question</a></li>
+              <li><a href="../../privacypolicy.html"><ion-icon name="shield-checkmark-outline"></ion-icon>Privacy Policy</a></li>
+              <li><a href="./tandc.html"><ion-icon name="document-text-outline"></ion-icon>Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h6>Services</h6>
+            <ul class="footer-links">
+              <li><a href="../../featured-car.html"><ion-icon name="car-sport-outline"></ion-icon>Explore Cars</a></li>
+              <li><a href="../../rentcar.html"><ion-icon name="hand-right-outline"></ion-icon>Rent Your Car</a></li>
+              <li><a href="../../offline.html"><ion-icon name="map-outline"></ion-icon>Offline Centers</a></li>
+              <li><a href="./login.html"><ion-icon name="person-add-outline"></ion-icon>Login</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <div class="social-section">
+              <h6>Follow Us</h6>
+              <div class="social-links">
+                <a href="https://linkedin.com/company/vehigo" target="_blank" class="social-link" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="https://twitter.com/vehigo" target="_blank" class="social-link" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="https://instagram.com/vehigo" target="_blank" class="social-link" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="https://facebook.com/vehigo" target="_blank" class="social-link" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <div class="copyright">© <span id="copyright-year">2025</span> Vehigo — All rights reserved.</div>
+          <div class="footer-bottom-links">
+            <a href="../../privacypolicy.html">Privacy</a>
+            <a href="./tandc.html">Terms</a>
+            <a href="./help-center.html">Support</a>
+            <a href="../../sitemap.html">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- Scripts -->
@@ -485,6 +630,8 @@
     themeToggle.addEventListener("change", function () {
       document.body.classList.toggle("dark-mode", this.checked);
     });
+    const yEl = document.getElementById('copyright-year');
+    if (yEl) { yEl.textContent = new Date().getFullYear(); }
   </script>
 
   <script src="./scripts/logout.js"></script>
