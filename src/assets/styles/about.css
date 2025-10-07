@@ -104,9 +104,7 @@ img {
 
 .section-title {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  font-weight: 800;
+  margin-bottom: 40px !important;
 }
 
 .about-section h1{
@@ -115,6 +113,10 @@ img {
     line-height: 1.12;
     letter-spacing: -.02em;
     -webkit-text-fill-color: #6d28d9;
+}
+
+.about-section{
+  padding: 0px 30px !important;
 }
 
 .gradient-text {
@@ -205,6 +207,7 @@ img {
 }
 
 .testimonial-card {
+  margin: 0px 0px 20px;
   flex: 0 0 300px;
   padding: 20px;
   box-shadow: var(--vehigo-shadow);
