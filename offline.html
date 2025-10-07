@@ -401,6 +401,34 @@
       .dark-theme .navbar-brand:hover img {
         opacity: 0.8;
       }
+
+      /* Ensure header/navbar readable in both themes regardless of Bootstrap bg classes */
+      .header .navbar {
+        background-color: #ffffff !important;
+      }
+      body.dark-theme .header .navbar {
+        background-color: #1a202c !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+      }
+
+      /* Override Bootstrap bg-dark if present */
+      .header .navbar.bg-dark {
+        background-color: #ffffff !important;
+      }
+      body.dark-theme .header .navbar.bg-dark {
+        background-color: #1a202c !important;
+      }
+
+      /* Toggler visibility */
+      .header .navbar .navbar-toggler { border-color: rgba(0,0,0,0.25); }
+      body.dark-theme .header .navbar .navbar-toggler { border-color: rgba(255,255,255,0.35); }
+
+      .header .navbar .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+      body.dark-theme .header .navbar .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
     </style>
   </head>
   <body>
