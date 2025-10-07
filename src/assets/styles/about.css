@@ -18,7 +18,6 @@
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
-  padding-top: 70px; /* header offset */
   background: var(--vehigo-light-bg);
   color: #111827;
   transition: background 0.3s, color 0.3s;
@@ -96,7 +95,7 @@ img {
    Sections
 =========================== */
 .section {
-  padding: 80px 20px;
+  padding: 0px 30px;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   border-radius: 20px;
   margin: 20px;
@@ -108,6 +107,14 @@ img {
   margin-bottom: 40px;
   font-size: 2.5rem;
   font-weight: 800;
+}
+
+.about-section h1{
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 55px;
+    line-height: 1.12;
+    letter-spacing: -.02em;
+    -webkit-text-fill-color: #6d28d9;
 }
 
 .gradient-text {
@@ -232,6 +239,7 @@ img {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: 50px;
 }
 
 .team-member {
@@ -328,6 +336,11 @@ img {
 
 .location-card:hover {
   transform: translateY(-5px);
+}
+
+.location-card-content p{
+    color : #000000;
+    padding-top: 20px;
 }
 
 /* ===========================
