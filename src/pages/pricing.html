@@ -428,8 +428,13 @@
 
       /* Footer (modernized) */
       .footer {
+        background: #f4f7fb;
+        color: #111827;
+        margin-top: 0;
+      }
+      .dark-theme .footer{
         background: #0b1220;
-        color: #cbd5e1;
+        color:#cbd5e1;
         margin-top: 0;
       }
 
@@ -454,8 +459,11 @@
       .footer-text {
         margin-top: 12px;
         line-height: 1.7;
-        color: #94a3b8;
+        color: #475569;
         max-width: 250px;
+      }
+      .dark-theme .footer-text{
+        color:#94a3b8 ;
       }
 
       .footer-list {
@@ -465,9 +473,12 @@
       }
 
       .footer-list-title {
-        color: #e2e8f0;
+        color: black;
         font-weight: 700;
         margin-bottom: 10px;
+      }
+      .dark-theme .footer-list-title{
+        color: #e2e8f0;;
       }
 
       .footer-list li {
@@ -493,6 +504,12 @@
 
       /* Newsletter */
       .newsletter {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        padding: 16px;
+      }
+       .dark-theme .newsletter {
         background: rgba(255, 255, 255, 0.04);
         border: 1px solid rgba(148, 163, 184, 0.15);
         padding: 14px;
@@ -502,8 +519,12 @@
       }
 
       .newsletter p {
-        color: #94a3b8;
+        color: #475569;
         margin: 0 0 10px;
+      }
+
+      .dark-theme .newsletter p{
+        color: #94a3b8;
       }
 
       .newsletter-form {
@@ -515,9 +536,15 @@
         flex: 1;
         padding: 10px 12px;
         border-radius: 10px;
+        border: 1px solid #e5e7eb
+       
+      }
+
+      .dark-theme .newsletter-form input{
         border: 1px solid rgba(148, 163, 184, 0.25);
         background: rgba(15, 23, 42, 0.6);
         color: #e2e8f0;
+
       }
 
       .newsletter-form button {
@@ -543,7 +570,11 @@
         gap: 12px;
         margin-top: 28px;
         padding-top: 18px;
+        border-top: 1px solid #e5e7eb
+      }
+      .dark-theme .footer-bottom{
         border-top: 1px solid rgba(148, 163, 184, 0.15);
+
       }
 
       .social-list {
@@ -572,7 +603,11 @@
       }
 
       .copyright {
+        color: var(--vehigo-gray);
+      }
+      .dark-theme .copyright{
         color: #94a3b8;
+
       }
 
       .payments {
@@ -582,12 +617,17 @@
       }
 
       .badge {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(148, 163, 184, 0.2);
-        color: #cbd5e1;
+        color: #475569;
+        border: 1px solid rgba(100, 102, 107, 0.2);
         padding: 6px 10px;
         border-radius: 10px;
         font-size: 12px;
+      }
+      .dark-theme.badge{
+        color: #cbd5e1;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+
       }
 
       /* Responsive */
