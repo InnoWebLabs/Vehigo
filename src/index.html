@@ -450,6 +450,10 @@
     opacity: 1;
     transform: rotate(30deg) translate(10%, 10%);
   }
+
+  .footer{
+    margin-top: 2rem !important;
+  }
   </style>
   <!-- 
     - favicon
@@ -610,30 +614,77 @@
         </div>
       </section>
 
-      <!-- Footer FAQ -->
-      <section class="section" aria-labelledby="footer-faq-title" style="background:#0b1220;">
-        <div class="container" style="padding:40px 20px 20px; color:#cbd5e1;">
-          <h2 id="footer-faq-title" class="h2 section-title" style="color:#e2e8f0; text-align:center; margin-bottom:20px;">Frequently Asked Questions</h2>
-          <div class="footer-faq" style="max-width:900px; margin:0 auto; display:grid; gap:10px;">
-            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
-              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">How do I book a car?</summary>
-              <div style="margin-top:8px; color:#94a3b8;">Choose a car, select dates, and confirm your booking. You’ll get an instant confirmation.</div>
-            </details>
-            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
-              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">What documents are required?</summary>
-              <div style="margin-top:8px; color:#94a3b8;">A valid driving license and a government ID. International users may need an international driving permit.</div>
-            </details>
-            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
-              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">Is there a security deposit?</summary>
-              <div style="margin-top:8px; color:#94a3b8;">Yes, a refundable deposit may apply based on the car category. It’s released after return checks.</div>
-            </details>
-            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
-              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">Can I cancel or modify my booking?</summary>
-              <div style="margin-top:8px; color:#94a3b8;">Yes. Free cancellation windows vary by plan. You can also modify dates if the car is available.</div>
-            </details>
-          </div>
-        </div>
-      </section>
+      <!-- Filtering and Sorting Section -->
+<section class="filter-sort-section">
+  <div class="container">
+    <h2 class="h2 section-title">Filter and Sort Cars</h2>
+
+    <form id="filter-sort-form">
+      <!-- Filter by Car Type -->
+
+    <div class="grid-container">
+      <div class="input-wrapper">
+        <label for="filter-car-type" class="input-label">Car Type</label>
+        <select name="filter-car-type" id="filter-car-type">
+          <option value="">All</option>
+          <option value="SUV">SUV</option>
+          <option value="Sedan">Sedan</option>
+          <option value="Hatchback">Hatchback</option>
+        </select>
+      </div>
+
+      <!-- Sort by Price -->
+      <div class="input-wrapper">
+        <label for="sort-price" class="input-label">Sort by Price</label>
+        <select name="sort-price" id="sort-price">
+          <option value="">None</option>
+          <option value="low-to-high">Low to High</option>
+          <option value="high-to-low">High to Low</option>
+        </select>
+      </div>
+
+      <!-- Sort by Model Year -->
+      <div class="input-wrapper">
+        <label for="sort-year" class="input-label">Sort by Model Year</label>
+        <select name="sort-year" id="sort-year">
+          <option value="">None</option>
+          <option value="new-to-old">New to Old</option>
+          <option value="old-to-new">Old to New</option>
+        </select>
+      </div>
+
+      <!-- Sort by Ratings -->
+      <div class="input-wrapper">
+        <label for="sort-rating" class="input-label">Sort by Ratings</label>
+        <select name="sort-rating" id="sort-rating">
+          <option value="">None</option>
+          <option value="high-to-low">High to Low</option>
+          <option value="low-to-high">Low to High</option>
+        </select>
+      </div>
+    </div>
+
+      <!-- Filter by Location -->
+    <div class="input-wrapper location-wrapper" 
+     style="width:100%;   
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;">
+        <label for="filter-location" class="input-label">Location</label>
+        <select name="filter-location" id="filter-location"  style="width:90%;">
+          <option value="">All</option>
+          <option value="Bhopal">Bhopal</option>
+          <option value="Indore">Indore</option>
+          <option value="Ujjain">Ujjain</option>
+        </select>
+      </div>
+
+      <center><button type="submit" class="btn" style="width: 90px;">Apply</button></center>
+    </form>
+  </div>
+</section>
+     
 
   <!--featured-car-->
         <section class="section featured-car" id="featured-car">
@@ -1169,181 +1220,6 @@
 
 
       <!-- 
-        - #REVIEW
-      -->
-
-<section class="reviews" id="reviews">
-  <div class="container">
-    <h2 class="h2 section-title">Customer Reviews</h2>
-    
-    <div class="review-carousel">
-      <button class="carousel-control prev-btn" aria-label="Previous review">
-        <ion-icon name="chevron-back-outline"></ion-icon>
-      </button>
-      
-      <div class="review-container">
-        <div class="review-slide active">
-          <div class="review-card">
-            <div class="review-header">
-              <div class="reviewer-image">
-                <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg" alt="Rahul Sharma">
-              </div>
-              <div class="reviewer-info">
-                <h4 class="reviewer-name">Rahul Sharma</h4>
-                <p class="reviewer-status">Verified Customer</p>
-              </div>
-            </div>
-            
-            <div class="review-content">
-              <h4 class="review-title">"Excellent rental experience!"</h4>
-              <p class="review-text">“I recently rented a car from Vehigo, and I couldn't be happier with the experience. The staff was incredibly friendly and helpful, guiding me through the rental process. The car I rented was in excellent condition and drove smoothly throughout my entire trip.”</p>
-            </div>
-            
-            <div class="review-rating">
-              <div class="stars">
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="review-slide">
-          <div class="review-card">
-            <div class="review-header">
-              <div class="reviewer-image">
-                <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jonathan.jpg" alt="Alok Patel">
-              </div>
-              <div class="reviewer-info">
-                <h4 class="reviewer-name">Alok Patel</h4>
-                <p class="reviewer-status">Verified Customer</p>
-              </div>
-            </div>
-            
-            <div class="review-content">
-              <h4 class="review-title">"Quick and hassle-free!"</h4>
-              <p class="review-text">“Renting a car from Vehigo was a breeze! The staff was friendly, the car was clean and well-maintained, and the whole process was quick and hassle-free. I'll definitely be renting from Vehigo again in the future.”</p>
-            </div>
-            
-            <div class="review-rating">
-              <div class="stars">
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star-half"></ion-icon>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="review-slide">
-          <div class="review-card">
-            <div class="review-header">
-              <div class="reviewer-image">
-                <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg" alt="Aaru Gupta">
-              </div>
-              <div class="reviewer-info">
-                <h4 class="reviewer-name">Aaru Gupta</h4>
-                <p class="reviewer-status">Verified Customer</p>
-              </div>
-            </div>
-            
-            <div class="review-content">
-              <h4 class="review-title">"My top choice for car rentals"</h4>
-              <p class="review-text">“Vehigo is my top choice for renting a car whenever I travel. Their service is consistently outstanding, and I appreciate their attention to detail. The vehicles are always clean, and the rental process is quick.”</p>
-            </div>
-            
-            <div class="review-rating">
-              <div class="stars">
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="review-slide">
-          <div class="review-card">
-            <div class="review-header">
-              <div class="reviewer-image">
-                <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jeanette.jpg" alt="Prateeksha Joshi">
-              </div>
-              <div class="reviewer-info">
-                <h4 class="reviewer-name">Prateeksha Joshi</h4>
-                <p class="reviewer-status">Verified Customer</p>
-              </div>
-            </div>
-            
-            <div class="review-content">
-              <h4 class="review-title">"Wonderful experience"</h4>
-              <p class="review-text">“Thank you for the wonderful experience! The car we rented was spacious, comfortable, and fuel-efficient, making our journey enjoyable. The team at Vehigo was friendly and accommodating.”</p>
-            </div>
-            
-            <div class="review-rating">
-              <div class="stars">
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star-outline"></ion-icon>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="review-slide">
-          <div class="review-card">
-            <div class="review-header">
-              <div class="reviewer-image">
-                <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-patrick.jpg" alt="Rohit Mehta">
-              </div>
-              <div class="reviewer-info">
-                <h4 class="reviewer-name">Rohit Mehta</h4>
-                <p class="reviewer-status">Verified Customer</p>
-              </div>
-            </div>
-            
-            <div class="review-content">
-              <h4 class="review-title">"Exceeded my expectations"</h4>
-              <p class="review-text">“I have been a loyal customer of Vehigo for several years now, and they have consistently exceeded my expectations. Their rental fleet is diverse, offering a wide range of vehicles to choose from.”</p>
-            </div>
-            
-            <div class="review-rating">
-              <div class="stars">
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star-half"></ion-icon>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <button class="carousel-control next-btn" aria-label="Next review">
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </button>
-    </div>
-    
-    <div class="carousel-dots">
-      <span class="dot active" data-index="0"></span>
-      <span class="dot" data-index="1"></span>
-      <span class="dot" data-index="2"></span>
-      <span class="dot" data-index="3"></span>
-      <span class="dot" data-index="4"></span>
-    </div>
-  </div>
-</section>
-
-      <!-- 
         - #BLOG
       -->
 
@@ -1592,80 +1468,213 @@
         </div>
       </section>
 
-      <!-- Filtering and Sorting Section -->
-<section class="filter-sort-section">
+
+
+      <!-- 
+        - #REVIEW
+      -->
+
+
+<section class="reviews" id="reviews">
   <div class="container">
-    <h2 class="h2 section-title">Filter and Sort Cars</h2>
-
-    <form id="filter-sort-form">
-      <!-- Filter by Car Type -->
-
-    <div class="grid-container">
-      <div class="input-wrapper">
-        <label for="filter-car-type" class="input-label">Car Type</label>
-        <select name="filter-car-type" id="filter-car-type">
-          <option value="">All</option>
-          <option value="SUV">SUV</option>
-          <option value="Sedan">Sedan</option>
-          <option value="Hatchback">Hatchback</option>
-        </select>
+    <h2 class="h2 section-title">Customer Reviews</h2>
+    
+    <div class="review-carousel">
+      <button class="carousel-control prev-btn" aria-label="Previous review">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+      
+      <div class="review-container">
+        <div class="review-slide active">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-image">
+                <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg" alt="Rahul Sharma">
+              </div>
+              <div class="reviewer-info">
+                <h4 class="reviewer-name">Rahul Sharma</h4>
+                <p class="reviewer-status">Verified Customer</p>
+              </div>
+            </div>
+            
+            <div class="review-content">
+              <h4 class="review-title">"Excellent rental experience!"</h4>
+              <p class="review-text">“I recently rented a car from Vehigo, and I couldn't be happier with the experience. The staff was incredibly friendly and helpful, guiding me through the rental process. The car I rented was in excellent condition and drove smoothly throughout my entire trip.”</p>
+            </div>
+            
+            <div class="review-rating">
+              <div class="stars">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-image">
+                <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jonathan.jpg" alt="Alok Patel">
+              </div>
+              <div class="reviewer-info">
+                <h4 class="reviewer-name">Alok Patel</h4>
+                <p class="reviewer-status">Verified Customer</p>
+              </div>
+            </div>
+            
+            <div class="review-content">
+              <h4 class="review-title">"Quick and hassle-free!"</h4>
+              <p class="review-text">“Renting a car from Vehigo was a breeze! The staff was friendly, the car was clean and well-maintained, and the whole process was quick and hassle-free. I'll definitely be renting from Vehigo again in the future.”</p>
+            </div>
+            
+            <div class="review-rating">
+              <div class="stars">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-half"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-image">
+                <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg" alt="Aaru Gupta">
+              </div>
+              <div class="reviewer-info">
+                <h4 class="reviewer-name">Aaru Gupta</h4>
+                <p class="reviewer-status">Verified Customer</p>
+              </div>
+            </div>
+            
+            <div class="review-content">
+              <h4 class="review-title">"My top choice for car rentals"</h4>
+              <p class="review-text">“Vehigo is my top choice for renting a car whenever I travel. Their service is consistently outstanding, and I appreciate their attention to detail. The vehicles are always clean, and the rental process is quick.”</p>
+            </div>
+            
+            <div class="review-rating">
+              <div class="stars">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-image">
+                <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jeanette.jpg" alt="Prateeksha Joshi">
+              </div>
+              <div class="reviewer-info">
+                <h4 class="reviewer-name">Prateeksha Joshi</h4>
+                <p class="reviewer-status">Verified Customer</p>
+              </div>
+            </div>
+            
+            <div class="review-content">
+              <h4 class="review-title">"Wonderful experience"</h4>
+              <p class="review-text">“Thank you for the wonderful experience! The car we rented was spacious, comfortable, and fuel-efficient, making our journey enjoyable. The team at Vehigo was friendly and accommodating.”</p>
+            </div>
+            
+            <div class="review-rating">
+              <div class="stars">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="review-slide">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-image">
+                <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-patrick.jpg" alt="Rohit Mehta">
+              </div>
+              <div class="reviewer-info">
+                <h4 class="reviewer-name">Rohit Mehta</h4>
+                <p class="reviewer-status">Verified Customer</p>
+              </div>
+            </div>
+            
+            <div class="review-content">
+              <h4 class="review-title">"Exceeded my expectations"</h4>
+              <p class="review-text">“I have been a loyal customer of Vehigo for several years now, and they have consistently exceeded my expectations. Their rental fleet is diverse, offering a wide range of vehicles to choose from.”</p>
+            </div>
+            
+            <div class="review-rating">
+              <div class="stars">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-half"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Sort by Price -->
-      <div class="input-wrapper">
-        <label for="sort-price" class="input-label">Sort by Price</label>
-        <select name="sort-price" id="sort-price">
-          <option value="">None</option>
-          <option value="low-to-high">Low to High</option>
-          <option value="high-to-low">High to Low</option>
-        </select>
-      </div>
-
-      <!-- Sort by Model Year -->
-      <div class="input-wrapper">
-        <label for="sort-year" class="input-label">Sort by Model Year</label>
-        <select name="sort-year" id="sort-year">
-          <option value="">None</option>
-          <option value="new-to-old">New to Old</option>
-          <option value="old-to-new">Old to New</option>
-        </select>
-      </div>
-
-      <!-- Sort by Ratings -->
-      <div class="input-wrapper">
-        <label for="sort-rating" class="input-label">Sort by Ratings</label>
-        <select name="sort-rating" id="sort-rating">
-          <option value="">None</option>
-          <option value="high-to-low">High to Low</option>
-          <option value="low-to-high">Low to High</option>
-        </select>
-      </div>
+      
+      <button class="carousel-control next-btn" aria-label="Next review">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
     </div>
-
-      <!-- Filter by Location -->
-    <div class="input-wrapper location-wrapper" 
-     style="width:100%;   
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 20px;">
-        <label for="filter-location" class="input-label">Location</label>
-        <select name="filter-location" id="filter-location"  style="width:90%;">
-          <option value="">All</option>
-          <option value="Bhopal">Bhopal</option>
-          <option value="Indore">Indore</option>
-          <option value="Ujjain">Ujjain</option>
-        </select>
-      </div>
-
-      <center><button type="submit" class="btn" style="width: 90px;">Apply</button></center>
-    </form>
+    
+    <div class="carousel-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+      <span class="dot" data-index="4"></span>
+    </div>
   </div>
 </section>
 
+
+ <!-- Footer FAQ -->
+      <section class="section" aria-labelledby="footer-faq-title" style="background:#0b1220;">
+        <div class="container" style="padding:40px 20px 20px; color:#cbd5e1;">
+          <h2 id="footer-faq-title" class="h2 section-title" style="color:#e2e8f0; text-align:center; margin-bottom:20px;">Frequently Asked Questions</h2>
+          <div class="footer-faq" style="max-width:900px; margin:0 auto; display:grid; gap:10px;">
+            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
+              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">How do I book a car?</summary>
+              <div style="margin-top:8px; color:#94a3b8;">Choose a car, select dates, and confirm your booking. You’ll get an instant confirmation.</div>
+            </details>
+            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
+              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">What documents are required?</summary>
+              <div style="margin-top:8px; color:#94a3b8;">A valid driving license and a government ID. International users may need an international driving permit.</div>
+            </details>
+            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
+              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">Is there a security deposit?</summary>
+              <div style="margin-top:8px; color:#94a3b8;">Yes, a refundable deposit may apply based on the car category. It’s released after return checks.</div>
+            </details>
+            <details style="background:rgba(255,255,255,0.06); border:1px solid rgba(148,163,184,.2); border-radius:12px; padding:12px 14px;">
+              <summary style="cursor:pointer; list-style:none; font-weight:700; color:#e5e7eb;">Can I cancel or modify my booking?</summary>
+              <div style="margin-top:8px; color:#94a3b8;">Yes. Free cancellation windows vary by plan. You can also modify dates if the car is available.</div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+
     </article>
   </main>
-
 
 
 
