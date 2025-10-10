@@ -455,6 +455,67 @@
         padding: 2rem 0 1.5rem;
       }
     }
+    /* Button Container (Centers the button) */
+.vehigo-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* Button Styling */
+.vehigo-btn {
+  display: inline-block;
+  background-color: var(--vehigo-primary);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+.vehigo-btn:hover {
+  background-color: var(--vehigo-primary-3);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+
+.vehigo-btn:active {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-1);
+}
+
+.vehigo-btn:focus {
+  outline: none;
+  border: 2px solid var(--vehigo-accent);
+}
+
+/* =====================
+   📱 Responsive Styling
+   ===================== */
+@media (max-width: 768px) {
+  .vehigo-btn {
+    padding: 12px 26px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehigo-btn {
+    width: 80%;
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  .vehigo-btn-container {
+    margin-top: 25px;
+  }
+}
   </style>
 </head>
   
@@ -595,6 +656,11 @@
         </div>
       </div>
     </div>
+
+    <div class="vehigo-btn-container">
+  <a href="src/pages/login.html" class="vehigo-btn">← Back to Sign Up</a>
+</div>
+
   </main>
 
   <!-- Back to Home Button -->
