@@ -38,58 +38,6 @@ img {
   border-radius: var(--vehigo-radius);
 }
 
-/* ===========================
-   Header & Navbar
-=========================== */
-.header {
-  /* background: linear-gradient(180deg, var(--vehigo-blue) 0%, var(--vehigo-blue-dark) 100%); */
-  /* background-color: white; */
-  color: black;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.15);
-}
-
-.navbar {
-  padding: 8px 20px !important;
-}
-
-.navbar-brand img {
-  height: 40px;
-}
-
-.navbar-nav {
-  gap: 6px;
-  align-items: center;
-}
-
-.nav-link {
-  color: black !important;
-  font-weight: 600;
-  border-radius: 10px;
-  padding: 8px 12px !important;
-}
-
-.nav-link:hover {
-  background: rgba(255,255,255,0.14);
-  color: black !important;
-}
-
-.nav-link[href$='featured-car.html'] {
-  border-radius: 9999px;
-  padding: 8px 16px !important;
-  background: rgba(255,255,255,0.1);
-}
-
-.theme-toggle-btn {
-  border-radius: 9999px;
-  padding: 8px 12px;
-  font-weight: 700;
-  backdrop-filter: blur(6px);
-}
 
 /* ===========================
    Sections
@@ -409,9 +357,7 @@ img {
   color: #e5e7eb;
 }
 
-.dark-theme .header {
-  background: linear-gradient(180deg, var(--vehigo-dark-bg) 0%, var(--vehigo-dark-bg-2) 100%);
-}
+
 
 .dark-theme .section {
   background: linear-gradient(135deg, #0f1218 0%, #1e293b 100%);
