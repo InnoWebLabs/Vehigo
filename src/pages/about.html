@@ -20,7 +20,11 @@
 
   <style>
     :root { --vehigo-blue: #3b82f6; --vehigo-blue-dark: #2563eb; }
-    <!-- .header { background: linear-gradient(180deg, rgb(2, 9, 88) 0%, rgb(2, 9, 88) 100%) !important; top: 0; z-index: 1000; box-shadow: 0 2px 0 rgba(0,0,0,0.15); } -->
+    <!-- .header {     position: sticky;
+    top: 0; z-index: 100000;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.203);
+    border-bottom: 1px solid var(--glass-brd); padding: 5px 0px;} -->
     .navbar { padding-top: 8px !important; padding-bottom: 8px !important; margin-left: 20px; }
     .navbar-brand img { height: 40px; }
     
@@ -45,12 +49,12 @@
       opacity: 0.8;
     }
     .navbar-nav { gap: 6px; align-items: center; }
-    .nav-link { color: #eaf2ff !important; font-weight: 600; border-radius: 10px; padding: 8px 12px !important; }
-    .nav-link:hover { background: rgba(255,255,255,0.14); color: #ffffff !important; }
+    .nav-link { color: var(--text) !important; font-weight: 600; border-radius: 10px; padding: 8px 12px !important; }
+    .nav-link:hover { background: rgba(124,58,237,.12); color: #000000 !important; }
     .nav-link[href$='featured-car.html'] {  border-radius: 9999px; padding: 8px 16px !important; }
     .nav-link[href$='featured-car.html']:hover { background: rgba(255,255,255,0.3); }
     .theme-toggle-btn { border-radius: 9999px; padding: 8px 12px; font-weight: 700; backdrop-filter: blur(6px);margin: 5px; }
-    .theme-toggle-btn.btn-outline-light { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.12); color: #fff !important; }
+    .theme-toggle-btn.btn-outline-light { border-color: rgba(255,255,255,0.35); background: rgba(0, 0, 0, 0.778); color: #fff !important; }
     .theme-toggle-btn.btn-outline-light:hover { background: rgba(255,255,255,0.2); }
     .btn-vehigo { background: #1d4ed8; color: #fff; border-radius: 9999px; padding: 8px 16px; font-weight: 800; border: none; }
     .btn-vehigo:hover { background: #1e40af; }
@@ -60,8 +64,7 @@
     .dark-theme .nav-link:hover { background: rgba(255,255,255,0.08); }
     .dark-theme .nav-link[href$='featured-car.html'] { background: rgba(255,255,255,0.16); }
 
-    /* Prevent header overlap */
-    body { padding-top: 70px; }
+
 
     /* Dark theme coverage for About page */
     .dark-theme { background-color: #0f0f14; color: #e5e7eb; }
@@ -69,7 +72,7 @@
     .dark-theme p { color: #d1d5db; }
 
     /* Section backgrounds */
-    .section { background: #ffffff; }
+    .section { background: #ffffff; padding: 40px 0px;}
     .dark-theme .section { background: #0f1218; }
 
     /* Modern cards and containers */
@@ -252,7 +255,7 @@
 
     <header class="header">
     <nav class="navbar navbar-expand-xl container py-2 px-3">
-      <a class="navbar-brand d-flex align-items-center gap-1" href="../../index.html" aria-label="Vehigo Home">
+      <a class="navbar-brand d-flex align-items-center gap-1" href="/src/index.html" aria-label="Vehigo Home">
         <img src="../assets/images/vehigologo.png" alt="Vehigo" />
       </a>
 
@@ -263,7 +266,7 @@
 
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/src/index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="../../featured-car.html">Explore cars</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
           <li class="nav-item"><a class="nav-link" href="../../blog.html">Blog</a></li>
@@ -300,7 +303,7 @@
         <section class="section about-section modern-section animate-section">
           <div class="container1">
             <div class="about-content animate-card">
-              <h1 class="h1 gradient-text">About VehiGo</h1>
+              <h1 class="h1 gradient-text"><span style="-webkit-text-fill-color: rgb(0, 0, 0) !important;">About</span> VehiGo</h1>
               <p class="hero-text">Seamless Rentals, Endless Adventures!</p>
               <p>
                 Founded in 2020, VehiGo is a premier car rental service in
@@ -523,21 +526,21 @@
           <div data-aos="flip-right" data-aos-delay="50" class="container" >
             <h2 class="h2 section-title gradient-text" style="margin-bottom: 20px;">🗺️ Where We Operate</h2>
             <div class="locations-list">
-              <a href="../../index.html" class="location-card modern-card animate-card">
+              <a href="/src/index.html" class="location-card modern-card animate-card">
                 <div class="location-card-content">
                   <h3 class="h3 card-title">Bhopal</h3>
                   <p>Explore the city of lakes with our reliable rental cars, perfect for urban adventures and business trips.</p>
                   <span class="card-link modern-btn">Rent in Bhopal</span>
                 </div>
               </a>
-              <a href="../../index.html" class="location-card modern-card animate-card">
+              <a href="/src/index.html" class="location-card modern-card animate-card">
                 <div class="location-card-content">
                   <h3 class="h3 card-title">Indore</h3>
                   <p>Navigate Indore's vibrant streets with our diverse fleet, from compact city cars to luxury vehicles for special occasions.</p>
                   <span class="card-link modern-btn">Rent in Indore</span>
                 </div>
               </a>
-              <a href="../../index.html" class="location-card modern-card animate-card">
+              <a href="/src/index.html" class="location-card modern-card animate-card">
                 <div class="location-card-content">
                   <h3 class="h3 card-title">Ujjain</h3>
                   <p>Discover Ujjain's spiritual and cultural heritage with our convenient rental options for pilgrims and tourists.</p>

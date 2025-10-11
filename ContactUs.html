@@ -54,16 +54,28 @@
         z-index: 1000;
       }
 
-      .navbar-collapse {
-        background-color: #212529;
-        position: absolute;
-        top: 100%;
-        left: -25%;
-        width: 150%;
-        padding: 0.75rem 0;
-        z-index: 1000;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
+  <header>
+    <div class="collapse navbar-collapse" id="navMain">
+      
+        <ul class="navbar-nav ms-auto">
+          <a class="navbar-brand d-flex align-items-center gap-1" href="/src/index.html" aria-label="Vehigo Home">
+        <img src="./assets/images/vehigologo.png" alt="Vehigo" />
+      </a>
+
+
+          <li class="nav-item"><a class="nav-link" href="/src/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="featured-car.html">Explore cars</a></li>
+          <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
+          <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
+
+          <li class="nav-item">
+            <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
+              <i class="fa-solid fa-gear"></i><span class="label">Dark</span>
+            </button>
+          </li>
 
       /* Only apply absolute positioning on mobile */
       @media (min-width: 992px) {

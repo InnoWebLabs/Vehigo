@@ -145,7 +145,7 @@ body {
   background: var(--alice-blue-1);
   overflow-x: hidden;
   overflow-y:auto;
-  padding-top: 100px;
+  padding-top: 10px;
 }
 
 /* Dark theme overrides */

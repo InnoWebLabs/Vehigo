@@ -1186,7 +1186,7 @@
   <!-- Header -->
   <header class="header">
     <nav class="navbar navbar-expand-xl container py-1 px-1 m-3">
-      <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Vehigo Home">
+      <a class="navbar-brand d-flex align-items-center" href="/src/index.html" aria-label="Vehigo Home">
         <img src="./assets/images/vehigologo.png" alt="Vehigo" />
       </a>
 
@@ -1197,7 +1197,7 @@
 
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html" data-translate="nav-home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/src/index.html" data-translate="nav-home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="featured-car.html" data-translate="nav-explore">Explore cars</a></li>
           <li class="nav-item"><a class="nav-link" href="./src/pages/about.html" data-translate="nav-about">About us</a></li>
           <li class="nav-item"><a class="nav-link" href="blog.html" data-translate="nav-blog">Blog</a></li>
@@ -1251,11 +1251,11 @@
         <div class="col-lg-7" data-aos="fade-right">
           <span class="badge">
             <i class="fa-solid fa-location-dot"></i>
-            <span data-translate="hero-location">Live in</span> <strong data-translate="hero-location-bhopal">Bhopal</strong>, <strong data-translate="hero-location-indore">Indore</strong> & <strong data-translate="hero-location-ujjain">Ujjain</strong>
+            <span data-translate="hero-location">Available in</span> <strong data-translate="hero-location-bhopal">Bhopal</strong>, <strong data-translate="hero-location-indore">Indore</strong> & <strong data-translate="hero-location-ujjain">Ujjain</strong>
           </span>
           <h1 class="hero-title mt-3"><span data-translate="hero-title-1">Seamless rentals,</span><br><span
               style="background:linear-gradient(90deg,#4e7fb4,#2563eb); -webkit-background-clip:text; background-clip:text; color:transparent;" data-translate="hero-title-2">Endless
-              Adventures.</span></h1>
+              Adventures!</span></h1>
           <p class="hero-sub mt-2" data-translate="hero-subtitle">Find the perfect car in minutes, from budget hatchbacks to premium SUVs — or list
             your car and earn.</p>
 
@@ -1685,21 +1685,20 @@
         <div class="footer-column">
           <div class="social-section">
             <h6>Follow Us</h6>
-            <div class="social-links">
-              <a href="https://linkedin.com/company/vehigo" target="_blank" class="social-link floating-icon"
-                aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="https://twitter.com/vehigo" target="_blank" class="social-link floating-icon" aria-label="Twitter">
-                <i class="fab fa-x-twitter"></i>
-              </a>
-              <a href="https://instagram.com/vehigo" target="_blank" class="social-link floating-icon"
-                aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://facebook.com/vehigo" target="_blank" class="social-link floating-icon"
-                aria-label="Facebook">
-                <i class="fab fa-facebook"></i>
+            <div class="social-links"><a href="https://www.linkedin.com/company/vehigo" target="_blank" rel="noopener noreferrer" class="social-link floating-icon" aria-label="LinkedIn">
+  <i class="fab fa-linkedin"></i>
+</a>
+<a href="https://x.com/vehigo" target="_blank" rel="noopener noreferrer" class="social-link floating-icon" aria-label="Twitter">
+  <i class="fab fa-x-twitter"></i>
+</a>
+<a href="https://www.instagram.com/vehigo" target="_blank" rel="noopener noreferrer" class="social-link floating-icon" aria-label="Instagram">
+  <i class="fab fa-instagram"></i>
+</a>
+<a href="https://www.facebook.com/vehigo" target="_blank" rel="noopener noreferrer" class="social-link floating-icon" aria-label="Facebook">
+  <i class="fab fa-facebook"></i>
+</a>
+
+              
               </a>
             </div>
           </div>
@@ -2023,27 +2022,32 @@
 
       // Blog arrows + responsive behavior
       const blogList = document.getElementById('blogList');
-      //const leftArrow = document.querySelector('.blog-arrow.left');
-      //const rightArrow = document.querySelector('.blog-arrow.right');
+      const leftArrow = document.querySelector('.blog-arrow.left');
+      const rightArrow = document.querySelector('.blog-arrow.right');
 
       function updateBlogArrows() {
+        if (!blogList || !leftArrow || !rightArrow) return;
         const canScroll = blogList.scrollWidth > blogList.clientWidth + 4;
         leftArrow.style.display = canScroll ? 'grid' : 'none';
         rightArrow.style.display = canScroll ? 'grid' : 'none';
       }
-      leftArrow.addEventListener('click', () => blogList.scrollBy({ left: -340, behavior: 'smooth' }));
-      rightArrow.addEventListener('click', () => blogList.scrollBy({ left: 340, behavior: 'smooth' }));
+      if (leftArrow && rightArrow && blogList) {
+        leftArrow.addEventListener('click', () => blogList.scrollBy({ left: -340, behavior: 'smooth' }));
+        rightArrow.addEventListener('click', () => blogList.scrollBy({ left: 340, behavior: 'smooth' }));
+      }
 
       // Wheel horizontally on desktop
-      blogList.addEventListener('wheel', (e) => {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-          blogList.scrollLeft += e.deltaY;
-        }
-      }, { passive: true });
+      if (blogList) {
+        blogList.addEventListener('wheel', (e) => {
+          if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            blogList.scrollLeft += e.deltaY;
+          }
+        }, { passive: true });
+      }
 
       updateBlogArrows();
       window.addEventListener('resize', updateBlogArrows);
-      blogList.addEventListener('scroll', updateBlogArrows);
+      if (blogList) blogList.addEventListener('scroll', updateBlogArrows);
 
       // Chatbot functionality
       const chatbotToggle = document.getElementById('chatbotToggle');
@@ -2054,14 +2058,61 @@
       const chatbotMessages = document.getElementById('chatbotMessages');
       const quickActions = document.querySelectorAll('.qa');
 
-      // Toggle chatbot window
-      chatbotToggle.addEventListener('click', () => {
-        chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
+      // Open/close helpers for better touch + keyboard support
+      function openChat() {
+        if (getComputedStyle(chatbotWindow).display === 'none') {
+          chatbotWindow.style.display = 'block';
+          chatbotWindow.setAttribute('aria-modal', 'true');
+          setTimeout(() => { try { chatbotInput && chatbotInput.focus(); } catch (_) {} }, 0);
+        }
+      }
+
+      function closeChat() {
+        chatbotWindow.style.display = 'none';
+        chatbotWindow.setAttribute('aria-modal', 'false');
+      }
+
+      function toggleChat() {
+        const isHidden = getComputedStyle(chatbotWindow).display === 'none';
+        if (isHidden) {
+          openChat();
+        } else {
+          closeChat();
+        }
+      }
+
+      // Click to toggle
+      chatbotToggle.addEventListener('click', toggleChat);
+
+      // Touch to toggle (prevents 300ms delay / duplicate click on some devices)
+      chatbotToggle.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        toggleChat();
+      }, { passive: false });
+
+      // Keyboard accessibility (Enter/Space)
+      chatbotToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleChat();
+        }
       });
 
       // Close chatbot window
-      chatbotClose.addEventListener('click', () => {
-        chatbotWindow.style.display = 'none';
+      chatbotClose.addEventListener('click', closeChat);
+      chatbotClose.addEventListener('touchstart', (e) => { e.preventDefault(); closeChat(); }, { passive: false });
+
+      // Close on ESC
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeChat();
+      });
+
+      // Close when clicking outside the chat window
+      document.addEventListener('click', (e) => {
+        const target = e.target;
+        if (!chatbotWindow.contains(target) && target !== chatbotToggle) {
+          closeChat();
+        }
       });
 
       // Send message function
@@ -2148,12 +2199,12 @@
         'nav-offline': 'Offline Centers',
         'nav-rent': 'Rent Your Car',
         'nav-login': 'Login',
-        'hero-location': 'Live in',
+        'hero-location': 'Available in',
         'hero-location-bhopal': 'Bhopal',
         'hero-location-indore': 'Indore',
         'hero-location-ujjain': 'Ujjain',
         'hero-title-1': 'Seamless rentals,',
-        'hero-title-2': 'Endless Adventures.',
+        'hero-title-2': 'Endless Adventures!',
         'hero-subtitle': 'Find the perfect car in minutes, from budget hatchbacks to premium SUVs — or list your car and earn.',
         'car-suv': 'SUV',
         'car-sedan': 'Sedan',
@@ -2177,12 +2228,12 @@
         'nav-offline': 'ऑफलाइन केंद्र',
         'nav-rent': 'अपनी कार किराए पर दें',
         'nav-login': 'लॉगिन',
-        'hero-location': 'रहते हैं',
+        'hero-location': 'उपलब्ध है',
         'hero-location-bhopal': 'भोपाल',
         'hero-location-indore': 'इंदौर',
         'hero-location-ujjain': 'उज्जैन',
         'hero-title-1': 'सहज किराया,',
-        'hero-title-2': 'अंतहीन रोमांच।',
+        'hero-title-2': 'अंतहीन रोमांच!',
         'hero-subtitle': 'बजट हैचबैक से लेकर प्रीमियम एसयूवी तक - या अपनी कार सूचीबद्ध करें और कमाएं।',
         'car-suv': 'एसयूवी',
         'car-sedan': 'सेडान',
@@ -2206,12 +2257,12 @@
         'nav-offline': 'Centros offline',
         'nav-rent': 'Renta tu auto',
         'nav-login': 'Iniciar sesión',
-        'hero-location': 'Vive en',
+        'hero-location': 'Disponible en',
         'hero-location-bhopal': 'Bhopal',
         'hero-location-indore': 'Indore',
         'hero-location-ujjain': 'Ujjain',
         'hero-title-1': 'Alquileres sin problemas,',
-        'hero-title-2': 'Aventuras infinitas.',
+        'hero-title-2': 'Aventuras infinitas!',
         'hero-subtitle': 'Encuentra el auto perfecto en minutos, desde hatchbacks económicos hasta SUVs premium — o lista tu auto y gana.',
         'car-suv': 'SUV',
         'car-sedan': 'Sedán',
@@ -2235,12 +2286,12 @@
         'nav-offline': 'Centres hors ligne',
         'nav-rent': 'Louez votre voiture',
         'nav-login': 'Connexion',
-        'hero-location': 'Vivez à',
+        'hero-location': 'Disponible à',
         'hero-location-bhopal': 'Bhopal',
         'hero-location-indore': 'Indore',
         'hero-location-ujjain': 'Ujjain',
         'hero-title-1': 'Locations sans tracas,',
-        'hero-title-2': 'Aventures infinies.',
+        'hero-title-2': 'Aventures infinies!',
         'hero-subtitle': 'Trouvez la voiture parfaite en quelques minutes, des citadines économiques aux SUV premium — ou listez votre voiture et gagnez.',
         'car-suv': 'SUV',
         'car-sedan': 'Berline',
@@ -2264,12 +2315,12 @@
         'nav-offline': 'Offline-Zentren',
         'nav-rent': 'Vermieten Sie Ihr Auto',
         'nav-login': 'Anmelden',
-        'hero-location': 'Leben in',
+        'hero-location': 'Verfügbar in',
         'hero-location-bhopal': 'Bhopal',
         'hero-location-indore': 'Indore',
         'hero-location-ujjain': 'Ujjain',
         'hero-title-1': 'Nahtlose Vermietungen,',
-        'hero-title-2': 'Endlose Abenteuer.',
+        'hero-title-2': 'Endlose Abenteuer!',
         'hero-subtitle': 'Finden Sie das perfekte Auto in Minuten, von Budget-Kompaktwagen bis hin zu Premium-SUVs — oder listen Sie Ihr Auto und verdienen Sie.',
         'car-suv': 'SUV',
         'car-sedan': 'Limousine',

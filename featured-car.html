@@ -61,10 +61,11 @@
 
     /* Header / Navbar */
     .header{
-      position: sticky; top:0; z-index: 50;
+      position: sticky; top:0; z-index: 500000;
       backdrop-filter: blur(10px);
       background: var(--glass-bg);
       border-bottom: 1px solid var(--glass-brd);
+      padding: 20px 0px;
     }
     .container{
       max-width: 1200px; margin: 0 auto; padding: 16px 20px;
@@ -80,7 +81,7 @@
     
     /* Dark mode logo visibility - when not light theme */
     :not(.light) .logo img {
-      filter: brightness(0) invert(1);
+      filter: brightness(0) invert(0);
       opacity: 1;
       transition: opacity 0.3s ease;
     }
@@ -744,12 +745,12 @@
   <header class="header" data-header>
     <div class="container">
       <nav class="nav">
-        <a href="index.html" class="logo" aria-label="VehiGo home">
+        <a href="/src/index.html" class="logo" aria-label="VehiGo home">
           <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
         </a>
 
         <ul class="navbar-list" role="menubar" aria-label="Primary">
-          <li><a href="index.html" class="navbar-link" role="menuitem">Home</a></li>
+          <li><a href="/src/index.html" class="navbar-link" role="menuitem">Home</a></li>
           <li><a href="featured-car.html" class="navbar-link" role="menuitem">Explore cars</a></li>
           <li><a href="./src/pages/about.html" class="navbar-link" role="menuitem">About us</a></li>
           <li><a href="blog.html" class="navbar-link" role="menuitem">Blog</a></li>

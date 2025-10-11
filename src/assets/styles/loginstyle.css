@@ -10,7 +10,7 @@
 }
 
 .body_tag {
-  background: linear-gradient(rgba(0, 0, 0, 0.884), rgba(0, 0, 0, 0.719)), url(../images/hero_banner_mustang.png) no-repeat center center;
+  background: linear-gradient(rgba(255, 253, 253, 0.884), rgba(0, 0, 0, 0.719)), url(../images/hero_banner_mustang.png) no-repeat center center;
   background-size: cover;
   background-attachment: scroll;   /* ensure it scrolls with content */
   min-height: 170vh;

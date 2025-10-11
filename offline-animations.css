@@ -2,11 +2,11 @@
 
 /* Hero Section Styling */
 .offline-hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  /* padding: 60px 0 40px; */
+  padding: 60px 10px 20px !important;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-color: #f8f9fa;
 }
 
 .offline-hero-section::before {
@@ -21,11 +21,13 @@
 }
 
 .animate-title {
-  font-size: 3rem;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 50px;
+  line-height: 1.12;
+  letter-spacing: -.02em;
   margin-bottom: 1rem;
-  color: white;
+  color: rgb(0, 0, 0);
   animation: slideInDown 1s ease-out;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
@@ -406,15 +408,7 @@
   backdrop-filter: blur(10px);
 }
 
-/* Enhanced gradient text animation */
-.gradient-text {
-  background: linear-gradient(135deg, #007bff, #28a745, #ffc107, #dc3545);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 4s ease-in-out infinite;
-}
+
 
 @keyframes gradientShift {
   0%, 100% {

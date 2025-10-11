@@ -97,25 +97,7 @@
         background-color: #1a202c;
       }
 
-      /* Enhanced gradient text animation */
-      body .gradient-text {
-        background: linear-gradient(135deg, #007bff, #28a745, #ffc107, #dc3545);
-        background-size: 300% 300%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: gradientShift 4s ease-in-out infinite;
-        font-weight: 700;
-      }
-
-      body.dark-theme .gradient-text {
-        background: linear-gradient(135deg, #4da8ff, #6fcf97, #f2c94c, #eb5757);
-        background-size: 300% 300%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: gradientShift 4s ease-in-out infinite;
-      }
+      
 
       @keyframes gradientShift {
         0%,
@@ -222,8 +204,8 @@
       }
 
       .hero-subtitle {
-        font-size: 1.2rem;
-        color: #c8c8c8;
+        font-size: 1rem;
+        color: #838282;
         max-width: 600px;
         margin: 20px auto 0;
       }
@@ -401,6 +383,65 @@
       .dark-theme .navbar-brand:hover img {
         opacity: 0.8;
       }
+      /* Search input styling */
+#searchInput {
+  max-width: 400px;
+  width: 100%;
+  border: 2px solid #007bff;
+  border-radius: 30px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+}
+
+/* Hover + focus effects */
+#searchInput:hover,
+#searchInput:focus {
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+  border-color: #0056b3;
+}
+
+/* Placeholder styling */
+#searchInput::placeholder {
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+#searchInput:focus::placeholder {
+  color: #007bff;
+}
+
+/* Dark theme compatibility */
+body.dark-theme #searchInput {
+  background-color: #2d3748;
+  border-color: #4da8ff;
+  color: #e2e8f0;
+  box-shadow: 0 2px 8px rgba(77, 168, 255, 0.1);
+}
+
+body.dark-theme #searchInput:hover,
+body.dark-theme #searchInput:focus {
+  box-shadow: 0 4px 12px rgba(77, 168, 255, 0.25);
+  border-color: #4da8ff;
+}
+
+body.dark-theme #searchInput::placeholder {
+  color: #a0aec0;
+}
+
+body.dark-theme #searchInput:focus::placeholder {
+  color: #4da8ff;
+}
+#searchInput {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards 0.3s;
+}
+
     </style>
   </head>
   <body>
@@ -409,12 +450,12 @@
     </div>
     <div id="app">
       <header class="header">
-        <nav class="navbar navbar-expand-lg bg-dark">
+        <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
             <!-- Logo -->
             <a
               class="navbar-brand d-flex align-items gap-1"
-              href="index.html"
+              href="/src/index.html"
               aria-label="Vehigo Home"
             >
               <img
@@ -441,7 +482,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html">Home</a>
+                  <a class="nav-link active" href="/src/index.html">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="featured-car.html">Explore Cars</a>
@@ -503,7 +544,7 @@
         <div class="offline-hero-section p-3">
           <div class="container">
             <h1 class="gradient-text animate-title">
-              🗺️ Find VehiGo Centers Near You!
+              <i class="fas fa-map-marker-alt" style="color: rgba(255, 0, 0, 0.599);"></i> Find <span style="color: #6d28d9;">VehiGo</span> Centers, Near You!
             </h1>
             <p class="hero-subtitle animate-subtitle">
               Discover our offline centers across India for personalized service
@@ -518,15 +559,24 @@
           </div>
         </div>
 
-        <div class="centers-section">
-          <div class="container">
-            <h2 class="section-title gradient-text">📍 Our Service Centers</h2>
-            <div
-              class="cards-container mt-4 d-flex flex-wrap justify-content-center gap-4"
-              id="cardsContainer"
-            ></div>
-          </div>
-        </div>
+        <h2 class="section-title gradient-text">📍 Our Service Centers</h2>
+
+<!-- 🔍 Search Box -->
+<div class="text-center mb-4">
+  <input
+    type="text"
+    id="searchInput"
+    class="form-control w-50 mx-auto shadow-sm"
+    placeholder="Search by city name..."
+    style="max-width: 400px; border-radius: 25px; padding: 10px 15px;"
+  />
+</div>
+
+<div
+  class="cards-container mt-4 d-flex flex-wrap justify-content-center gap-4"
+  id="cardsContainer"
+></div>
+
       </main>
 
       <!-- Leaflet JS and other scripts -->
@@ -629,6 +679,18 @@
             });
 
             cardsContainer.appendChild(card);
+            // 🔍 Search Filter Functionality
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("input", (e) => {
+  const query = e.target.value.toLowerCase();
+  const cards = document.querySelectorAll("#cardsContainer .card");
+
+  cards.forEach((card) => {
+    const cityName = card.querySelector("h3").textContent.toLowerCase();
+    card.style.display = cityName.includes(query) ? "block" : "none";
+  });
+});
+
           });
 
           // Smooth map loading animation
@@ -746,7 +808,7 @@
         <div class="container">
           <div class="footer-top">
             <div class="footer-brand">
-              <a href="index.html" class="logo">
+              <a href="/src/index.html" class="logo">
                 <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
               </a>
 
@@ -861,7 +923,7 @@
 
             <p class="copyright">
               &copy; <span id="copyright-year">2025</span>
-              <a href="index.html">VehiGo</a>. All rights reserved. Contact us
+              <a href="/src/index.html">VehiGo</a>. All rights reserved. Contact us
               at <a href="mailto:contact@vehigo.com">contact@vehigo.com</a>
             </p>
           </div>
