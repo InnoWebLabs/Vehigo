@@ -54,28 +54,16 @@
         z-index: 1000;
       }
 
-  <header>
-    <div class="collapse navbar-collapse" id="navMain">
-      
-        <ul class="navbar-nav ms-auto">
-          <a class="navbar-brand d-flex align-items-center gap-1" href="/src/index.html" aria-label="Vehigo Home">
-        <img src="./assets/images/vehigologo.png" alt="Vehigo" />
-      </a>
-
-
-          <li class="nav-item"><a class="nav-link" href="/src/index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="featured-car.html">Explore cars</a></li>
-          <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
-          <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
-
-          <li class="nav-item">
-            <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
-              <i class="fa-solid fa-gear"></i><span class="label">Dark</span>
-            </button>
-          </li>
+      .navbar-collapse {
+        background-color: #212529;
+        position: absolute;
+        top: 100%;
+        left: -25%;
+        width: 150%;
+        padding: 0.75rem 0;
+        z-index: 1000;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
       /* Only apply absolute positioning on mobile */
       @media (min-width: 992px) {
@@ -126,40 +114,15 @@
         animation: gradientShift 4s ease-in-out infinite;
       }
 
-  <!-- Main Content -->
-  <section class="main">
-    <h2 class="heading">Contact Us</h2>
-    <div class="contact-container">
-      
-      <!-- Contact Info Cards -->
-      <div class="contact-info">
-        <h3>Contact Information</h3>
-        <div id="ContactUscards"></div>
-      </div>
-
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <h2>Send us a Message</h2>
-        <div id="successMessage" class="hidden" role="alert" aria-live="polite">
-          <div class="success-icon">✓</div>
-          <h3>Message Sent!</h3>
-          <p>Our Car experts will get back to you within 24 hours.</p>
-        </div>
-        <form id="form" class="form" novalidate>
-          <div>
-            <label for="contact-name">Your Name</label>
-            <input 
-              type="text" 
-              id="contact-name"
-              name="name" 
-              placeholder="Enter your full name" 
-              minlength="3" 
-              maxlength="50"
-              autocomplete="name"
-              aria-required="true"
-              required 
-            />
-          </div>
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
 
       /* Fix for header links visibility */
       .header .navbar-nav .nav-link {

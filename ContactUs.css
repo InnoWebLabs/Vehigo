@@ -10,22 +10,24 @@ body {
   padding: 4rem;
 }
 
-.heading{
-    text-align: center;
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 55px;
-    line-height: 1.12;
-    letter-spacing: -.02em;
-    -webkit-text-fill-color: #2f2f2f;
-    margin-bottom: 0;
-
+.heading {
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 55px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  -webkit-text-fill-color: #2f2f2f;
+  margin-bottom: 0;
 }
 /* NAVBAR */
-.navbar-nav {
+/* .navbar-nav {
   height: 80px;
   background-color: #fff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   display: flex; */
+*/
 /* justify-content: center; Center nav items */
 /* align-items: center; /* Vertically align
   flex-direction: row;
