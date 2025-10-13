@@ -306,9 +306,9 @@ h1 {
   text-decoration: none;
   background-color: white;
   color: black;
-  border-radius: 10px;
-  padding: 15px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.717);
+  border-radius: 30px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 32%);
   border: none;
 }
 

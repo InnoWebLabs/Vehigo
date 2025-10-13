@@ -97,25 +97,7 @@
         background-color: #1a202c;
       }
 
-      /* Enhanced gradient text animation */
-      body .gradient-text {
-        background: linear-gradient(135deg, #007bff, #28a745, #ffc107, #dc3545);
-        background-size: 300% 300%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: gradientShift 4s ease-in-out infinite;
-        font-weight: 700;
-      }
-
-      body.dark-theme .gradient-text {
-        background: linear-gradient(135deg, #4da8ff, #6fcf97, #f2c94c, #eb5757);
-        background-size: 300% 300%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: gradientShift 4s ease-in-out infinite;
-      }
+      
 
       @keyframes gradientShift {
         0%,
@@ -222,8 +204,8 @@
       }
 
       .hero-subtitle {
-        font-size: 1.2rem;
-        color: #c8c8c8;
+        font-size: 1rem;
+        color: #838282;
         max-width: 600px;
         margin: 20px auto 0;
       }
@@ -467,72 +449,13 @@ body.dark-theme #searchInput:focus::placeholder {
       <div class="spinner"></div>
     </div>
     <div id="app">
-      <!-- <header class="header">
-        <nav class="navbar navbar-expand-lg container py-2">
-          <div class="collapse navbar-collapse" id="navMain">
-            <ul class="navbar-nav ms-auto">
-              <a
-                class="navbar-brand d-flex align-items-center gap-1"
-                href="index.html"
-                aria-label="Vehigo Home"
-              >
-                <img src="./assets/images/vehigologo.png" alt="Vehigo" />
-              </a>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="featured-car.html">Explore cars</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./src/pages/about.html">About us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="ContactUs.html">Contact Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="offline.html">Offline Centers</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="rentcar.html">Rent Your Car</a>
-              </li>
-
-               Theme switch -->
-      <!-- <li class="nav-item">
-                <button
-                  id="themeToggle"
-                  class="btn btn-outline-secondary theme-toggle-btn"
-                  type="button"
-                >
-                  <i class="fa-solid fa-moon"></i
-                  ><span class="label"> Dark</span>
-                </button>
-              </li> -->
-
-      <!-- Login & Logout -->
-      <!-- <li class="nav-item">
-                <a
-                  href="./src/pages/login.html"
-                  class="btn btn-vehigo"
-                  id="loginBtn"
-                >
-                  <i class="fa-regular fa-user"></i> <span>Login</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header> -->
       <header class="header">
-        <nav class="navbar navbar-expand-lg bg-dark">
+        <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
             <!-- Logo -->
             <a
               class="navbar-brand d-flex align-items gap-1"
-              href="index.html"
+              href="/src/index.html"
               aria-label="Vehigo Home"
             >
               <img
@@ -621,7 +544,7 @@ body.dark-theme #searchInput:focus::placeholder {
         <div class="offline-hero-section p-3">
           <div class="container">
             <h1 class="gradient-text animate-title">
-              🗺️ Find VehiGo Centers Near You!
+              <i class="fas fa-map-marker-alt" style="color: rgba(255, 0, 0, 0.599);"></i> Find <span style="color: #6d28d9;">VehiGo</span> Centers, Near You!
             </h1>
             <p class="hero-subtitle animate-subtitle">
               Discover our offline centers across India for personalized service
@@ -885,7 +808,7 @@ searchInput.addEventListener("input", (e) => {
         <div class="container">
           <div class="footer-top">
             <div class="footer-brand">
-              <a href="index.html" class="logo">
+              <a href="/src/index.html" class="logo">
                 <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
               </a>
 
@@ -1000,7 +923,7 @@ searchInput.addEventListener("input", (e) => {
 
             <p class="copyright">
               &copy; <span id="copyright-year">2025</span>
-              <a href="index.html">VehiGo</a>. All rights reserved. Contact us
+              <a href="/src/index.html">VehiGo</a>. All rights reserved. Contact us
               at <a href="mailto:contact@vehigo.com">contact@vehigo.com</a>
             </p>
           </div>
