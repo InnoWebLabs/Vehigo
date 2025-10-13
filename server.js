@@ -13,7 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Serve static files (css, js, images, etc.)
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname,'src')));
+app.use(express.static(path.join(__dirname,'assets')));
+app.use(express.static(path.join(__dirname,'images')));
 
 // Serve index.html at root
 app.get("/", (req, res) => {
