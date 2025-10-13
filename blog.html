@@ -34,6 +34,7 @@
         left: 0 !important;
         width: 100% !important;
         z-index: 1000 !important;
+        padding: 20px 0px;
       }
       
       .header .container-fluid {
@@ -116,7 +117,7 @@
       
       .nav-link:hover {
         color: #2563eb !important;
-        background: rgba(37, 100, 235, 0.1) !important;
+       
         transform: translateY(-1px) !important;
       }
       
@@ -126,62 +127,57 @@
       
       .dark-theme .nav-link:hover {
         color: #60a5fa !important;
-        background: rgba(96, 165, 250, 0.1) !important;
+       
       }
       
       /* Theme Toggle Button */
       .theme-toggle-btn {
-        border-radius: 22px !important;
-        padding: 6px 12px !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        transition: all 0.3s ease !important;
-        border: 2px solid #e5e7eb !important;
-        background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important;
-        color: #374151 !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+       background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      margin-right: 5px;
+      padding: 10px 25px !important;
+      font-weight: 700 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
       }
       
       .theme-toggle-btn:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
-        border-color: #2563eb !important;
-        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
-        color: #2563eb !important;
       }
       
-      .theme-toggle-btn.btn-outline-light {
-        border-color: rgba(255,255,255,0.3) !important;
-        background: rgba(255,255,255,0.1) !important;
-        color: white !important;
-        backdrop-filter: blur(10px) !important;
+      
+      
+      .dark-theme .theme-toggle-btn{
+         background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important
+      }
+      .dark-theme .theme-toggle-btn:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
       }
       
-      .theme-toggle-btn.btn-outline-light:hover {
-        background: rgba(255,255,255,0.2) !important;
-        border-color: rgba(255,255,255,0.5) !important;
-        color: white !important;
-      }
-      
+
       /* Login Button */
       .btn-vehigo {
-        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
-        border: none !important;
-        border-radius: 22px !important;
-        padding: 6px 12px !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        color: white !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
-      }
-      
-      .btn-vehigo:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
-        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
-      }
-      
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      margin-right: 5px;
+      padding: 10px 20px !important;
+      font-weight: 600 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
+      text-decoration: none;
+    }
+
+    .btn-vehigo:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+    }
       /* Mobile Menu */
       .navbar-toggler {
         border: none !important;
@@ -568,6 +564,7 @@
     .footer-list{list-style-type: none; }
     .social-list{list-style-type: none;}
     
+    
       </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -610,7 +607,7 @@
             <!-- Theme switch -->
             <li class="nav-item">
               <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
-                <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+                
               </button>
             </li>
 
@@ -967,12 +964,12 @@
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
           document.body.classList.add('dark-theme');
-          themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+          themeToggle.innerHTML = 'Light';
           themeToggle.classList.remove('btn-outline-secondary');
           themeToggle.classList.add('btn-outline-light');
         } else {
           document.body.classList.remove('dark-theme');
-          themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+          themeToggle.innerHTML = 'Dark';
           themeToggle.classList.remove('btn-outline-light');
           themeToggle.classList.add('btn-outline-secondary');
         }
@@ -985,13 +982,13 @@
           if (isDark) {
             document.body.classList.remove('dark-theme');
             localStorage.setItem('theme', 'light');
-            themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+            themeToggle.innerHTML = 'Dark';
             themeToggle.classList.remove('btn-outline-light');
             themeToggle.classList.add('btn-outline-secondary');
           } else {
             document.body.classList.add('dark-theme');
             localStorage.setItem('theme', 'dark');
-            themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+            themeToggle.innerHTML = 'Light';
             themeToggle.classList.remove('btn-outline-secondary');
             themeToggle.classList.add('btn-outline-light');
           }
