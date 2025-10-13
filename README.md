@@ -18,7 +18,7 @@
 
 ## 🌐 Live Demo
 
-👉 [Click here to explore VehiGo](https://vehigo-orpin.vercel.app/)
+👉 [Click here to explore VehiGo](https://vehigo-l38q78iw6-piyusha-chopras-projects.vercel.app)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
