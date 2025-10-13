@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ — VehiGo</title>
+    <link rel="icon" href="favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            /* Primary Accent: Blue */
+            --primary-blue: #007bff;
+            /* Secondary Accent: Dark Blue/Hover */
+            --secondary-dark-blue: #0056b3; 
+            
+            /* Text & Backgrounds */
+            --text-dark: #212529;
+            --text-muted: #6c757d;
+            --bg-light: #f8f9fa;
+            --bg-dark: #1e1e1e;
+            --white: #ffffff;
+            --card-bg: var(--white);
+            --border-color: #eaeaea;
+        }
+
+        /* Dark Mode Overrides */
+        body.dark-mode {
+            background-color: var(--bg-dark);
+            color: var(--white);
+        }
+
+        body.dark-mode header {
+            background: var(--bg-dark);
+            border-bottom-color: #333;
+        }
+
+        body.dark-mode .logo {
+            color: var(--primary-blue);
+        }
+
+        body.dark-mode .nav-links a {
+            color: var(--white);
+        }
+
+        body.dark-mode .nav-links a:hover,
+        body.dark-mode .nav-links a.active {
+            color: var(--primary-blue);
+        }
+
+        body.dark-mode .faq-section h1 {
+            color: var(--primary-blue);
+        }
+
+        body.dark-mode .faq-section p,
+        body.dark-mode .faq-answer {
+            color: #ccc;
+        }
+
+        body.dark-mode .faq-container {
+            background: #2a2a2a;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        body.dark-mode .faq-item {
+            border-bottom-color: #333;
+        }
+
+        body.dark-mode .faq-question {
+            background: #2a2a2a;
+            color: var(--white);
+        }
+
+        body.dark-mode .faq-question:hover {
+            background: var(--bg-dark);
+        }
+        
+        body.dark-mode .faq-answer {
+             background: #2a2a2a;
+        }
+        
+        body.dark-mode footer {
+            background: #111;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-blue); /* Used Blue as the main brand color */
+            text-decoration: none;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        /* Mode Toggle Button */
+        .mode-toggle {
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 5px;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            transition: background 0.3s, color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        body.dark-mode .mode-toggle {
+            color: var(--white);
+        }
+
+        .mode-toggle svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 1.2rem;
+        }
+
+        .faq-section h1 {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            color: var(--primary-blue); /* Used Blue */
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-section p {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-container {
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 1.2rem 1.5rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+        
+        body.dark-mode .faq-question:hover {
+            background: var(--bg-dark);
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.6rem;
+            color: var(--primary-blue); /* Used Blue */
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "–";
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 1.5rem 1.2rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            background: var(--card-bg);
+            transition: background 0.3s;
+        }
+
+        .faq-answer a {
+            color: var(--secondary-dark-blue); /* Used a dark blue for contrast */
+            text-decoration: none;
+        }
+
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background: var(--bg-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--primary-blue); /* Used Blue */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-links {
+                display: none; 
+            }
+            
+            .faq-section {
+                margin: 40px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">VehiGo</a>
+            <div class="nav-actions">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="cars.html">Cars</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="faq.html" class="active">FAQ</a>
+                </div>
+                
+                <button id="modeToggle" class="mode-toggle" aria-label="Toggle dark/light mode">
+                    <svg id="moonIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    <svg id="sunIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="faq-section">
+        <h1>Frequently Asked Questions</h1>
+        <p>Quick answers about VehiGo bookings, rentals, and services.</p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">How can I book a car on VehiGo?</div>
+                <div class="faq-answer">
+                    Browse available cars, choose your preferred one, and click “Book Now.” You’ll be guided through a quick and secure booking process.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What documents do I need to rent?</div>
+                <div class="faq-answer">
+                    A valid driving license and government-issued ID (like Aadhaar or Passport) are mandatory. Payment method verification may be required.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I cancel or modify my booking?</div>
+                <div class="faq-answer">
+                    Yes! You can cancel or reschedule from “My Bookings” up to 24 hours before pickup time without penalties.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Are there extra or hidden charges?</div>
+                <div class="faq-answer">
+                    No hidden fees! All applicable taxes and charges are visible during booking. Late returns or damages may incur additional costs.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Where is VehiGo available?</div>
+                <div class="faq-answer">
+                    VehiGo currently serves multiple major cities across India, with ongoing expansion to new regions for better access.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How can I contact support?</div>
+                <div class="faq-answer">
+                    Visit our <a href="contact.html">Contact</a> page or email <a href="mailto:support@vehigo.com">support@vehigo.com</a>. Our team is available 24/7.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 VehiGo. All Rights Reserved.</p>
+        <p>
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms & Conditions</a> |
+            <a href="contact.html">Contact Us</a>
+        </p>
+    </footer>
+
+    <script>
+        // --- FAQ Toggle Logic ---
+        document.querySelectorAll(".faq-item").forEach(item => {
+            item.querySelector(".faq-question").addEventListener("click", () => {
+                // Collapse all other active items
+                document.querySelectorAll(".faq-item.active").forEach(activeItem => {
+                    if (activeItem !== item) {
+                        activeItem.classList.remove("active");
+                    }
+                });
+                // Toggle the clicked item
+                item.classList.toggle("active");
+            });
+        });
+
+        // --- Dark/Light Mode Logic ---
+        const modeToggle = document.getElementById("modeToggle");
+        const body = document.body;
+        const moonIcon = modeToggle.querySelector('svg[viewBox="0 0 24 24"][style*="display: none"]');
+        const sunIcon = modeToggle.querySelector('svg[viewBox="0 0 24 24"]:not([style*="display: none"])');
+
+
+        const applyTheme = (isDark) => {
+            if (isDark) {
+                body.classList.add("dark-mode");
+                moonIcon.style.display = "block";
+                sunIcon.style.display = "none";
+                modeToggle.setAttribute("aria-label", "Switch to light mode");
+            } else {
+                body.classList.remove("dark-mode");
+                moonIcon.style.display = "none";
+                sunIcon.style.display = "block";
+                modeToggle.setAttribute("aria-label", "Switch to dark mode");
+            }
+        };
+
+        // 1. Check local storage for preference
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            applyTheme(true);
+        } else if (savedTheme === "light") {
+            applyTheme(false);
+        } else {
+            // 2. Default to system preference if no saved theme
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            applyTheme(prefersDark);
+        }
+
+        // 3. Toggle listener
+        modeToggle.addEventListener("click", () => {
+            const isDark = !body.classList.contains("dark-mode"); // Determine the NEXT state
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            applyTheme(isDark);
+        });
+    </script>
+</body>
+</html>
