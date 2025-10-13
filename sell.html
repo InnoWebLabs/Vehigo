@@ -298,6 +298,216 @@
             border-radius: 8px;
             margin-top: 10px;
         }
+        
+        /* Footer Styles */
+        .footer {
+            padding: 60px 0 20px;
+            background: #f4f7fb;
+            color: #111827;
+            margin-top: 60px;
+        }
+        
+        body.dark-mode .footer {
+            background: #0b0f14;
+            color: #e5e7eb;
+        }
+        
+        .footer .container {
+            max-width: 1200px;
+            margin-inline: auto;
+            padding: 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+            gap: 32px;
+            align-items: start;
+        }
+        
+        .footer-brand .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-brand .logo img {
+            height: 44px;
+        }
+        
+        .footer-text {
+            margin-top: 12px;
+            color: #475569;
+        }
+        
+        body.dark-mode .footer-text {
+            color: #cbd5e1;
+        }
+        
+        .footer .social-list {
+            display: flex;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        
+        .footer .social-link {
+            font-size: 22px;
+            color: #1f2937;
+        }
+        
+        .footer .social-link:hover {
+            color: #2563eb;
+        }
+        
+        body.dark-mode .footer .social-link {
+            color: #cbd5e1;
+        }
+        
+        .footer-list-title {
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+        
+        body.dark-mode .footer-list-title {
+            color: #e2e8f0;
+        }
+        
+        .footer-link {
+            color: #374151;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .footer-link:hover {
+            color: #2563eb;
+            transform: translateX(2px);
+        }
+        
+        body.dark-mode .footer-link {
+            color: #cbd5e1;
+        }
+        
+        body.dark-mode .footer-link:hover {
+            color: #60a5fa;
+        }
+        
+        .newsletter {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 16px;
+        }
+        
+        body.dark-mode .newsletter {
+            background: #111827;
+            border-color: #263241;
+        }
+        
+        .newsletter h4 {
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        
+        .newsletter p {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-bottom: 12px;
+        }
+        
+        body.dark-mode .newsletter p {
+            color: #94a3b8;
+        }
+        
+        .newsletter .form {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .newsletter input {
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            outline: none;
+        }
+        
+        body.dark-mode .newsletter input {
+            background: #0f1218;
+            color: #e5e7eb;
+            border-color: #263241;
+        }
+        
+        .newsletter button {
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            font-weight: 700;
+        }
+        
+        .newsletter button:hover {
+            background: #1e40af;
+        }
+        
+        .footer-bottom {
+            margin-top: 32px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        body.dark-mode .footer-bottom {
+            border-color: #263241;
+        }
+        
+        .footer-bottom .mini-links {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .footer-bottom .mini-links a {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+        
+        .footer-bottom .mini-links a:hover {
+            color: #2563eb;
+        }
+        
+        .footer-list {
+            list-style-type: none;
+        }
+        
+        .social-list {
+            list-style-type: none;
+            display: flex;
+            gap: 12px;
+        }
+        
+        .copyright {
+            color: #475569;
+        }
+        
+        body.dark-mode .copyright {
+            color: #cbd5e1;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -550,6 +760,64 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="assets/images/vehigologo.png" alt="VehiGo logo" />
+                    </a>
+                    <p class="footer-text">
+                        Seamless rentals across Bhopal, Indore and Ujjain. Reliable, affordable and convenient car rental services for every journey.
+                    </p>
+                </div>
+
+                <ul class="footer-list">
+                    <li><p class="footer-list-title">Company</p></li>
+                    <li><a href="src/pages/about.html" class="footer-link">About us</a></li>
+                    <li><a href="src/pages/pricing.html" class="footer-link">Pricing plans</a></li>
+                    <li><a href="blog.html" class="footer-link">Our blog</a></li>
+                    <li><a href="ContactUs.html" class="footer-link">Contact Us</a></li>
+                </ul>
+
+                <ul class="footer-list">
+                    <li><p class="footer-list-title">Support</p></li>
+                    <li><a href="src/pages/help-center.html" class="footer-link">Help center</a></li>
+                    <li><a href="src/pages/Askaques.html" class="footer-link">Ask a question</a></li>
+                    <li><a href="privacypolicy.html" class="footer-link">Privacy policy</a></li>
+                    <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
+                </ul>
+
+                <div class="newsletter">
+                    <h4>Stay in the loop</h4>
+                    <p>Subscribe to get updates about new cars and offers.</p>
+                    <div class="form">
+                        <input type="email" placeholder="Enter your email" aria-label="Email address" />
+                        <button type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <ul class="social-list">
+                    <li><a href="https://facebook.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="https://instagram.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    <li><a href="https://twitter.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="https://linkedin.com/company/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                    <li><a href="https://github.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon></a></li>
+                    <li><a href="mailto:contact@vehigo.com" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
+                </ul>
+                <p class="copyright">© <span id="copyright-year"></span> VehiGo. All rights reserved.</p>
+                <div class="mini-links">
+                    <a href="privacypolicy.html">Privacy</a>
+                    <a href="tandc.html">Terms</a>
+                    <a href="ContactUs.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
         // Dark mode toggle
         document.addEventListener('DOMContentLoaded', function () {
@@ -569,6 +837,9 @@
                     }
                 });
             }
+            
+            // Set copyright year
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
         });
 
         // Photo preview function
