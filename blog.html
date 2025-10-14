@@ -10,8 +10,7 @@
     <title>Our Blogs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="src/assets/styles/style.css" />
+    
     <link rel="stylesheet" href="assets/css/blog-enhanced.css" />
     <link rel="stylesheet" href="assets/css/dark.css" />
     
@@ -35,6 +34,7 @@
         left: 0 !important;
         width: 100% !important;
         z-index: 1000 !important;
+        padding: 20px 0px;
       }
       
       .header .container-fluid {
@@ -94,6 +94,17 @@
       .dark-theme .navbar-brand:hover img {
         opacity: 0.8;
       }
+
+      .dark-theme .footer-brand img {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .dark-theme .footer-brand:hover img {
+        opacity: 0.8;
+      }
+      
       
       .nav-link {
         color: #374151 !important;
@@ -106,7 +117,7 @@
       
       .nav-link:hover {
         color: #2563eb !important;
-        background: rgba(37, 100, 235, 0.1) !important;
+       
         transform: translateY(-1px) !important;
       }
       
@@ -116,62 +127,57 @@
       
       .dark-theme .nav-link:hover {
         color: #60a5fa !important;
-        background: rgba(96, 165, 250, 0.1) !important;
+       
       }
       
       /* Theme Toggle Button */
       .theme-toggle-btn {
-        border-radius: 22px !important;
-        padding: 6px 12px !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        transition: all 0.3s ease !important;
-        border: 2px solid #e5e7eb !important;
-        background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%) !important;
-        color: #374151 !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+       background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      margin-right: 5px;
+      padding: 10px 25px !important;
+      font-weight: 700 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
       }
       
       .theme-toggle-btn:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
-        border-color: #2563eb !important;
-        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
-        color: #2563eb !important;
       }
       
-      .theme-toggle-btn.btn-outline-light {
-        border-color: rgba(255,255,255,0.3) !important;
-        background: rgba(255,255,255,0.1) !important;
-        color: white !important;
-        backdrop-filter: blur(10px) !important;
+      
+      
+      .dark-theme .theme-toggle-btn{
+         background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important
+      }
+      .dark-theme .theme-toggle-btn:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
       }
       
-      .theme-toggle-btn.btn-outline-light:hover {
-        background: rgba(255,255,255,0.2) !important;
-        border-color: rgba(255,255,255,0.5) !important;
-        color: white !important;
-      }
-      
+
       /* Login Button */
       .btn-vehigo {
-        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
-        border: none !important;
-        border-radius: 22px !important;
-        padding: 6px 12px !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        color: white !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
-      }
-      
-      .btn-vehigo:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
-        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
-      }
-      
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      margin-right: 5px;
+      padding: 10px 20px !important;
+      font-weight: 600 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
+      text-decoration: none;
+    }
+
+    .btn-vehigo:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+    }
       /* Mobile Menu */
       .navbar-toggler {
         border: none !important;
@@ -320,23 +326,6 @@
         color: #9ca3af !important;
       }
       
-      /* Footer Dark Mode */
-      .dark-theme .footer {
-        background-color: #111827 !important;
-        color: #e5e7eb !important;
-      }
-      
-      .dark-theme .footer h5 {
-        color: #ffffff !important;
-      }
-      
-      .dark-theme .footer-link {
-        color: #d1d5db !important;
-      }
-      
-      .dark-theme .footer-link:hover {
-        color: #60a5fa !important;
-      }
       
       /* Form Elements Dark Mode */
       .dark-theme .form-control {
@@ -526,43 +515,45 @@
         border: 1px solid #374151 !important;
       }
         /* Footer */
-    .footer { background: #f4f7fb; color: #111827; }
+    .footer { background: #f4f7fb; color: #111827;  }
     .dark-theme .footer { background: #0b0f14; color: #e5e7eb; }
-    .dark-theme .footer .footer-link { color: #cbd5e1; }
-    .dark-theme .footer .footer-link:hover { color: #60a5fa; }
-    .dark-theme .social-link { color: #cbd5e1; }
-
+    .dark-theme  .footer-link { color: #cbd5e1; }
+    .dark-theme  .footer .footer-link:hover { color: #60a5fa; }
+    .dark-theme  .social-link { color: #cbd5e1; }
+    .dark-theme  .footer-text{color:#cbd5e1;}
+    .dark-theme  .footer-list-title{color:#cbd5e1;}
     /* New Footer UI */
     .footer {
       padding: 60px 0 20px;
+      margin-top: 150px;
     }
     .footer .container { max-width: 1200px; margin-inline: auto; }
     .footer-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
-      gap: 32px;
+      gap: 50px;
       align-items: start;
     }
     .footer-brand .logo { display: inline-flex; align-items: center; gap: 8px; }
     .footer-brand .logo img { height: 44px; }
     .footer-text { margin-top: 12px; color: #475569; }
-    .dark-theme .footer-text { color: #94a3b8; }
+    
     .footer .social-list { display: flex; gap: 12px; margin-top: 14px; }
     .footer .social-link { font-size: 22px; color: #1f2937; }
     .footer .social-link:hover { color: #2563eb; }
-    .dark-theme .footer .social-link { color: #cbd5e1; }
+    .dark-theme  .footer .social-link { color: #cbd5e1; }
     .footer-list-title { font-weight: 800; margin-bottom: 10px; color: #0f172a; }
-    .dark-theme .footer-list-title { color: #e2e8f0; }
-    .footer-link { color: #374151; font-weight: 500; }
+    .dark-theme  .footer-list-title { color: #e2e8f0; }
+    .footer-link { color: #374151; font-weight: 500; text-decoration: none; }
     .footer-link:hover { color: #2563eb; transform: translateX(2px); }
     .newsletter { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 16px; }
-    .dark-theme .newsletter { background: #111827; border-color: #263241; }
+    .dark-theme  .newsletter { background: #111827; border-color: #263241; }
     .newsletter h4 { margin-bottom: 8px; font-weight: 800; }
     .newsletter p { font-size: 0.95rem; color: #475569; margin-bottom: 12px; }
-    .dark-theme .newsletter p { color: #94a3b8; }
+    .dark-theme  .newsletter p { color: #94a3b8; }
     .newsletter .form { display: flex; gap: 8px; }
     .newsletter input { flex: 1; padding: 10px 12px; border-radius: 10px; border: 1px solid #e5e7eb; outline: none; }
-    .dark-theme .newsletter input { background: #0f1218; color: #e5e7eb; border-color: #263241; }
+    .dark-theme  .newsletter input { background: #0f1218; color: #e5e7eb; border-color: #263241; }
     .newsletter button { padding: 10px 14px; border-radius: 10px; background: #2563eb; color: #fff; border: none; font-weight: 700; }
     .newsletter button:hover { background: #1e40af; }
     .footer-bottom { margin-top: 32px; border-top: 1px solid #e5e7eb; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; }
@@ -570,36 +561,9 @@
     .footer-bottom .mini-links { display: flex; gap: 12px; }
     .footer-bottom .mini-links a { color: #475569; font-size: 0.95rem; }
     .footer-bottom .mini-links a:hover { color: #2563eb; }
-    .footer-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-list li {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-list .footer-link {
-  display: inline-block;
-  white-space: nowrap;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
-}
-
-    @media (max-width: 992px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 576px) {
-      .footer-grid { grid-template-columns: 1fr; }
-      .newsletter .form { flex-direction: column; }
-    }
+    .footer-list{list-style-type: none; }
+    .social-list{list-style-type: none;}
+    
     
       </style>
 
@@ -643,7 +607,7 @@
             <!-- Theme switch -->
             <li class="nav-item">
               <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
-                <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+                
               </button>
             </li>
 
@@ -927,12 +891,16 @@
         </article>
     </main>
 
+  
+  </div>
+  </div>
+  
    <footer class="footer">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
             <a href="#" class="logo">
-              <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
+              <img src="assets\images\vehigologo.png" alt="VehiGo logo" />
             </a>
             <p class="footer-text">
               Seamless rentals across Bhopal, Indore and Ujjain. Reliable, affordable and convenient car rental services for every journey.
@@ -940,17 +908,17 @@
 
           <ul class="footer-list">
             <li><p class="footer-list-title">Company</p></li>
-            <li><a href="about.html" class="footer-link">About us</a></li>
-            <li><a href="pricing.html" class="footer-link">Pricing plans</a></li>
-            <li><a href="../../blog.html" class="footer-link">Our blog</a></li>
-            <li><a href="../../ContactUs.html" class="footer-link">Contact Us</a></li>
+            <li><a href="src\pages\about.html" class="footer-link">About us</a></li>
+            <li><a href="src\pages\pricing.html" class="footer-link">Pricing plans</a></li>
+            <li><a href="blog.html" class="footer-link">Our blog</a></li>
+            <li><a href="ContactUs.html" class="footer-link">Contact Us</a></li>
           </ul>
 
           <ul class="footer-list">
             <li><p class="footer-list-title">Support</p></li>
-            <li><a href="help-center.html" class="footer-link">Help center</a></li>
-            <li><a href="Askaques.html" class="footer-link">Ask a question</a></li>
-            <li><a href="../../privacypolicy.html" class="footer-link">Privacy policy</a></li>
+            <li><a href="src\pages\help-center.html" class="footer-link">Help center</a></li>
+            <li><a href="src\pages\Askaques.html" class="footer-link">Ask a question</a></li>
+            <li><a href="privacypolicy.html" class="footer-link">Privacy policy</a></li>
             <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
           </ul>
 
@@ -965,15 +933,15 @@
         </div>
 
         <div class="footer-bottom">
-          <ul class="social-list">
-            <li><a href="https://facebook.com/vehigo" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
-            <li><a href="https://www.instagram.com/vehigo/" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
-            <li><a href="https://twitter.com/vehigo" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
-            <li><a href="https://linkedin.com/company/vehigo" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-            <li><a href="https://github.com/vehigo" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
+          <ul data-aos="fade-up" class="social-list">
+            <li><a href="https://facebook.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="https://instagram.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="https://twitter.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="https://linkedin.com/company/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://github.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon></a></li>
             <li><a href="mailto:contact@vehigo.com" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
           </ul>
-          <p class="copyright"><span id="about-footer-year"></span> @VehiGo. All rights reserved.</p>
+          <p class="copyright">© <span id="about-footer-year"></span> VehiGo. All rights reserved.</p>
           <div class="mini-links">
             <a href="../../privacypolicy.html">Privacy</a>
             <a href="tandc.html">Terms</a>
@@ -982,8 +950,6 @@
         </div>
       </div>
     </footer>
-  </div>
-  </div>  
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="preloader.js"></script>
@@ -998,12 +964,12 @@
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
           document.body.classList.add('dark-theme');
-          themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+          themeToggle.innerHTML = 'Light';
           themeToggle.classList.remove('btn-outline-secondary');
           themeToggle.classList.add('btn-outline-light');
         } else {
           document.body.classList.remove('dark-theme');
-          themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+          themeToggle.innerHTML = 'Dark';
           themeToggle.classList.remove('btn-outline-light');
           themeToggle.classList.add('btn-outline-secondary');
         }
@@ -1016,13 +982,13 @@
           if (isDark) {
             document.body.classList.remove('dark-theme');
             localStorage.setItem('theme', 'light');
-            themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+            themeToggle.innerHTML = 'Dark';
             themeToggle.classList.remove('btn-outline-light');
             themeToggle.classList.add('btn-outline-secondary');
           } else {
             document.body.classList.add('dark-theme');
             localStorage.setItem('theme', 'dark');
-            themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+            themeToggle.innerHTML = 'Light';
             themeToggle.classList.remove('btn-outline-secondary');
             themeToggle.classList.add('btn-outline-light');
           }
