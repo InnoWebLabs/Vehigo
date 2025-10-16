@@ -197,7 +197,7 @@
     .footer-bottom { margin-top: 32px; border-top: 1px solid #e5e7eb; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; }
     .dark-theme .footer-bottom { border-color: #263241; }
     .footer-bottom .mini-links { display: flex; gap: 12px; }
-    .footer-bottom .mini-links a { color: #475569; font-size: 0.95rem; }
+    .footer-bottom .mini-links a { color: #475569; font-size: 0.95rem; text-decoration: none; }
     .footer-bottom .mini-links a:hover { color: #2563eb; }
     @media (max-width: 992px) {
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -626,12 +626,14 @@
       </article>
     </main>
 
-    <footer class="footer">
+    
+  </div>
+  <footer class="footer">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
             <a href="#" class="logo">
-              <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
+              <img src="../assets\images\vehigologo.png" alt="VehiGo logo" />
             </a>
             <p class="footer-text">
               Seamless rentals across Bhopal, Indore and Ujjain. Reliable, affordable and convenient car rental services for every journey.
@@ -639,17 +641,17 @@
 
           <ul class="footer-list">
             <li><p class="footer-list-title">Company</p></li>
-            <li><a href="about.html" class="footer-link">About us</a></li>
-            <li><a href="pricing.html" class="footer-link">Pricing plans</a></li>
-            <li><a href="../../blog.html" class="footer-link">Our blog</a></li>
-            <li><a href="../../ContactUs.html" class="footer-link">Contact Us</a></li>
+            <li><a href="src\pages\about.html" class="footer-link">About us</a></li>
+            <li><a href="src\pages\pricing.html" class="footer-link">Pricing plans</a></li>
+            <li><a href="blog.html" class="footer-link">Our blog</a></li>
+            <li><a href="ContactUs.html" class="footer-link">Contact Us</a></li>
           </ul>
 
           <ul class="footer-list">
             <li><p class="footer-list-title">Support</p></li>
-            <li><a href="help-center.html" class="footer-link">Help center</a></li>
-            <li><a href="Askaques.html" class="footer-link">Ask a question</a></li>
-            <li><a href="../../privacypolicy.html" class="footer-link">Privacy policy</a></li>
+            <li><a href="src\pages\help-center.html" class="footer-link">Help center</a></li>
+            <li><a href="src\pages\Askaques.html" class="footer-link">Ask a question</a></li>
+            <li><a href="privacypolicy.html" class="footer-link">Privacy policy</a></li>
             <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
           </ul>
 
@@ -681,7 +683,6 @@
         </div>
       </div>
     </footer>
-  </div>
 
   <!-- Scroll to Top Button -->
   <a href="./about.html" style="
