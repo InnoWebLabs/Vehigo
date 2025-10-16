@@ -17,20 +17,63 @@
     />
     <style>
       /* Dark theme overrides */
-      body.dark-theme { background:#0b1220; color:#e6e6f0; }
-      body.dark-theme .header .container{ background-color:#0f172a !important; }
-      body.dark-theme .navbar-link{ color:#e5e7eb !important; }
-      body.dark-theme .navbar-link:hover{ color:#60a5fa !important; }
-      body.dark-theme .body_tag{ background: transparent; }
-      body.dark-theme .forms .form{ background:#101927; border:1px solid #1f2a3a; box-shadow: 0 14px 40px rgba(0,0,0,.4); }
-      body.dark-theme input{ background:#0f172a; color:#e6e6f0; border-color:#334155; }
-      body.dark-theme .password-checklist{ background:#0f172a; color:#cbd5e1; border:1px solid #334155; }
-      body.dark-theme .terms-text, body.dark-theme .forgot-pass{ color:#93c5fd !important; }
-      body.dark-theme .field.button-field button{ background:#2563eb; }
-
+      body.dark-theme {
+        background: #0b1220;
+        color: #e6e6f0;
+      }
+      body.dark-theme .header .container {
+        background-color: #0f172a !important;
+      }
+      body.dark-theme .navbar-link {
+        color: #e5e7eb !important;
+      }
+      body.dark-theme .navbar-link:hover {
+        color: #60a5fa !important;
+      }
+      body.dark-theme .body_tag {
+        background: transparent;
+      }
+      body.dark-theme .forms .form {
+        background: #101927;
+        border: 1px solid #003e85;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+      }
+      body.dark-theme input {
+        background: #0f172a;
+        color: #e6e6f0;
+        border-color: #334155;
+      }
+      body.dark-theme .password-checklist {
+        background: #0f172a;
+        color: #cbd5e1;
+        border: 1px solid #334155;
+      }
+      body.dark-theme .terms-text,
+      body.dark-theme .forgot-pass {
+        color: #93c5fd !important;
+      }
+      body.dark-theme .field.button-field button {
+        background: #2563eb;
+      }
+      body.dark-theme .spantext {
+        color: #dfdfe1;
+      }
       /* Compact theme toggle */
-      .theme-toggle-btn{ border-radius:9999px; padding:4px 8px; font-size:12px; font-weight:700; border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.12); color:#fff; display:inline-flex; align-items:center; gap:6px; }
-      .theme-toggle-btn i{ font-size:14px; }
+      .theme-toggle-btn {
+        border-radius: 9999px;
+        padding: 4px 8px;
+        font-size: 12px;
+        font-weight: 700;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .theme-toggle-btn i {
+        font-size: 14px;
+      }
 
       .forms.show-signup {
         align-items: flex-start;
@@ -57,7 +100,7 @@
       .terms-checkbox-container {
         display: block;
         padding: 18px;
-        background-color: rgba(255,255,255,0.95);
+        background-color: rgba(255, 255, 255, 0.95);
       }
 
       .terms-error {
@@ -84,40 +127,123 @@
         color: #ffd700 !important;
       }
 
-      .body_tag { 
-        padding-top: 0 !important; 
+      .body_tag {
+        padding-top: 0 !important;
       }
 
       body.dark-theme .navbar-brand img {
-      filter: brightness(0) invert(1);
-      opacity: 1;
-      transition: opacity 0.3s ease;
-    }
+        filter: brightness(0) invert(1);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
 
-    body.dark-theme .navbar-brand:hover img {
-      opacity: 0.8;
-    }
+      body.dark-theme .navbar-brand:hover img {
+        opacity: 0.8;
+      }
+      @media (max-width: 768px) {
+        .header .container {
+          padding: 10px 20px;
+        }
+        .header .navbar-link {
+          font-size: 14px !important;
+        }
+        .header .contact-time {
+          display: none !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .header .container {
+          padding: 8px 15px;
+        }
+        .header .navbar-link {
+          font-size: 13px !important;
+        }
+      }
+      /* Spinner styles */
+      #spinnerOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+      .loader {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @media (max-width: 480px) {
+        .message .title {
+          font-size: 16px;
+        }
+        .message .subtitle {
+          font-size: 16px;
+        }
+        .form header {
+          font-size: 20px;
+        }
+        .field.button-field button {
+          font-size: 16px;
+        }
+        .field.input-field input {
+          font-size: 14px;
+        }
+        .terms-text {
+          font-size: 13px;
+        }
+        .terms-checkbox-container {
+          padding: 12px;
+        }
+      }
+      .form.login .message {
+        margin-bottom: 10px !important; /* reduce or remove extra space */
+        padding-top: 10px !important; /* add some padding at the top */
+      }
 
+      .form.login .form-content {
+        margin-top: 0; /* ensures no gap from top */
+      }
+      .form.signup .form-content {
+        margin-top: 10px; /* add some space at the top for signup form */
+      }
     </style>
   </head>
 
-
-<div id="spinnerOverlay" style="display: none;">
+  <div id="spinnerOverlay" style="display: none">
     <span class="loader"></span>
-</div>
+  </div>
 
   <body>
     <header class="header" data-header>
       <div class="container" style="background-color: #0171d3">
         <!-- <div class="overlay" data-overlay></div> -->
         <div class="navbar-brand">
-        <a href="/src/index.html" class="logo">
-          <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
-        </a></div>
+          <a href="/src/index.html" class="logo">
+            <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
+          </a>
+        </div>
         <nav class="navbar" data-navbar>
           <ul class="navbar-list">
             <li>
-              <a href="/src/index.html" class="navbar-link" data-nav-link>Home</a>
+              <a href="/src/index.html" class="navbar-link" data-nav-link
+                >Home</a
+              >
             </li>
 
             <li>
@@ -145,28 +271,39 @@
 
         <div class="header-actions">
           <div class="header-contact">
-            <a href="tel:1800100100" class="contact-link" style="text-decoration: none;color:white">1800-100-100</a>
+            <a
+              href="tel:1800100100"
+              class="contact-link"
+              style="text-decoration: none; color: white"
+              >1800-100-100</a
+            >
 
-            <span class="contact-time" style="color: white;">Mon - Sat: 9:00 am - 6:00 pm</span>
+            <span class="contact-time" style="color: white"
+              >Mon - Sat: 9:00 am - 6:00 pm</span
+            >
           </div>
         </div>
 
-        <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
-          <i class='bx bx-moon'></i><span class="label">Dark</span>
+        <button
+          id="themeToggle"
+          class="theme-toggle-btn"
+          type="button"
+          aria-label="Toggle theme"
+          title="Toggle theme"
+        >
+          <i class="bx bx-moon"></i><span class="label">Dark</span>
         </button>
       </div>
     </header>
 
-
-
-
     <div class="body_tag">
+      <br />
       <section class="container forms">
         <div class="form login">
-              <div class="message">
-  <h1 class="title">👋 Hey there!!</h1>
-  <p class="subtitle">Welcome to <span class="brand">VehiGo</span></p>
-</div>
+          <div class="message" style="margin-bottom: 10px; text-align: center">
+            <h1 class="title">👋 Hey there!!</h1>
+            <p class="subtitle">Welcome to<span class="brand">VehiGo</span></p>
+          </div>
           <div class="form-content">
             <header>Login</header>
             <form id="loginForm" action="/login" method="POST">
@@ -204,7 +341,7 @@
             </form>
 
             <div class="form-link">
-              <span
+              <span class="spantext"
                 >Don't have an account?
                 <a href="#" class="link signup-link">Signup</a></span
               >
@@ -253,17 +390,25 @@
                 <i class="bx bx-hide eye-icon"></i>
               </div>
               <ul id="passwordChecklist" class="password-checklist">
-              <li id="check-length" class="invalid">✔ At least 8 characters</li>
-              <li id="check-uppercase" class="invalid">✔ At least one uppercase letter</li>
-              <li id="check-lowercase" class="invalid">✔ At least one lowercase letter</li>
-              <li id="check-number" class="invalid">✔ At least one number</li>
-              <li id="check-special" class="invalid">✔ At least one special character (!@#$%^&*)</li>
+                <li id="check-length" class="invalid">
+                  ✔ At least 8 characters
+                </li>
+                <li id="check-uppercase" class="invalid">
+                  ✔ At least one uppercase letter
+                </li>
+                <li id="check-lowercase" class="invalid">
+                  ✔ At least one lowercase letter
+                </li>
+                <li id="check-number" class="invalid">✔ At least one number</li>
+                <li id="check-special" class="invalid">
+                  ✔ At least one special character (!@#$%^&*)
+                </li>
               </ul>
               <div class="field input-field">
                 <input
                   id="confirmPassword"
                   name="confirm_password"
-                  type="password"  
+                  type="password"
                   placeholder="Confirm password"
                   class="password"
                   required
@@ -297,11 +442,21 @@
               <div class="field terms-field">
                 <div class="terms-checkbox-container">
                   <label class="terms-checkbox-label">
-                    <input type="checkbox" id="terms-checkbox" name="terms-checkbox" required />
+                    <input
+                      type="checkbox"
+                      id="terms-checkbox"
+                      name="terms-checkbox"
+                      required
+                    />
                     <span class="checkmark"></span>
                     <span class="terms-text">
-                      I have read and agree to the 
-                      <a href="../../tandc.html" target="_blank" class="terms-link">Terms and Conditions of Vehigo</a>
+                      I have read and agree to the
+                      <a
+                        href="../../tandc.html"
+                        target="_blank"
+                        class="terms-link"
+                        >Terms and Conditions of Vehigo</a
+                      >
                     </span>
                   </label>
                 </div>
@@ -328,283 +483,293 @@
     </div>
 
     <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Theme persistence
-    const themeBtn = document.getElementById('themeToggle');
-    const themeLabel = themeBtn?.querySelector('.label');
-    const savedTheme = localStorage.getItem('login_theme') || 'light';
-    if(savedTheme === 'dark'){ document.body.classList.add('dark-theme'); if(themeLabel) themeLabel.textContent='Light'; }
-    themeBtn?.addEventListener('click', ()=>{
-      const isDark = document.body.classList.toggle('dark-theme');
-      localStorage.setItem('login_theme', isDark ? 'light' : 'dark');
-      if(themeLabel) themeLabel.textContent = isDark ? 'Light' : 'Dark';
-    });
+      document.addEventListener("DOMContentLoaded", () => {
+        // Theme persistence
+        const themeBtn = document.getElementById("themeToggle");
+        const themeLabel = themeBtn?.querySelector(".label");
+        const savedTheme = localStorage.getItem("login_theme") || "light";
+        if (savedTheme === "dark") {
+          document.body.classList.add("dark-theme");
+          if (themeLabel) themeLabel.textContent = "Light";
+        }
+        themeBtn?.addEventListener("click", () => {
+          const isDark = document.body.classList.toggle("dark-theme");
+          localStorage.setItem("login_theme", isDark ? "light" : "dark");
+          if (themeLabel) themeLabel.textContent = isDark ? "Light" : "Dark";
+        });
 
-    const container = document.querySelector(".forms");
-    const signUpLink = document.querySelector(".signup-link");
-    const logInLink = document.querySelector(".login-link");
-    const eyeIcons = document.querySelectorAll(".eye-icon");
-    const signupForm = document.getElementById("signupForm");
-    const loginForm = document.getElementById("loginForm");
-    const signupErrorMessage = document.getElementById("errorMessage");
-    const loginMessage = document.getElementById("loginMessage");
+        const container = document.querySelector(".forms");
+        const signUpLink = document.querySelector(".signup-link");
+        const logInLink = document.querySelector(".login-link");
+        const eyeIcons = document.querySelectorAll(".eye-icon");
+        const signupForm = document.getElementById("signupForm");
+        const loginForm = document.getElementById("loginForm");
+        const signupErrorMessage = document.getElementById("errorMessage");
+        const loginMessage = document.getElementById("loginMessage");
         // ✅ Password Checklist Validation
-    const passwordInput = document.getElementById("signupPassword");
-    const checklist = {
-      length: document.getElementById("check-length"),
-      uppercase: document.getElementById("check-uppercase"),
-      lowercase: document.getElementById("check-lowercase"),
-      number: document.getElementById("check-number"),
-      special: document.getElementById("check-special"),
-    };
+        const passwordInput = document.getElementById("signupPassword");
+        const checklist = {
+          length: document.getElementById("check-length"),
+          uppercase: document.getElementById("check-uppercase"),
+          lowercase: document.getElementById("check-lowercase"),
+          number: document.getElementById("check-number"),
+          special: document.getElementById("check-special"),
+        };
 
-    passwordInput.addEventListener("input", () => {
-      const value = passwordInput.value;
+        passwordInput.addEventListener("input", () => {
+          const value = passwordInput.value;
 
-      // Length check
-      if (value.length >= 8) {
-        checklist.length.classList.add("valid");
-        checklist.length.classList.remove("invalid");
-      } else {
-        checklist.length.classList.add("invalid");
-        checklist.length.classList.remove("valid");
-      }
+          // Length check
+          if (value.length >= 8) {
+            checklist.length.classList.add("valid");
+            checklist.length.classList.remove("invalid");
+          } else {
+            checklist.length.classList.add("invalid");
+            checklist.length.classList.remove("valid");
+          }
 
-      // Uppercase check
-      if (/[A-Z]/.test(value)) {
-        checklist.uppercase.classList.add("valid");
-        checklist.uppercase.classList.remove("invalid");
-      } else {
-        checklist.uppercase.classList.add("invalid");
-        checklist.uppercase.classList.remove("valid");
-      }
-      if (/[a-z]/.test(value)) {
-        checklist.lowercase.classList.add("valid");
-        checklist.lowercase.classList.remove("invalid");
-      } else {
-        checklist.lowercase.classList.add("invalid");
-        checklist.lowercase.classList.remove("valid");
-      }
-      // Number check
-      if (/\d/.test(value)) {
-        checklist.number.classList.add("valid");
-        checklist.number.classList.remove("invalid");
-      } else {
-        checklist.number.classList.add("invalid");
-        checklist.number.classList.remove("valid");
-      }
+          // Uppercase check
+          if (/[A-Z]/.test(value)) {
+            checklist.uppercase.classList.add("valid");
+            checklist.uppercase.classList.remove("invalid");
+          } else {
+            checklist.uppercase.classList.add("invalid");
+            checklist.uppercase.classList.remove("valid");
+          }
+          if (/[a-z]/.test(value)) {
+            checklist.lowercase.classList.add("valid");
+            checklist.lowercase.classList.remove("invalid");
+          } else {
+            checklist.lowercase.classList.add("invalid");
+            checklist.lowercase.classList.remove("valid");
+          }
+          // Number check
+          if (/\d/.test(value)) {
+            checklist.number.classList.add("valid");
+            checklist.number.classList.remove("invalid");
+          } else {
+            checklist.number.classList.add("invalid");
+            checklist.number.classList.remove("valid");
+          }
 
-      // Special char check
-      if (/[!@#$%^&*]/.test(value)) {
-        checklist.special.classList.add("valid");
-        checklist.special.classList.remove("invalid");
-      } else {
-        checklist.special.classList.add("invalid");
-        checklist.special.classList.remove("valid");
-      }
-    });
+          // Special char check
+          if (/[!@#$%^&*]/.test(value)) {
+            checklist.special.classList.add("valid");
+            checklist.special.classList.remove("invalid");
+          } else {
+            checklist.special.classList.add("invalid");
+            checklist.special.classList.remove("valid");
+          }
+        });
 
-    // Show/Hide password functionality
-    eyeIcons.forEach((eyeIcon) => {
-      eyeIcon.addEventListener("click", () => {
-        const passwordField = eyeIcon.previousElementSibling;
-        if (passwordField.type === "password") {
-          passwordField.type = "text";
-          eyeIcon.classList.replace("bx-hide", "bx-show");
-        } else {
-          passwordField.type = "password";
-          eyeIcon.classList.replace("bx-show", "bx-hide");
-        }
-      });
-    });
-
-    // Toggle between login and signup forms
-    signUpLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      container.classList.add("show-signup");
-    });
-
-    logInLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      container.classList.remove("show-signup");
-    });
-
-    // Terms and Conditions Checkbox Validation
-    const termsCheckbox = document.getElementById("terms-checkbox");
-    const signupSubmitBtn = document.getElementById("signup-submit-btn");
-    const termsContainer = document.querySelector(".terms-checkbox-container");
-    
-    // Initially disable submit button
-    signupSubmitBtn.disabled = true;
-    
-    // Add error message element
-    const termsErrorMessage = document.createElement("div");
-    termsErrorMessage.className = "terms-error";
-    termsErrorMessage.textContent = "You must agree to the Terms and Conditions to continue.";
-    termsContainer.appendChild(termsErrorMessage);
-    
-    // Checkbox change event
-    termsCheckbox.addEventListener("change", function() {
-      if (this.checked) {
-        signupSubmitBtn.disabled = false;
-        termsContainer.classList.remove("error");
-        termsErrorMessage.style.display = "none";
-      } else {
-        signupSubmitBtn.disabled = true;
-        termsContainer.classList.add("error");
-        termsErrorMessage.style.display = "block";
-      }
-    });
-
-    // Handle Signup Form Submission
-    if (signupForm) {
-      signupForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        signupErrorMessage.textContent = "";
-
-        // Check terms and conditions first
-        if (!termsCheckbox.checked) {
-          termsContainer.classList.add("error");
-          termsErrorMessage.style.display = "block";
-          termsCheckbox.focus();
-          
-          // Scroll to terms section
-          termsContainer.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'center' 
+        // Show/Hide password functionality
+        eyeIcons.forEach((eyeIcon) => {
+          eyeIcon.addEventListener("click", () => {
+            const passwordField = eyeIcon.previousElementSibling;
+            if (passwordField.type === "password") {
+              passwordField.type = "text";
+              eyeIcon.classList.replace("bx-hide", "bx-show");
+            } else {
+              passwordField.type = "password";
+              eyeIcon.classList.replace("bx-show", "bx-hide");
+            }
           });
-          
-          return;
-        }
+        });
 
-        if (!signupForm.checkValidity()) {
-          signupForm.reportValidity();
-          return;
-        }
+        // Toggle between login and signup forms
+        signUpLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          container.classList.add("show-signup");
+        });
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("signupEmail").value.trim();
-        const password = document.getElementById("signupPassword").value.trim();
-        const confirmPassword = document.getElementById("confirmPassword").value.trim();
-        const phone_number = document.getElementById("phone_number").value.trim();
-        const address = document.getElementById("address").value.trim();
+        logInLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          container.classList.remove("show-signup");
+        });
 
-        if (!name || !email || !password || !phone_number || !address) {
-          signupErrorMessage.textContent =
-            "Please fill in all required fields.";
-          return;
-        }
-        if (password !== confirmPassword) {
+        // Terms and Conditions Checkbox Validation
+        const termsCheckbox = document.getElementById("terms-checkbox");
+        const signupSubmitBtn = document.getElementById("signup-submit-btn");
+        const termsContainer = document.querySelector(
+          ".terms-checkbox-container"
+        );
+
+        // Initially disable submit button
+        signupSubmitBtn.disabled = true;
+
+        // Add error message element
+        const termsErrorMessage = document.createElement("div");
+        termsErrorMessage.className = "terms-error";
+        termsErrorMessage.textContent =
+          "You must agree to the Terms and Conditions to continue.";
+        termsContainer.appendChild(termsErrorMessage);
+
+        // Checkbox change event
+        termsCheckbox.addEventListener("change", function () {
+          if (this.checked) {
+            signupSubmitBtn.disabled = false;
+            termsContainer.classList.remove("error");
+            termsErrorMessage.style.display = "none";
+          } else {
+            signupSubmitBtn.disabled = true;
+            termsContainer.classList.add("error");
+            termsErrorMessage.style.display = "block";
+          }
+        });
+
+        // Handle Signup Form Submission
+        if (signupForm) {
+          signupForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            signupErrorMessage.textContent = "";
+
+            // Check terms and conditions first
+            if (!termsCheckbox.checked) {
+              termsContainer.classList.add("error");
+              termsErrorMessage.style.display = "block";
+              termsCheckbox.focus();
+
+              // Scroll to terms section
+              termsContainer.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+
+              return;
+            }
+
+            if (!signupForm.checkValidity()) {
+              signupForm.reportValidity();
+              return;
+            }
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("signupEmail").value.trim();
+            const password = document
+              .getElementById("signupPassword")
+              .value.trim();
+            const confirmPassword = document
+              .getElementById("confirmPassword")
+              .value.trim();
+            const phone_number = document
+              .getElementById("phone_number")
+              .value.trim();
+            const address = document.getElementById("address").value.trim();
+
+            if (!name || !email || !password || !phone_number || !address) {
+              signupErrorMessage.textContent =
+                "Please fill in all required fields.";
+              return;
+            }
+            if (password !== confirmPassword) {
               signupErrorMessage.textContent = "Passwords do not match.";
               return;
-        }
-        try {
-          const res = await fetch("http://localhost:4000/api/auth/signup", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              name,
-              email,
-              password,
-              phone_number,
-              address,
-              auth_provider: "email",
-            }),
-          });
-          const result = await res.json();
+            }
+            try {
+              const res = await fetch("http://localhost:4000/api/auth/signup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  name,
+                  email,
+                  password,
+                  phone_number,
+                  address,
+                  auth_provider: "email",
+                }),
+              });
+              const result = await res.json();
 
-          if (res.ok) {
-            localStorage.setItem("userToken", result.token);
-            localStorage.setItem("userInfo", JSON.stringify(result.user));
-            window.location.href = `./about.html?message=Signup successful! Welcome to VehiGo!&type=success`;
-          } else {
-            signupErrorMessage.textContent =
-              result.message || "Signup failed. Please try again.";
+              if (res.ok) {
+                localStorage.setItem("userToken", result.token);
+                localStorage.setItem("userInfo", JSON.stringify(result.user));
+                window.location.href = `./about.html?message=Signup successful! Welcome to VehiGo!&type=success`;
+              } else {
+                signupErrorMessage.textContent =
+                  result.message || "Signup failed. Please try again.";
+              }
+            } catch (err) {
+              console.error("Frontend error:", err);
+              signupErrorMessage.textContent =
+                "Error connecting to the server.";
+            }
+          });
+        }
+
+        // Handle Login Form Submission
+        if (loginForm) {
+          loginForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            loginMessage.textContent = "";
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (!email || !password) {
+              loginMessage.textContent = "Please fill in all fields.";
+              loginMessage.className = "error";
+              return;
+            }
+
+            const spinner = document.getElementById("spinnerOverlay");
+            spinner.style.display = "flex"; // Show spinner
+
+            try {
+              const res = await fetch("http://localhost:4000/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                credentials: "include",
+                body: JSON.stringify({ email, password }),
+              });
+
+              const result = await res.json();
+
+              if (res.ok && result.success) {
+                localStorage.setItem("userToken", "logged-in");
+                localStorage.setItem(
+                  "userInfo",
+                  JSON.stringify({
+                    username: result.user.username || result.user.email,
+                    email: result.user.email,
+                    id: result.user._id,
+                  })
+                );
+
+                window.location.href = `./about.html?message=${encodeURIComponent(
+                  result.message || "Login successful"
+                )}&type=success`;
+              } else {
+                spinner.style.display = "none"; // Hide spinner on error
+                loginMessage.textContent =
+                  result.message || "Invalid credentials";
+                loginMessage.className = "error";
+              }
+            } catch (err) {
+              spinner.style.display = "none"; // Hide spinner on error
+              console.error("Frontend error:", err);
+              loginMessage.textContent = "Login failed";
+              loginMessage.className = "error";
+            }
+          });
+        }
+
+        // Logout function
+        async function logout() {
+          try {
+            const res = await fetch("http://localhost:4000/api/auth/logout", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+            });
+            if (res.ok) {
+              localStorage.removeItem("userToken");
+              localStorage.removeItem("userInfo");
+              window.location.href = "./index.html";
+            }
+          } catch (err) {
+            console.error("Logout error:", err);
           }
-        } catch (err) {
-          console.error("Frontend error:", err);
-          signupErrorMessage.textContent =
-            "Error connecting to the server.";
         }
       });
-    }
-
-    // Handle Login Form Submission
-    if (loginForm) {
-      loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        loginMessage.textContent = "";
-
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
-
-        if (!email || !password) {
-          loginMessage.textContent = "Please fill in all fields.";
-          loginMessage.className = "error";
-          return;
-        }
-
-        const spinner = document.getElementById("spinnerOverlay");
-        spinner.style.display = "flex"; // Show spinner
-
-        try {
-          const res = await fetch("http://localhost:4000/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include",
-            body: JSON.stringify({ email, password }),
-          });
-
-          const result = await res.json();
-
-          if (res.ok && result.success) {
-            localStorage.setItem("userToken", "logged-in");
-            localStorage.setItem(
-              "userInfo",
-              JSON.stringify({
-                username: result.user.username || result.user.email,
-                email: result.user.email,
-                id: result.user._id,
-              })
-            );
-
-            window.location.href = `./about.html?message=${encodeURIComponent(
-              result.message || "Login successful"
-            )}&type=success`;
-          } else {
-            spinner.style.display = "none"; // Hide spinner on error
-            loginMessage.textContent = result.message || "Invalid credentials";
-            loginMessage.className = "error";
-          }
-        } catch (err) {
-          spinner.style.display = "none"; // Hide spinner on error
-          console.error("Frontend error:", err);
-          loginMessage.textContent = "Login failed";
-          loginMessage.className = "error";
-        }
-      });
-    }
-
-    // Logout function
-    async function logout() {
-      try {
-        const res = await fetch("http://localhost:4000/api/auth/logout", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-        });
-        if (res.ok) {
-          localStorage.removeItem("userToken");
-          localStorage.removeItem("userInfo");
-          window.location.href = "./index.html";
-        }
-      } catch (err) {
-        console.error("Logout error:", err);
-      }
-    }
-  });
-
-  
-</script>
-
+    </script>
   </body>
 </html>
