@@ -356,6 +356,15 @@
         color: #4da8ff;
       }
 
+       .dark-theme .footer-brand img {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      .dark-theme .footer-brand:hover img {
+        opacity: 0.8;
+      }
       /* Responsive adjustments */
       @media (max-width: 768px) {
         .cards-container {
