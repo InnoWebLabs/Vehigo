@@ -28,6 +28,7 @@
     .navbar { padding-top: 8px !important; padding-bottom: 8px !important; margin-left: 20px; }
     .navbar-brand img { height: 40px; }
     
+    
     /* Dark mode logo visibility */
     .dark-theme .navbar-brand img {
       filter: brightness(0) invert(1);
@@ -132,6 +133,130 @@
       background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
     }
 
+/* ==============================
+   VEHIGO NAVBAR FINAL STYLING
+   ============================== */
+
+:root {
+  --vehigo-blue: #3b82f6;
+  --vehigo-blue-dark: #2563eb;
+  --text-dark: #374151;
+  --text-light: #e5e7eb;
+  --bg-light: #ffffff;
+  --bg-dark: #1a1a1a;
+}
+
+/* HEADER BASE STYLING */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* DARK THEME HEADER */
+.dark-theme .header {
+  background: linear-gradient(135deg, #111111 0%, #1e1e1e 100%);
+  box-shadow: 0 2px 15px rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* NAVBAR */
+.navbar {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  align-items: center;
+}
+
+/* LOGO */
+.navbar-brand img {
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+.dark-theme .navbar-brand img {
+  filter: brightness(0) invert(1);
+}
+
+/* NAV LINKS */
+.nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 500 !important;
+  margin: 0 10px !important;
+  transition: all 0.3s ease !important;
+  border-radius: 8px !important;
+  padding: 10px 15px !important;
+}
+
+.nav-link:hover {
+  color: var(--vehigo-blue) !important;
+  transform: translateY(-1px);
+}
+
+.dark-theme .nav-link {
+  color: var(--text-light) !important;
+}
+
+.dark-theme .nav-link:hover {
+  color: var(--vehigo-blue) !important;
+}
+
+/* CONTACT INFO */
+.header .contact-info {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.dark-theme .header .contact-info {
+  color: #9ca3af;
+}
+
+/* THEME TOGGLE BUTTON */
+.theme-toggle-btn {
+  background: linear-gradient(135deg, var(--vehigo-blue-dark), var(--vehigo-blue));
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px 25px;
+  font-weight: 600;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 8px rgba(59, 130, 246, 0.4);
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+}
+
+/* ICON IN TOGGLE BUTTON */
+.theme-toggle-btn i {
+  font-size: 1rem;
+}
+
+/* RESPONSIVE NAV FIX */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .theme-toggle-btn {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 
 
@@ -326,48 +451,72 @@
         ">&times;</button>
     </div>
 
-    <header class="header">
-    <nav class="navbar navbar-expand-xl container py-2 px-3">
-      <a class="navbar-brand d-flex align-items-center gap-1" href="/src/index.html" aria-label="Vehigo Home">
-        <img src="../assets/images/vehigologo.png" alt="Vehigo" />
-      </a>
+     <!-- 
+    - #HEADER
+  -->
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
-        aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <header class="header" data-header>
+    <div class="container">
 
-      <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/src/index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="../../featured-car.html">Explore cars</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-          <li class="nav-item"><a class="nav-link" href="../../blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="../../ContactUs.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="../../offline.html">Offline Centers</a></li>
-          <li class="nav-item"><a class="nav-link" href="../../rentcar.html">Rent Your Car</a></li>
+      <div class="overlay" data-overlay></div>
 
-          <!-- Theme switch -->
-          <li class="nav-item">
-            <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
-              <i class="fa-solid fa-gear"></i><span class="label">Light</span>
-            </button>
-          </li>
+      <a href="/src/index.html" class="logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});">
+    <img src="../assets/images/vehigologo.png" alt="VehiGo logo">
+</a>
 
-          <!-- Login & Logout -->
-          <li class="nav-item">
-            <a href="../pages/login.html" class="btn btn-vehigo" id="loginBtn">
-              <i class="fa-regular fa-user"></i> <span>Login</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
-              <i class="fa-solid fa-right-from-bracket"></i>
-            </button>
-          </li>
-        </ul>
+<nav class="navbar" data-navbar>
+  <ul class="navbar-list">
+
+    <li>
+      <a href="/src/index.html" class="navbar-link" data-nav-link>Home</a>
+    </li>
+
+    <li>
+      <a href="index.html#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
+    </li>
+
+    <li>
+      <a href="pages/about.html" class="navbar-link" data-nav-link>About us</a>
+    </li>
+
+    <li>
+      <a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a>
+    </li>
+
+    <li>
+      <a href="./pages/bill.html" class="navbar-link" data-nav-link>Fare Calculator</a>
+    </li>
+
+  </ul>
+</nav>
+
+
+      <div class="header-actions">
+
+        <div class="header-contact">
+          <a href="tel:1800100100" class="contact-link">1800-100-100</a>
+
+          <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+        </div>
+
+        <a href="./pages/login.html" class="btn user-btn" aria-label="Profile">
+          <ion-icon name="person-outline"></ion-icon>
+        </a>
+
+        <button class="btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme" style="min-width:40px;min-height:40px;display:flex;align-items:center;gap:8px;padding-inline:10px;">
+          <ion-icon id="theme-toggle-icon" name="moon-outline"></ion-icon>
+          <span id="theme-toggle-text">Dark</span>
+        </button>
+
+        <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+        </button>
+
       </div>
-    </nav>
+
+    </div>
   </header>
 
     <main class="aboutus-container">
