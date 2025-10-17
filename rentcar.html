@@ -629,6 +629,61 @@
         font-size: 16px;
       }
     }
+
+    /* Dark Theme */
+body.dark-mode,
+body.dark-theme {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #f1f5f9;
+}
+
+body.dark-mode .vehicle-form-section,
+body.dark-theme .vehicle-form-section {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+body.dark-mode .vehicle-form-card,
+body.dark-theme .vehicle-form-card {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .vehicle-form-title,
+body.dark-theme .vehicle-form-title {
+  color: #f1f5f9;
+}
+
+body.dark-mode .vehicle-input-group label,
+body.dark-theme .vehicle-input-group label {
+  color: #e2e8f0;
+}
+
+body.dark-mode .vehicle-input-group input,
+body.dark-theme .vehicle-input-group input {
+  background-color: #1e293b;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+}
+
+body.dark-mode .vehicle-input-group input:focus,
+body.dark-theme .vehicle-input-group input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+body.dark-mode .vehicle-submit-btn,
+body.dark-theme .vehicle-submit-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+body.dark-mode .vehicle-submit-btn:hover,
+body.dark-theme .vehicle-submit-btn:hover {
+  background-color: #1d4ed8;
+}
+
     
     @media (max-width: 480px) {
       h1 {
