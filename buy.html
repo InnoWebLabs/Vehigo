@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.svg">
     <title>Vehigo - Buy Cars</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="src/assets/styles/style.css" />
+   
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
@@ -16,6 +15,22 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <style>
+         :root {
+      --vehigo-primary: #2563eb;
+      --vehigo-primary-2: #4e7fb4;
+      --vehigo-primary-3: #1e40af;
+      --vehigo-accent: #ffd700;
+      --vehigo-bg: #f6f8fa;
+      --vehigo-text: #0f172a;
+      --vehigo-card: #ffffff;
+      --vehigo-border: #e5e7eb;
+      --shadow-1: 0 6px 20px rgba(37, 99, 235, .18);
+      --shadow-2: 0 14px 40px rgba(37, 99, 235, .20);
+      --shadow-3: 0 -18px 50px rgba(37, 99, 235, .25);
+      --radius-xl: 18px;
+      --radius-lg: 14px;
+      --radius-md: 12px;
+    }
         * {
             margin: 0;
             padding: 0;
@@ -29,21 +44,24 @@
             color: #333;
         }
 
+
         body.dark-mode {
             background: linear-gradient(135deg, #232526 0%, #414345 100%), url('./assets/images/car-bg.jpg') center/cover no-repeat;
             color: #fff;
+      --vehigo-bg: #0b1220;
+      --vehigo-text: #e6e6f0;
+      --vehigo-card: #101927;
+      --vehigo-border: #1f2a3a;
+      --shadow-1: 0 6px 20px rgba(0, 0, 0, .35);
+      --shadow-2: 0 20px 50px rgba(0, 0, 0, .45);
         }
-        body.dark-mode .navbar {
-  background-color: #4e7fb4;
-}
-
-        .buy-container {
+         .buy-container {
             max-width: 1400px;
             margin: 70px auto;
             padding: 40px 20px;
         }
 
-       .header {
+        .header {
       position: fixed;
       top: 0; left: 0; right: 0;
       background: linear-gradient(180deg, rgba(255, 255, 255, .95), rgba(255, 255, 255, .9));
@@ -71,21 +89,19 @@
       transform: scale(1.05);
     }
 
-    .dark-mode .logo img {
+   body.dark-mode .logo img {
       filter: brightness(0) invert(1);
       opacity: 1;
       transition: opacity 0.3s ease;
     }
 
-    .dark-mode .logo:hover img {
+    body.dark-mode .logo:hover img {
       opacity: 0.8;
     }
 
-    .navbar .navbar-list {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0; padding: 0;
+   .navbar-list{
+      display:flex; list-style:none; gap:14px; padding:0; margin:0; align-items:center;
+      
     }
     
     .navbar-link {
@@ -100,13 +116,67 @@
     
     .navbar-link:hover {
       color: var(--vehigo-primary);
-      background: rgba(37, 99, 235, .08);
+      
     }
     
     .navbar-link.active {
       color: var(--vehigo-primary);
-      background: linear-gradient(90deg, rgba(37, 99, 235, .12), rgba(78, 127, 180, .12));
+      
     }
+
+    /* ---------- THEME SWITCH ---------- */
+     .theme-switch {
+
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      margin-right: 5px;
+      padding: 10px 25px !important;
+      font-weight: 700 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
+    }
+
+    .theme-toggle-switch:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+      border-color: #2563eb !important;
+    }
+
+    .theme-switch input{ appearance:none; width:0; height:0; position:absolute; }
+    .slider {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+   .btn-vehigo {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      margin-right: 5px;
+      padding: 10px 20px !important;
+      font-weight: 600 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
+      text-decoration: none;
+    }
+
+    .btn-vehigo:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+    }
+    
+    body.dark-mode .btn-outline-light {
+      background: var(--vehigo-card);
+      color: var(--vehigo-text);
+      border-color: var(--vehigo-border);
+    }
+
+    /* Dark t
 
     /* ---------- THEME SWITCH ---------- */
     .mode-switch {
@@ -709,32 +779,37 @@
 </head>
 
 <body>
-    <!-- Header -->
     <header class="header">
     <a href="/src/index.html" class="logo">
       <img src="./assets/images/vehigologo.png" alt="VehiGo logo"/>
     </a>
     <nav class="navbar">
-      <ul class="navbar-list">
-        <li><a href="/src/index.html" class="navbar-link">Home</a></li>
-        <li><a href="featured-car.html" class="navbar-link">Explore cars</a></li>
-        <li><a href="./src/pages/about.html" class="navbar-link">About</a></li>
-        <li><a href="blog.html" class="navbar-link">Blog</a></li>
-        <li><a href="offline.html" class="navbar-link">Offline Centers</a></li>
-        <li><a href="rentcar.html" class="navbar-link">Rent Your Car</a></li>
-      </ul>
+      <ul class="navbar-list" role="menubar" aria-label="Primary">
+          <li><a href="../src/index.html" class="navbar-link" role="menuitem">Home</a></li>
+          <li><a href="featured-car.html" class="navbar-link" role="menuitem">Explore cars</a></li>
+          <li><a href="./src/pages/about.html" class="navbar-link" role="menuitem">About us</a></li>
+          <li><a href="blog.html" class="navbar-link" role="menuitem">Blog</a></li>
+          <li><a href="offline.html" class="navbar-link" role="menuitem">Offline Centers</a></li>
+          <li><a href="rentcar.html" class="navbar-link" role="menuitem">Rent Your Car</a></li>
+          <li><a href="wishlist.html" class="navbar-link" role="menuitem">Wishlist</a></li>
+          <li>
+            <label class="theme-switch" for="theme-toggle" title="Toggle theme">
+              <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode"/>
+              <span id="theme-text">Dark</span>
+            </label>
+          </li>
+          <li>
+            <a href="src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+              <i class="fa-regular fa-user"></i> <span>Login</span>
+            </a>
+          </li>
+        </ul>
+     
     </nav>
 
     <!-- Theme Toggle -->
-    <label class="theme-switch">
-      <input type="checkbox" id="theme-toggle"/>
-      <span class="slider">
-        <button class="btn-outline-light" id="themebtn"><i class="fa-solid fa-gear"></i> Dark</button>
-      </span>
-    </label>
-    <a href="./src/pages/login.html" class="btn-outline-light" id="loginBtn" style="margin-left: 0.75rem;"><i class="fa-regular fa-user"></i> Login</a>
+    
   </header>
-
     <div class="buy-container">
         <div class="buy-header">
             <h1>Buy Used Cars</h1>
