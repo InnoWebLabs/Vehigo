@@ -71,6 +71,7 @@
         .faq-question h3 { font-size: 1rem; color: #111827; }
         .faq-answer { display:none; padding: 0 16px 14px; color: #374151; }
         .faq-item.active .faq-answer { display:block; }
+        .faq-item:hover{ transform: translateY(-1.5px) scale(1);box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); border-color: #3b82f6;}
 
         /* Support */
         .contact-support { background: linear-gradient(180deg, #f8fafc, #eef2ff); padding: 54px 0; }
@@ -81,6 +82,7 @@
         .support-card i { color:#2563eb; font-size:26px; margin-bottom:8px; }
         .support-card h3 { margin:6px 0 4px; color: #000000; }
         .support-card p { color: #333333; }
+        .support-card:hover{transform: translateY(-1.5px) scale(1);box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); border-color: #3b82f6;}
 
         @media (max-width: 640px) { .help-hero h1 { font-size: 2.1rem; } }
 
@@ -353,6 +355,33 @@ padding: 10px 20px !important; /* increased vertical and horizontal padding */
             background: #374151 !important;
             border: 1px solid #4b5563 !important;
         }
+       /* 🔧 Dark Theme Hover Fixes */
+
+/* Category cards hover (dark mode) */
+.dark-theme .category-card:hover {
+  background: linear-gradient(180deg, #4b5563, #6b7280) !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 14px 28px rgba(96, 165, 250, 0.3) !important;
+  transform: translateY(-4px);
+}
+
+/* FAQ item hover (dark mode) */
+.dark-theme .faq-item:hover {
+  background: #4b5563 !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 14px 28px rgba(96, 165, 250, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+/* Support card hover (dark mode) */
+.dark-theme .support-card:hover {
+  background: #4b5563 !important;
+  border-color: #60a5fa !important;
+  box-shadow: 0 14px 28px rgba(96, 165, 250, 0.3) !important;
+  transform: translateY(-3px);
+}
+
+
 
         .dark-theme .faq-question h3 {
             color: #f3f4f6 !important;
