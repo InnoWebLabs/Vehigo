@@ -4,28 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | VehiGo</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-          --vehigo-primary: #2563eb;
-          --vehigo-primary-2: #4e7fb4;
-          --vehigo-primary-3: #1e40af;
-          --vehigo-accent: #ffd700;
-          --vehigo-bg: #f6f8fa;
-          --vehigo-text: #0f172a;
-          --vehigo-card: #ffffff;
-          --vehigo-border: #e5e7eb;
-          --shadow-1: 0 6px 20px rgba(37, 99, 235, .18);
-          --shadow-2: 0 14px 40px rgba(37, 99, 235, .20);
+            --vehigo-primary: #2563eb;
+            --vehigo-primary-2: #4e7fb4;
+            --vehigo-primary-3: #1e40af;
+            --vehigo-accent: #ffd700;
+            --vehigo-bg: #f6f8fa;
+            --vehigo-text: #0f172a;
+            --vehigo-card: #ffffff;
+            --vehigo-border: #e5e7eb;
+            --shadow-1: 0 6px 20px rgba(37, 99, 235, .18);
+            --shadow-2: 0 14px 40px rgba(37, 99, 235, .20);
         }
-        /* Global Reset & Base */
+
+        .dark-theme {
+            --vehigo-bg: #0b1220;
+            --vehigo-text: #e6e6f0;
+            --vehigo-card: #101927;
+            --vehigo-border: #1f2a3a;
+            --shadow-1: 0 6px 20px rgba(0, 0, 0, .35);
+            --shadow-2: 0 20px 50px rgba(0, 0, 0, .45);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -33,267 +42,362 @@
             color: var(--vehigo-text);
             overflow-x: hidden;
             animation: fadeInBody 1s ease-in;
-        }
-        .dark-theme {
-      --vehigo-bg: #0b1220;
-      --vehigo-text: #e6e6f0;
-      --vehigo-card: #101927;
-      --vehigo-border: #1f2a3a;
-      --shadow-1: 0 6px 20px rgba(0, 0, 0, .35);
-      --shadow-2: 0 20px 50px rgba(0, 0, 0, .45);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Header Styles */
-        .header { position: sticky; top: 0; z-index: 100; backdrop-filter: saturate(140%) blur(8px); background: transparent; border-bottom: none; box-shadow: none; border-radius: 0; }
-        .dark-theme .header { background: transparent; }
-        .dark-theme .nav-link { color: #e6e6f0 !important; }
-        .dark-theme .nav-link:hover { color: #60a5fa !important; }
-        /* NAVBAR FIXES */
-        .navbar .nav-link { font-weight: 600; letter-spacing: .2px; color: #334155 !important; white-space: nowrap; padding: .75rem .5rem; line-height: 1.1; }
-        .dark-theme .navbar .nav-link { color: #ffffff !important; }
-        /* Ensure navbar is visible regardless of legacy styles */
-        header.header nav.navbar { display: flex !important; visibility: visible !important; opacity: 1 !important; background: transparent !important; }
-        header.header .navbar-collapse { align-items: center; background: transparent !important; }
-        /* Override legacy fixed width/box-shadow applied to header .container in global CSS */
-        header.header .container { width: 100% !important; max-width: 100% !important; margin: 0; height: auto; box-shadow: none; padding-left: 4px; padding-right: 8px; background: transparent !important; }
-        .navbar-toggler { border-color: rgba(51,65,85,.15); }
-        .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51,65,85,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
-        .dark-theme .navbar-toggler { border-color: rgba(255,255,255,.15); }
-        .dark-theme .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
-        .navbar .nav-link:hover { color: #60a5fa !important; }
-        .navbar-brand img { height: 36px; }
-        .navbar-nav { flex-wrap: nowrap; gap: 16px; align-items: center; }
-        .navbar .btn, .theme-toggle-btn { white-space: nowrap; }
-        @media (max-width: 1200px) { .navbar-nav { gap: 12px; } }
-        .navbar .btn { padding: 6px 14px; font-size: 0.9rem; }
-        /* Theme toggle button (compact, no white pill) */
-        .theme-toggle-btn { border-radius: 22px !important; padding: 6px 12px !important; font-size: 13px !important; font-weight: 600 !important; transition: all 0.2s ease !important; border: 1px solid rgba(51,65,85,0.35) !important; background: transparent !important; color: #334155 !important; box-shadow: none !important; }
-        .theme-toggle-btn:hover { transform: translateY(-1px) !important; border-color: #2563eb !important; color: #2563eb !important; }
-        .theme-toggle-btn.btn-outline-secondary { border-color: rgba(51,65,85,0.35) !important; background: transparent !important; color: #334155 !important; backdrop-filter: none !important; }
-        .theme-toggle-btn.btn-outline-secondary:hover { background: rgba(51,65,85,0.08) !important; border-color: rgba(51,65,85,0.55) !important; color: #334155 !important; }
-        .theme-toggle-btn.btn-outline-light { border-color: rgba(255,255,255,0.35) !important; background: transparent !important; color: #fff !important; backdrop-filter: none !important; }
-        .theme-toggle-btn.btn-outline-light:hover { background: rgba(255,255,255,0.08) !important; border-color: rgba(255,255,255,0.55) !important; color: #fff !important; }
-        .dark-theme .theme-toggle-btn { border: 1px solid rgba(255,255,255,0.35) !important; color: #ffffff !important; }
-        .dark-theme .theme-toggle-btn:hover { border-color: #60a5fa !important; color: #60a5fa !important; }
-        /* Login button visibility */
-        .btn-vehigo { background: transparent !important; color: #334155 !important; border: 1px solid rgba(51,65,85,0.35) !important; border-radius: 25px !important; }
-        .btn-vehigo:hover { background: rgba(51,65,85,0.1) !important; border-color: #2563eb !important; color: #2563eb !important; }
-        .dark-theme .btn-vehigo { color: #fff !important; background: transparent !important; border: 1px solid rgba(255,255,255,0.35) !important; }
-        .dark-theme .btn-vehigo:hover { background: rgba(255,255,255,0.1) !important; border-color: #60a5fa !important; color: #60a5fa !important; }
-        .dark-theme .theme-toggle-btn { color: #fff !important; border-color: rgba(255,255,255,.35) !important; background: rgba(255,255,255,.08) !important; }
-        .dark-theme .theme-toggle-btn:hover { background: rgba(255,255,255,.16) !important; }
-        /* Right-align navbar content */
-        header.header .navbar {
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          position: relative;
-          padding: 0 4px;
-        }
-        header.header .navbar .navbar-brand {
-          position: static;
-          margin-right: auto;
-          margin-left: 0;
-        }
-        header.header .navbar .navbar-collapse {
-          display: flex;
-          justify-content: flex-end;
-          flex: 1;
-        }
-        header.header .navbar .navbar-nav {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          margin: 0;
-          gap: 16px;
-        }
-        header.header .navbar .btn-vehigo { margin-left: 8px; }
-
-        /* Ensure header strip aligns cleanly in both themes */
-        .header { border-radius: 0; }
-        .dark-theme .header { border-bottom-color: rgba(255,255,255,0.08); }
-        
-        /* Right-align navbar items */
-        .navbar-nav {
-          display: flex !important;
-          align-items: center !important;
-          gap: 10px !important;
-          margin-left: auto !important;
-          margin-right: 0 !important;
-          background: transparent !important;
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: saturate(180%) blur(20px);
+            background: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid var(--vehigo-border);
+            transition: all 0.3s ease;
         }
 
-        .navbar-brand {
-          margin-right: auto !important;
-        }
-        
-        /* Ensure buttons are visible and styled properly */
-        .navbar-nav .nav-item {
-          background: transparent !important;
-        }
-        
-        .navbar-nav .btn {
-          background: transparent !important;
-          border: 1px solid rgba(255,255,255,0.35) !important;
-          color: #ffffff !important;
-        }
-        
-        .navbar-nav .btn:hover {
-          background: rgba(255,255,255,0.1) !important;
-          border-color: #60a5fa !important;
-          color: #60a5fa !important;
-        }
-        
-        /* Force remove all white backgrounds */
-        .navbar, .navbar-collapse, .navbar-nav, .nav-item, .nav-link, .btn, .theme-toggle-btn, .btn-vehigo {
-          background: transparent !important;
-          background-color: transparent !important;
-        }
-        
-        /* Override Bootstrap defaults */
-        .navbar-expand-xl .navbar-collapse {
-          background: transparent !important;
-        }
-        
-        .navbar-expand-xl .navbar-nav {
-          background: transparent !important;
+        .dark-theme .header {
+            background: rgba(11, 18, 32, 0.92);
+            border-bottom: 1px solid var(--vehigo-border);
         }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      z-index: 1;
-      padding: 72px 0 28px;
-    }
-
-    .hero .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      font-weight: 700;
-      background: linear-gradient(90deg, rgba(37, 99, 235, .12), rgba(78, 127, 180, .12));
-      border: 1px solid var(--vehigo-border);
-      border-radius: 999px;
-    }
-
-    .hero-title {
-      font-size: clamp(2rem, 4.2vw, 3.2rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: .3px;
-    }
-
-    .hero-sub {
-      font-size: clamp(1rem, 1.6vw, 1.2rem);
-      opacity: .85;
-    }
-        /* Remove legacy header/nav styles */
-
-        @keyframes fadeInBody {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .navbar-brand img {
+            height: 40px;
+            transition: transform 0.3s ease;
         }
 
-        @keyframes slideDown {
-            from { transform: translateY(-100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .navbar-brand:hover img {
+            transform: scale(1.05);
         }
 
-        h1 {
-            font-size: 2.2em;
+        .nav-link {
+            font-weight: 600;
+            color: var(--vehigo-text) !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: var(--vehigo-primary) !important;
+            background: rgba(37, 99, 235, 0.08);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--vehigo-primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .theme-toggle-btn {
+            border: none;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--vehigo-primary);
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--vehigo-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-1);
+        }
+
+        .btn-vehigo {
+            background: var(--vehigo-primary);
+            color: white !important;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 24px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-vehigo:hover {
+            background: var(--vehigo-primary-3);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-1);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 6px 10px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(37, 99, 235, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            width: 1.2em;
+            height: 1.2em;
+        }
+
+        .dark-theme .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Main Content */
+        .privacy-hero {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(78, 127, 180, 0.05) 100%);
+            padding: 100px 0 60px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--vehigo-border);
+        }
+
+        .dark-theme .privacy-hero {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(78, 127, 180, 0.08) 100%);
+        }
+
+        .privacy-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 800;
             text-align: center;
             color: var(--vehigo-text);
-            margin-top: 100px;
-            margin-bottom: 30px;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 30px auto;
-            background: transparent;
-            padding: 30px 40px;
-            border-radius: 0;
-            box-shadow: none;
-            animation: fadeInForm 1.3s ease;
-        }
-
-        @keyframes fadeInForm {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h2 {
-            font-size: 1.5em;
             margin-bottom: 20px;
-            color: hsl(204, 91%, 53%);
-            border-bottom: 2px solid hsl(204, 91%, 53%);
-            padding-bottom: 8px;
+            line-height: 1.2;
         }
 
-        h3 {
-            font-size: 1.2em;
-            margin: 20px 0 10px;
-            color: hsl(204, 91%, 40%);
+        .privacy-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--vehigo-text);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        p {
-            margin-bottom: 15px;
+        .privacy-content {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .section-card {
+            background: var(--vehigo-card);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-1);
+            border: 1px solid var(--vehigo-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-2);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--vehigo-primary);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--vehigo-primary);
+            display: inline-block;
+        }
+
+        .subsection-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--vehigo-primary-2);
+            margin: 25px 0 15px;
+        }
+
+        .content-text {
+            font-size: 1.05rem;
             line-height: 1.7;
+            color: var(--vehigo-text);
+            margin-bottom: 20px;
         }
 
-        ul {
-            margin: 15px 0;
+        .content-list {
+            margin: 20px 0;
             padding-left: 25px;
         }
 
-        li {
-            margin-bottom: 8px;
-        }
-
-        a {
-            color: hsl(204, 91%, 53%);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        a:hover {
-            text-decoration: underline;
+        .content-list li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: var(--vehigo-text);
         }
 
         .highlight-box {
-            background: transparent;
-            border-left: 4px solid hsl(204, 91%, 53%);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(78, 127, 180, 0.08) 100%);
+            border-left: 4px solid var(--vehigo-primary);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border: 1px solid var(--vehigo-border);
         }
 
-        /* Better contrast for Important note in dark mode */
-        .dark-theme .highlight-box {
-            background: #0b1220;
-            border-left-color: #60a5fa;
-            box-shadow: inset 0 0 0 1px rgba(96,165,250,0.15);
+        .highlight-box strong {
+            color: var(--vehigo-primary);
+            font-size: 1.1rem;
         }
-        .dark-theme .highlight-box p { color: #e6f0ff; }
-        .dark-theme .highlight-box strong { color: #93c5fd; }
 
         .contact-info {
-            background: transparent;
-            border: 1px solid #f59e0b;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 20px 0;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(251, 191, 36, 0.08) 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
         }
 
         .contact-info h3 {
             color: #92400e;
-            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
         .contact-info p {
             color: #92400e;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .contact-info a {
+            color: #92400e;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #7c2d12;
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--vehigo-card);
+            border-top: 1px solid var(--vehigo-border);
+            padding: 60px 0 30px;
+            margin-top: auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand img {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: var(--vehigo-text);
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer-list-title {
+            font-weight: 700;
+            color: var(--vehigo-text);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-list li {
+            margin-bottom: 12px;
+        }
+
+        .footer-link {
+            color: var(--vehigo-text);
+            opacity: 0.8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--vehigo-primary);
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--vehigo-border);
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .social-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: var(--vehigo-primary);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: var(--vehigo-primary-3);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .copyright {
+            color: var(--vehigo-text);
+            opacity: 0.7;
+            margin-bottom: 0;
+        }
+
+        .copyright a {
+            color: var(--vehigo-primary);
+            text-decoration: none;
+        }
+
+        .copyright a:hover {
+            text-decoration: underline;
         }
 
         /* Back to Top Button */
@@ -301,100 +405,206 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: hsl(204, 91%, 53%);
+            background: var(--vehigo-primary);
             color: white;
             border: none;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
+            width: 56px;
+            height: 56px;
+            display: none;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 153, 255, 0.3);
+            box-shadow: var(--shadow-1);
             transition: all 0.3s ease;
             z-index: 1000;
+            font-size: 1.2rem;
         }
 
         .back-to-top:hover {
-            background: hsl(204, 91%, 43%);
+            background: var(--vehigo-primary-3);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 153, 255, 0.4);
+            box-shadow: var(--shadow-2);
+        }
+
+        /* Animations */
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-card {
+            animation: fadeInUp 0.6s ease-out;
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .navbar-nav {
+                gap: 8px;
+            }
+            
+            .nav-link {
+                padding: 0.4rem 0.8rem !important;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                background: var(--vehigo-card);
+                border-radius: 12px;
+                padding: 20px;
+                margin-top: 10px;
+                box-shadow: var(--shadow-2);
+                border: 1px solid var(--vehigo-border);
+            }
+            
+            .nav-link {
+                text-align: center;
+                padding: 0.75rem 1rem !important;
+            }
+            
+            .navbar-nav {
+                gap: 5px;
+            }
+        }
+
         @media (max-width: 768px) {
-            main {
-                width: 90%;
-                padding: 25px 20px;
+            .privacy-hero {
+                padding: 80px 0 40px;
             }
 
-            h1 {
-                font-size: 1.8em;
+            .privacy-content {
+                padding: 0 15px 40px;
             }
 
-            h2 {
-                font-size: 1.3em;
+            .section-card {
+                padding: 25px;
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .subsection-title {
+                font-size: 1.2rem;
+            }
+
+            .content-text {
+                font-size: 1rem;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .theme-toggle-btn,
+            .btn-vehigo {
+                width: 100%;
+                justify-content: center;
+                margin: 5px 0;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-hero {
+                padding: 70px 0 30px;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+
+            .contact-info {
+                padding: 20px;
+            }
+            
+            .navbar-brand img {
+                height: 32px;
             }
         }
     </style>
 </head>
 <body class="dark-theme">
 <header class="header">
-
-  <nav class="navbar navbar-expand-xl container-fluid px-4 py-2">
-    <a class="navbar-brand d-flex align-items-center gap-1" href="/src/index.html" aria-label="Vehigo Home">
-      <img src="./assets/images/vehigologo.png" alt="Vehigo" />
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/src/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="featured-car.html">Explore cars</a></li>
-        <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
-        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
-        <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
-        <li class="nav-item">
-          <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
-            <i class="fa-solid fa-gear"></i><span class="label">Light</span>
-          </button>
-        </li>
-        <li class="nav-item">
-          <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
-            <i class="fa-regular fa-user"></i> <span>Login</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout">
-            <i class="fa-solid fa-right-from-bracket"></i><span></span>
-      </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-xl container-fluid px-4 py-3">
+        <a class="navbar-brand d-flex align-items-center gap-1" href="/src/index.html" aria-label="Vehigo Home">
+            <img src="./assets/images/vehigologo.png" alt="Vehigo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="/src/index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="featured-car.html">Explore cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
+                <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
+            </ul>
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <button id="themeToggle" class="btn theme-toggle-btn" type="button">
+                        <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+                        <i class="fa-regular fa-user"></i> <span>Login</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </header>
 
-    <h1>Privacy Policy</h1>
+<section class="privacy-hero">
+    <div class="container">
+        <h1 class="privacy-title">Privacy Policy</h1>
+        <p class="privacy-subtitle">Your privacy is important to us. Learn how we protect and handle your information.</p>
+    </div>
+</section>
 
-    <main>
-        <section>
-  <h2>1. Introduction</h2>
-            <p>Welcome to VehiGo. We are committed to protecting your privacy and handling your data in an open and transparent manner. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our car rental services.</p>
+<main class="privacy-content">
+    <div class="container">
+        <div class="section-card">
+            <h2 class="section-title">1. Introduction</h2>
+            <p class="content-text">Welcome to VehiGo. We are committed to protecting your privacy and handling your data in an open and transparent manner. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our car rental services.</p>
 
             <div class="highlight-box">
                 <p><strong>Important:</strong> Please read this policy carefully. If you do not agree with the terms of this privacy policy, please do not access our services.</p>
             </div>
+        </div>
 
-  <h2>2. Information We Collect</h2>
-            <p>We may collect information about you in a variety of ways. The information we may collect includes:</p>
+        <div class="section-card">
+            <h2 class="section-title">2. Information We Collect</h2>
+            <p class="content-text">We may collect information about you in a variety of ways. The information we may collect includes:</p>
 
-            <h3>Personal Data</h3>
-            <p>Personally identifiable information, such as:</p>
-            <ul>
+            <h3 class="subsection-title">Personal Data</h3>
+            <p class="content-text">Personally identifiable information, such as:</p>
+            <ul class="content-list">
                 <li>Your name, email address, and phone number</li>
                 <li>Shipping and billing addresses</li>
                 <li>Driver's license information</li>
@@ -402,27 +612,29 @@
                 <li>Demographic information (age, gender, preferences)</li>
             </ul>
 
-            <h3>Derivative Data</h3>
-            <p>Information our servers automatically collect when you access our services:</p>
-            <ul>
+            <h3 class="subsection-title">Derivative Data</h3>
+            <p class="content-text">Information our servers automatically collect when you access our services:</p>
+            <ul class="content-list">
                 <li>IP address and browser type</li>
                 <li>Operating system and device information</li>
                 <li>Access times and pages viewed</li>
                 <li>Referring website addresses</li>
             </ul>
 
-            <h3>Financial Data</h3>
-            <p>Financial information related to your payment methods, including:</p>
-            <ul>
+            <h3 class="subsection-title">Financial Data</h3>
+            <p class="content-text">Financial information related to your payment methods, including:</p>
+            <ul class="content-list">
                 <li>Credit card numbers and expiration dates</li>
                 <li>Bank account information</li>
                 <li>Payment history and transaction records</li>
             </ul>
+        </div>
 
-  <h2>3. How We Use Your Information</h2>
-            <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you to:</p>
+        <div class="section-card">
+            <h2 class="section-title">3. How We Use Your Information</h2>
+            <p class="content-text">Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you to:</p>
 
-            <ul>
+            <ul class="content-list">
                 <li><strong>Account Management:</strong> Create and manage your VehiGo account</li>
                 <li><strong>Service Delivery:</strong> Process your car rental transactions and send related information</li>
                 <li><strong>Communication:</strong> Enable user-to-user communications and customer support</li>
@@ -431,17 +643,19 @@
                 <li><strong>Support:</strong> Resolve disputes and troubleshoot problems</li>
                 <li><strong>Customer Service:</strong> Respond to product and customer service requests</li>
                 <li><strong>Legal Compliance:</strong> Comply with legal obligations and protect our rights</li>
-  </ul>
+            </ul>
+        </div>
 
-  <h2>4. Disclosure of Your Information</h2>
-            <p>We may share information we have collected about you in certain situations:</p>
+        <div class="section-card">
+            <h2 class="section-title">4. Disclosure of Your Information</h2>
+            <p class="content-text">We may share information we have collected about you in certain situations:</p>
 
-            <h3>By Law or to Protect Rights</h3>
-            <p>If we believe the release of information about you is necessary to respond to legal process, investigate potential violations of our policies, or protect the rights, property, and safety of others.</p>
+            <h3 class="subsection-title">By Law or to Protect Rights</h3>
+            <p class="content-text">If we believe the release of information about you is necessary to respond to legal process, investigate potential violations of our policies, or protect the rights, property, and safety of others.</p>
 
-            <h3>Third-Party Service Providers</h3>
-            <p>We may share your information with third parties that perform services for us, including:</p>
-            <ul>
+            <h3 class="subsection-title">Third-Party Service Providers</h3>
+            <p class="content-text">We may share your information with third parties that perform services for us, including:</p>
+            <ul class="content-list">
                 <li>Payment processing</li>
                 <li>Data analysis and storage</li>
                 <li>Email delivery services</li>
@@ -449,223 +663,178 @@
                 <li>Marketing assistance</li>
             </ul>
 
-            <h3>Marketing Communications</h3>
-            <p>With your consent, we may share your information with third parties for marketing purposes, as permitted by law.</p>
+            <h3 class="subsection-title">Marketing Communications</h3>
+            <p class="content-text">With your consent, we may share your information with third parties for marketing purposes, as permitted by law.</p>
+        </div>
 
-            <h2>5. Data Security</h2>
-            <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
-            <ul>
+        <div class="section-card">
+            <h2 class="section-title">5. Data Security</h2>
+            <p class="content-text">We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+            <ul class="content-list">
                 <li>SSL encryption for data transmission</li>
                 <li>Secure servers and databases</li>
                 <li>Regular security audits and updates</li>
                 <li>Access controls and authentication</li>
             </ul>
+        </div>
 
-            <h2>6. Your Rights</h2>
-            <p>You have certain rights regarding your personal information:</p>
-            <ul>
+        <div class="section-card">
+            <h2 class="section-title">6. Your Rights</h2>
+            <p class="content-text">You have certain rights regarding your personal information:</p>
+            <ul class="content-list">
                 <li><strong>Access:</strong> Request access to your personal data</li>
                 <li><strong>Correction:</strong> Request correction of inaccurate data</li>
                 <li><strong>Deletion:</strong> Request deletion of your personal data</li>
                 <li><strong>Portability:</strong> Request transfer of your data to another service</li>
                 <li><strong>Objection:</strong> Object to processing of your personal data</li>
             </ul>
+        </div>
 
-            <h2>7. Contact Us</h2>
+        <div class="section-card">
+            <h2 class="section-title">7. Contact Us</h2>
             <div class="contact-info">
                 <h3>Privacy Questions?</h3>
                 <p>If you have questions or comments about this Privacy Policy, please contact us:</p>
                 <p><strong>Email:</strong> <a href="mailto:privacy@vehigo.com">privacy@vehigo.com</a></p>
                 <p><strong>Phone:</strong> <a href="tel:1800100100">1800-100-100</a></p>
                 <p><strong>Address:</strong> VehiGo Privacy Team, Madhya Pradesh, India</p>
-</div>
-        </section>
-    </main>
+            </div>
+        </div>
+    </div>
+</main>
 
-    <!-- Footer -->
 <footer class="footer">
     <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="/src/index.html" class="logo">
-            <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
-          </a>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="/src/index.html" class="logo">
+                    <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
+                </a>
+                <p class="footer-text">
+                    Search for cheap rental cars in Madhya Pradesh. We offer our
+                    customers an attractive and fun selection of vehicles as well as
+                    an opportunity to rent their cars when not in use.
+                </p>
+            </div>
 
-          <p class="footer-text">
-            Search for cheap rental cars in Madhya Pradesh. We offer our
-            customers an attractive and fun selection of vehicles as well as
-            an opportunity to rent their cars when not in use.
-          </p>
+            <ul class="footer-list">
+                <li>
+                    <p class="footer-list-title">Company</p>
+                </li>
+                <li><a href="src/pages/about.html" class="footer-link">About us</a></li>
+                <li><a href="./src/pages/pricing.html" class="footer-link">Pricing plans</a></li>
+                <li><a href="blog.html" class="footer-link">Our blog</a></li>
+                <li><a href="ContactUs.html" class="footer-link">Contacts</a></li>
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <p class="footer-list-title">Support</p>
+                </li>
+                <li><a href="./src/pages/help-center.html" class="footer-link">Help center</a></li>
+                <li><a href="./src/pages/Askaques.html" class="footer-link">Ask a question</a></li>
+                <li><a href="privacypolicy.html" class="footer-link">Privacy policy</a></li>
+                <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <p class="footer-list-title">Quick Links</p>
+                </li>
+                <li><a href="/src/index.html" class="footer-link">Home</a></li>
+                <li><a href="featured-car.html" class="footer-link">Explore Cars</a></li>
+                <li><a href="src/pages/login.html" class="footer-link">Login</a></li>
+                <li><a href="/" class="footer-link">Register</a></li>
+            </ul>
         </div>
 
-        <ul class="footer-list">
-          <li>
-            <p class="footer-list-title">Company</p>
-          </li>
-
-          <li>
-            <a href="src/pages/about.html" class="footer-link">About us</a>
-          </li>
-
-          <li>
-            <a href="./src/pages/pricing.html" class="footer-link">Pricing plans</a>
-          </li>
-
-          <li>
-            <a href="blog.html" class="footer-link">Our blog</a>
-          </li>
-
-          <li>
-            <a href="ContactUs.html" class="footer-link">Contacts</a>
-          </li>
-        </ul>
-
-        <ul class="footer-list">
-          <li>
-            <p class="footer-list-title">Support</p>
-          </li>
-
-          <li>
-            <a href="./src/pages/help-center.html" class="footer-link">Help center</a>
-          </li>
-
-          <li>
-            <a href="./src/pages/Askaques.html" class="footer-link">Ask a question</a>
-          </li>
-
-          <li>
-            <a href="privacypolicy.html" class="footer-link">Privacy policy</a>
-          </li>
-
-          <li>
-            <a href="tandc.html" class="footer-link">Terms & conditions</a>
-          </li>
-        </ul>
-
-        <ul class="footer-list">
-          <li>
-            <p class="footer-list-title">Quick Links</p>
-          </li>
-
-          <li>
-            <a href="/src/index.html" class="footer-link">Home</a>
-          </li>
-
-          <li>
-            <a href="featured-car.html" class="footer-link">Explore Cars</a>
-          </li>
-
-          <li>
-            <a href="src/pages/login.html" class="footer-link">Login</a>
-          </li>
-
-          <li>
-            <a href="/" class="footer-link">Register</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer-bottom">
-        <ul class="social-list">
-          <li>
-            <a href="https://facebook.com/vehigo" class="social-link" target="_blank" rel="noopener">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://instagram.com/vehigo" class="social-link" target="_blank" rel="noopener">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://twitter.com/vehigo" class="social-link" target="_blank" rel="noopener">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://linkedin.com/company/vehigo" class="social-link" target="_blank" rel="noopener">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="mailto:contact@vehigo.com" class="social-link">
-              <ion-icon name="mail-outline"></ion-icon>
-            </a>
-          </li>
-        </ul>
-
-        <p class="copyright">
-          &copy; <span id="copyright-year"></span> <a href="/src/index.html">VehiGo</a>. All rights reserved. Contact us at <a href="mailto:contact@vehigo.com">contact@vehigo.com</a>
-        </p>
-      </div>
+        <div class="footer-bottom">
+            <ul class="social-list">
+                <li>
+                    <a href="https://facebook.com/vehigo" class="social-link" target="_blank" rel="noopener">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/vehigo" class="social-link" target="_blank" rel="noopener">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/vehigo" class="social-link" target="_blank" rel="noopener">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/company/vehigo" class="social-link" target="_blank" rel="noopener">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:contact@vehigo.com" class="social-link">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright">
+                &copy; <span id="copyright-year"></span> <a href="/src/index.html">VehiGo</a>. All rights reserved. Contact us at <a href="mailto:contact@vehigo.com">contact@vehigo.com</a>
+            </p>
+        </div>
     </div>
-  </footer>
+</footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
-        <ion-icon name="chevron-up-outline"></ion-icon>
-    </button>
+<button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+</button>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Theme toggle sync with localStorage
-            const themeToggle = document.getElementById('themeToggle');
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.body.classList.remove('dark-theme');
-                themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
-                themeToggle.classList.remove('btn-outline-light');
-                themeToggle.classList.add('btn-outline-secondary');
-            } else {
-                document.body.classList.add('dark-theme');
-                themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
-                themeToggle.classList.remove('btn-outline-secondary');
-                themeToggle.classList.add('btn-outline-light');
-            }
-
-            themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-theme');
-                const isDark = document.body.classList.contains('dark-theme');
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                if (isDark) {
-                  themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
-                  themeToggle.classList.remove('btn-outline-secondary');
-                  themeToggle.classList.add('btn-outline-light');
-                } else {
-                  themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
-                  themeToggle.classList.remove('btn-outline-light');
-                  themeToggle.classList.add('btn-outline-secondary');
-                }
-            });
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-            var yearSpan = document.getElementById('copyright-year');
-            if (yearSpan) {
-                yearSpan.textContent = new Date().getFullYear();
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    document.addEventListener('DOMContentLoaded', function() {
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.remove('dark-theme');
+            themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+        } else {
+            document.body.classList.add('dark-theme');
+            themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
         }
 
-        // Show/hide back to top button based on scroll position
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            if (isDark) {
+                themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+            } else {
+                themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+            }
+        });
+
+        // Copyright year
+        const yearSpan = document.getElementById('copyright-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+
+        // Back to top button
+        const backToTopBtn = document.querySelector('.back-to-top');
         window.addEventListener('scroll', function() {
-            const backToTopBtn = document.querySelector('.back-to-top');
             if (window.pageYOffset > 300) {
                 backToTopBtn.style.display = 'flex';
             } else {
                 backToTopBtn.style.display = 'none';
             }
         });
+    });
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
 </script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
