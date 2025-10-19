@@ -679,7 +679,7 @@
       transition: transform .2s ease, box-shadow .25s ease, border-color .2s ease;
     }
 
-    .get-start-card:hover {
+    .get-start-card:hover{
       transform: translateY(-8px) scale(1.03);
       box-shadow: 0 8px 32px rgba(37, 99, 235, 0.13);
       border-color: var(--vehigo-primary);
@@ -695,7 +695,7 @@
       transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s, background 0.3s;
     }
 
-    .get-start-card .card-icon {
+    .get-start-card .card-icon{
       width: 44px;
       height: 44px;
       display: grid;
@@ -717,6 +717,22 @@
     .dark-theme .reviews {
       background: linear-gradient(180deg, rgba(16, 25, 39, .8), rgba(16, 25, 39, .7));
     }
+     .card:hover{
+       border-color: var(--vehigo-primary);
+
+     }
+     .dark-theme .card{
+      color:white;
+     }
+
+     .dark-theme .card:hover{
+      color:white;
+      
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.22);
+      border-color: var(--vehigo-primary-2);
+      background: linear-gradient(180deg, #101927 80%, #1f2a3a 100%);
+      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s, background 0.3s;
+     }
 
     /* Blog (responsive) */
 .blog-wrapper {
@@ -1498,18 +1514,18 @@
   <section class="reviews container p-3 my-3" id="reviews" data-aos="fade-up">
     <div class="px-2 px-md-3 py-2">
       <div class="d-flex align-items-center justify-content-between">
-        <h2 class="m-0">Reviews</h2>
+        <h2 class="m-0 " >Reviews</h2>
         <span class="badge-soft"><i class="fa-solid fa-shield-heart"></i> Verified customers</span>
       </div>
       <div class="row g-3 mt-1">
-        <div class="col-12 col-lg-6" data-aos="fade-up">
-          <div class="p-3 rounded-4 feature-card-bg-1">
+        <div class="col-12 col-lg-6 " data-aos="fade-up">
+          <div class="p-3 rounded-4 feature-card-bg-1 card">
             <div class="d-flex align-items-center gap-3">
               <img
                 src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg"
                 alt="Rahul Sharma" class="rounded-circle" width="52" height="52" />
               <div>
-                <div class="fw-bold">Rahul Sharma</div>
+                <div class="fw-bold ">Rahul Sharma</div>
                 <div class="small opacity-75">Verified Customer</div>
               </div>
             </div>
@@ -1518,15 +1534,14 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="60">
-          <div class="p-3 rounded-4"
-            style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
-            <div class="d-flex align-items-center gap-3">
+        <div class="col-12 col-lg-6 " data-aos="fade-up" data-aos-delay="60">
+          <div class="p-3 rounded-4 feature-card-bg-1 card">
+            <div class="d-flex align-items-center gap-3 ">
               <img
                 src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jonathan.jpg"
                 alt="Alok Patel" class="rounded-circle" width="52" height="52" />
               <div>
-                <div class="fw-bold">Alok Patel</div>
+                <div class="fw-bold ">Alok Patel</div>
                 <div class="small opacity-75">Verified Customer</div>
               </div>
             </div>
@@ -1535,15 +1550,14 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-6" data-aos="fade-up">
-          <div class="p-3 rounded-4"
-            style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
+        <div class="col-12 col-lg-6 " data-aos="fade-up">
+          <div class="p-3 rounded-4  feature-card-bg-1 card">
             <div class="d-flex align-items-center gap-3">
               <img
                 src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg"
                 alt="Aaru Gupta" class="rounded-circle" width="52" height="52" />
               <div>
-                <div class="fw-bold">Aaru Gupta</div>
+                <div class="fw-bold ">Aaru Gupta</div>
                 <div class="small opacity-75">Verified Customer</div>
               </div>
             </div>
@@ -1552,15 +1566,14 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="60">
-          <div class="p-3 rounded-4"
-            style="background:var(--vehigo-card); border:1px solid var(--vehigo-border); box-shadow: var(--shadow-1);">
+        <div class="col-12 col-lg-6 " data-aos="fade-up" data-aos-delay="60">
+          <div class="p-3 rounded-4 feature-card-bg-1 card">
             <div class="d-flex align-items-center gap-3">
               <img
                 src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jeanette.jpg"
                 alt="Prateeksha Joshi" class="rounded-circle" width="52" height="52" />
               <div>
-                <div class="fw-bold">Prateeksha Joshi</div>
+                <div class="fw-bold ">Prateeksha Joshi</div>
                 <div class="small opacity-75">Verified Customer</div>
               </div>
             </div>
