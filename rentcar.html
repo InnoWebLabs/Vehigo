@@ -11,7 +11,7 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   
   <style>
     /* ---------- VEHIGO THEME VARIABLES ---------- */
@@ -34,7 +34,7 @@
 
     body {
       margin: 0;
-      font-family: 'Inter', 'Nunito', system-ui, -apple-system, sans-serif;
+      font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
       background: var(--vehigo-bg);
       color: var(--vehigo-text);
       transition: all 0.4s ease;
@@ -55,20 +55,20 @@
     #animated-bg {
       position: fixed;
       inset: 0;
-      background: radial-gradient(1200px 800px at 10% 10%, rgba(37, 99, 235, .15), transparent 40%),
-        radial-gradient(1000px 700px at 90% 20%, rgba(78, 127, 180, .2), transparent 45%),
-        radial-gradient(800px 600px at 30% 90%, rgba(30, 64, 175, .18), transparent 40%);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       pointer-events: none;
       z-index: 0;
-      filter: blur(0.5px);
-      animation: blobFloat 24s ease-in-out infinite alternate;
-      opacity: .9;
+      filter: none;
+      opacity: 1;
     }
 
-    @keyframes blobFloat {
-      0% { transform: translate3d(0, 0, 0) scale(1); }
-      100% { transform: translate3d(0, -20px, 0) scale(1.02); }
+    /* Animated particles grid */
+    .particles {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 24px 24px; opacity: .15; animation: parallax 40s linear infinite;
     }
+    @keyframes parallax { from { background-position: 0 0; } to { background-position: 1000px 600px; } }
 
     /* ---------- HEADER ---------- */
     .header {
@@ -240,13 +240,61 @@
 
     /* ---------- FORM ---------- */
     .form-container {
-      background: linear-gradient(180deg, rgba(255, 255, 255, .82), rgba(255, 255, 255, .76));
+      background: rgba(15, 23, 42, .45);
       border: 1px solid var(--vehigo-border);
       border-radius: var(--radius-xl);
       padding: 2rem;
-      box-shadow: var(--shadow-1);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
       margin-bottom: 3rem;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(18px) saturate(120%);
+    }
+
+    /* --- Improved Form Grouping & Inputs with Icons --- */
+    .vehicle-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px dashed var(--vehigo-border);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.6);
+    }
+    .vehicle-section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--vehigo-primary);
+      margin: .25rem 0 .5rem;
+    }
+    .input-with-icon {
+      position: relative;
+    }
+    .input-with-icon i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #60a5fa;
+      opacity: .85;
+      pointer-events: none;
+    }
+    .input-with-icon input {
+      padding-left: 38px !important;
+    }
+    .error-text {
+      font-size: .85rem;
+      color: #b91c1c;
+      margin-top: 6px;
+      display: none;
+    }
+    .has-error input {
+      border-color: #ef4444 !important;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, .15) !important;
+    }
+    .help-text {
+      font-size: .85rem;
+      color: #64748b;
     }
     
     body.dark-theme .form-container {
@@ -284,8 +332,8 @@
     }
     
     #carForm input:focus {
-      border-color: var(--vehigo-primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, .1);
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, .25), 0 8px 24px rgba(0,0,0,.25);
       outline: none;
       transform: translateY(-1px);
     }
@@ -313,9 +361,9 @@
       font-size: 1.1rem;
       cursor: pointer;
       color: #fff;
-      background: linear-gradient(135deg, var(--vehigo-primary), var(--vehigo-primary-2));
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
       transition: all 0.3s ease;
-      box-shadow: var(--shadow-1);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, .35);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -325,8 +373,8 @@
     
     #carForm button:hover {
       transform: translateY(-3px);
-      box-shadow: var(--shadow-2);
-      background: linear-gradient(135deg, var(--vehigo-primary-3), var(--vehigo-primary));
+      box-shadow: 0 16px 40px rgba(139, 92, 246, .45);
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
     }
     
     #carForm button:active {
@@ -534,6 +582,9 @@
     /* New Footer UI */
     .footer {
       padding: 60px 0 20px;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
     }
     .footer .container { max-width: 1200px; margin-inline: auto; }
     .footer-grid {
@@ -731,6 +782,48 @@ body.dark-theme .vehicle-submit-btn:hover {
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 0.6s ease;
+  position: relative;
+  will-change: transform, box-shadow;
+  transition: transform .2s ease, box-shadow .3s ease;
+}
+
+/* Animated gradient border around card */
+.vehicle-form-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  padding: 2px;
+  background: conic-gradient(from 0deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: borderSpin 6s linear infinite;
+  pointer-events: none;
+  opacity: .25;
+}
+
+@keyframes borderSpin { to { transform: rotate(360deg); } }
+
+/* Entry pop animation helper */
+.card-animate { animation: cardPop .6s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes cardPop {
+  0% { opacity: 0; transform: translateY(18px) scale(.98); }
+  60% { opacity: 1; transform: translateY(-2px) scale(1.005); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.vehicle-form-card:hover {
+  box-shadow: 0 16px 40px rgba(59,130,246,.25), 0 6px 20px rgba(0,0,0,.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vehicle-form-card,
+  .vehicle-form-card::before,
+  .card-animate {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 .vehicle-form-title {
@@ -934,6 +1027,7 @@ body.dark-theme .vehicle-submit-btn i {
 
   <!-- ANIMATED BACKGROUND -->
   <div id="animated-bg"></div>
+  <div class="particles"></div>
 
   <!-- MAIN -->
   <main class="rentcar-main-content">
@@ -949,38 +1043,82 @@ body.dark-theme .vehicle-submit-btn i {
 
     <!-- 🚗 Vehicle Form Section -->
 <section class="vehicle-form-section">
-  <div class="vehicle-form-card">
-    <h2 class="vehicle-form-title">Add Your Vehicle</h2>
+  <div class="vehicle-form-card card-animate" aria-labelledby="vehicle-form-title">
+    <h2 id="vehicle-form-title" class="vehicle-form-title">Add Your Vehicle</h2>
 
-    <form id="vehicleForm" class="vehicle-form">
-      <div class="vehicle-input-group">
-        <label for="carName">Car Make & Model</label>
-        <input type="text" id="carName" placeholder="e.g., Honda City, Toyota Innova" required />
+    <form id="vehicleForm" class="vehicle-form" novalidate>
+      <!-- Group: Car Information -->
+      <div class="vehicle-section" aria-labelledby="sec-car-info">
+        <div class="vehicle-section-title" id="sec-car-info">
+          <i class="fas fa-car-side"></i>
+          <span>Car information</span>
+        </div>
+        <div class="vehicle-input-group" id="group-carName">
+          <label for="carName">Car Make & Model</label>
+          <div class="input-with-icon">
+            <i class="fas fa-tag"></i>
+            <input type="text" id="carName" placeholder="e.g., Honda City, Toyota Innova" required aria-required="true" aria-describedby="carName-help carName-error" />
+          </div>
+          <div id="carName-help" class="help-text">Use full model name for better discovery.</div>
+          <div id="carName-error" class="error-text"></div>
+        </div>
+
+        <div class="vehicle-input-group" id="group-year">
+          <label for="year">Year of Registration</label>
+          <div class="input-with-icon">
+            <i class="fas fa-calendar-alt"></i>
+            <input type="number" id="year" placeholder="e.g., 2020" required aria-required="true" aria-describedby="year-error" />
+          </div>
+          <div id="year-error" class="error-text"></div>
+        </div>
       </div>
 
-      <div class="vehicle-input-group">
-        <label for="year">Year of Registration</label>
-        <input type="number" id="year" placeholder="e.g., 2020" required />
+      <!-- Group: Pricing & Location -->
+      <div class="vehicle-section" aria-labelledby="sec-pricing-location">
+        <div class="vehicle-section-title" id="sec-pricing-location">
+          <i class="fas fa-map-marked-alt"></i>
+          <span>Pricing & location</span>
+        </div>
+        <div class="vehicle-input-group" id="group-price">
+          <label for="price">Rental Price per Day</label>
+          <div class="input-with-icon">
+            <i class="fas fa-indian-rupee-sign"></i>
+            <input type="number" id="price" placeholder="e.g., 1500" required aria-required="true" aria-describedby="price-error" />
+          </div>
+          <div id="price-error" class="error-text"></div>
+        </div>
+
+        <div class="vehicle-input-group" id="group-location">
+          <label for="location">Pickup Location</label>
+          <div class="input-with-icon">
+            <i class="fas fa-location-dot"></i>
+            <input type="text" id="location" placeholder="e.g., Bhopal, Indore" required aria-required="true" aria-describedby="location-error" />
+          </div>
+          <div id="location-error" class="error-text"></div>
+        </div>
       </div>
 
-      <div class="vehicle-input-group">
-        <label for="price">Rental Price per Day</label>
-        <input type="number" id="price" placeholder="e.g., 1500" required />
+      <!-- Group: Media -->
+      <div class="vehicle-section" aria-labelledby="sec-media">
+        <div class="vehicle-section-title" id="sec-media">
+          <i class="fas fa-image"></i>
+          <span>Photos</span>
+        </div>
+        <div class="vehicle-input-group" id="group-imageUrl">
+          <label for="imageUrl">Image URL of Car</label>
+          <div class="input-with-icon">
+            <i class="fas fa-link"></i>
+            <input type="url" id="imageUrl" placeholder="https://example.com/car-image.jpg" required aria-required="true" aria-describedby="imageUrl-error" />
+          </div>
+          <div id="imageUrl-error" class="error-text"></div>
+        </div>
       </div>
 
-      <div class="vehicle-input-group">
-        <label for="location">Pickup Location</label>
-        <input type="text" id="location" placeholder="e.g., Bhopal, Indore" required />
+      <div class="form-submit">
+        <button type="submit" class="vehicle-submit-btn pulse" aria-live="polite">
+          <i class="fas fa-plus"></i> Add Your Car
+        </button>
       </div>
-
-      <div class="vehicle-input-group">
-        <label for="imageUrl">Image URL of Car</label>
-        <input type="url" id="imageUrl" placeholder="https://example.com/car-image.jpg" required />
-      </div>
-
-      <button type="submit" class="vehicle-submit-btn">
-        <i class="fas fa-plus"></i> Add Your Car
-      </button>
     </form>
   </div>
 </section>
@@ -1021,6 +1159,7 @@ body.dark-theme .vehicle-submit-btn i {
             </a>
             <p class="footer-text">
               Seamless rentals across Bhopal, Indore and Ujjain. Reliable, affordable and convenient car rental services for every journey.
+            </p>
           </div>
 
           <ul class="footer-list">
@@ -1080,6 +1219,7 @@ body.dark-theme .vehicle-submit-btn i {
 
   <!-- SCRIPTS -->
   <script src="scripts/rentcar.js"></script>
+  <div id="toast-root" aria-live="polite" aria-atomic="true" style="position: fixed; top: 16px; right: 16px; z-index: 2000;"></div>
   
   <!-- SCROLL FUNCTIONS -->
   <script>
@@ -1106,9 +1246,13 @@ body.dark-theme .vehicle-submit-btn i {
   <!-- THEME SCRIPT -->
   <script>
     const themebtn = document.getElementById('theme-toggle');
-    if(localStorage.getItem("theme") === "dark"){
+    // Default to dark if no preference saved
+    if(localStorage.getItem("theme") !== "light"){
       document.body.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
       themebtn.innerHTML = '<i class="fa-solid fa-sun"></i> Light';
+    } else {
+      themebtn.innerHTML = '<i class="fa-solid fa-moon"></i> Dark';
     }
     themebtn.addEventListener("click", () => {
       if(document.body.classList.contains("dark-theme")){
