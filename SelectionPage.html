@@ -5,112 +5,325 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.svg">
-    <title>
-        Selection page
-    </title>
+    <title>Selection Page</title>
 
-    <!-- 
-        - custom css link
-      -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/selectionStyle.css">
+    <style>
+        :root {
+            --vehigo-primary: #2563eb;
+            --vehigo-primary-2: #4e7fb4;
+            --vehigo-primary-3: #1e40af;
+            --vehigo-accent: #ffd700;
+            --vehigo-bg: #f6f8fa;
+            --vehigo-text: #0f172a;
+            --vehigo-card: #ffffff;
+            --vehigo-border: #e5e7eb;
+            --shadow-1: 0 6px 20px rgba(37, 99, 235, .18);
+            --shadow-2: 0 14px 40px rgba(37, 99, 235, .20);
+            --radius-xl: 18px;
+            --radius-md: 12px;
+        }
 
-    <!-- 
-    - google font link
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
-        rel="stylesheet">
+        * {
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            background-color: var(--vehigo-bg);
+            color: var(--vehigo-text);
+        }
+
+        /* HEADER */
+        header {
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--vehigo-primary);
+            color: white;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--vehigo-accent);
+        }
+
+        .header-contact {
+            text-align: right;
+            color: white;
+        }
+
+        /* MAIN SELECTION */
+        main.selection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 10px;
+            background-color: #b8d3f0;
+        }
+
+        main.selection h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--vehigo-primary-3);
+            font-weight: 700;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* FLIP CARD */
+        .flip-card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--radius-xl);
+            backface-visibility: hidden;
+            box-shadow: var(--shadow-1);
+        }
+
+        .flip-card-front {
+            background-color: var(--vehigo-card);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
+
+        .flip-card-front:hover {
+            background: linear-gradient(135deg, var(--vehigo-primary), var(--vehigo-primary-2));
+            color: white;
+        }
+
+        .flip-card-front img {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .flip-card-front:hover img {
+            transform: scale(1.1);
+        }
+
+        .flip-card-front h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .flip-card-front .btn {
+            background: var(--vehigo-primary);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .flip-card-front .btn:hover {
+            background: var(--vehigo-primary-2);
+            transform: scale(1.05);
+        }
+
+        .flip-card-back {
+            background-color: var(--vehigo-primary-2);
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+/* BACK TO HOME BUTTON */
+.back-home {
+    margin-top: 40px;
+    display: flex;          /* Make it flex */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically if needed */
+}
+
+.back-home a {
+    background-color: var(--vehigo-primary);
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-home a:hover {
+    background-color: var(--vehigo-primary-2);
+    transform: scale(1.05);
+}
+
+        /* RESPONSIVE */
+        @media(max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+        }
+
+        /* RESPONSIVE */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Keep your existing code */
+    }
+
+    main.selection h1 {
+        font-size: 2rem; /* Slightly smaller heading */
+        text-align: center;
+    }
+
+    .cards-container {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 30px;
+        align-items: center;
+    }
+
+    .flip-card {
+        width: 250px; /* Smaller card width */
+        height: 350px; /* Adjust height */
+    }
+
+    .flip-card-front img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .flip-card-front h3 {
+        font-size: 1.3rem;
+    }
+
+    .flip-card-front .btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .back-home {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .back-home a {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+    </style>
 </head>
 
 <body>
 
-    <header class="header" data-header>
-        <div class="container">
+    <header>
+        <a href="index.html" class="logo"><img src="./assets/images/vehigologo.png" alt="VehiGo logo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#featured-car">Explore cars</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="header-contact">
+            <a href="tel:1800100100" style="color: white;">1800-100-100</a><br>
+            Mon - Sat: 9:00 am - 6:00 pm
+        </div>
+    </header>
 
-            <div class="overlay" data-overlay></div>
+    <main class="selection">
+        <h1>ARE YOU A CLIENT OR AN OWNER ?</h1>
+        <div class="cards-container">
 
-            <a href="/src/index.html" class="logo">
-                <img src="./assets/images/vehigologo.png" alt="VehiGo logo">
+            <!-- Owner Card -->
+            <a href="hostPage.html">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/car-rental.png" alt="Owner">
+                            <h3>Owner</h3>
+                            <button class="btn">Register</button>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Owner Info</h3>
+                            <p>Owners can list their vehicles, manage bookings, and monitor performance.</p>
+                        </div>
+                    </div>
+                </div>
             </a>
 
-            <nav class="navbar" data-navbar>
-                <ul class="navbar-list">
-
-                    <li>
-                        <a href="/src/index.html" class="navbar-link" data-nav-link>Home</a>
-                    </li>
-
-                    <li>
-                        <a href="index.html#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="navbar-link" data-nav-link>About us</a>
-                    </li>
-
-                    <li>
-                        <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-                    </li>
-
-                </ul>
-            </nav>
-
-            <div class="header-actions">
-
-                <div class="header-contact">
-                    <a href="tel:1800100100" class="contact-link">1800-100-100</a>
-
-                    <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+            <!-- Client Card -->
+            <a href="/">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/user (1).png" alt="Client">
+                            <h3>Client</h3>
+                            <button class="btn">Register</button>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Client Info</h3>
+                            <p>Clients can browse cars, book trips, and manage reservations easily.</p>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
-                    <ion-icon name="car-outline"></ion-icon>
-
-                    <span id="aria-label-txt">Explore cars</span>
-                </a>
-
-                <a href="./src/pages/login.html" class="btn user-btn" aria-label="Profile">
-                    <ion-icon name="person-outline"></ion-icon>
-                </a>
-
-                <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-                    <span class="one"></span>
-                    <span class="two"></span>
-                    <span class="three"></span>
-                </button> -->
-
-            </div>
+            </a>
 
         </div>
+    </main>
 
+    <div class="back-home">
+        <a href="index.html">Back to Home</a>
+    </div>
 
-        <main class="selection">
-            <h1>ARE YOU A CLIENT OR AN OWNER ?</h1>
-            <a href="hostPage.html">
-                <div class="card1">
-                    <div class="owner">
-                        <img src="./assets/images/car-rental.png">
-                        <h3>Owner</h3>
-                        <input type="submit" value="Register" />
-                    </div>
-                </div>
-            </a>
-
-            <a href="/">
-                <div class="card2">
-                    <div class="owner">
-                        <img src="./assets/images/user (1).png">
-                        <h3>Client</h3>
-                        <input type="submit" value="Register" />
-                    </div>
-                </div>
-            </a>
-        </main>
-        <script src="scripts/loginscript.js"></script>
+            <script src="scripts/loginscript.js"></script>
 
 </body>
-
 </html>
