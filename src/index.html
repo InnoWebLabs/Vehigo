@@ -331,10 +331,10 @@
     background: white;
     border-radius: 0 0 12px 12px;
   }
-  
-  .featured-car-card:hover .card-content {
-    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+  body.dark .card-content{ 
+    background-color: black !important;
   }
+   
   
   .card-title-wrapper {
     position: relative;
@@ -399,7 +399,7 @@
     border: 2px solid #007bff;
     background: #007bff;
     color: white;
-    font-weight: 600;
+    font-weight: 800;
     border-radius: 30px;
     padding: 10px 20px;
   }
@@ -417,8 +417,9 @@
   }
   
   .featured-car-card:hover .btn {
+    background: #fff;
     color: #007bff;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
   }
   
   .featured-car-card:hover .btn::before {
@@ -487,7 +488,8 @@
 /* -------------------- BLOG SECTION -------------------- */
 .blog {
   padding: 80px 0;
-  background-color: var(--bg-color, #f8f9fa);
+  background-color: #f8f9fa;
+  color: #000;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -496,12 +498,11 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 10px;
-  color: var(--text-color, #111);
+  color:  #111;
 }
 
 .blog .section-sub {
-  text-align: center;
-  color: var(--subtext-color, #666);
+  text-align: center; 
   max-width: 600px;
   margin: 0 auto 40px auto;
 }
@@ -606,7 +607,7 @@ body.dark, body.dark-theme {
   --vehigo-blue-dark: #2563eb;
 }
 
-body.dark .blog, body.dark-theme .blog {
+body.dark .blog {
   background-color: var(--bg-color);
 }
 
@@ -625,13 +626,11 @@ body.dark-theme .blog-card .text-dark {
   color: var(--meta-text) !important;
 }
 
-body.dark .section-title,
-body.dark-theme .section-title {
+body.dark .section-title {
   color: var(--heading-color);
 }
 
-body.dark .section-sub,
-body.dark-theme .section-sub {
+body.dark .section-sub {
   color: var(--subtext-color);
 }
 
@@ -666,7 +665,7 @@ body.dark-theme .section-sub {
 
       <div class="overlay" data-overlay></div>
 
-      <a href="/src/index.html" class="logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});">
+      <a href="./index.html" class="logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});">
     <img src="./assets/images/vehigologo.png" alt="VehiGo logo">
 </a>
 
@@ -674,7 +673,7 @@ body.dark-theme .section-sub {
   <ul class="navbar-list">
 
     <li>
-      <a href="/src/index.html" class="navbar-link" data-nav-link>Home</a>
+      <a href="./index.html" class="navbar-link" data-nav-link>Home</a>
     </li>
 
     <li>

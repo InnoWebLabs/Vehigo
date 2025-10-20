@@ -201,7 +201,10 @@ body.dark .overlay { background: var(--alice-blue-2); }
 
 ::-webkit-scrollbar-thumb:hover { background: hsla(219, 14%, 60%, 0.5); }
 
-
+/* logo in dark */
+body.dark .logo img{
+  filter:  brightness(0) invert(1);
+}
 
 
 
@@ -305,7 +308,7 @@ button, a { transition: var(--transition); }
   height: 70px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; 
 }
 
 .header-actions {
@@ -313,6 +316,9 @@ button, a { transition: var(--transition); }
   align-items: center;
   gap: 20px;
   width: 35%;
+}
+ .logo{
+  margin-left: 4rem;
 }
 
 .header-actions .btn span { display: none; }
