@@ -12,48 +12,45 @@
 <body>
 
 
-  <header class="header">
-    <nav class="navbar container py-2">
-      <a class="navbar-brand " href="../index.html" aria-label="Vehigo Home">
-        <img src="../assets/images/vehigologo.png" alt="Vehigo" />
-      </a>
+   <header class="header">
+      <div class="container-fluid px-4">
+        <nav class="navbar navbar-expand-xl py-2">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/src/index.html" aria-label="Vehigo Home">
+          <img src="../assets/images/vehigologo.png" alt="Vehigo" />
+        </a>
 
-      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
+        
 
-      <div class="navbar-links" id="navMain">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html">Explore cars</a></li>
-          <li class="nav-item"><a class="nav-link" href="../src/pages/about.html">About us</a></li>
-          <li class="nav-item"><a class="nav-link" href="../blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="../offline.html">Offline Centers</a></li>
-          <li class="nav-item"><a class="nav-link" href="../rentcar.html">Rent Your Car</a></li>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/src/index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="featured-car.html">Explore cars</a></li>
+            <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
+            <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
 
-          <!-- Theme switch -->
-          <li class="nav-item">
-            <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
-              <i class="fa-solid fa-gear"></i><span class="label">Light</span>
-            </button>
-          </li>
+            <!-- Theme switch -->
+            <li class="nav-item">
+              <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
+                
+              </button>
+            </li>
 
-          <!-- Login & Logout -->
-          <!-- <li class="nav-item">
-            <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
-              <i class="fa-regular fa-user"></i> <span>Login</span>
-            </a>
-          </li> -->
-          <li class="nav-item">
-            <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout" href="../src/pages/login.html">
-              <i class="fa-solid fa-right-from-bracket"></i>
-            </button>
-          </li>
-        </ul>
+            <!-- Login & Logout -->
+            <li class="nav-item">
+              <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+                <i class="fa-regular fa-user"></i> <span>Login</span>
+              </a>
+            </li>
+           
+          </ul>
+        </div>
+        </nav>
       </div>
-    </nav>
-  </header>
+    </header>
+
 
   <div class="reading-progress" id="readingProgress"></div>
   
@@ -150,12 +147,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
     document.body.classList.remove('dark-theme');
-    themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+    themeToggle.innerHTML = '<span class="label">Dark</span>';
     themeToggle.classList.remove('btn-outline-light');
     themeToggle.classList.add('btn-outline-secondary');
   } else {
     document.body.classList.add('dark-theme');
-    themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+    themeToggle.innerHTML = '<span class="label">Light</span>';
     themeToggle.classList.remove('btn-outline-secondary');
     themeToggle.classList.add('btn-outline-light');
   }
@@ -167,11 +164,11 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
     if (isDark) {
-      themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+      themeToggle.innerHTML = '<span class="label">Light</span>';
       themeToggle.classList.remove('btn-outline-secondary');
       themeToggle.classList.add('btn-outline-light');
     } else {
-      themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+      themeToggle.innerHTML = '<span class="label">Dark</span>';
       themeToggle.classList.remove('btn-outline-light');
       themeToggle.classList.add('btn-outline-secondary');
     }
