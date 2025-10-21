@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pricing Plans | VehiGo</title>
-    <link rel="stylesheet" href="../../assets/css/style.css" />
+   
     <link rel="stylesheet" href="../../assets/styles/pricing-help.css" />
     <link
       rel="stylesheet"
@@ -59,6 +59,38 @@
       }
 
       /* Navbar Styling (match home) */
+      /* Make sure everything stays in one horizontal line */
+.header .navbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+}
+
+/* Align navbar brand, links, and theme toggle neatly */
+.header .navbar .navbar-collapse {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-grow: 1 !important;
+}
+
+/* Prevent wrapping of nav items */
+.header .navbar .navbar-nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: nowrap !important;
+}
+
+
+
+/* Optional: Prevent wrapping of all items together */
+.header .navbar * {
+  white-space: nowrap !important;
+}
+
       .header {
         background: linear-gradient(
           135deg,
@@ -91,7 +123,7 @@
       .nav-link {
         color: #374151 !important;
         font-weight: 500 !important;
-        padding: 10px 15px !important;
+        padding: 16px 15px !important;
         border-radius: 8px !important;
         transition: all 0.3s ease !important;
         position: relative !important;
@@ -111,42 +143,23 @@
 
       /* Theme Toggle Button */
       .theme-toggle-btn {
-        border-radius: 25px !important;
-        padding: 10px 20px !important;
-        font-size: 14px !important;
-        font-weight: 600 !important;
-        transition: all 0.3s ease !important;
-        border: 2px solid #e5e7eb !important;
-        background: linear-gradient(
-          135deg,
-          #ffffff 0%,
-          #f9fafb 100%
-        ) !important;
-        color: #374151 !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+       background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      margin-right: 5px;
+      padding: 10px 25px !important;
+      font-weight: 700 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
       }
+      
       .theme-toggle-btn:hover {
         transform: translateY(-2px) !important;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
-        border-color: #2563eb !important;
-        background: linear-gradient(
-          135deg,
-          #f0f9ff 0%,
-          #e0f2fe 100%
-        ) !important;
-        color: #2563eb !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
       }
-      .theme-toggle-btn.btn-outline-light {
-        border-color: rgba(255, 255, 255, 0.3) !important;
-        background: rgba(255, 255, 255, 0.1) !important;
-        color: white !important;
-        backdrop-filter: blur(10px) !important;
-      }
-      .theme-toggle-btn.btn-outline-light:hover {
-        background: rgba(255, 255, 255, 0.2) !important;
-        border-color: rgba(255, 255, 255, 0.5) !important;
-        color: white !important;
-      }
+      
+    
 
       /* Hero Section Styles */
       .pricing-hero {
@@ -612,36 +625,28 @@
         filter: brightness(0) invert(1);
       }
 
-      /* Fix login button visibility in dark mode */
-      .dark-theme .btn-vehigo {
-        background: #3b82f6 !important;
-        color: white !important;
-        border: 1px solid #3b82f6 !important;
-      }
-
-      .dark-theme .btn-vehigo:hover {
-        background: #2563eb !important;
-        border-color: #2563eb !important;
-        color: white !important;
-      }
+     
 
       /* Ensure the login button has proper styling in light mode as well */
+      /* Login Button */
       .btn-vehigo {
-        background: #2563eb;
-        color: white;
-        border: 1px solid #2563eb;
-        padding: 8px 16px;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      margin-right: 5px;
+      padding: 10px 20px !important;
+      font-weight: 600 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
+      text-decoration: none;
+    }
 
-      .btn-vehigo:hover {
-        background: #1d4ed8;
-        border-color: #1d4ed8;
-        color: white;
-        transform: translateY(-1px);
-      }
+    .btn-vehigo:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+    }
     </style>
   </head>
   <body>
@@ -706,7 +711,7 @@
                 class="btn btn-outline-secondary theme-toggle-btn"
                 type="button"
               >
-                <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+              <span class="label">Light</span>
               </button>
             </li>
 
@@ -967,13 +972,13 @@
             themeToggle.classList.remove("btn-outline-secondary");
             themeToggle.classList.add("btn-outline-light");
             themeToggle.innerHTML =
-              '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+              '<span class="label">Light</span>';
           } else {
             document.body.classList.remove("dark-theme");
             themeToggle.classList.remove("btn-outline-light");
             themeToggle.classList.add("btn-outline-secondary");
             themeToggle.innerHTML =
-              '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+              '<span class="label">Dark</span>';
           }
           themeToggle.addEventListener("click", function (e) {
             e.preventDefault();
@@ -984,14 +989,14 @@
               themeToggle.classList.remove("btn-outline-light");
               themeToggle.classList.add("btn-outline-secondary");
               themeToggle.innerHTML =
-                '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+                '<span class="label">Dark</span>';
             } else {
               document.body.classList.add("dark-theme");
               localStorage.setItem("theme", "dark");
               themeToggle.classList.remove("btn-outline-secondary");
               themeToggle.classList.add("btn-outline-light");
               themeToggle.innerHTML =
-                '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+                '<span class="label">Light</span>';
             }
           });
         } else {
