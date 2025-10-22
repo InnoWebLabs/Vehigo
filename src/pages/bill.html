@@ -183,6 +183,267 @@
       background: #0f172a;
       color: #e6e6f0;
     }
+
+    .dark-theme #carBrand {
+  background-color: #1e1e1e;       /* dark background */
+  color: #f1f1f1;                  /* light text */
+  border: 2px solid #1e88e5;       /* lighter blue border */
+  box-shadow: 0 0 5px rgba(20, 94, 168, 0.4);
+}
+
+.dark-theme #carBrand option {
+  background-color: #2a2a2a;       /* dark dropdown menu */
+  color: #f1f1f1;
+}
+
+/* Optional hover/focus styles */
+.dark-theme #carBrand:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.6);
+}
+    :root {
+  --vehigo-primary: #2563eb;
+  --vehigo-primary-2: #4e7fb4;
+  --vehigo-primary-3: #1e40af;
+  --vehigo-accent: #ffd700;
+  --vehigo-bg: #f6f8fa;
+  --vehigo-text: #0f172a;
+  --vehigo-card: #ffffff;
+  --vehigo-border: #e5e7eb;
+  --shadow-1: 0 6px 20px rgba(37, 99, 235, .18);
+  --shadow-2: 0 14px 40px rgba(37, 99, 235, .20);
+  --radius-xl: 18px;
+  --radius-md: 12px;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Page Background */
+body {
+  background: linear-gradient(180deg, var(--vehigo-bg), #e9efff);
+  color: var(--vehigo-text);
+  padding: 50px 15px;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  color: var(--vehigo-primary);
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+/* Billing Form Container */
+form {
+  background: var(--vehigo-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-1);
+  padding: 30px 35px;
+  max-width: 650px;
+  margin: auto;
+  border: 1px solid var(--vehigo-border);
+  transition: all 0.3s ease;
+}
+
+form:hover {
+  box-shadow: var(--shadow-2);
+  transform: translateY(-3px);
+}
+
+/* Labels */
+label {
+  display: block;
+  font-weight: 600;
+  color: var(--vehigo-primary-3);
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1.8px solid var(--vehigo-border);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  color: var(--vehigo-text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: var(--vehigo-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+}
+
+/* Form Spacing */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Submit Button */
+#billingForm button[type="submit"] {
+  width: 100%;
+  background: var(--vehigo-primary);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-1);
+}
+
+#billingForm button[type="submit"]:hover {
+  background: var(--vehigo-primary-3);
+  box-shadow: var(--shadow-2);
+}
+
+/* Bill Card */
+.bill {
+  background: var(--vehigo-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-1);
+  margin: 40px auto;
+  max-width: 720px;
+  padding: 25px 35px;
+  border: 1px solid var(--vehigo-border);
+  transition: all 0.3s ease;
+}
+
+.bill:hover {
+  box-shadow: var(--shadow-2);
+}
+
+/* Bill Header */
+.bill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px dashed var(--vehigo-border);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.bill-header h3 {
+  color: var(--vehigo-primary);
+  font-weight: 700;
+}
+
+/* Bill Section */
+.bill-section {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Bill Totals */
+.bill-total {
+  border-top: 2px dashed var(--vehigo-border);
+  padding-top: 15px;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.bill-total div {
+  margin: 6px 0;
+}
+
+.bill-total span {
+  float: right;
+  color: var(--vehigo-primary);
+  font-weight: 600;
+}
+
+/* Pay Button */
+.bill button {
+  display: block;
+  background: var(--vehigo-accent);
+  color: #111;
+  font-weight: 700;
+  padding: 12px 0;
+  width: 60%;
+  margin: 20px auto 0;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-1);
+  transition: all 0.3s ease;
+}
+
+.bill button:hover {
+  background: #ffce00;
+  box-shadow: var(--shadow-2);
+}
+.bill {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.container {
+  animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  text-align: center;
+  padding-top: 40px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  animation: fadeSlideIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Entrance Animation */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Optional underline animation */
+h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border-radius: 10px;
+  animation: underlineGrow 1s ease-out 0.8s forwards;
+}
+
+@keyframes underlineGrow {
+  from { width: 0; }
+  to { width: 120px; }
+}
+
   </style>
 </head>
 

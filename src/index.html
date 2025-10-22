@@ -454,6 +454,245 @@
   .footer{
     margin-top: 2rem !important;
   }
+
+     /* Blog (responsive) */
+.blog-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-list {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.blog-list li {
+  flex: 0 0 calc(33.333% - 13.33px); 
+  list-style: none;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+/* -------------------- BLOG SECTION -------------------- */
+.blog {
+  padding: 80px 0;
+  background-color: var(--bg-color, #f8f9fa);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.blog .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--text-color, #111);
+}
+
+.blog .section-sub {
+  text-align: center;
+  color: var(--subtext-color, #666);
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+/* Blog list grid */
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual blog card */
+.blog-card {
+  background: var(--card-bg, #fff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Card banner image */
+.blog-card .card-banner {
+  position: relative;
+}
+
+.blog-card img {
+  width: 100%;
+  height: auto; /* Let height adjust automatically */
+  max-height: 200px; /* Limit height */
+  object-fit: cover;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Card button inside banner */
+.blog-card .btn-vehigo {
+  background: var(--vehigo-blue, #007bff);
+  color: #fff;
+  font-size: 13px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.blog-card .btn-vehigo:hover {
+  background: var(--vehigo-blue-dark, #0056b3);
+}
+
+/* Card content */
+.blog-card .p-3 {
+  padding: 16px;
+}
+
+.blog-card h3 a {
+  color: var(--heading-color, #111);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-card h3 a:hover {
+  color: var(--vehigo-blue, #007bff);
+}
+
+/* Meta info (date & comments) */
+.blog-card .text-dark {
+  color: var(--meta-text, #444) !important;
+}
+
+.blog-card .d-flex img {
+  border: 2px solid var(--vehigo-blue, #007bff);
+}
+
+/* Author section */
+.blog-card .d-flex.align-items-center.gap-2 img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* -------------------- DARK MODE -------------------- */
+body.dark, body.dark-theme {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --subtext-color: #cbd5e1;
+  --card-bg: #1e293b;
+  --heading-color: #f1f5f9;
+  --meta-text: #cbd5e1;
+  --vehigo-blue: #3b82f6;
+  --vehigo-blue-dark: #2563eb;
+}
+
+body.dark .blog, body.dark-theme .blog {
+  background-color: var(--bg-color);
+}
+
+body.dark .blog-card, body.dark-theme .blog-card {
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+}
+
+body.dark .blog-card h3 a,
+body.dark-theme .blog-card h3 a {
+  color: var(--heading-color);
+}
+
+body.dark .blog-card .text-dark,
+body.dark-theme .blog-card .text-dark {
+  color: var(--meta-text) !important;
+}
+
+body.dark .section-title,
+body.dark-theme .section-title {
+  color: var(--heading-color);
+}
+
+body.dark .section-sub,
+body.dark-theme .section-sub {
+  color: var(--subtext-color);
+}
+
+/* Logo */
+.logo img {
+  height: 36px;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Dark mode logo styling if using same logo */
+.dark-theme .logo img {
+  filter: brightness(0) invert(1);
+}
+
+/* Optional: theme button styling */
+.theme-switch {
+  cursor: pointer;
+  border: 1px solid var(--vehigo-border);
+  background: var(--vehigo-card);
+  padding: 6px 12px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-1);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.theme-switch:hover {
+  transform: scale(1.05);
+}
+
+.dark-theme #logo {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+/* Dark mode logo visibility */
+    .dark-theme .navbar-brand img {
+      filter: brightness(0) invert(1);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .dark-theme .navbar-brand:hover img {
+      opacity: 0.8;
+    }
+
+    .navbar-nav {
+      flex-wrap: nowrap;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .navbar .btn,
+    .theme-switch {
+      white-space: nowrap;
+    }
+
+
   </style>
   <!-- 
     - favicon
@@ -480,69 +719,50 @@
     - #HEADER
   -->
 
-  <header class="header" data-header>
-    <div class="container">
+ <header class="header" data-header>
+  <div class="container">
+    <div class="overlay" data-overlay></div>
 
-      <div class="overlay" data-overlay></div>
+   <a class="navbar-brand d-flex align-items-center" href="/src/index.html" aria-label="Vehigo Home">
+        <img src="./assets/images/vehigologo.png" alt="Vehigo" />
+      </a>
 
-      <a href="/src/index.html" class="logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});">
-    <img src="./assets/images/vehigologo.png" alt="VehiGo logo">
-</a>
+    <nav class="navbar" data-navbar>
+      <ul class="navbar-list">
+        <li><a href="/src/index.html" class="navbar-link" data-nav-link>Home</a></li>
+        <li><a href="index.html#featured-car" class="navbar-link" data-nav-link>Explore cars</a></li>
+        <li><a href="pages/about.html" class="navbar-link" data-nav-link>About us</a></li>
+        <li><a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a></li>
+        <li><a href="./pages/bill.html" class="navbar-link" data-nav-link>Fare Calculator</a></li>
+      </ul>
+    </nav>
 
-<nav class="navbar" data-navbar>
-  <ul class="navbar-list">
-
-    <li>
-      <a href="/src/index.html" class="navbar-link" data-nav-link>Home</a>
-    </li>
-
-    <li>
-      <a href="index.html#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
-    </li>
-
-    <li>
-      <a href="pages/about.html" class="navbar-link" data-nav-link>About us</a>
-    </li>
-
-    <li>
-      <a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a>
-    </li>
-
-    <li>
-      <a href="./pages/bill.html" class="navbar-link" data-nav-link>Fare Calculator</a>
-    </li>
-
-  </ul>
-</nav>
-
-
-      <div class="header-actions">
-
-        <div class="header-contact">
-          <a href="tel:1800100100" class="contact-link">1800-100-100</a>
-
-          <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
-        </div>
-
-        <a href="./pages/login.html" class="btn user-btn" aria-label="Profile">
-          <ion-icon name="person-outline"></ion-icon>
-        </a>
-
-        <button class="btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme" style="min-width:40px;min-height:40px;display:flex;align-items:center;gap:8px;padding-inline:10px;">
-          <ion-icon id="theme-toggle-icon" name="moon-outline"></ion-icon>
-          <span id="theme-toggle-text">Dark</span>
-        </button>
-
-        <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-          <span class="one"></span>
-          <span class="two"></span>
-          <span class="three"></span>
-        </button>
-
+    <div class="header-actions">
+      <div class="header-contact">
+        <a href="tel:1800100100" class="contact-link">1800-100-100</a>
+        <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
       </div>
 
+      <a href="./pages/login.html" class="btn user-btn" aria-label="Profile">
+        <ion-icon name="person-outline"></ion-icon>
+      </a>
+
+      <!-- ✅ Fixed button IDs -->
+      <button class="btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme"
+        style="min-width:71px;min-height:40px;display:flex;align-items:center;gap:8px;padding-inline:10px;">
+        <ion-icon id="theme-toggle-icon" name="moon-outline"></ion-icon>
+        <span id="theme-toggle-text">Dark</span>
+      </button>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <main>
     <article>
@@ -1219,255 +1439,134 @@
       </section>
 
 
-      <!-- 
-        - #BLOG
-      -->
+   <section class="section blog" id="blog">
+    <div class="container">
+      <div class="blog-wrapper">
+        <h2 class="section-title" data-aos="fade-up">Our Blog</h2>
+        <p class="section-sub" data-aos="fade-up" data-aos-delay="70">Tips, news, and essential guides for renters &
+          hosts.</p>
 
-      <section class="section blog" id="blog">
-        <div class="container">
 
-          <div class="blog-wrapper">
-            <h2 class="h2 section-title">Our Blog</h2>
-
-            <button class="left-arrow">
-              &#10094;
-            </button>
-
-            <ul class="blog-list has-scrollbar">
-
-              <li>
-                <div class="blog-card">
-
-                  <figure class="blog-image">
-
-                      <a href="blog.html?id=1"><img src="./assets/images/blog-1.jpg" alt="Opening of new offices of the company" loading="lazy"
-                        class="w-100"></a>
-                    
-
-                  </figure>
-
-                  <div class="card-content">
-
-                    <h3 class="h3 card-title">
-                      <a href="blog.html?id=1">Opening of new offices of the company</a>
-                    </h3>
-
-                    <div class="card-meta">
-
-                      <div class="publish-date">
-                        <ion-icon name="time-outline"></ion-icon>
-
-                        <time datetime="2022-01-14">January 14, 2022</time>
-                      </div>
-
-                      <div class="comments">
-                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
-                        <data value="114">114</data>
-                      </div>
-
-                    </div>
-
-                    <div class="card-author">
-                      <img src="./assets/images/author.jpg" class="author-img">
-                      <div class="author-name">Benialla Dsouza</div>
-                    </div>
-
-                  </div>
-
+        <ul class="blog-list has-scrollbar" id="blogList">
+          <li>
+            <div class="blog-card" data-aos="fade-up">
+              <figure class="card-banner">
+                <a href="blogs/blog1.html"><img src="./assets/images/blog-1.jpg" alt="Opening of new offices"
+                    loading="lazy"></a>
+                <a href="blogs/blog1.html" class="btn btn-vehigo position-absolute"
+                  style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-building"></i> Company</a>
+              </figure>
+              <div class="p-3">
+                <h3 class="h5 fw-bold"><a href="blogs/blog1.html" class="text-decoration-none">Opening of new offices of
+                    the company</a></h3>
+                <div class="d-flex align-items-center justify-content-between mt-2 small opacity-75 text-dark"><!--Manika New Class :- text-dark-->
+                  <span><i class="fa-regular fa-clock"></i> Jan 14, 2022</span>
+                  <span><i class="fa-regular fa-comments"></i> 114</span>
                 </div>
-
-
-              </li>
-
-              <li>
-                <div class="blog-card">
-
-                  <figure class="blog-image">
-
-                 <a href="blog.html?id=2"><img src="./assets/images/blog-2.jpg" alt="What cars are most vulnerable" loading="lazy"
-                        class="w-100"></a>
-                
-
-
-                  </figure>
-
-                  <div class="card-content">
-
-                    <h3 class="h3 card-title">
-                      <a href="blog.html?id=2">What cars are most vulnerable</a>
-                    </h3>
-
-                    <div class="card-meta">
-
-                      <div class="publish-date">
-                        <ion-icon name="time-outline"></ion-icon>
-
-                        <time datetime="2022-01-14">January 14, 2022</time>
-                      </div>
-
-                      <div class="comments">
-                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
-                        <data value="114">114</data>
-                      </div>
-
-                    </div>
-
-                    <div class="card-author">
-                      <img src="./assets/images/author.jpg" class="author-img">
-                      <div class="author-name">Benialla Dsouza</div>
-                    </div>
-
-                  </div>
-
+                <div class="d-flex align-items-center gap-2 mt-2 text-dark">
+                  <img src="./assets/images/author.jpg" alt="Author" class="rounded-circle" width="28" height="28">
+                  <div class="small fw-semibold">Benialla Dsouza</div>
                 </div>
-              </li>
+              </div>
+            </div>
+          </li>
 
-              <li>
-                <div class="blog-card">
-
-                  <figure class="blog-image">
-
-                      <a href="blog.html?id=3"><img src="./assets/images/blog-3.jpg" alt="Statistics showed which average age" loading="lazy"
-                        class="w-100"></a>
-                  
-
-                  </figure>
-
-                  <div class="card-content">
-
-                    <h3 class="h3 card-title">
-                    <a href="blog.html?id=3">Statistics showed which average age</a>
-                    </h3>
-
-                    <div class="card-meta">
-
-                      <div class="publish-date">
-                        <ion-icon name="time-outline"></ion-icon>
-
-                        <time datetime="2022-01-14">January 14, 2022</time>
-                      </div>
-
-                      <div class="comments">
-                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
-                        <data value="114">114</data>
-                      </div>
-
-                    </div>
-
-                    <div class="card-author">
-                      <img src="./assets/images/author.jpg" class="author-img">
-                      <div class="author-name">Benialla Dsouza</div>
-                    </div>
-
-                  </div>
-
+          <li>
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="50">
+              <figure class="card-banner">
+                <a href="blogs/blog2.html"><img src="./assets/images/blog-2.jpg" alt="Vulnerable cars"
+                    loading="lazy"></a>
+                <a href="blogs/blog2.html" class="btn btn-vehigo position-absolute"
+                  style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-screwdriver-wrench"></i>
+                  Repair</a>
+              </figure>
+              <div class="p-3">
+                <h3 class="h5 fw-bold"><a href="blogs/blog2.html" class="text-decoration-none">What cars are most
+                    vulnerable</a></h3>
+                <div class="d-flex align-items-center justify-content-between mt-2 small opacity-75 text-dark">
+                  <span><i class="fa-regular fa-clock"></i> Jan 14, 2022</span>
+                  <span><i class="fa-regular fa-comments"></i> 114</span>
                 </div>
-              </li>
-
-              <li>
-                <div class="blog-card">
-
-                  <figure class="blog-image">
-
-                
-                      <a href="blog.html?id=4"><img src="./assets/images/blog-4.jpg" alt="What´s required when renting a car?" loading="lazy"
-                        class="w-100"></a>
-                
-
-      
-
-                  </figure>
-
-                  <div class="card-content">
-
-                    <h3 class="h3 card-title">
-                   <a href="blog.html?id=4">What's required when renting a car?</a>
-                    </h3>
-
-                    <div class="card-meta">
-
-                      <div class="publish-date">
-                        <ion-icon name="time-outline"></ion-icon>
-
-                        <time datetime="2022-01-14">January 14, 2022</time>
-                      </div>
-
-                      <div class="comments">
-                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
-                        <data value="114">114</data>
-                      </div>
-
-                    </div>
-
-                    <div class="card-author">
-                      <img src="./assets/images/author.jpg" class="author-img">
-                      <div class="author-name">Benialla Dsouza</div>
-                    </div>
-
-                  </div>
-
+                <div class="d-flex align-items-center gap-2 mt-2 text-dark">
+                  <img src="./assets/images/author.jpg" alt="Author" class="rounded-circle" width="28" height="28">
+                  <div class="small fw-semibold">Siddharth Menon</div>
                 </div>
-              </li>
+              </div>
+            </div>
+          </li>
 
-              <li>
-                <div class="blog-card">
-
-                  <figure class="blog-image">
-
-                      <a href="blog.html?id=5"><img src="./assets/images/blog-5.jpg" alt="New rules for handling our cars" loading="lazy"
-                        class="w-100"></a>
-                
-
-                  </figure>
-
-                  <div class="card-content">
-
-                    <h3 class="h3 card-title">
-                     <a href="blog.html?id=5">New rules for handling our cars</a>
-                    </h3>
-
-                    <div class="card-meta">
-
-                      <div class="publish-date">
-                        <ion-icon name="time-outline"></ion-icon>
-
-                        <time datetime="2022-01-14">January 14, 2022</time>
-                      </div>
-
-                      <div class="comments">
-                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
-                        <data value="114">114</data>
-                      </div>
-
-                    </div>
-
-                    <div class="card-author">
-                      <img src="./assets/images/author.jpg" class="author-img">
-                      <div class="author-name">Benialla Dsouza</div>
-                    </div>
-
-                  </div>
-
+          <li>
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="80">
+              <figure class="card-banner">
+                <a href="blogs/blog3.html"><img src="./assets/images/blog-3.jpg" alt="Average age stats"
+                    loading="lazy"></a>
+                <a href="blogs/blog3.html" class="btn btn-vehigo position-absolute"
+                  style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-car-side"></i> Cars</a>
+              </figure>
+              <div class="p-3">
+                <h3 class="h5 fw-bold"><a href="blogs/blog3.html" class="text-decoration-none">Statistics showed which
+                    average age</a></h3>
+                <div class="d-flex align-items-center justify-content-between mt-2 small opacity-75 text-dark">
+                  <span><i class="fa-regular fa-clock"></i> Jan 14, 2022</span>
+                  <span><i class="fa-regular fa-comments"></i> 114</span>
                 </div>
+                <div class="d-flex align-items-center gap-2 mt-2 text-dark">
+                  <img src="./assets/images/author.jpg" alt="Author" class="rounded-circle" width="28" height="28">
+                  <div class="small fw-semibold">Priya Deshmukh</div>
+                </div>
+              </div>
+            </div>
+          </li>
 
-              </li>
+          <li>
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="110">
+              <figure class="card-banner">
+                <a href="blogs/blog4.html"><img src="./assets/images/blog-4.jpg" alt="Renting requirements"
+                    loading="lazy"></a>
+                <a href="blogs/blog4.html" class="btn btn-vehigo position-absolute"
+                  style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-car"></i> Cars</a>
+              </figure>
+              <div class="p-3">
+                <h3 class="h5 fw-bold"><a href="blogs/blog4.html" class="text-decoration-none">What's required when
+                    renting a car?</a></h3>
+                <div class="d-flex align-items-center justify-content-between mt-2 small opacity-75 text-dark">
+                  <span><i class="fa-regular fa-clock"></i> Jan 14, 2022</span>
+                  <span><i class="fa-regular fa-comments"></i> 114</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 mt-2">
+                  <img src="./assets/images/author.jpg" alt="Author" class="rounded-circle" width="28" height="28">
+                  <div class="small fw-semibold text-dark">Ravi Khanna</div>
+                </div>
+              </div>
+            </div>
+          </li>
 
-            </ul>
-
-            <button class="right-arrow">
-              &#10095;
-            </button>
-
-          </div>
-
-        </div>
-      </section>
-
+          <li>
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="140">
+              <figure class="card-banner">
+                <a href="blogs/blog5.html"><img src="./assets/images/blog-5.jpg" alt="New rules" loading="lazy"></a>
+                <a href="blogs/blog5.html" class="btn btn-vehigo position-absolute"
+                  style="top:12px;right:12px; padding:6px 10px;"><i class="fa-solid fa-building"></i> Company</a>
+              </figure>
+              <div class="p-3">
+                <h3 class="h5 fw-bold"><a href="blogs/blog5.html" class="text-decoration-none">New rules for handling
+                    our cars</a></h3>
+                <div class="d-flex align-items-center justify-content-between mt-2 small opacity-75 text-dark">
+                  <span><i class="fa-regular fa-clock"></i> Jan 14, 2022</span>
+                  <span><i class="fa-regular fa-comments"></i> 114</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 mt-2">
+                  <img src="./assets/images/author.jpg" alt="Author" class="rounded-circle" width="28" height="28">
+                  <div class="small fw-semibold text-dark">Shruti Yadav</div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+       
+      </div>
+    </div>
+  </section>
 
 
       <!-- 
@@ -1750,65 +1849,57 @@
             <a href="./tandc.html" class="footer-link">Terms & conditions</a>
           </li>
 
-        </ul>
+        </ul> 
 
-        <ul class="footer-list">
+        <ul class="footer-list"> 
+          <li>
+            <p class="footer-list-title">Social Links</p>
+          </li>
+
+          <div class="social-list">
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>Facebook
+            </a>
+          </li>
 
           <li>
-            <p class="footer-list-title"> </p>
+            <a href="https://www.instagram.com/akashh_shelke/" class="social-link" target="_blank">
+              <ion-icon name="logo-instagram"></ion-icon>Instagram
+            </a>
           </li>
+
+          <li>
+            <a href="https://x.com/akashshelke07" class="social-link" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>Twitter
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/in/akash-shelke-5b1520259/?originalSubdomain=in" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>Linkdin
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>Github
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="mail-outline"></ion-icon>Email 
+            </a>
+          </li>
+           </div>
+ 
 
         </ul>
 
       </div>
 
       <div class="footer-bottom">
-
-        <ul class="social-list"> 
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://www.instagram.com/akashh_shelke/" class="social-link" target="_blank">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://x.com/akashshelke07" class="social-link" target="_blank">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://www.linkedin.com/in/akash-shelke-5b1520259/?originalSubdomain=in" class="social-link" target="_blank">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="mail-outline"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://github.com/InnoWebLabs/Vehigo?tab=readme-ov-file" class="social-link" target="_blank">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
 
         <p class="copyright">
           &copy; <span id="copyright-year"></span> <a href="#">VehiGo</a> Contact us through
@@ -1914,25 +2005,6 @@
     }
   });
 </script>
-<a href="./index.html" style="
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
-  background-color: #007BFF;
-  color: white;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  transition: background-color 0.3s;
-" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
-  <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
-</a>
 
     <!-- Scroll Buttons -->
 <button id="scrollTopBtn" style="
@@ -2022,7 +2094,7 @@
 </script>
 
 
-<button id="scrollTop" style="position:fixed;bottom:20px;right:20px;display:none;width:50px;height:50px;border:none;border-radius:50%;background:#007bff;color:#fff;font-size:24px;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,0.3);transition:0.3s;">⬆</button>
+
 
 <script>
 const btn = document.getElementById('scrollTop');
@@ -2030,6 +2102,84 @@ window.onscroll = () => btn.style.display = (window.scrollY > 100 ? 'block' : 'n
 btn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
 btn.onmouseover = () => btn.style.transform='scale(1.1)';
 btn.onmouseout = () => btn.style.transform='scale(1)';
+
+// --------- Theme Toggle ----------
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme');
+
+  // Apply saved theme
+  if (savedTheme === 'light') {
+    document.body.classList.remove('dark-theme');
+    themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+    themeToggle.classList.remove('btn-outline-light');
+    themeToggle.classList.add('btn-outline-secondary');
+  } else {
+    document.body.classList.add('dark-theme');
+    themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+    themeToggle.classList.remove('btn-outline-secondary');
+    themeToggle.classList.add('btn-outline-light');
+  }
+
+  // Toggle on click
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    const isDark = document.body.classList.contains('dark-theme');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+    if (isDark) {
+      themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+      themeToggle.classList.remove('btn-outline-secondary');
+      themeToggle.classList.add('btn-outline-light');
+    } else {
+      themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+      themeToggle.classList.remove('btn-outline-light');
+      themeToggle.classList.add('btn-outline-secondary');
+    }
+  });
+});
+
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const body = document.body;
+  const toggleBtn = document.getElementById('theme-toggle');
+  const toggleIcon = document.getElementById('theme-toggle-icon');
+  const toggleText = document.getElementById('theme-toggle-text');
+  const logo = document.getElementById('logo');
+
+  const savedTheme = localStorage.getItem('theme');
+
+  // Apply saved theme
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-theme');
+    logo.src = logo.dataset.dark;
+    toggleIcon.setAttribute('name', 'sunny-outline');
+    toggleText.textContent = 'Light';
+  } else {
+    body.classList.remove('dark-theme');
+    logo.src = './assets/images/vehigologo.png';
+    toggleIcon.setAttribute('name', 'moon-outline');
+    toggleText.textContent = 'Dark';
+  }
+
+  // Toggle theme
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+    const isDark = body.classList.contains('dark-theme');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+    if (isDark) {
+      logo.src = logo.dataset.dark;
+      toggleIcon.setAttribute('name', 'sunny-outline');
+      toggleText.textContent = 'Light';
+    } else {
+      logo.src = './assets/images/vehigologo.png';
+      toggleIcon.setAttribute('name', 'moon-outline');
+      toggleText.textContent = 'Dark';
+    }
+  });
+});
 </script>
 
 </body>

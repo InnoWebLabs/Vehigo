@@ -54,6 +54,30 @@
         z-index: 1000;
       }
 
+
+  <header>
+    <div class="collapse navbar-collapse" id="navMain">
+      
+        <ul class="navbar-nav ms-auto">
+          <a class="navbar-brand d-flex align-items-center gap-1" href="/src/index.html" aria-label="Vehigo Home">
+        <img src="./assets/images/vehigologo.png" alt="Vehigo" />
+      </a>
+
+
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="featured-car.html">Explore cars</a></li>
+          <li class="nav-item"><a class="nav-link" href="./src/pages/about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="offline.html">Offline Centers</a></li>
+          <li class="nav-item"><a class="nav-link" href="rentcar.html">Rent Your Car</a></li>
+
+          <li class="nav-item">
+            <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
+              <i class="fa-solid fa-gear"></i><span class="label">Dark</span>
+            </button>
+          </li>
+
       .navbar-collapse {
         background-color: #212529;
         position: absolute;
@@ -64,6 +88,7 @@
         z-index: 1000;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
       }
+
 
       /* Only apply absolute positioning on mobile */
       @media (min-width: 992px) {
@@ -574,34 +599,15 @@
       <footer class="footer">
         <div class="container">
           <!-- Top Section -->
-          <div class="footer-top">
+          <div class="footer-grid">
             <!-- Brand Info -->
             <div class="footer-brand">
               <a href="index.html" class="logo">
                 <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
               </a>
               <p class="footer-text">
-                Search affordable rental cars across Madhya Pradesh. List your
-                car when you’re not using it and earn with ease.
+                 Seamless rentals across Bhopal, Indore and Ujjain. Reliable, affordable and convenient car rental services for every journey.
               </p>
-              <form
-                id="newsletter-form"
-                class="newsletter"
-                onsubmit="event.preventDefault(); this.reset();"
-              >
-                <label for="newsletter-email">Subscribe for updates</label>
-                <div class="newsletter-row">
-                  <input
-                    id="newsletter-email"
-                    type="email"
-                    placeholder="Enter your email"
-                    required
-                  />
-                  <button type="submit" aria-label="Subscribe to newsletter">
-                    Subscribe
-                  </button>
-                </div>
-              </form>
             </div>
 
             <!-- Company Links -->
@@ -643,27 +649,17 @@
                 >
               </li>
             </ul>
-
-            <!-- Contact Details -->
-            <div class="footer-contact">
-              <p class="footer-list-title">Get in touch</p>
-              <ul class="footer-list">
-                <li>
-                  <a class="footer-link" href="mailto:support@vehigo.com"
-                    >support@vehigo.com</a
-                  >
-                </li>
-                <li>
-                  <a class="footer-link" href="tel:+919999999999"
-                    >+91 99999 99999</a
-                  >
-                </li>
-                <li><span class="footer-link">Bhopal, Madhya Pradesh</span></li>
-              </ul>
+            <div class="newsletter">
+            <h4>Stay in the loop</h4>
+            <p>Subscribe to get updates about new cars and offers.</p>
+            <div class="form">
+              <input type="email" placeholder="Enter your email" aria-label="Email address" />
+              <button type="button">Subscribe</button>
             </div>
           </div>
+        </div>
 
-          <!-- Bottom Section -->
+        
           <!-- Bottom Section -->
           <div class="footer-bottom">
             <ul class="social-list">
@@ -733,10 +729,12 @@
               </li>
             </ul>
 
-            <p class="copyright">
-              &copy; <span id="copyright-year"></span> <a href="#">VehiGo</a> |
-              All rights reserved
-            </p>
+            <p class="copyright">© <span id="about-footer-year"></span> VehiGo. All rights reserved.</p>
+          <div class="mini-links">
+            <a href="../../privacypolicy.html">Privacy</a>
+            <a href="tandc.html">Terms</a>
+            <a href="../../ContactUs.html">Contact</a>
+          </div>
           </div>
         </div>
       </footer>

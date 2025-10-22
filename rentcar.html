@@ -11,7 +11,7 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   
   <style>
     /* ---------- VEHIGO THEME VARIABLES ---------- */
@@ -34,7 +34,7 @@
 
     body {
       margin: 0;
-      font-family: 'Inter', 'Nunito', system-ui, -apple-system, sans-serif;
+      font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
       background: var(--vehigo-bg);
       color: var(--vehigo-text);
       transition: all 0.4s ease;
@@ -55,20 +55,20 @@
     #animated-bg {
       position: fixed;
       inset: 0;
-      background: radial-gradient(1200px 800px at 10% 10%, rgba(37, 99, 235, .15), transparent 40%),
-        radial-gradient(1000px 700px at 90% 20%, rgba(78, 127, 180, .2), transparent 45%),
-        radial-gradient(800px 600px at 30% 90%, rgba(30, 64, 175, .18), transparent 40%);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       pointer-events: none;
       z-index: 0;
-      filter: blur(0.5px);
-      animation: blobFloat 24s ease-in-out infinite alternate;
-      opacity: .9;
+      filter: none;
+      opacity: 1;
     }
 
-    @keyframes blobFloat {
-      0% { transform: translate3d(0, 0, 0) scale(1); }
-      100% { transform: translate3d(0, -20px, 0) scale(1.02); }
+    /* Animated particles grid */
+    .particles {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 24px 24px; opacity: .15; animation: parallax 40s linear infinite;
     }
+    @keyframes parallax { from { background-position: 0 0; } to { background-position: 1000px 600px; } }
 
     /* ---------- HEADER ---------- */
     .header {
@@ -109,11 +109,9 @@
       opacity: 0.8;
     }
 
-    .navbar .navbar-list {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0; padding: 0;
+   .navbar-list{
+      display:flex; list-style:none; gap:14px; padding:0; margin:0; align-items:center;
+      
     }
     
     .navbar-link {
@@ -128,53 +126,58 @@
     
     .navbar-link:hover {
       color: var(--vehigo-primary);
-      background: rgba(37, 99, 235, .08);
+      
     }
     
     .navbar-link.active {
       color: var(--vehigo-primary);
-      background: linear-gradient(90deg, rgba(37, 99, 235, .12), rgba(78, 127, 180, .12));
+      
     }
 
     /* ---------- THEME SWITCH ---------- */
-    .theme-switch {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      margin-left: 1rem;
+     .theme-switch {
+
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      margin-right: 5px;
+      padding: 10px 25px !important;
+      font-weight: 700 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
     }
-    
-    .theme-switch input { display: none; }
-    
+
+    .theme-toggle-switch:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+      border-color: #2563eb !important;
+    }
+
+    .theme-switch input{ appearance:none; width:0; height:0; position:absolute; }
     .slider {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
     
-    .btn-outline-light {
-      width: 100px;
-      height: 40px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--vehigo-border);
-      background: var(--vehigo-card);
-      color: var(--vehigo-text);
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      box-shadow: var(--shadow-1);
+   .btn-vehigo {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      border: none !important;
+      border-radius: 25px !important;
+      margin-right: 5px;
+      padding: 10px 20px !important;
+      font-weight: 600 !important;
+      color: white !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 2px 8px rgba(37, 100, 235, 0.3) !important;
+      text-decoration: none;
     }
-    
-    .btn-outline-light:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-2);
-      background: linear-gradient(90deg, var(--vehigo-primary), var(--vehigo-primary-2));
-      color: white;
+
+    .btn-vehigo:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 15px rgba(37, 100, 235, 0.4) !important;
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
     }
     
     body.dark-theme .btn-outline-light {
@@ -237,13 +240,61 @@
 
     /* ---------- FORM ---------- */
     .form-container {
-      background: linear-gradient(180deg, rgba(255, 255, 255, .82), rgba(255, 255, 255, .76));
+      background: rgba(15, 23, 42, .45);
       border: 1px solid var(--vehigo-border);
       border-radius: var(--radius-xl);
       padding: 2rem;
-      box-shadow: var(--shadow-1);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
       margin-bottom: 3rem;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(18px) saturate(120%);
+    }
+
+    /* --- Improved Form Grouping & Inputs with Icons --- */
+    .vehicle-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px dashed var(--vehigo-border);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.6);
+    }
+    .vehicle-section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--vehigo-primary);
+      margin: .25rem 0 .5rem;
+    }
+    .input-with-icon {
+      position: relative;
+    }
+    .input-with-icon i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #60a5fa;
+      opacity: .85;
+      pointer-events: none;
+    }
+    .input-with-icon input {
+      padding-left: 38px !important;
+    }
+    .error-text {
+      font-size: .85rem;
+      color: #b91c1c;
+      margin-top: 6px;
+      display: none;
+    }
+    .has-error input {
+      border-color: #ef4444 !important;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, .15) !important;
+    }
+    .help-text {
+      font-size: .85rem;
+      color: #64748b;
     }
     
     body.dark-theme .form-container {
@@ -281,8 +332,8 @@
     }
     
     #carForm input:focus {
-      border-color: var(--vehigo-primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, .1);
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, .25), 0 8px 24px rgba(0,0,0,.25);
       outline: none;
       transform: translateY(-1px);
     }
@@ -310,9 +361,9 @@
       font-size: 1.1rem;
       cursor: pointer;
       color: #fff;
-      background: linear-gradient(135deg, var(--vehigo-primary), var(--vehigo-primary-2));
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
       transition: all 0.3s ease;
-      box-shadow: var(--shadow-1);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, .35);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -322,8 +373,8 @@
     
     #carForm button:hover {
       transform: translateY(-3px);
-      box-shadow: var(--shadow-2);
-      background: linear-gradient(135deg, var(--vehigo-primary-3), var(--vehigo-primary));
+      box-shadow: 0 16px 40px rgba(139, 92, 246, .45);
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
     }
     
     #carForm button:active {
@@ -521,97 +572,56 @@
     }
 
     /* ---------- FOOTER ---------- */
+   .footer { background: #f4f7fb; color: #111827; }
+    body.dark-theme .footer { background: #0b0f14; color: #e5e7eb; }
+    body.dark-theme .footer-link { color: #cbd5e1; }
+    body.dark-theme .footer .footer-link:hover { color: #60a5fa; }
+    body.dark-theme .social-link { color: #cbd5e1; }
+   body.dark-theme .footer-text{color:#cbd5e1;}
+    body.dark-theme .footer-list-title{color:#cbd5e1;}
+    /* New Footer UI */
     .footer {
-      background: linear-gradient(135deg, var(--vehigo-primary), var(--vehigo-primary-2));
-      color: #fff;
-      border-top-left-radius: var(--radius-xl);
-      border-top-right-radius: var(--radius-xl);
-      padding: 3rem 1.5rem 2rem;
-      margin-top: 4rem;
+      padding: 60px 0 20px;
       position: relative;
       z-index: 1;
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
     }
-    
-    body.dark-theme .footer {
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .footer-row {
+    .footer .container { max-width: 1200px; margin-inline: auto; }
+    .footer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
+      grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+      gap: 32px;
+      align-items: start;
     }
-
-    .footer-col h6 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-col a {
-      color: #fff;
-      opacity: 0.9;
-      text-decoration: none;
-      transition: opacity 0.3s;
-    }
-
-    .footer-col a:hover {
-      opacity: 1;
-    }
-
-    .footer .brand img {
-      height: 45px;
-      margin-bottom: 1rem;
-    }
-
-    .footer .brand p {
-      margin: 0.3rem 0;
-      opacity: 0.95;
-    }
-
-    .socials {
-      display: flex;
-      gap: 1rem;
-      font-size: 1.3rem;
-    }
-    .socials a {
-      color: #fff;
-      opacity: 0.85;
-    }
-    .socials a:hover {
-      opacity: 1;
-    }
-
-    /* Bottom Section */
-    .footer-bottom {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(255,255,255,0.35);
-      padding-top: 1rem;
-      opacity: 0.9;
-    }
-    .footer-bottom a {
-      color: #fff;
-      text-decoration: none;
-    }
-
+    .footer-brand .logo { display: inline-flex; align-items: center; gap: 8px; }
+    .footer-brand .logo img { height: 44px; }
+    .footer-text { margin-top: 12px; color: #475569; }
+    
+    .footer .social-list { display: flex; gap: 12px; margin-top: 14px; }
+    .footer .social-link { font-size: 22px; color: #1f2937; }
+    .footer .social-link:hover { color: #2563eb; }
+    body.dark-theme .footer .social-link { color: #cbd5e1; }
+    .footer-list-title { font-weight: 800; margin-bottom: 10px; color: #0f172a; }
+    body.dark-theme .footer-list-title { color: #e2e8f0; }
+    .footer-link { color: #374151; font-weight: 500; text-decoration: none; }
+    .footer-link:hover { color: #2563eb; transform: translateX(2px); }
+    .newsletter { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 16px; }
+    body.dark-theme .newsletter { background: #111827; border-color: #263241; }
+    .newsletter h4 { margin-bottom: 8px; font-weight: 800; }
+    .newsletter p { font-size: 0.95rem; color: #475569; margin-bottom: 12px; }
+    body.dark-theme .newsletter p { color: #94a3b8; }
+    .newsletter .form { display: flex; gap: 8px; }
+    .newsletter input { flex: 1; padding: 10px 12px; border-radius: 10px; border: 1px solid #e5e7eb; outline: none; }
+    body.dark-theme .newsletter input { background: #0f1218; color: #e5e7eb; border-color: #263241; }
+    .newsletter button { padding: 10px 14px; border-radius: 10px; background: #2563eb; color: #fff; border: none; font-weight: 700; }
+    .newsletter button:hover { background: #1e40af; }
+    .footer-bottom { margin-top: 32px; border-top: 1px solid #e5e7eb; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; }
+   body.dark-theme .footer-bottom { border-color: #263241; }
+    .footer-bottom .mini-links { display: flex; gap: 12px; }
+    .footer-bottom .mini-links a { color: #475569; font-size: 0.95rem; }
+    .footer-bottom .mini-links a:hover { color: #2563eb; }
+    .footer-list{list-style-type: none;}
+    .social-list{list-style-type: none;}
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 768px) {
       .header {
@@ -670,6 +680,61 @@
         font-size: 16px;
       }
     }
+
+    /* Dark Theme */
+body.dark-mode,
+body.dark-theme {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #f1f5f9;
+}
+
+body.dark-mode .vehicle-form-section,
+body.dark-theme .vehicle-form-section {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+body.dark-mode .vehicle-form-card,
+body.dark-theme .vehicle-form-card {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .vehicle-form-title,
+body.dark-theme .vehicle-form-title {
+  color: #f1f5f9;
+}
+
+body.dark-mode .vehicle-input-group label,
+body.dark-theme .vehicle-input-group label {
+  color: #e2e8f0;
+}
+
+body.dark-mode .vehicle-input-group input,
+body.dark-theme .vehicle-input-group input {
+  background-color: #1e293b;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+}
+
+body.dark-mode .vehicle-input-group input:focus,
+body.dark-theme .vehicle-input-group input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+body.dark-mode .vehicle-submit-btn,
+body.dark-theme .vehicle-submit-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+body.dark-mode .vehicle-submit-btn:hover,
+body.dark-theme .vehicle-submit-btn:hover {
+  background-color: #1d4ed8;
+}
+
     
     @media (max-width: 480px) {
       h1 {
@@ -717,6 +782,48 @@
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 0.6s ease;
+  position: relative;
+  will-change: transform, box-shadow;
+  transition: transform .2s ease, box-shadow .3s ease;
+}
+
+/* Animated gradient border around card */
+.vehicle-form-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  padding: 2px;
+  background: conic-gradient(from 0deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: borderSpin 6s linear infinite;
+  pointer-events: none;
+  opacity: .25;
+}
+
+@keyframes borderSpin { to { transform: rotate(360deg); } }
+
+/* Entry pop animation helper */
+.card-animate { animation: cardPop .6s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes cardPop {
+  0% { opacity: 0; transform: translateY(18px) scale(.98); }
+  60% { opacity: 1; transform: translateY(-2px) scale(1.005); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.vehicle-form-card:hover {
+  box-shadow: 0 16px 40px rgba(59,130,246,.25), 0 6px 20px rgba(0,0,0,.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vehicle-form-card,
+  .vehicle-form-card::before,
+  .card-animate {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 .vehicle-form-title {
@@ -780,6 +887,98 @@
   transform: translateY(-2px);
 }
 
+/* ====== DARK MODE STYLING ====== */
+
+
+
+/* Section container */
+body.dark-theme .vehicle-form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  background-color: #0f172a;
+}
+
+/* Card */
+body.dark-theme .vehicle-form-card {
+  background-color: #1e293b; /* Dark slate card */
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  width: 100%;
+  max-width: 500px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.dark-theme .vehicle-form-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Title */
+body.dark-theme .vehicle-form-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #e2e8f0;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.75rem;
+}
+
+/* Labels & Inputs */
+body.dark-theme.vehicle-input-group {
+  margin-bottom: 1.2rem;
+}
+
+body.dark-theme .vehicle-input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+body.dark-theme .vehicle-input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #f8fafc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-theme.vehicle-input-group input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
+}
+
+/* Submit Button */
+body.dark-theme .vehicle-submit-btn {
+  width: 100%;
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.dark-theme .vehicle-submit-btn:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-2px);
+}
+
+body.dark-theme .vehicle-submit-btn i {
+  margin-right: 0.5rem;
+}
+
+
 /* Responsive */
 @media (max-width: 600px) {
   .vehicle-form-card {
@@ -799,28 +998,36 @@
       <img src="./assets/images/vehigologo.png" alt="VehiGo logo"/>
     </a>
     <nav class="navbar">
-      <ul class="navbar-list">
-        <li><a href="/src/index.html" class="navbar-link">Home</a></li>
-        <li><a href="featured-car.html" class="navbar-link">Explore cars</a></li>
-        <li><a href="./src/pages/about.html" class="navbar-link">About</a></li>
-        <li><a href="blog.html" class="navbar-link">Blog</a></li>
-        <li><a href="offline.html" class="navbar-link">Offline Centers</a></li>
-        <li><a href="rentcar.html" class="navbar-link">Rent Your Car</a></li>
-      </ul>
+      <ul class="navbar-list" role="menubar" aria-label="Primary">
+          <li><a href="../src/index.html" class="navbar-link" role="menuitem">Home</a></li>
+          <li><a href="featured-car.html" class="navbar-link" role="menuitem">Explore cars</a></li>
+          <li><a href="./src/pages/about.html" class="navbar-link" role="menuitem">About us</a></li>
+          <li><a href="blog.html" class="navbar-link" role="menuitem">Blog</a></li>
+          <li><a href="offline.html" class="navbar-link" role="menuitem">Offline Centers</a></li>
+          <li><a href="rentcar.html" class="navbar-link" role="menuitem">Rent Your Car</a></li>
+          <li><a href="wishlist.html" class="navbar-link" role="menuitem">Wishlist</a></li>
+          <li>
+            <label class="theme-switch" for="theme-toggle" title="Toggle theme">
+              <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode"/>
+              <span id="theme-text">Dark</span>
+            </label>
+          </li>
+          <li>
+            <a href="src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+              <i class="fa-regular fa-user"></i> <span>Login</span>
+            </a>
+          </li>
+        </ul>
+     
     </nav>
 
     <!-- Theme Toggle -->
-    <label class="theme-switch">
-      <input type="checkbox" id="theme-toggle"/>
-      <span class="slider">
-        <button class="btn-outline-light" id="themebtn"><i class="fa-solid fa-gear"></i> Dark</button>
-      </span>
-    </label>
-    <a href="./src/pages/login.html" class="btn-outline-light" id="loginBtn" style="margin-left: 0.75rem;"><i class="fa-regular fa-user"></i> Login</a>
+    
   </header>
 
   <!-- ANIMATED BACKGROUND -->
   <div id="animated-bg"></div>
+  <div class="particles"></div>
 
   <!-- MAIN -->
   <main class="rentcar-main-content">
@@ -836,38 +1043,82 @@
 
     <!-- 🚗 Vehicle Form Section -->
 <section class="vehicle-form-section">
-  <div class="vehicle-form-card">
-    <h2 class="vehicle-form-title">Add Your Vehicle</h2>
+  <div class="vehicle-form-card card-animate" aria-labelledby="vehicle-form-title">
+    <h2 id="vehicle-form-title" class="vehicle-form-title">Add Your Vehicle</h2>
 
-    <form id="vehicleForm" class="vehicle-form">
-      <div class="vehicle-input-group">
-        <label for="carName">Car Make & Model</label>
-        <input type="text" id="carName" placeholder="e.g., Honda City, Toyota Innova" required />
+    <form id="vehicleForm" class="vehicle-form" novalidate>
+      <!-- Group: Car Information -->
+      <div class="vehicle-section" aria-labelledby="sec-car-info">
+        <div class="vehicle-section-title" id="sec-car-info">
+          <i class="fas fa-car-side"></i>
+          <span>Car information</span>
+        </div>
+        <div class="vehicle-input-group" id="group-carName">
+          <label for="carName">Car Make & Model</label>
+          <div class="input-with-icon">
+            <i class="fas fa-tag"></i>
+            <input type="text" id="carName" placeholder="e.g., Honda City, Toyota Innova" required aria-required="true" aria-describedby="carName-help carName-error" />
+          </div>
+          <div id="carName-help" class="help-text">Use full model name for better discovery.</div>
+          <div id="carName-error" class="error-text"></div>
+        </div>
+
+        <div class="vehicle-input-group" id="group-year">
+          <label for="year">Year of Registration</label>
+          <div class="input-with-icon">
+            <i class="fas fa-calendar-alt"></i>
+            <input type="number" id="year" placeholder="e.g., 2020" required aria-required="true" aria-describedby="year-error" />
+          </div>
+          <div id="year-error" class="error-text"></div>
+        </div>
       </div>
 
-      <div class="vehicle-input-group">
-        <label for="year">Year of Registration</label>
-        <input type="number" id="year" placeholder="e.g., 2020" required />
+      <!-- Group: Pricing & Location -->
+      <div class="vehicle-section" aria-labelledby="sec-pricing-location">
+        <div class="vehicle-section-title" id="sec-pricing-location">
+          <i class="fas fa-map-marked-alt"></i>
+          <span>Pricing & location</span>
+        </div>
+        <div class="vehicle-input-group" id="group-price">
+          <label for="price">Rental Price per Day</label>
+          <div class="input-with-icon">
+            <i class="fas fa-indian-rupee-sign"></i>
+            <input type="number" id="price" placeholder="e.g., 1500" required aria-required="true" aria-describedby="price-error" />
+          </div>
+          <div id="price-error" class="error-text"></div>
+        </div>
+
+        <div class="vehicle-input-group" id="group-location">
+          <label for="location">Pickup Location</label>
+          <div class="input-with-icon">
+            <i class="fas fa-location-dot"></i>
+            <input type="text" id="location" placeholder="e.g., Bhopal, Indore" required aria-required="true" aria-describedby="location-error" />
+          </div>
+          <div id="location-error" class="error-text"></div>
+        </div>
       </div>
 
-      <div class="vehicle-input-group">
-        <label for="price">Rental Price per Day</label>
-        <input type="number" id="price" placeholder="e.g., 1500" required />
+      <!-- Group: Media -->
+      <div class="vehicle-section" aria-labelledby="sec-media">
+        <div class="vehicle-section-title" id="sec-media">
+          <i class="fas fa-image"></i>
+          <span>Photos</span>
+        </div>
+        <div class="vehicle-input-group" id="group-imageUrl">
+          <label for="imageUrl">Image URL of Car</label>
+          <div class="input-with-icon">
+            <i class="fas fa-link"></i>
+            <input type="url" id="imageUrl" placeholder="https://example.com/car-image.jpg" required aria-required="true" aria-describedby="imageUrl-error" />
+          </div>
+          <div id="imageUrl-error" class="error-text"></div>
+        </div>
       </div>
 
-      <div class="vehicle-input-group">
-        <label for="location">Pickup Location</label>
-        <input type="text" id="location" placeholder="e.g., Bhopal, Indore" required />
+      <div class="form-submit">
+        <button type="submit" class="vehicle-submit-btn pulse" aria-live="polite">
+          <i class="fas fa-plus"></i> Add Your Car
+        </button>
       </div>
-
-      <div class="vehicle-input-group">
-        <label for="imageUrl">Image URL of Car</label>
-        <input type="url" id="imageUrl" placeholder="https://example.com/car-image.jpg" required />
-      </div>
-
-      <button type="submit" class="vehicle-submit-btn">
-        <i class="fas fa-plus"></i> Add Your Car
-      </button>
     </form>
   </div>
 </section>
@@ -900,59 +1151,61 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-row">
-        <!-- Brand -->
-        <div class="footer-col brand">
-          <a href="#" class="logo">
-            <img src="./assets/images/vehigologo.png" alt="Vehigo logo">
-          </a>
-          <p>🚗 <strong>Affordable rentals across Madhya Pradesh</strong></p>
-          <p>Choose from a wide range of vehicles — or rent your own when it’s idle.</p>
-        </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <img src="assets\images\vehigologo.png" alt="VehiGo logo" />
+            </a>
+            <p class="footer-text">
+              Seamless rentals across Bhopal, Indore and Ujjain. Reliable, affordable and convenient car rental services for every journey.
+            </p>
+          </div>
 
-        <!-- Company -->
-        <div class="footer-col">
-          <h6>Company</h6>
-          <ul>
-            <li><a href="./src/pages/about.html">About Us</a></li>
-            <li><a href="./src/pages/pricing.html">Pricing Plans</a></li>
-            <li><a href="./blog.html">Our Blog</a></li>
-            <li><a href="./ContactUs.html">Contact Us</a></li>
+          <ul class="footer-list">
+            <li><p class="footer-list-title">Company</p></li>
+            <li><a href="src\pages\about.html" class="footer-link">About us</a></li>
+            <li><a href="src\pages\pricing.html" class="footer-link">Pricing plans</a></li>
+            <li><a href="blog.html" class="footer-link">Our blog</a></li>
+            <li><a href="ContactUs.html" class="footer-link">Contact Us</a></li>
           </ul>
-        </div>
 
-        <!-- Support -->
-        <div class="footer-col">
-          <h6>Support</h6>
-          <ul>
-            <li><a href="./src/pages/help-center.html">Help Center</a></li>
-            <li><a href="./src/pages/Askaques.html">Ask a Question</a></li>
-            <li><a href="./privacypolicy.html">Privacy Policy</a></li>
-            <li><a href="./tandc.html">Terms & Conditions</a></li>
+          <ul class="footer-list">
+            <li><p class="footer-list-title">Support</p></li>
+            <li><a href="src\pages\help-center.html" class="footer-link">Help center</a></li>
+            <li><a href="src\pages\Askaques.html" class="footer-link">Ask a question</a></li>
+            <li><a href="privacypolicy.html" class="footer-link">Privacy policy</a></li>
+            <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
           </ul>
+
+          <div class="newsletter">
+            <h4>Stay in the loop</h4>
+            <p>Subscribe to get updates about new cars and offers.</p>
+            <div class="form">
+              <input type="email" placeholder="Enter your email" aria-label="Email address" />
+              <button type="button">Subscribe</button>
+            </div>
+          </div>
         </div>
 
-        <!-- Follow -->
-        <div class="footer-col">
-          <h6>Follow</h6>
-          <div class="socials">
-            <a href="https://www.facebook.com/vehigo" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/vehigo" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/vehigo" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/company/vehigo" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/vehigo" target="_blank"><i class="fab fa-github"></i></a>
+        <div class="footer-bottom">
+          <ul data-aos="fade-up" class="social-list">
+            <li><a href="https://facebook.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="https://instagram.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="https://twitter.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="https://linkedin.com/company/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://github.com/vehigo" class="social-link" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="mailto:contact@vehigo.com" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
+          </ul>
+          <p class="copyright">© <span id="about-footer-year"></span> VehiGo. All rights reserved.</p>
+          <div class="mini-links">
+            <a href="../../privacypolicy.html">Privacy</a>
+            <a href="tandc.html">Terms</a>
+            <a href="../../ContactUs.html">Contact</a>
           </div>
         </div>
       </div>
-
-      <!-- Bottom -->
-      <div class="footer-bottom">
-        <div>© <span id="copyright-year">2025</span> Vehigo — All rights reserved.</div>
-        <div><i class="fa-solid fa-phone"></i> <a href="tel:1800100100">1800-100-100</a> · Mon–Sat: 9:00am–6:00pm</div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <!-- Floating Scroll Buttons -->
   <div class="scroll-buttons">
@@ -966,6 +1219,7 @@
 
   <!-- SCRIPTS -->
   <script src="scripts/rentcar.js"></script>
+  <div id="toast-root" aria-live="polite" aria-atomic="true" style="position: fixed; top: 16px; right: 16px; z-index: 2000;"></div>
   
   <!-- SCROLL FUNCTIONS -->
   <script>
@@ -991,10 +1245,14 @@
   
   <!-- THEME SCRIPT -->
   <script>
-    const themebtn = document.getElementById('themebtn');
-    if(localStorage.getItem("theme") === "dark"){
+    const themebtn = document.getElementById('theme-toggle');
+    // Default to dark if no preference saved
+    if(localStorage.getItem("theme") !== "light"){
       document.body.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
       themebtn.innerHTML = '<i class="fa-solid fa-sun"></i> Light';
+    } else {
+      themebtn.innerHTML = '<i class="fa-solid fa-moon"></i> Dark';
     }
     themebtn.addEventListener("click", () => {
       if(document.body.classList.contains("dark-theme")){
