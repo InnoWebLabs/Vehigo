@@ -34,6 +34,11 @@ app.get("/signup", (req, res) => {
   res.sendFile(path.join(__dirname, "src/pages/login.html"));
 });
 
+// Serve Rent Your Car page
+app.get("/rent-your-car", (req, res) => {
+  res.sendFile(path.join(__dirname, "rentcar.html"));
+});
+
 app.use("/", authRouter);
 
 // Handle 404 - Must be after all other routes
