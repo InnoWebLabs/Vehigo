@@ -32,7 +32,7 @@
           <!-- Theme switch -->
           <li class="nav-item">
             <button id="themeToggle" class="btn btn-outline-secondary theme-toggle-btn" type="button">
-              <i class="fa-solid fa-gear"></i><span class="label">Light</span>
+              <span class="label">Light</span>
             </button>
           </li>
 
@@ -43,10 +43,11 @@
             </a>
           </li> -->
           <li class="nav-item">
-            <button id="logoutBtn" class="btn btn-outline-light d-none" aria-label="Logout" href="../src/pages/login.html">
-              <i class="fa-solid fa-right-from-bracket"></i>
-            </button>
-          </li>
+              <a href="./src/pages/login.html" class="btn btn-vehigo" id="loginBtn">
+                <i class="fa-regular fa-user"></i> <span>Login</span>
+              </a>
+            </li>
+           
         </ul>
       </div>
     </nav>
@@ -111,12 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
     document.body.classList.remove('dark-theme');
-    themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+    themeToggle.innerHTML = '<span class="label">Dark</span>';
     themeToggle.classList.remove('btn-outline-light');
     themeToggle.classList.add('btn-outline-secondary');
   } else {
     document.body.classList.add('dark-theme');
-    themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+    themeToggle.innerHTML = '<span class="label">Light</span>';
     themeToggle.classList.remove('btn-outline-secondary');
     themeToggle.classList.add('btn-outline-light');
   }
@@ -128,11 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
     if (isDark) {
-      themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Light</span>';
+      themeToggle.innerHTML = '<span class="label">Light</span>';
       themeToggle.classList.remove('btn-outline-secondary');
       themeToggle.classList.add('btn-outline-light');
     } else {
-      themeToggle.innerHTML = '<i class="fa-solid fa-gear"></i><span class="label">Dark</span>';
+      themeToggle.innerHTML = '<span class="label">Dark</span>';
       themeToggle.classList.remove('btn-outline-light');
       themeToggle.classList.add('btn-outline-secondary');
     }
